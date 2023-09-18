@@ -10,12 +10,11 @@ class AppColor {
   static const Color white = Color(0XFFFFFFFF);
   static const Color erorr = Color(0XFFF01F0E);
 
-  static const Color categoryGreen = Color(0XFFE4F3EA);
   static const Color success = Color(0XFF2AA952);
-  static const Color categoryPink = Color(0XFFFFECE8);
+
   static const Color pink = Colors.pink;
-  static const Color categoryOrange = Color(0XFFFFF6E4);
+
   static const Color orange = Colors.orange;
-  static const Color categoryPurple = Color(0XFFF1EDFC);
+
   static const Color purple = Colors.purple;
 }

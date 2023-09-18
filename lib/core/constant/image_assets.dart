@@ -13,7 +13,7 @@ abstract class AppAssets {
       "assets/images/category/diamond-ring.png";
   static const String fragrances = "assets/images/category/fragrances.png";
   static const String furnitures = "assets/images/category/furnitures.png";
-  static const String grocery = "assets/mages/category/grocery.png";
+  static const String grocery = "assets/images/category/grocery.png";
   static const String womensBags = "assets/images/category/handbag.png";
   static const String womensShoes = "assets/images/category/high-heels.png";
   static const String houseDecoration =

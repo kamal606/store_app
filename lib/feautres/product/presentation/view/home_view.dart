@@ -6,6 +6,7 @@ import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/utils/icons.dart';
 import 'package:store_app/core/widgets/custom_appbar.dart';
 import 'package:store_app/core/widgets/custom_text_form_field.dart';
+import 'package:store_app/feautres/product/data/local_data_source.dart/icon_category.dart';
 
 import '../widgets/home/carouse_slider.dart';
 
@@ -71,11 +72,27 @@ class CategoryHome extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-        const Row(
-          children: [
-            // ...List.generate(length, (index) => null)
-            CustomBoxCategory(image: , title:  , color: ,),
-          ],
+        SizedBox(
+          height: 120.h,
+          child: ListView.builder(
+              clipBehavior: Clip.none,
+              scrollDirection: Axis.horizontal,
+              physics: const BouncingScrollPhysics(),
+              itemCount: AppCategoryIcon.categoryListIcon.length,
+              itemBuilder: (context, i) {
+                return Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(right: 16.w),
+                      child: CustomBoxCategory(
+                        image: AppCategoryIcon.categoryListIcon[i].icon,
+                        title: AppCategoryIcon.categoryListIcon[i].title,
+                        colorbox: AppCategoryIcon.categoryListIcon[i].colorbox,
+                      ),
+                    ),
+                  ],
+                );
+              }),
         )
       ],
     );
@@ -84,10 +101,11 @@ class CategoryHome extends StatelessWidget {
 
 class CustomBoxCategory extends StatelessWidget {
   const CustomBoxCategory(
-      {super.key, required this.image, required this.title, this.color});
+      {super.key, required this.image, required this.title, this.colorbox});
   final String image;
   final String title;
-  final Color? color;
+
+  final Color? colorbox;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -97,15 +115,15 @@ class CustomBoxCategory extends StatelessWidget {
           width: 48.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8.r),
-            color: AppColor.categoryGreen,
+            color: colorbox,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
                 image,
-                color: color,
-                height: 30.h,
+                color: AppColor.white,
+                height: 28.h,
               ),
             ],
           ),
@@ -115,7 +133,8 @@ class CustomBoxCategory extends StatelessWidget {
         ),
         Text(
           title,
-          style: AppFonts.font_16,
+          textAlign: TextAlign.center,
+          style: AppFonts.font_12,
         )
       ],
     );
