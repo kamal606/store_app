@@ -1,8 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/constant/image_assets.dart';
+
+import '../../../../../core/fonts/app_font.dart';
 
 class CustomCarouseSlider extends StatelessWidget {
   const CustomCarouseSlider({super.key});
@@ -21,35 +23,48 @@ class CustomCarouseSlider extends StatelessWidget {
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,
       ),
-      items: AppSlider.slider.map((i) {
+      items: AppSlider.sliderImage.map((i) {
         return Builder(
           builder: (BuildContext context) {
-            return Container(
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.symmetric(horizontal: 5.0),
-              decoration: BoxDecoration(
-                border: Border.all(color: AppColor.grey, width: 0.5),
-              ),
-              child: CachedNetworkImage(
-                imageUrl: i,
-                imageBuilder: (context, imageProvider) => Container(
+            return Stack(
+              children: [
+                Container(
+                  alignment: Alignment.centerRight,
+                  height: 150.h,
+                  width: 325.w,
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: imageProvider,
-                        fit: BoxFit.cover,
-                        colorFilter: const ColorFilter.mode(
-                            Colors.grey, BlendMode.colorBurn)),
+                    borderRadius: BorderRadius.all(Radius.circular(12.r)),
+                  ),
+                  child: Image.asset(
+                    i.imageName,
+                    fit: BoxFit.fitHeight,
                   ),
                 ),
-                placeholder: (context, url) => const Center(
-                    child: CircularProgressIndicator(
-                  color: AppColor.blacK,
-                )),
-                errorWidget: (context, url, error) => Image.asset(
-                  AppAssets.error,
-                  fit: BoxFit.cover,
+                Positioned(
+                  right: 130.w,
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 150.h,
+                    width: 315.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(80.r),
+                          bottomRight: Radius.circular(80.r)),
+                      color: AppColor.blue,
+                    ),
+                  ),
                 ),
-              ),
+                Positioned(
+                  left: 15.h,
+                  top: 40.h,
+                  child: Text(
+                    i.title,
+                    textAlign: TextAlign.start,
+                    style: AppFonts.font_18
+                        .copyWith(color: AppColor.white, height: 1.3),
+                  ),
+                ),
+              ],
             );
           },
         );
@@ -58,14 +73,28 @@ class CustomCarouseSlider extends StatelessWidget {
   }
 }
 
-abstract class AppSlider {
-  static List slider = [
-    "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
-    "https://i.dummyjson.com/data/products/47/thumbnail.jpeg",
-    "https://i.dummyjson.com/data/products/55/thumbnail.jpg",
-    "https://i.dummyjson.com/data/products/76/thumbnail.jpg",
-    "https://i.dummyjson.com/data/products/82/thumbnail.jpg",
-    "https://i.dummyjson.com/data/products/93/thumbnail.jpg",
-    "https://i.dummyjson.com/data/products/99/thumbnail.jpg",
+class AppSlider {
+  final String imageName;
+  final String title;
+
+  AppSlider({required this.imageName, required this.title});
+
+  static List<AppSlider> sliderImage = [
+    AppSlider(
+      imageName: AppAssets.slider1,
+      title: "Get ready\n to start\n with us",
+    ),
+    AppSlider(
+      imageName: AppAssets.slider2,
+      title: "Our offers\n are\n irresistible",
+    ),
+    AppSlider(
+      imageName: AppAssets.slider3,
+      title: "discount\n on products\n 70%",
+    ),
+    AppSlider(
+      imageName: AppAssets.slider4,
+      title: "Keep an eye\n on our latest\n news",
+    ),
   ];
 }
