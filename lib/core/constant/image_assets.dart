@@ -31,4 +31,8 @@ abstract class AppAssets {
   static const String menWatches = "assets/images/category/watch(1).png";
   static const String womensDresses =
       "assets/images/category/woman-clothes.png";
+  //=======================icons============================
+  static const String shoppingCart = "assets/images/icons/shopping-cart.png";
+  static const String bell = "assets/images/icons/bell.png";
+  static const String welcome = "assets/images/icons/welcome.png";
 }
