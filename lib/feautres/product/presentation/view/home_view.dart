@@ -6,7 +6,7 @@ import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/utils/icons.dart';
 import 'package:store_app/core/widgets/custom_appbar.dart';
 import 'package:store_app/core/widgets/custom_text_form_field.dart';
-import 'package:store_app/feautres/product/data/local_data_source.dart/icon_category.dart';
+import 'package:store_app/feautres/product/data/data_source/local_data_source.dart/icon_category.dart';
 
 import '../widgets/home/carouse_slider.dart';
 
