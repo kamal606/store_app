@@ -22,7 +22,6 @@ class CategoryRepoImpl implements CategoryRepo {
         return right(categoryLocal);
       }
       // category from api
-
       final categoryRemote = await categoryRemoteDataSourceImpl.getCategory();
 
       return right(categoryRemote);

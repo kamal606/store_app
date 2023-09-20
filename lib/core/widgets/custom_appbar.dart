@@ -39,11 +39,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             children: [
               Image.asset(
                 AppAssets.bell,
-                width: 20.w,
+                width: 20.r,
               ),
               Image.asset(
                 AppAssets.shoppingCart,
-                width: 20.w,
+                width: 20.r,
               ),
             ],
           ),

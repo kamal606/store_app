@@ -31,7 +31,7 @@ class CustomCarouseSlider extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerRight,
                   height: 150.h,
-                  width: 325.w,
+                  width: 325.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(12.r)),
                   ),
@@ -41,11 +41,11 @@ class CustomCarouseSlider extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  right: 130.w,
+                  right: 120.h,
                   child: Container(
                     alignment: Alignment.center,
                     height: 150.h,
-                    width: 315.w,
+                    width: 300.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                           topRight: Radius.circular(80.r),
