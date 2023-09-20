@@ -4,7 +4,7 @@ import 'package:store_app/core/utils/failure.dart';
 import 'package:store_app/feautres/product/domain/repository/repo_category.dart';
 
 class GetCategoryUseCases extends UseCaseNoParam {
-  final GetCategoryRepo getCategoryRepo;
+  final CategoryRepo getCategoryRepo;
   GetCategoryUseCases({required this.getCategoryRepo});
 
   @override

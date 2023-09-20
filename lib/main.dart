@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:store_app/core/constant/hive_const.dart';
 import 'package:store_app/core/utils/app_router.dart';
+import 'package:store_app/feautres/product/domain/entities/category_entity.dart';
 
-void main() {
+Future<void> main() async {
   runApp(const StoreApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(CategoryEntityAdapter());
+  await Hive.openBox(AppHive.categoryBox);
 }
 
 class StoreApp extends StatelessWidget {
