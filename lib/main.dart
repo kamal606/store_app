@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:store_app/core/utils/api_services.dart';
 import 'package:store_app/core/utils/app_router.dart';
 import 'package:store_app/feautres/product/data/data_source/remote_data_source/category_remote_data_source.dart';
@@ -9,13 +10,16 @@ import 'package:store_app/feautres/product/data/repository/repo_category_impl.da
 import 'package:store_app/feautres/product/domain/use_cases/get_category_use_case.dart';
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
 
+import 'core/constant/hive_const.dart';
+import 'feautres/product/domain/entities/category_entity.dart';
+
 Future<void> main() async {
   runApp(const StoreApp());
   WidgetsFlutterBinding.ensureInitialized();
 
-  // await Hive.initFlutter();
-  // Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
-  // await Hive.openBox(AppHive.categoryBox);
+  await Hive.initFlutter();
+  Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
+  await Hive.openBox(AppHive.categoryBox);
 }
 
 class StoreApp extends StatelessWidget {

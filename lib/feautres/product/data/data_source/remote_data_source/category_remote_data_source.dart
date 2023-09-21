@@ -1,6 +1,9 @@
 import 'package:store_app/core/utils/api_services.dart';
 import 'package:store_app/feautres/product/domain/entities/category_entity.dart';
 
+import '../../../../../core/constant/hive_const.dart';
+import '../../../../../core/function/save_data.dart';
+
 abstract class CategoryRemoteDataSource {
   Future<List<CategoryEntity>> getCategory();
 }
@@ -16,7 +19,7 @@ class CategoryRemoteDataSourceImpl implements CategoryRemoteDataSource {
     List<CategoryEntity> categories = _getCategoryList(data);
 
     //save data in hive local
-    // saveDataLocal(categories, AppHive.categoryBox);
+    saveDataLocal(categories, AppHive.categoryBox);
     //return List of category
     return categories;
   }
