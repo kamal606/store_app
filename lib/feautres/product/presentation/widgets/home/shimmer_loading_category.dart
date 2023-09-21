@@ -29,7 +29,10 @@ class ShimmerLoadingCategory extends StatelessWidget {
                           child: Column(
                             children: [
                               Container(
-                                color: AppColor.grey,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                  color: AppColor.grey,
+                                ),
                                 height: 48.h,
                                 width: 48.h,
                               ),
@@ -37,7 +40,10 @@ class ShimmerLoadingCategory extends StatelessWidget {
                                 height: 10.h,
                               ),
                               Container(
-                                color: AppColor.grey,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8.r),
+                                  color: AppColor.grey,
+                                ),
                                 height: 10.h,
                                 width: 48.h,
                               ),

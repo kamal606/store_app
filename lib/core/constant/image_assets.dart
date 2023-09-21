@@ -1,6 +1,6 @@
 abstract class AppAssets {
   //=======================error============================
-  static const String error = "assets/images/3828537.jpg";
+  static const String error = "assets/images/error/3828537.jpg";
   //=======================slider============================
   static const String slider1 = "assets/images/slider/slider1.jpg";
   static const String slider2 = "assets/images/slider/slider2.jpg";

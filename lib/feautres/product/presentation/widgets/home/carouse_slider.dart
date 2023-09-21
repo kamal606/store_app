@@ -13,7 +13,7 @@ class CustomCarouseSlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
-        aspectRatio: 8 / 4,
+        clipBehavior: Clip.none,
         initialPage: 0,
         reverse: false,
         autoPlay: true,
@@ -31,13 +31,13 @@ class CustomCarouseSlider extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerRight,
                   height: 150.h,
-                  width: 325.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(12.r)),
-                  ),
-                  child: Image.asset(
-                    i.imageName,
-                    fit: BoxFit.fitHeight,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(16.r)),
+                    child: Image.asset(
+                      i.imageName,
+
+                      // fit: BoxFit.fill,
+                    ),
                   ),
                 ),
                 Positioned(
@@ -45,9 +45,11 @@ class CustomCarouseSlider extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.center,
                     height: 150.h,
-                    width: 300.h,
+                    width: 120.h,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(16.r),
+                          topLeft: Radius.circular(16.r),
                           topRight: Radius.circular(80.r),
                           bottomRight: Radius.circular(80.r)),
                       color: AppColor.blue,
