@@ -22,7 +22,6 @@ Future<void> initGetIt() async {
   // Repository
   sl.registerLazySingleton<CategoryRepoImpl>(() => CategoryRepoImpl(
         categoryRemoteDataSourceImpl: sl.call(),
-        categoryLocalDataSourceImpl: sl.call(),
       ));
 
   //Use Cases

@@ -1,5 +1,3 @@
-import 'package:store_app/core/constant/hive_const.dart';
-import 'package:store_app/core/function/save_data.dart';
 import 'package:store_app/core/utils/api_services.dart';
 import 'package:store_app/feautres/product/domain/entities/category_entity.dart';
 
@@ -16,8 +14,9 @@ class CategoryRemoteDataSourceImpl implements CategoryRemoteDataSource {
     final data = await apiService.getCategory(endPoint: "products/categories");
 
     List<CategoryEntity> categories = _getCategoryList(data);
+
     //save data in hive local
-    saveDataLocal(categories, AppHive.categoryBox);
+    // saveDataLocal(categories, AppHive.categoryBox);
     //return List of category
     return categories;
   }
@@ -25,9 +24,12 @@ class CategoryRemoteDataSourceImpl implements CategoryRemoteDataSource {
 // method to parse data from list of string to list of category entity
   List<CategoryEntity> _getCategoryList(List<String> data) {
     List<CategoryEntity> categories = [];
-    for (var category in data) {
-      categories.add(CategoryEntity(categoryName: category));
+    for (var item in data) {
+      categories.add(
+        CategoryEntity(categoryName: item),
+      );
     }
+
     return categories;
   }
 }

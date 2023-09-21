@@ -7,7 +7,8 @@ class ApiService {
 
   Future<List<String>> getCategory({required String endPoint}) async {
     final result = await _dio.get("$baseUrl$endPoint");
-    return result.data;
+
+    return (result.data as List<dynamic>).cast<String>();
   }
 
   Future<Map<String, dynamic>> get({required String endPoint}) async {
