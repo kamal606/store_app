@@ -8,6 +8,7 @@ import 'package:store_app/feautres/product/presentation/widgets/home/shimmer_loa
 
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/utils/icon_category.dart';
+import '../../../../../core/widgets/custom_flutter_toast.dart';
 
 class CategoryHome extends StatelessWidget {
   const CategoryHome({super.key});
@@ -63,7 +64,7 @@ class CategoryHome extends StatelessWidget {
                       );
                     });
               } else if (state is GetCategoryFailure) {
-                return Text(state.errMessage);
+                return toast(state.errMessage);
               } else {
                 return const ShimmerLoadingCategory();
               }

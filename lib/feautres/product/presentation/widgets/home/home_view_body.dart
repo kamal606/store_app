@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/constant/image_assets.dart';
 import 'package:store_app/core/utils/icons.dart';
 import 'package:store_app/core/widgets/custom_text_form_field.dart';
+import 'package:store_app/feautres/product/presentation/bloc/get_product_of_category/get_product_of_category_bloc.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/carouse_slider.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/category_home.dart';
 
@@ -11,7 +13,9 @@ import '../../../../../core/color/app_color.dart';
 import '../../../../../core/fonts/app_font.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +46,6 @@ class HomeViewBody extends StatelessWidget {
                 ),
                 const CustomListProductHome(
                   titleList: "Featured Product",
-                  showAll: "See All",
                 ),
               ],
             ),
@@ -54,9 +57,12 @@ class HomeViewBody extends StatelessWidget {
 }
 
 class CustomListProductHome extends StatelessWidget {
-  const CustomListProductHome({super.key, this.titleList, this.showAll});
+  const CustomListProductHome({
+    super.key,
+    this.titleList,
+  });
   final String? titleList;
-  final String? showAll;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -69,7 +75,7 @@ class CustomListProductHome extends StatelessWidget {
               style: AppFonts.font_18,
             ),
             Text(
-              showAll ?? "",
+              "See All",
               style: AppFonts.font_14.copyWith(color: AppColor.blue),
             ),
           ],
@@ -77,16 +83,34 @@ class CustomListProductHome extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        SizedBox(
-          height: 256.h,
-          child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              clipBehavior: Clip.none,
-              scrollDirection: Axis.horizontal,
-              itemCount: 10,
-              itemBuilder: (context, i) {
-                return const CustomCardProduct();
-              }),
+        BlocBuilder<GetProductOfCategoryBloc, GetProductOfCategoryState>(
+          builder: (context, state) {
+            if (state is GetProductOfCategoryFailure) {
+              return Text(state.errMessage);
+            } else if (state is GetProductOfCategorySuccess) {
+              return SizedBox(
+                height: 256.h,
+                child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    clipBehavior: Clip.none,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: state.products.length,
+                    itemBuilder: (context, i) {
+                      if (state.products[i].categoryProduct == "smartphones") {
+                        return CustomCardProduct(
+                          image: state.products[i].image,
+                          price: state.products[i].priceProduct,
+                          rate: state.products[i].ratingProduct,
+                          title: state.products[i].titleProduct,
+                        );
+                      }
+                      return null;
+                    }),
+              );
+            } else {
+              return const CircularProgressIndicator();
+            }
+          },
         )
       ],
     );
@@ -95,11 +119,15 @@ class CustomListProductHome extends StatelessWidget {
 
 class CustomCardProduct extends StatelessWidget {
   const CustomCardProduct(
-      {super.key, this.image, this.title, this.price, this.rate});
-  final String? image;
-  final String? title;
-  final double? price;
-  final double? rate;
+      {super.key,
+      required this.image,
+      required this.title,
+      required this.price,
+      required this.rate});
+  final String image;
+  final String title;
+  final int price;
+  final double rate;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -119,7 +147,8 @@ class CustomCardProduct extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12.h),
                 child: CachedNetworkImage(
-                  imageUrl: "https://i.dummyjson.com/data/products/40/2.jpg",
+                  imageUrl: image,
+                  fadeOutCurve: Curves.easeOut,
                   placeholder: (context, url) =>
                       const CircularProgressIndicator(),
                   errorWidget: (context, url, error) =>
@@ -132,7 +161,7 @@ class CustomCardProduct extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                "TMA-2 HD Wireless",
+                title,
                 style: AppFonts.font_16,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -142,7 +171,7 @@ class CustomCardProduct extends StatelessWidget {
             ),
             Expanded(
               child: Text(
-                "Rp. 1.500.000",
+                "$price",
                 style: AppFonts.font_14.copyWith(color: AppColor.erorr),
               ),
             ),
@@ -161,7 +190,7 @@ class CustomCardProduct extends StatelessWidget {
                     width: 3.h,
                   ),
                   Text(
-                    "4.6",
+                    "$rate",
                     style: AppFonts.font_14,
                   )
                 ],
