@@ -2,10 +2,9 @@ abstract class AppAssets {
   //=======================error============================
   static const String error = "assets/images/error/3828537.jpg";
   //=======================slider============================
-  static const String slider1 = "assets/images/slider/slider1.jpg";
-  static const String slider2 = "assets/images/slider/slider2.jpg";
-  static const String slider3 = "assets/images/slider/slider3.jpg";
-  static const String slider4 = "assets/images/slider/slider4.jpg";
+  static const String slider1 = "assets/images/slider/slider1.png";
+  static const String slider2 = "assets/images/slider/slider3.png";
+
   //=======================category============================
   static const String automotive = "assets/images/category/automotive.png";
   static const String tops = "assets/images/category/badge.png";
@@ -20,6 +19,7 @@ abstract class AppAssets {
       "assets/images/category/house-decoration.png";
 
   static const String laptops = "assets/images/category/laptop.png";
+
   static const String mensShirt = "assets/images/category/mens-clothing.png";
   static const String smartPhone = "assets/images/category/mobile-phone.png";
   static const String motorbike = "assets/images/category/motorbike.png";
@@ -31,8 +31,10 @@ abstract class AppAssets {
   static const String menWatches = "assets/images/category/watch(1).png";
   static const String womensDresses =
       "assets/images/category/woman-clothes.png";
+
   //=======================icons============================
   static const String shoppingCart = "assets/images/icons/shopping-cart.png";
   static const String bell = "assets/images/icons/bell.png";
   static const String welcome = "assets/images/icons/welcome.png";
+  static const String avatarProfile = "assets/images/icons/Rectangle 97.png";
 }

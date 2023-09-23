@@ -19,7 +19,7 @@ class CustomBoxCategory extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 96.h,
-      width: 48.h,
+      width: 60.h,
       child: Column(
         children: [
           Container(
@@ -46,7 +46,7 @@ class CustomBoxCategory extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: AppFonts.font_12,
+            style: AppFonts.regular_11,
           ),
         ],
       ),

@@ -35,37 +35,27 @@ class CustomCarouseSlider extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(16.r)),
                     child: Image.asset(
                       i.imageName,
-
-                      // fit: BoxFit.fill,
                     ),
                   ),
                 ),
                 Positioned(
-                  right: 120.h,
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 150.h,
-                    width: 120.h,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(16.r),
-                          topLeft: Radius.circular(16.r),
-                          topRight: Radius.circular(80.r),
-                          bottomRight: Radius.circular(80.r)),
-                      color: AppColor.blue,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: 15.h,
-                  top: 40.h,
-                  child: Text(
-                    i.title,
-                    textAlign: TextAlign.start,
-                    style: AppFonts.font_18
-                        .copyWith(color: AppColor.white, height: 1.3),
-                  ),
-                ),
+                    top: 30,
+                    left: 20.h,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(i.title, style: AppFonts.bold_25),
+                        Text(i.subTitle,
+                            style: AppFonts.regular_16
+                                .copyWith(color: AppColor.blacK)),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Text(i.code,
+                            style: AppFonts.semiBold_11
+                                .copyWith(color: AppColor.darkGrey)),
+                      ],
+                    )),
               ],
             );
           },
@@ -78,25 +68,27 @@ class CustomCarouseSlider extends StatelessWidget {
 class AppSlider {
   final String imageName;
   final String title;
+  final String subTitle;
+  final String code;
 
-  AppSlider({required this.imageName, required this.title});
+  AppSlider(
+      {required this.imageName,
+      required this.title,
+      required this.subTitle,
+      required this.code});
 
   static List<AppSlider> sliderImage = [
     AppSlider(
       imageName: AppAssets.slider1,
-      title: "Get ready\n to start\n with us",
+      title: "50% Off",
+      subTitle: "On everything today",
+      code: " With code:FSCREATION",
     ),
     AppSlider(
       imageName: AppAssets.slider2,
-      title: "Our offers\n are\n irresistible",
-    ),
-    AppSlider(
-      imageName: AppAssets.slider3,
-      title: "discount\n on products\n 70%",
-    ),
-    AppSlider(
-      imageName: AppAssets.slider4,
-      title: "Keep an eye\n on our latest\n news",
+      title: "Get ready",
+      subTitle: "to start with us",
+      code: "",
     ),
   ];
 }

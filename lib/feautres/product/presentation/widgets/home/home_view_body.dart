@@ -22,17 +22,12 @@ class HomeViewBody extends StatelessWidget {
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [
-        SliverFillRemaining(
-          hasScrollBody: false,
+        SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 30.h),
             child: Column(
               children: [
-                CutomTextFormField(
-                  hint: "Search Product Name",
-                  suffixIcon: AppIcon.search,
-                  onPressed: () {},
-                ),
+                const SectionTitleWithFormField(),
                 SizedBox(
                   height: 30.h,
                 ),
@@ -42,7 +37,7 @@ class HomeViewBody extends StatelessWidget {
                 ),
                 const CategoryHome(),
                 SizedBox(
-                  height: 25.h,
+                  height: 30.h,
                 ),
                 const CustomListProductHome(
                   titleList: "Featured Product",
@@ -51,6 +46,36 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         )
+      ],
+    );
+  }
+}
+
+class SectionTitleWithFormField extends StatelessWidget {
+  const SectionTitleWithFormField({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ListTile(
+          title: Text(
+            "Welcome,",
+            style: AppFonts.bold_25,
+          ),
+          subtitle: Text(
+            "Our Ecommerce App",
+            style: AppFonts.semiBold_20.copyWith(color: AppColor.darkGrey),
+          ),
+        ),
+        SizedBox(
+          height: 20.h,
+        ),
+        CutomTextFormField(
+          hint: "Search Product Name",
+          prefixIcon: AppIcon.search,
+          onPressed: () {},
+        ),
       ],
     );
   }
@@ -72,11 +97,11 @@ class CustomListProductHome extends StatelessWidget {
           children: [
             Text(
               titleList ?? "",
-              style: AppFonts.font_18,
+              style: AppFonts.semiBold_18,
             ),
             Text(
               "See All",
-              style: AppFonts.font_14.copyWith(color: AppColor.blue),
+              style: AppFonts.semiBold_14.copyWith(color: AppColor.blue),
             ),
           ],
         ),
@@ -96,7 +121,7 @@ class CustomListProductHome extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: state.products.length,
                     itemBuilder: (context, i) {
-                      if (state.products[i].categoryProduct == "smartphones") {
+                      if (state.products[i].categoryProduct == "tops") {
                         return CustomCardProduct(
                           image: state.products[i].image,
                           price: state.products[i].priceProduct,
@@ -131,6 +156,7 @@ class CustomCardProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: AppColor.background,
       elevation: 2,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.h)),
       child: Container(
@@ -162,7 +188,7 @@ class CustomCardProduct extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: AppFonts.font_16,
+                style: AppFonts.regular_8,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
@@ -172,7 +198,7 @@ class CustomCardProduct extends StatelessWidget {
             Expanded(
               child: Text(
                 "$price",
-                style: AppFonts.font_14.copyWith(color: AppColor.erorr),
+                style: AppFonts.regular_8.copyWith(color: AppColor.erorr),
               ),
             ),
             SizedBox(
@@ -191,7 +217,7 @@ class CustomCardProduct extends StatelessWidget {
                   ),
                   Text(
                     "$rate",
-                    style: AppFonts.font_14,
+                    style: AppFonts.regular_8,
                   )
                 ],
               ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:store_app/core/color/app_color.dart';
 
 import 'package:store_app/dependency_injection.dart';
 
@@ -40,6 +41,8 @@ class StoreApp extends StatelessWidget {
           child: MaterialApp.router(
             routerConfig: AppRouter.router,
             debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+                fontFamily: "Poppins", scaffoldBackgroundColor: AppColor.white),
           ),
         );
       },

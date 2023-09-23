@@ -22,11 +22,11 @@ class CategoryHome extends StatelessWidget {
           children: [
             Text(
               "Categories",
-              style: AppFonts.font_18,
+              style: AppFonts.semiBold_18,
             ),
             Text(
               "See All",
-              style: AppFonts.font_14.copyWith(color: AppColor.blue),
+              style: AppFonts.semiBold_14.copyWith(color: AppColor.blue),
             )
           ],
         ),

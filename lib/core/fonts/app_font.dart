@@ -2,10 +2,56 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppFonts {
-  static TextStyle font_10 = TextStyle(fontSize: 10.sp);
-  static TextStyle font_12 = TextStyle(fontSize: 12.sp);
-  static TextStyle font_14 = TextStyle(fontSize: 14.sp);
-  static TextStyle font_16 = TextStyle(fontSize: 16.sp);
-  static TextStyle font_18 = TextStyle(fontSize: 18.sp);
-  static TextStyle font_20 = TextStyle(fontSize: 20.sp);
+  //========================= regular ===========================
+  static TextStyle regular_13 = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle regular_16 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle regular_11 = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle regular_8 = TextStyle(
+    fontSize: 8.sp,
+    fontWeight: FontWeight.w400,
+  );
+
+//========================= bold ===========================
+  static TextStyle bold_14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle bold_18 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w700,
+  );
+  static TextStyle bold_25 = TextStyle(
+    fontSize: 25.sp,
+    fontWeight: FontWeight.w700,
+  );
+//========================= semi bold ===========================
+  static TextStyle semiBold_11 = TextStyle(
+    fontSize: 11.sp,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle semiBold_14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle semiBold_16 = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle semiBold_18 = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: FontWeight.w600,
+  );
+  static TextStyle semiBold_20 = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: FontWeight.w600,
+  );
 }
