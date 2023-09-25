@@ -5,6 +5,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:store_app/core/color/app_color.dart';
 
 import 'package:store_app/dependency_injection.dart';
+import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
 
@@ -17,6 +18,7 @@ Future<void> main() async {
   await initGetIt();
   await Hive.initFlutter();
   Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
+  Hive.registerAdapter<ProductEntity>(ProductEntityAdapter());
 
   runApp(const StoreApp());
 }

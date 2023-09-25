@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
 import 'package:store_app/feautres/product/presentation/widgets/category/custom_box_category.dart';
-import 'package:store_app/feautres/product/presentation/widgets/home/shimmer_loading_category.dart';
+import 'package:store_app/core/shimmer_loading/shimmer_loading_category.dart';
 
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/utils/icon_category.dart';

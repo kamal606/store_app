@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:store_app/feautres/product/data/data_source/local_data_source.dart/category_local_data_source.dart';
+import 'package:store_app/feautres/product/data/data_source/local_data_source.dart/products_local_data_source.dart';
 import 'package:store_app/feautres/product/domain/repository/repo_category.dart';
 import 'package:store_app/feautres/product/domain/repository/repo_product.dart';
 
@@ -23,14 +24,16 @@ Future<void> initGetIt() async {
       () => GetProductOfCategoryBloc(getProductOfCategoryUseCase: sl.call()));
 
   //! Data Sources
+  sl.registerLazySingleton(() => ProductsLocalDataSourceImpl());
   sl.registerLazySingleton(() => CategoryLocalDataSourceImpl());
   sl.registerLazySingleton<CategoryRemoteDataSourceImpl>(
       () => CategoryRemoteDataSourceImpl(
             categoryLocalDataSourceImpl: sl.call(),
             apiService: sl.call(),
           ));
-  sl.registerLazySingleton<ProductOfCategoryRemoteDataSourceImpl>(
-      () => ProductOfCategoryRemoteDataSourceImpl(apiService: sl.call()));
+  sl.registerLazySingleton<ProductOfCategoryRemoteDataSourceImpl>(() =>
+      ProductOfCategoryRemoteDataSourceImpl(
+          apiService: sl.call(), productsLocalDataSourceImpl: sl.call()));
 
   //! Repository
   sl.registerLazySingleton<CategoryRepo>(
@@ -40,6 +43,7 @@ Future<void> initGetIt() async {
   );
   sl.registerLazySingleton<GetProductsOfCategoryRepo>(
     () => GetProductOfCategoryRepoImpl(
+        productsLocalDataSourceImpl: sl.call(),
         productOfCategoryRemoteDataSourceImpl: sl.call()),
   );
 

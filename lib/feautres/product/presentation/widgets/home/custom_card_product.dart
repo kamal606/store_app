@@ -32,7 +32,6 @@ class CustomCardProduct extends StatelessWidget {
               height: 100.h,
               imageUrl: image,
               fadeOutCurve: Curves.easeOut,
-              placeholder: (context, url) => const CircularProgressIndicator(),
               errorWidget: (context, url, error) =>
                   Image.asset(AppAssets.error),
             ),
