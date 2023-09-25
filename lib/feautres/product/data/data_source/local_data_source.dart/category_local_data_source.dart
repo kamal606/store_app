@@ -1,14 +1,27 @@
 import 'package:hive/hive.dart';
 import 'package:store_app/core/constant/hive_const.dart';
+import 'package:store_app/feautres/product/domain/entities/category_entity.dart';
 
 abstract class CategoryLocalDataSource {
-  List<String> getCategory();
+  Future<Box> openBox();
+  Future<void> addCategory(Box box, List<CategoryEntity> categoryEntity);
+  Future<List<CategoryEntity>> getCategory(Box box);
 }
 
 class CategoryLocalDataSourceImpl implements CategoryLocalDataSource {
   @override
-  List<String> getCategory() {
-    var box = Hive.box<String>(AppHive.categoryBox);
-    return box.values.toList();
+  Future<Box> openBox() async {
+    Box box = await Hive.openBox<CategoryEntity>(AppHive.categoryBox);
+    return box;
+  }
+
+  @override
+  Future<void> addCategory(Box box, List<CategoryEntity> categoryEntity) async {
+    await box.addAll(categoryEntity);
+  }
+
+  @override
+  Future<List<CategoryEntity>> getCategory(Box box) async {
+    return box.values.toList().cast();
   }
 }

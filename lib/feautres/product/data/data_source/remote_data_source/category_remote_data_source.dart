@@ -1,8 +1,7 @@
+import 'package:hive/hive.dart';
 import 'package:store_app/core/utils/api_services.dart';
+import 'package:store_app/feautres/product/data/data_source/local_data_source.dart/category_local_data_source.dart';
 import 'package:store_app/feautres/product/domain/entities/category_entity.dart';
-
-import '../../../../../core/constant/hive_const.dart';
-import '../../../../../core/function/save_data.dart';
 
 abstract class CategoryRemoteDataSource {
   Future<List<CategoryEntity>> getCategory();
@@ -10,7 +9,11 @@ abstract class CategoryRemoteDataSource {
 
 class CategoryRemoteDataSourceImpl implements CategoryRemoteDataSource {
   final ApiService apiService;
-  const CategoryRemoteDataSourceImpl({required this.apiService});
+  final CategoryLocalDataSourceImpl categoryLocalDataSourceImpl;
+  const CategoryRemoteDataSourceImpl({
+    required this.apiService,
+    required this.categoryLocalDataSourceImpl,
+  });
 
   @override
   Future<List<CategoryEntity>> getCategory() async {
@@ -19,9 +22,14 @@ class CategoryRemoteDataSourceImpl implements CategoryRemoteDataSource {
     List<CategoryEntity> categories = _getCategoryList(data);
 
     //save data in hive local
-    saveDataLocal(categories, AppHive.categoryBox);
+    await saveDataLocal(categories);
     //return List of category
     return categories;
+  }
+
+  Future<void> saveDataLocal(List<CategoryEntity> categories) async {
+    Box box = await categoryLocalDataSourceImpl.openBox();
+    await categoryLocalDataSourceImpl.addCategory(box, categories);
   }
 
 // method to parse data from list of string to list of category entity

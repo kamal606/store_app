@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
+import 'package:store_app/core/widgets/custom_flutter_toast.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/custom_card_product.dart';
 
 import '../../../../../core/fonts/app_font.dart';
@@ -35,11 +36,14 @@ class CustomListProductHome extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        BlocBuilder<GetProductOfCategoryBloc, GetProductOfCategoryState>(
-          builder: (context, state) {
+        BlocConsumer<GetProductOfCategoryBloc, GetProductOfCategoryState>(
+          listener: (context, state) {
             if (state is GetProductOfCategoryFailure) {
-              return Text(state.errMessage);
-            } else if (state is GetProductOfCategorySuccess) {
+              toast(message: state.errMessage, color: AppColor.erorr);
+            }
+          },
+          builder: (context, state) {
+            if (state is GetProductOfCategorySuccess) {
               return SizedBox(
                 height: 220.h,
                 child: ListView.builder(

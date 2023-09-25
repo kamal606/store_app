@@ -8,18 +8,17 @@ import 'package:store_app/dependency_injection.dart';
 
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
 
-import 'core/constant/hive_const.dart';
 import 'core/utils/go_router.dart';
 import 'dependency_injection.dart' as di;
 import 'feautres/product/domain/entities/category_entity.dart';
 
 Future<void> main() async {
-  runApp(const StoreApp());
   WidgetsFlutterBinding.ensureInitialized();
   await initGetIt();
   await Hive.initFlutter();
   Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
-  await Hive.openBox(AppHive.categoryBox);
+
+  runApp(const StoreApp());
 }
 
 class StoreApp extends StatelessWidget {

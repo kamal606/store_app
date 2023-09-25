@@ -34,43 +34,44 @@ class CategoryHome extends StatelessWidget {
           height: 20.h,
         ),
         SizedBox(
-          height: 120.h,
-          child: BlocBuilder<GetCategoryBloc, GetCategoryState>(
-            builder: (context, state) {
-              if (state is GetCategorySuccess) {
-                return ListView.builder(
-                    clipBehavior: Clip.none,
-                    scrollDirection: Axis.horizontal,
-                    physics: const BouncingScrollPhysics(),
-                    itemCount: state.category.length,
-                    itemBuilder: (context, i) {
-                      return Row(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(right: 40.w),
-                            child: InkWell(
-                              onTap: () {
-                                print(state.category[i].categoryName);
-                              },
-                              child: CustomBoxCategory(
-                                image: AppCategoryIcon.categoryListIcon[i].icon,
-                                title: state.category[i].categoryName,
-                                colorbox: AppCategoryIcon
-                                    .categoryListIcon[i].colorbox,
+            height: 120.h,
+            child: BlocConsumer<GetCategoryBloc, GetCategoryState>(
+              listener: (context, state) {
+                if (state is GetCategoryFailure) {
+                  toast(message: state.errMessage, color: AppColor.erorr);
+                }
+              },
+              builder: (context, state) {
+                if (state is GetCategorySuccess) {
+                  return ListView.builder(
+                      clipBehavior: Clip.none,
+                      scrollDirection: Axis.horizontal,
+                      physics: const BouncingScrollPhysics(),
+                      itemCount: state.category.length,
+                      itemBuilder: (context, i) {
+                        return Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(right: 40.w),
+                              child: InkWell(
+                                onTap: () {},
+                                child: CustomBoxCategory(
+                                  image:
+                                      AppCategoryIcon.categoryListIcon[i].icon,
+                                  title: state.category[i].categoryName,
+                                  colorbox: AppCategoryIcon
+                                      .categoryListIcon[i].colorbox,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      );
-                    });
-              } else if (state is GetCategoryFailure) {
-                return toast(state.errMessage);
-              } else {
-                return const ShimmerLoadingCategory();
-              }
-            },
-          ),
-        )
+                          ],
+                        );
+                      });
+                } else {
+                  return const ShimmerLoadingCategory();
+                }
+              },
+            ))
       ],
     );
   }
