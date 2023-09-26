@@ -23,6 +23,6 @@ class ProductsLocalDataSourceImpl implements ProductsLocalDataSource {
 
   @override
   List<ProductEntity> getProduct(Box box) {
-    return box.values.toList().cast();
+    return box.values.toList().cast<ProductEntity>();
   }
 }

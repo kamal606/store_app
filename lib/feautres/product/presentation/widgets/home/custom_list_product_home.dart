@@ -53,8 +53,8 @@ class CustomListProductHome extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemCount: state.products.length,
                     itemBuilder: (context, i) {
-                      if (state.products[i].categoryProduct ==
-                          typeCategoryName) {
+                      if (typeCategoryName ==
+                          state.products[i].categoryProduct) {
                         return CustomCardProduct(
                           image: state.products[i].image,
                           price: state.products[i].priceProduct,

@@ -22,12 +22,11 @@ class GetProductOfCategoryRepoImpl extends GetProductsOfCategoryRepo {
     List<ProductEntity> productsLocal = await getProductsFromLocal();
     if (productsLocal.isNotEmpty) {
       return right(productsLocal);
-    }
-
-    if (await InternetConnectionChecker().hasConnection) {
+    } else if (await InternetConnectionChecker().hasConnection) {
       try {
         final productsRemote =
             await productOfCategoryRemoteDataSourceImpl.getProductOfCategory();
+
         return right(productsRemote);
       } catch (e) {
         if (e is DioException) {

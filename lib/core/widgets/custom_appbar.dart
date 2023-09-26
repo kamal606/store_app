@@ -20,13 +20,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: EdgeInsets.only(left: 15.h),
         child: CircleAvatar(
-          backgroundColor: AppColor.white,
+          backgroundColor: AppColor.blacK,
           child: IconButton(
             onPressed: onPressedLeading,
             icon: FaIcon(
               iconLeading,
               size: 15.h,
-              color: AppColor.blacK,
+              color: AppColor.white,
             ),
           ),
         ),
@@ -37,6 +37,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: action,
         ),
       ],
+      backgroundColor: AppColor.white,
       elevation: 0,
     );
   }

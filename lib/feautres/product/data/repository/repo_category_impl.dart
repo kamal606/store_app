@@ -23,6 +23,7 @@ class CategoryRepoImpl implements CategoryRepo {
     if (categoryLocal.isNotEmpty) {
       return right(categoryLocal);
     }
+
     if (await InternetConnectionChecker().hasConnection) {
       try {
         // category from api

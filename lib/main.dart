@@ -1,25 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:store_app/core/color/app_color.dart';
-
-import 'package:store_app/dependency_injection.dart';
-import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
 
+import 'core/function/init_flutter.dart';
 import 'core/utils/go_router.dart';
 import 'dependency_injection.dart' as di;
-import 'feautres/product/domain/entities/category_entity.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await initGetIt();
-  await Hive.initFlutter();
-  Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
-  Hive.registerAdapter<ProductEntity>(ProductEntityAdapter());
-
+  await initFlutter();
+  await Future.delayed(const Duration(milliseconds: 300));
   runApp(const StoreApp());
 }
 
@@ -43,9 +35,7 @@ class StoreApp extends StatelessWidget {
             routerConfig: AppRouter.router,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-                appBarTheme: const AppBarTheme(color: AppColor.blacK),
-                fontFamily: "Poppins",
-                scaffoldBackgroundColor: AppColor.white),
+                fontFamily: "Poppins", scaffoldBackgroundColor: AppColor.white),
           ),
         );
       },
