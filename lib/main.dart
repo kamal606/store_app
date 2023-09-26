@@ -43,7 +43,9 @@ class StoreApp extends StatelessWidget {
             routerConfig: AppRouter.router,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-                fontFamily: "Poppins", scaffoldBackgroundColor: AppColor.white),
+                appBarTheme: const AppBarTheme(color: AppColor.blacK),
+                fontFamily: "Poppins",
+                scaffoldBackgroundColor: AppColor.white),
           ),
         );
       },

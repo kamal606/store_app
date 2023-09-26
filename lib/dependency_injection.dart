@@ -57,5 +57,6 @@ Future<void> initGetIt() async {
   sl.registerLazySingleton<ApiService>(() => ApiService(sl.call()));
 
   //! External
+
   sl.registerLazySingleton<Dio>(() => Dio());
 }

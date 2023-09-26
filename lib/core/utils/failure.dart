@@ -11,7 +11,9 @@ class CachedFailure extends Failure {
 }
 
 class NetworkFailure extends Failure {
-  NetworkFailure({required super.message});
+  NetworkFailure({
+    required super.message,
+  });
 }
 
 class ServerFailure extends Failure {

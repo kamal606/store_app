@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
 import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 import 'package:store_app/feautres/product/domain/use_cases/get_products_of_category_use_case.dart';
@@ -16,9 +16,8 @@ class GetProductOfCategoryBloc
         emit(GetProductOfCategoryLoading());
         final getProducts = await getProductOfCategoryUseCase.call();
         getProducts.fold(
-          (l) => emit(GetProductOfCategoryFailure(errMessage: l.message)),
-          (r) => emit(GetProductOfCategorySuccess(products: r)),
-        );
+            (l) => emit(GetProductOfCategoryFailure(errMessage: l.message)),
+            (r) => emit(GetProductOfCategorySuccess(products: r)));
       }
     });
   }
