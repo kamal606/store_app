@@ -52,7 +52,7 @@ class ListCategoryHome extends StatelessWidget {
                         return Row(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(right: 40.w),
+                              padding: EdgeInsets.only(right: 30.w),
                               child: InkWell(
                                 onTap: () {},
                                 child: CustomBoxCategory(

@@ -23,8 +23,8 @@ class CustomBoxCategory extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 48.h,
-            height: 48.h,
+            width: 40.h,
+            height: 40.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.r),
               color: colorbox,
@@ -35,7 +35,7 @@ class CustomBoxCategory extends StatelessWidget {
                 Image.asset(
                   image,
                   color: AppColor.white,
-                  height: 28.h,
+                  height: 20.h,
                 ),
               ],
             ),
