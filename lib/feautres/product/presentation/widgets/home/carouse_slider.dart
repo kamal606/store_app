@@ -27,35 +27,33 @@ class CustomCarouseSlider extends StatelessWidget {
         return Builder(
           builder: (BuildContext context) {
             return Stack(
+              alignment: Alignment.centerLeft,
               children: [
-                Container(
-                  alignment: Alignment.centerRight,
-                  height: 150.h,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(16.r)),
-                    child: Image.asset(
-                      i.imageName,
-                    ),
+                ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(16.r)),
+                  child: Image.asset(
+                    i.imageName,
                   ),
                 ),
                 Positioned(
-                    top: 30,
-                    left: 20.h,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(i.title, style: AppFonts.bold_25),
-                        Text(i.subTitle,
-                            style: AppFonts.regular_16
-                                .copyWith(color: AppColor.blacK)),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Text(i.code,
-                            style: AppFonts.semiBold_11
-                                .copyWith(color: AppColor.darkGrey)),
-                      ],
-                    )),
+                  left: 10.h,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(i.title, style: AppFonts.bold_25),
+                      Text(i.subTitle,
+                          style: AppFonts.regular_16
+                              .copyWith(color: AppColor.blacK)),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Text(i.code,
+                          style: AppFonts.semiBold_11
+                              .copyWith(color: AppColor.darkGrey)),
+                    ],
+                  ),
+                )
               ],
             );
           },

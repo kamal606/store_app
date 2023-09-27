@@ -11,49 +11,96 @@ class CustomCardProduct extends StatelessWidget {
       required this.image,
       required this.title,
       required this.price,
-      required this.categoryName});
+      required this.categoryName,
+      this.colorStatus,
+      this.titleStatus,
+      this.isStatus = false,
+      this.isDiscount = false,
+      this.priceDiscount});
   final String image;
   final String title;
   final int price;
-
+  final Color? colorStatus;
   final String categoryName;
+  final String? titleStatus;
+  final bool isStatus;
+  final bool isDiscount;
+  final num? priceDiscount;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(right: 20.h),
-      width: 155.h,
-      height: 240.h,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12.h),
-            child: CachedNetworkImage(
-              height: 100.h,
-              imageUrl: image,
-              fadeOutCurve: Curves.easeOut,
-              errorWidget: (context, url, error) =>
-                  Image.asset(AppAssets.error),
-            ),
+    return Stack(
+      alignment: Alignment.topLeft,
+      children: [
+        Container(
+          padding: EdgeInsets.all(5.h),
+          width: 155.h,
+          margin: EdgeInsets.only(right: 20.h),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12.h),
+                child: CachedNetworkImage(
+                  height: 100.h,
+                  imageUrl: image,
+                  fadeOutCurve: Curves.easeOut,
+                  errorWidget: (context, url, error) =>
+                      Image.asset(AppAssets.error),
+                ),
+              ),
+              SizedBox(
+                height: 18.h,
+              ),
+              Text(
+                title,
+                style: AppFonts.semiBold_14,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Text(
+                categoryName,
+                style: AppFonts.regular_11.copyWith(color: AppColor.lightGrey),
+              ),
+              isDiscount
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "\$${price.toStringAsFixed(1)}",
+                          style: AppFonts.semiBold_14.copyWith(
+                            color: AppColor.blacK,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 4.h,
+                        ),
+                        Text(
+                          "\$${(price - price * priceDiscount! / 100).toStringAsFixed(1)}",
+                          style: AppFonts.semiBold_14.copyWith(
+                            color: AppColor.erorr,
+                          ),
+                        ),
+                      ],
+                    )
+                  : Text("\$${price.toStringAsFixed(1)}",
+                      style: AppFonts.semiBold_14),
+            ],
           ),
-          SizedBox(
-            height: 18.h,
-          ),
-          Text(
-            title,
-            style: AppFonts.semiBold_14,
-            overflow: TextOverflow.ellipsis,
-          ),
-          Text(
-            categoryName,
-            style: AppFonts.regular_11.copyWith(color: AppColor.lightGrey),
-          ),
-          Text(
-            "\$$price",
-            style: AppFonts.semiBold_14,
-          ),
-        ],
-      ),
+        ),
+        isStatus == true
+            ? Container(
+                padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 3.h),
+                decoration: BoxDecoration(
+                  color: colorStatus ?? AppColor.erorr,
+                  borderRadius: BorderRadius.circular(30.r),
+                ),
+                child: Text(
+                  "$titleStatus",
+                  style: AppFonts.regular_13.copyWith(color: AppColor.white),
+                ),
+              )
+            : const SizedBox(),
+      ],
     );
   }
 }

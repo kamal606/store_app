@@ -22,12 +22,12 @@ class CategoryRemoteDataSourceImpl implements CategoryRemoteDataSource {
     List<CategoryEntity> categories = _getCategoryList(data);
 
     //save data in hive local
-    await saveDataLocal(categories);
+    await addCategoryToLocal(categories);
     //return List of category
     return categories;
   }
 
-  Future<void> saveDataLocal(List<CategoryEntity> categories) async {
+  Future<void> addCategoryToLocal(List<CategoryEntity> categories) async {
     Box box = await categoryLocalDataSourceImpl.openBox();
     await categoryLocalDataSourceImpl.addCategory(box, categories);
   }

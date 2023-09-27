@@ -1,9 +1,10 @@
+import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 
 part 'product_entity.g.dart';
 
 @HiveType(typeId: 1)
-class ProductEntity {
+class ProductEntity extends Equatable {
   @HiveField(0)
   final int idProduct;
   @HiveField(1)
@@ -27,7 +28,7 @@ class ProductEntity {
 
   // final List<String> subImage;
 
-  ProductEntity({
+  const ProductEntity({
     required this.idProduct,
     required this.titleProduct,
     required this.descriptionProduct,
@@ -40,4 +41,17 @@ class ProductEntity {
     required this.image,
     // required this.subImage,
   });
+  @override
+  List<Object?> get props => [
+        idProduct,
+        titleProduct,
+        descriptionProduct,
+        priceProduct,
+        discountPercentageProduct,
+        ratingProduct,
+        stockProduct,
+        brandProduct,
+        categoryProduct,
+        image,
+      ];
 }

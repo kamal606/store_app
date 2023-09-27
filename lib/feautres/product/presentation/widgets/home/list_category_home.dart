@@ -10,8 +10,8 @@ import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/utils/icon_category.dart';
 import '../../../../../core/widgets/custom_flutter_toast.dart';
 
-class CategoryHome extends StatelessWidget {
-  const CategoryHome({super.key});
+class ListCategoryHome extends StatelessWidget {
+  const ListCategoryHome({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -38,6 +38,10 @@ class AppFonts {
     fontSize: 11.sp,
     fontWeight: FontWeight.w600,
   );
+  static TextStyle semiBold_12 = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: FontWeight.w600,
+  );
   static TextStyle semiBold_14 = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w600,

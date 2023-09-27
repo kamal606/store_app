@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/carouse_slider.dart';
-import 'package:store_app/feautres/product/presentation/widgets/home/category_home.dart';
+import 'package:store_app/feautres/product/presentation/widgets/home/list_category_home.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/custom_list_product_home.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/section_form_field_and_title.dart';
 
@@ -28,13 +29,23 @@ class HomeViewBody extends StatelessWidget {
                 SizedBox(
                   height: 30.h,
                 ),
-                const CategoryHome(),
+                const ListCategoryHome(),
                 SizedBox(
                   height: 30.h,
                 ),
                 const CustomListProductHome(
                   titleList: "Featured Product",
-                  typeCategoryName: "smartphones",
+                  categoryName: "laptops",
+                  colorStatus: AppColor.erorr,
+                  isStatus: true,
+                  isDiscount: true,
+                ),
+                const CustomListProductHome(
+                  titleList: "Recommended Product",
+                  categoryName: "fragrances",
+                  colorStatus: AppColor.blacK,
+                  isStatus: true,
+                  titleStatus: "NEW",
                 ),
               ],
             ),

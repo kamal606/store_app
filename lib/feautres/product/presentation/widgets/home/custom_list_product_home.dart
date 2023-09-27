@@ -13,10 +13,18 @@ class CustomListProductHome extends StatelessWidget {
   const CustomListProductHome({
     super.key,
     this.titleList,
-    required this.typeCategoryName,
+    required this.categoryName,
+    this.colorStatus,
+    this.isStatus = false,
+    this.titleStatus,
+    this.isDiscount = false,
   });
   final String? titleList;
-  final String typeCategoryName;
+  final String categoryName;
+  final Color? colorStatus;
+  final bool isStatus;
+  final String? titleStatus;
+  final bool isDiscount;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,22 +56,29 @@ class CustomListProductHome extends StatelessWidget {
               return SizedBox(
                 height: 220.h,
                 child: ListView.builder(
-                    physics: const BouncingScrollPhysics(),
-                    clipBehavior: Clip.none,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: state.products.length,
-                    itemBuilder: (context, i) {
-                      if (typeCategoryName ==
-                          state.products[i].categoryProduct) {
-                        return CustomCardProduct(
-                          image: state.products[i].image,
-                          price: state.products[i].priceProduct,
-                          title: state.products[i].titleProduct,
-                          categoryName: state.products[i].categoryProduct,
-                        );
-                      }
-                      return null;
-                    }),
+                  physics: const BouncingScrollPhysics(),
+                  clipBehavior: Clip.none,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: state.products.length,
+                  itemBuilder: (context, i) {
+                    final product = state.products[i];
+
+                    if (product.categoryProduct == categoryName) {
+                      return CustomCardProduct(
+                          priceDiscount: product.discountPercentageProduct,
+                          isDiscount: isDiscount,
+                          titleStatus: titleStatus ??
+                              product.discountPercentageProduct.toString(),
+                          colorStatus: colorStatus,
+                          isStatus: isStatus,
+                          image: product.image,
+                          title: product.titleProduct,
+                          price: product.priceProduct,
+                          categoryName: product.categoryProduct);
+                    }
+                    return Container();
+                  },
+                ),
               );
             } else {
               return const ShimmerLoadingProducts();

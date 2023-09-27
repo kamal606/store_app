@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 
 class ProductModel extends ProductEntity {
