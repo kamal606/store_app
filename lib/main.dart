@@ -7,7 +7,7 @@ import 'package:store_app/feautres/product/presentation/bloc/get_category/get_ca
 
 import 'core/function/init_flutter.dart';
 import 'core/utils/go_router.dart';
-import 'dependency_injection.dart' as di;
+import 'core/utils/dependency_injection.dart' as di;
 
 Future<void> main() async {
   await initFlutter();

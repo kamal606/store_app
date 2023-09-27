@@ -16,7 +16,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final IconData iconLeading;
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [
+                  AppColor.blacK,
+                  AppColor.grey,
+                ],
+                begin: FractionalOffset(0.0, 0.0),
+                end: FractionalOffset(0.5, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp)),
+      ),
       leading: Padding(
         padding: EdgeInsets.only(left: 15.h),
         child: CircleAvatar(
@@ -37,7 +49,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: action,
         ),
       ],
-      backgroundColor: AppColor.white,
+      backgroundColor: Colors.transparent,
       elevation: 0,
     );
   }

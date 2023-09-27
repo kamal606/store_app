@@ -5,15 +5,15 @@ import 'package:store_app/feautres/product/data/data_source/local_data_source.da
 import 'package:store_app/feautres/product/domain/repository/repo_category.dart';
 import 'package:store_app/feautres/product/domain/repository/repo_product.dart';
 
-import 'core/utils/api_services.dart';
-import 'feautres/product/data/data_source/remote_data_source/category_remote_data_source.dart';
-import 'feautres/product/data/data_source/remote_data_source/product_of_category_remote_date_source.dart';
-import 'feautres/product/data/repository/repo_category_impl.dart';
-import 'feautres/product/data/repository/repo_product_of_category_impl.dart';
-import 'feautres/product/domain/use_cases/get_category_use_case.dart';
-import 'feautres/product/domain/use_cases/get_products_of_category_use_case.dart';
-import 'feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
-import 'feautres/product/presentation/bloc/get_product_of_category/get_product_of_category_bloc.dart';
+import 'api_services.dart';
+import '../../feautres/product/data/data_source/remote_data_source/category_remote_data_source.dart';
+import '../../feautres/product/data/data_source/remote_data_source/product_of_category_remote_date_source.dart';
+import '../../feautres/product/data/repository/repo_category_impl.dart';
+import '../../feautres/product/data/repository/repo_product_of_category_impl.dart';
+import '../../feautres/product/domain/use_cases/get_category_use_case.dart';
+import '../../feautres/product/domain/use_cases/get_products_of_category_use_case.dart';
+import '../../feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
+import '../../feautres/product/presentation/bloc/get_product_of_category/get_product_of_category_bloc.dart';
 
 final sl = GetIt.instance;
 
