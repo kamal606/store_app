@@ -4,6 +4,7 @@ import 'package:store_app/feautres/product/data/data_source/local_data_source.da
 import 'package:store_app/feautres/product/data/data_source/local_data_source.dart/products_local_data_source.dart';
 import 'package:store_app/feautres/product/domain/repository/repo_category.dart';
 import 'package:store_app/feautres/product/domain/repository/repo_product.dart';
+import 'package:store_app/feautres/product/presentation/bloc/status_internet/status_internet_bloc.dart';
 
 import 'api_services.dart';
 import '../../feautres/product/data/data_source/remote_data_source/category_remote_data_source.dart';
@@ -22,7 +23,7 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => GetCategoryBloc(getCategoryUseCases: sl.call()));
   sl.registerFactory(
       () => GetProductOfCategoryBloc(getProductOfCategoryUseCase: sl.call()));
-
+  sl.registerFactory(() => StatusInternetBloc());
   //! Data Sources
   sl.registerLazySingleton(() => ProductsLocalDataSourceImpl());
   sl.registerLazySingleton(() => CategoryLocalDataSourceImpl());

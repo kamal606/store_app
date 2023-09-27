@@ -3,8 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:store_app/core/color/app_color.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({
+class CustomSliverAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const CustomSliverAppBar({
     super.key,
     this.action,
     this.onPressedLeading,
@@ -32,13 +33,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: EdgeInsets.only(left: 15.h),
         child: CircleAvatar(
-          backgroundColor: AppColor.blacK,
+          backgroundColor: AppColor.white,
           child: IconButton(
             onPressed: onPressedLeading,
             icon: FaIcon(
               iconLeading,
               size: 15.h,
-              color: AppColor.white,
+              color: AppColor.blacK,
             ),
           ),
         ),
@@ -49,7 +50,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: action,
         ),
       ],
-      backgroundColor: Colors.transparent,
       elevation: 0,
     );
   }

@@ -1,8 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:store_app/core/constant/messages.dart';
 import 'package:store_app/core/utils/failure.dart';
 import 'package:store_app/feautres/product/data/data_source/local_data_source.dart/products_local_data_source.dart';
 import 'package:store_app/feautres/product/data/data_source/remote_data_source/product_of_category_remote_date_source.dart';
@@ -24,20 +22,16 @@ class GetProductOfCategoryRepoImpl extends GetProductsOfCategoryRepo {
       return right(productsLocal);
     }
 
-    if (await InternetConnectionChecker().hasConnection) {
-      try {
-        final productsRemote =
-            await productOfCategoryRemoteDataSourceImpl.getProductOfCategory();
+    try {
+      final productsRemote =
+          await productOfCategoryRemoteDataSourceImpl.getProductOfCategory();
 
-        return right(productsRemote);
-      } catch (e) {
-        if (e is DioException) {
-          return left(ServerFailure.fromDioException(e));
-        }
-        return left(ServerFailure(message: e.toString()));
+      return right(productsRemote);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
       }
-    } else {
-      return left(NetworkFailure(message: AppMessages.noInternet));
+      return left(ServerFailure(message: e.toString()));
     }
   }
 

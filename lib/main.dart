@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
+import 'package:store_app/feautres/product/presentation/bloc/status_internet/status_internet_bloc.dart';
 
 import 'core/function/init_flutter.dart';
 import 'core/utils/go_router.dart';
@@ -29,6 +30,9 @@ class StoreApp extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) => di.sl<GetCategoryBloc>()..add(GetCategory()),
+            ),
+            BlocProvider(
+              create: (context) => di.sl<StatusInternetBloc>(),
             ),
           ],
           child: MaterialApp.router(

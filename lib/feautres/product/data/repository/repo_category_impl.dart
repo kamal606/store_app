@@ -1,8 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:store_app/core/constant/messages.dart';
 import 'package:store_app/core/utils/failure.dart';
 import 'package:store_app/feautres/product/data/data_source/local_data_source.dart/category_local_data_source.dart';
 import 'package:store_app/feautres/product/data/data_source/remote_data_source/category_remote_data_source.dart';
@@ -24,21 +22,17 @@ class CategoryRepoImpl implements CategoryRepo {
       return right(categoryLocal);
     }
 
-    if (await InternetConnectionChecker().hasConnection) {
-      try {
-        // category from api
-        final categoryRemote = await categoryRemoteDataSourceImpl.getCategory();
+    try {
+      // category from api
+      final categoryRemote = await categoryRemoteDataSourceImpl.getCategory();
 
-        return right(categoryRemote);
-      } catch (e) {
-        if (e is DioException) {
-          return left(ServerFailure.fromDioException(e));
-        }
-
-        return left(ServerFailure(message: e.toString()));
+      return right(categoryRemote);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
       }
-    } else {
-      return left(NetworkFailure(message: AppMessages.noInternet));
+
+      return left(ServerFailure(message: e.toString()));
     }
   }
 
