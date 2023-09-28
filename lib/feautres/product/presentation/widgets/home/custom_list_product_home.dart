@@ -40,7 +40,7 @@ class CustomListProductHome extends StatelessWidget {
             ),
             Text(
               "See All",
-              style: AppFonts.semiBold_14.copyWith(color: AppColor.blue),
+              style: AppFonts.semiBold_14.copyWith(color: AppColor.darkGrey),
             ),
           ],
         ),

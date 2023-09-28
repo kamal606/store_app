@@ -8,7 +8,7 @@ import 'package:store_app/core/shimmer_loading/shimmer_loading_category.dart';
 
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/utils/error_display.dart';
-import '../../../../../core/utils/icon_category.dart';
+import '../../../../../core/classes/icon_category.dart';
 import '../../../../../core/widgets/custom_flutter_toast.dart';
 
 class ListCategoryHome extends StatelessWidget {
@@ -27,7 +27,7 @@ class ListCategoryHome extends StatelessWidget {
             ),
             Text(
               "See All",
-              style: AppFonts.semiBold_14.copyWith(color: AppColor.blue),
+              style: AppFonts.semiBold_14.copyWith(color: AppColor.darkGrey),
             )
           ],
         ),

@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/constant/image_assets.dart';
+import 'package:store_app/core/classes/image_assets.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
 class CustomCardProduct extends StatelessWidget {
@@ -58,7 +58,7 @@ class CustomCardProduct extends StatelessWidget {
               ),
               Text(
                 categoryName,
-                style: AppFonts.regular_11.copyWith(color: AppColor.lightGrey),
+                style: AppFonts.regular_11.copyWith(color: AppColor.grey),
               ),
               isDiscount
                   ? Row(

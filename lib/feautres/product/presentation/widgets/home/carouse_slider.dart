@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/constant/image_assets.dart';
+import 'package:store_app/core/classes/image_assets.dart';
 
 import '../../../../../core/fonts/app_font.dart';
 

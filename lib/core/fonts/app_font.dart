@@ -21,6 +21,10 @@ class AppFonts {
   );
 
 //========================= bold ===========================
+  static TextStyle bold_13 = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w700,
+  );
   static TextStyle bold_14 = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeight.w700,

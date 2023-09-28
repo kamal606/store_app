@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:store_app/core/constant/hive_const.dart';
+import 'package:store_app/core/classes/hive_const.dart';
 import 'package:store_app/feautres/product/domain/entities/category_entity.dart';
 
 abstract class CategoryLocalDataSource {

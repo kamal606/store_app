@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/constant/image_assets.dart';
+import 'package:store_app/core/classes/image_assets.dart';
 
 class AppCategoryIcon {
   final String icon;
@@ -29,7 +29,7 @@ class AppCategoryIcon {
     AppCategoryIcon(
       icon: AppAssets.skincare,
       title: "Skincare",
-      colorbox: AppColor.lightGrey,
+      colorbox: AppColor.grey,
     ),
     AppCategoryIcon(
       icon: AppAssets.grocery,
@@ -49,7 +49,7 @@ class AppCategoryIcon {
     AppCategoryIcon(
       icon: AppAssets.tops,
       title: "Tops",
-      colorbox: AppColor.lightGrey,
+      colorbox: AppColor.grey,
     ),
     AppCategoryIcon(
       icon: AppAssets.womensDresses,
@@ -69,7 +69,7 @@ class AppCategoryIcon {
     AppCategoryIcon(
       icon: AppAssets.menShoes,
       title: "Men\n Shoes",
-      colorbox: AppColor.lightGrey,
+      colorbox: AppColor.grey,
     ),
     AppCategoryIcon(
       icon: AppAssets.menWatches,
@@ -89,7 +89,7 @@ class AppCategoryIcon {
     AppCategoryIcon(
       icon: AppAssets.womensJewellery,
       title: "Jewellery",
-      colorbox: AppColor.lightGrey,
+      colorbox: AppColor.grey,
     ),
     AppCategoryIcon(
       icon: AppAssets.sunglasses,
@@ -109,7 +109,7 @@ class AppCategoryIcon {
     AppCategoryIcon(
       icon: AppAssets.lighting,
       title: "Lighting",
-      colorbox: AppColor.lightGrey,
+      colorbox: AppColor.grey,
     ),
   ];
 }

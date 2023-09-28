@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/utils/icons.dart';
+import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/widgets/custom_text_form_field.dart';
 
 class SectionTitleWithFormField extends StatelessWidget {
@@ -14,7 +14,7 @@ class SectionTitleWithFormField extends StatelessWidget {
       children: [
         ListTile(
           title: Text(
-            "Welcome,",
+            "Welcome ‌🙋",
             style: AppFonts.bold_14.copyWith(color: AppColor.white),
           ),
           subtitle: Text(

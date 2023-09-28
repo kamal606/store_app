@@ -52,23 +52,11 @@ class CustomSliverAppBar extends StatelessWidget
       flexibleSpace: const FlexibleSpaceBar(
         background: SectionTitleWithFormField(),
       ),
-      backgroundColor: AppColor.lightGrey,
+      backgroundColor: AppColor.grey,
       elevation: 0,
     );
   }
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-}
-
-colo4() {
-  const LinearGradient(
-      colors: [
-        AppColor.blacK,
-        AppColor.grey,
-      ],
-      begin: FractionalOffset(0.0, 0.0),
-      end: FractionalOffset(0.5, 0.0),
-      stops: [0.0, 1.0],
-      tileMode: TileMode.clamp);
 }

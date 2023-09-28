@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/constant/image_assets.dart';
+import 'package:store_app/core/classes/image_assets.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

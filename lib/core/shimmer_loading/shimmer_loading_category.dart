@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/utils/icon_category.dart';
+import 'package:store_app/core/classes/icon_category.dart';
 
 class ShimmerLoadingCategory extends StatelessWidget {
   const ShimmerLoadingCategory({super.key});
