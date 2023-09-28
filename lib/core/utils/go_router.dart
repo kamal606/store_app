@@ -7,15 +7,18 @@ import 'package:store_app/feautres/product/presentation/view/home_view.dart';
 import 'package:store_app/core/utils/dependency_injection.dart' as di;
 import 'package:store_app/feautres/product/presentation/view/profile_view.dart';
 
+import '../../feautres/product/presentation/view/details_product.dart';
+
 abstract class AppRouter {
   static const String cartView = "/cartView";
   static const String favoriteView = "/favoriteView";
   static const String profileView = "/profileView";
+  static const String detailsProductView = "/detailsProductView";
   static final router = GoRouter(
     routes: [
       // GoRoute(path: "/", builder: (context, state) => const MyApp()),
       GoRoute(
-        path: "/",
+        path: "/as",
         builder: (context, state) => BlocProvider(
           create: (context) =>
               di.sl<AllProductsBloc>()..add(GetAllProductsEvent()),
@@ -33,6 +36,10 @@ abstract class AppRouter {
       GoRoute(
         path: profileView,
         builder: (context, state) => const ProfileView(),
+      ),
+      GoRoute(
+        path: "/",
+        builder: (context, state) => const DetailsProductView(),
       ),
     ],
   );

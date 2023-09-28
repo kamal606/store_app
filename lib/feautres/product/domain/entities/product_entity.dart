@@ -25,8 +25,8 @@ class ProductEntity extends Equatable {
   final String categoryProduct;
   @HiveField(9)
   final String image;
-
-  // final List<String> subImage;
+  @HiveField(10)
+  final List<String> subImage;
 
   const ProductEntity({
     required this.idProduct,
@@ -39,7 +39,7 @@ class ProductEntity extends Equatable {
     required this.brandProduct,
     required this.categoryProduct,
     required this.image,
-    // required this.subImage,
+    required this.subImage,
   });
   @override
   List<Object?> get props => [
@@ -53,5 +53,6 @@ class ProductEntity extends Equatable {
         brandProduct,
         categoryProduct,
         image,
+        subImage,
       ];
 }

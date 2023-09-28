@@ -13,7 +13,9 @@ import 'core/utils/dependency_injection.dart' as di;
 Future<void> main() async {
   await initFlutter();
   await Future.delayed(const Duration(milliseconds: 300));
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+  SystemChrome.setEnabledSystemUIMode(
+      overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top],
+      SystemUiMode.leanBack);
   runApp(const StoreApp());
 }
 

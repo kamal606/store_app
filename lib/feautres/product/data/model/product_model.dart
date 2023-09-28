@@ -13,7 +13,7 @@ class ProductModel extends ProductEntity {
   String? brand;
   String? category;
   String? thumbnail;
-  // List<String>? images;
+  List<String>? images;
 
   ProductModel({
     this.id,
@@ -26,20 +26,19 @@ class ProductModel extends ProductEntity {
     this.brand,
     this.category,
     this.thumbnail,
-    // this.images,
+    this.images,
   }) : super(
-          idProduct: id!,
-          titleProduct: title ?? "",
-          descriptionProduct: description ?? "",
-          priceProduct: price!,
-          discountPercentageProduct: discountPercentage ?? 0,
-          ratingProduct: rating ?? 0,
-          stockProduct: stock ?? 0,
-          brandProduct: brand ?? "",
-          categoryProduct: category ?? "",
-          image: thumbnail ?? "",
-          // subImage: images ?? <String>[]
-        );
+            idProduct: id!,
+            titleProduct: title ?? "",
+            descriptionProduct: description ?? "",
+            priceProduct: price!,
+            discountPercentageProduct: discountPercentage ?? 0,
+            ratingProduct: rating ?? 0,
+            stockProduct: stock ?? 0,
+            brandProduct: brand ?? "",
+            categoryProduct: category ?? "",
+            image: thumbnail ?? "",
+            subImage: images ?? <String>[]);
 
   factory ProductModel.fromJson(Map<String, dynamic> json) => ProductModel(
         id: json['id'] as int?,
@@ -52,7 +51,7 @@ class ProductModel extends ProductEntity {
         brand: json['brand'] as String?,
         category: json['category'] as String?,
         thumbnail: json['thumbnail'] as String?,
-        // images: json['images'] as List<String>?,
+        images: json['images'] as List<String>?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -66,6 +65,6 @@ class ProductModel extends ProductEntity {
         'brand': brand,
         'category': category,
         'thumbnail': thumbnail,
-        // 'images': images,
+        'images': images,
       };
 }
