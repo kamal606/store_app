@@ -8,6 +8,10 @@ class AppFonts {
     fontSize: 8.sp,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle regular_9 = TextStyle(
+    fontSize: 9.sp,
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle regular_10 = TextStyle(
     fontSize: 10.sp,
     fontWeight: FontWeight.w400,

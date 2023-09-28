@@ -3,14 +3,16 @@ import 'package:store_app/feautres/product/presentation/widgets/details_product/
 import 'package:store_app/feautres/product/presentation/widgets/details_product/section_image.dart';
 
 class DetailsProductViewBody extends StatelessWidget {
-  const DetailsProductViewBody({super.key});
+  const DetailsProductViewBody({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        SectionImage(),
-        BodyContainerDiscripeProduct(),
+        Expanded(flex: 1, child: SectionImage()),
+        Expanded(flex: 2, child: BodyContainerDiscripeProduct()),
       ],
     );
   }
