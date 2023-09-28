@@ -15,7 +15,7 @@ class SectionTitleWithFormField extends StatelessWidget {
         ListTile(
           title: Text(
             "Welcome ‌🙋",
-            style: AppFonts.bold_14.copyWith(color: AppColor.white),
+            style: AppFonts.bold_14.copyWith(color: AppColor.blacK),
           ),
           subtitle: Text(
             "Our Ecommerce App",
