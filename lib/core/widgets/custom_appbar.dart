@@ -21,40 +21,43 @@ class CustomSliverAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      bottom: PreferredSize(
-          preferredSize: preferredSize,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 15.h, bottom: 5.h),
-                child: CircleAvatar(
-                  backgroundColor: AppColor.white,
-                  child: IconButton(
-                    onPressed: onPressedLeading,
-                    icon: FaIcon(
-                      iconLeading,
-                      size: 15.h,
-                      color: AppColor.blacK,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(right: 15.h, bottom: 5.h),
-                child: action,
-              ),
-            ],
-          )),
+      leading: Padding(
+        padding: EdgeInsets.only(left: 15.h, bottom: 5.h),
+        child: CircleAvatar(
+          backgroundColor: AppColor.white,
+          child: IconButton(
+            onPressed: onPressedLeading,
+            icon: FaIcon(
+              iconLeading,
+              size: 15.h,
+              color: AppColor.blacK,
+            ),
+          ),
+        ),
+      ),
+      actions: [
+        Padding(
+          padding: EdgeInsets.only(right: 15.h, bottom: 5.h),
+          child: action,
+        ),
+      ],
       pinned: true,
       floating: true,
-      expandedHeight: 170.h,
-      flexibleSpace: const FlexibleSpaceBar(
-        collapseMode: CollapseMode.pin,
-        background: SectionTitleWithFormField(),
+      expandedHeight: 180.h,
+      flexibleSpace: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+          AppColor.blacK,
+          AppColor.background,
+          AppColor.darkGrey,
+        ])),
+        child: const FlexibleSpaceBar(
+          collapseMode: CollapseMode.parallax,
+          background: SectionTitleWithFormField(),
+        ),
       ),
-      backgroundColor: AppColor.grey,
       elevation: 0,
+      backgroundColor: Colors.transparent,
     );
   }
 

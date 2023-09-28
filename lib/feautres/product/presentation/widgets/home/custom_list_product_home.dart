@@ -71,7 +71,7 @@ class CustomListProductHome extends StatelessWidget {
                           priceDiscount: product.discountPercentageProduct,
                           isDiscount: isDiscount,
                           titleStatus: titleStatus ??
-                              product.discountPercentageProduct.toString(),
+                              "${product.discountPercentageProduct} %",
                           colorStatus: colorStatus,
                           isStatus: isStatus,
                           image: product.image,
