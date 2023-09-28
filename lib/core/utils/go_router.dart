@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 import 'package:store_app/feautres/product/presentation/bloc/get_all_products/get_product_of_category_bloc.dart';
 import 'package:store_app/feautres/product/presentation/view/cart_view.dart';
 import 'package:store_app/feautres/product/presentation/view/favorite_view.dart';
@@ -18,7 +19,7 @@ abstract class AppRouter {
     routes: [
       // GoRoute(path: "/", builder: (context, state) => const MyApp()),
       GoRoute(
-        path: "/as",
+        path: "/",
         builder: (context, state) => BlocProvider(
           create: (context) =>
               di.sl<AllProductsBloc>()..add(GetAllProductsEvent()),
@@ -38,8 +39,9 @@ abstract class AppRouter {
         builder: (context, state) => const ProfileView(),
       ),
       GoRoute(
-        path: "/",
-        builder: (context, state) => const DetailsProductView(),
+        path: detailsProductView,
+        builder: (context, state) =>
+            DetailsProductView(productEntity: state.extra as ProductEntity),
       ),
     ],
   );

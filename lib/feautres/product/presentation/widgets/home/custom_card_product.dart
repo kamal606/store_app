@@ -16,7 +16,8 @@ class CustomCardProduct extends StatelessWidget {
       this.titleStatus,
       this.isStatus = false,
       this.isDiscount = false,
-      this.priceDiscount});
+      this.priceDiscount,
+      required this.id});
   final String image;
   final String title;
   final num price;
@@ -26,6 +27,7 @@ class CustomCardProduct extends StatelessWidget {
   final bool isStatus;
   final bool isDiscount;
   final num? priceDiscount;
+  final int id;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -40,12 +42,15 @@ class CustomCardProduct extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12.h),
-                child: CachedNetworkImage(
-                  height: 100.h,
-                  imageUrl: image,
-                  fadeOutCurve: Curves.easeOut,
-                  errorWidget: (context, url, error) =>
-                      Image.asset(AppAssets.error),
+                child: Hero(
+                  tag: id,
+                  child: CachedNetworkImage(
+                    height: 100.h,
+                    imageUrl: image,
+                    fadeOutCurve: Curves.bounceInOut,
+                    errorWidget: (context, url, error) =>
+                        Image.asset(AppAssets.error),
+                  ),
                 ),
               ),
               SizedBox(

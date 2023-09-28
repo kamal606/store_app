@@ -26,7 +26,7 @@ class ProductEntity extends Equatable {
   @HiveField(9)
   final String image;
   @HiveField(10)
-  final List<String> subImage;
+  final List<dynamic> subImage;
 
   const ProductEntity({
     required this.idProduct,

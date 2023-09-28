@@ -14,8 +14,7 @@ Future<void> main() async {
   await initFlutter();
   await Future.delayed(const Duration(milliseconds: 300));
   SystemChrome.setEnabledSystemUIMode(
-      overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top],
-      SystemUiMode.leanBack);
+      overlays: [SystemUiOverlay.top], SystemUiMode.leanBack);
   runApp(const StoreApp());
 }
 

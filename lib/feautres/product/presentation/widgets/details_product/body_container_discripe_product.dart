@@ -6,9 +6,11 @@ import 'package:store_app/feautres/product/presentation/widgets/details_product/
 import 'package:store_app/feautres/product/presentation/widgets/details_product/section_price_button.dart';
 import 'package:store_app/feautres/product/presentation/widgets/details_product/section_title_with_quantity.dart';
 
-class BodyContainerDiscripeProduct extends StatelessWidget {
-  const BodyContainerDiscripeProduct({super.key});
+import '../../../domain/entities/product_entity.dart';
 
+class BodyContainerDiscripeProduct extends StatelessWidget {
+  const BodyContainerDiscripeProduct({super.key, required this.productEntity});
+  final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,20 +43,20 @@ class BodyContainerDiscripeProduct extends StatelessWidget {
                   SizedBox(
                     height: 5.h,
                   ),
-                  const SectionTitleWithQuantity(),
+                  SectionTitleWithQuantity(productEntity: productEntity),
                   SizedBox(
                     height: 20.h,
                   ),
-                  const SectionDescription(),
+                  SectionDescription(productEntity: productEntity),
                   SizedBox(
                     height: 30.h,
                   ),
-                  const SectionListImages(),
+                  SectionListImages(productEntity: productEntity),
                   SizedBox(
                     height: 20.h,
                   ),
                   const Spacer(),
-                  const SectionPriceAndButtonCart(),
+                  SectionPriceAndButtonCart(productEntity: productEntity),
                   SizedBox(
                     height: 70.h,
                   ),

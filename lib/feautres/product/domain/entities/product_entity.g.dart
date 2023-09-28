@@ -27,7 +27,7 @@ class ProductEntityAdapter extends TypeAdapter<ProductEntity> {
       brandProduct: fields[7] as String,
       categoryProduct: fields[8] as String,
       image: fields[9] as String,
-      subImage: (fields[10] as List).cast<String>(),
+      subImage: (fields[10] as List).cast<dynamic>(),
     );
   }
 

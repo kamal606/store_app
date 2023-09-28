@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
 
-class SectionPriceAndButtonCart extends StatelessWidget {
-  const SectionPriceAndButtonCart({super.key});
+import '../../../domain/entities/product_entity.dart';
 
+class SectionPriceAndButtonCart extends StatelessWidget {
+  const SectionPriceAndButtonCart({super.key, required this.productEntity});
+  final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -18,7 +20,7 @@ class SectionPriceAndButtonCart extends StatelessWidget {
               style: AppFonts.regular_9,
             ),
             Text(
-              r"$198.00",
+              "\$${productEntity.priceProduct.toStringAsFixed(2)}",
               style: AppFonts.bold_18,
             ),
           ],

@@ -5,10 +5,11 @@ import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
 import '../../../../../core/color/app_color.dart';
+import '../../../domain/entities/product_entity.dart';
 
 class SectionTitleWithQuantity extends StatelessWidget {
-  const SectionTitleWithQuantity({super.key});
-
+  const SectionTitleWithQuantity({super.key, required this.productEntity});
+  final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,15 +18,18 @@ class SectionTitleWithQuantity extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Roller Rabbit",
-              style: AppFonts.semiBold_18,
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2,
+              child: Text(
+                productEntity.titleProduct,
+                style: AppFonts.semiBold_18,
+              ),
             ),
             SizedBox(
               height: 5.h,
             ),
             Text(
-              "Vado Odelle Dress",
+              productEntity.categoryProduct,
               style: AppFonts.regular_11,
             ),
             SizedBox(
@@ -45,7 +49,7 @@ class SectionTitleWithQuantity extends StatelessWidget {
                   width: 5.h,
                 ),
                 Text(
-                  "(4.6)",
+                  "(${productEntity.ratingProduct})",
                   style: AppFonts.regular_10,
                 ),
               ],
@@ -93,7 +97,7 @@ class SectionTitleWithQuantity extends StatelessWidget {
               height: 10.h,
             ),
             Text(
-              "Stock : 15",
+              "Stock : ${productEntity.stockProduct}",
               style: AppFonts.bold_13,
             ),
           ],

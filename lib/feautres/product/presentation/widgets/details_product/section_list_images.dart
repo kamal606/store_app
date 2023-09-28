@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 
-class SectionListImages extends StatelessWidget {
-  const SectionListImages({super.key});
+import '../../../../../core/shimmer_loading/shimmer_loading_list_image_details_products.dart';
+import '../../../domain/entities/product_entity.dart';
 
+class SectionListImages extends StatelessWidget {
+  const SectionListImages({super.key, required this.productEntity});
+  final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -13,19 +16,20 @@ class SectionListImages extends StatelessWidget {
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        itemCount: 5,
-        itemBuilder: ((context, index) {
+        itemCount: productEntity.subImage.length,
+        itemBuilder: ((context, i) {
           return Padding(
             padding: EdgeInsets.only(right: 10.h),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50.h),
-                  border: Border.all(width: 2, color: AppColor.blue)),
+                  border: Border.all(width: 1, color: AppColor.grey)),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50.h),
                 child: CachedNetworkImage(
-                  imageUrl:
-                      "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+                  progressIndicatorBuilder: (context, url, progress) =>
+                      const ShimmerLoadingListDetailsProduct(),
+                  imageUrl: productEntity.subImage[i],
                   fadeInCurve: Curves.bounceOut,
                   fit: BoxFit.fill,
                   width: 100.h,
