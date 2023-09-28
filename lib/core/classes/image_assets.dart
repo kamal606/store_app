@@ -40,4 +40,6 @@ abstract class AppAssets {
   static const String home = "assets/images/icons/home.png";
   static const String notification = "assets/images/icons/notification.png";
   static const String profile = "assets/images/icons/profile.png";
+  static const String favorite = "assets/images/icons/love.png";
+  static const String favoriteNavBar = "assets/images/icons/heart_2077502.png";
 }

@@ -48,8 +48,9 @@ class CustomSliverAppBar extends StatelessWidget
           )),
       pinned: true,
       floating: true,
-      expandedHeight: 150.h,
+      expandedHeight: 170.h,
       flexibleSpace: const FlexibleSpaceBar(
+        collapseMode: CollapseMode.pin,
         background: SectionTitleWithFormField(),
       ),
       backgroundColor: AppColor.grey,

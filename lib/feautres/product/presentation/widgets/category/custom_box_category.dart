@@ -46,7 +46,7 @@ class CustomBoxCategory extends StatelessWidget {
           Text(
             title,
             textAlign: TextAlign.center,
-            style: AppFonts.regular_11,
+            style: AppFonts.regular_10,
           ),
         ],
       ),

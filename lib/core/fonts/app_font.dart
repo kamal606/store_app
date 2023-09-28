@@ -3,20 +3,26 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppFonts {
   //========================= regular ===========================
-  static TextStyle regular_13 = TextStyle(
-    fontSize: 13.sp,
+
+  static TextStyle regular_8 = TextStyle(
+    fontSize: 8.sp,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle regular_16 = TextStyle(
-    fontSize: 16.sp,
+  static TextStyle regular_10 = TextStyle(
+    fontSize: 10.sp,
     fontWeight: FontWeight.w400,
   );
   static TextStyle regular_11 = TextStyle(
     fontSize: 11.sp,
     fontWeight: FontWeight.w400,
   );
-  static TextStyle regular_8 = TextStyle(
-    fontSize: 8.sp,
+
+  static TextStyle regular_13 = TextStyle(
+    fontSize: 13.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle regular_16 = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.w400,
   );
 

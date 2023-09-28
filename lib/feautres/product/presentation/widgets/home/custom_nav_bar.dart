@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:store_app/core/classes/icons.dart';
+import 'package:store_app/core/color/app_color.dart';
 
-import '../../../../../core/classes/icon_bottom_nav_bar.dart';
-import '../../../../../core/classes/image_assets.dart';
-import '../../../../../core/color/app_color.dart';
-import '../../../../../core/fonts/app_font.dart';
-
-class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({super.key});
-
+class CustomBottomNavBar extends StatelessWidget {
+  const CustomBottomNavBar({super.key, required this.currentIndex, this.onTap});
+  final int currentIndex;
+  final Function(int)? onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 65.h,
-      padding: EdgeInsets.symmetric(horizontal: 30.h),
+      padding: EdgeInsets.only(top: 10.h),
       decoration: BoxDecoration(
           color: AppColor.white,
           boxShadow: [
@@ -25,46 +23,40 @@ class CustomBottomNavigationBar extends StatelessWidget {
           ],
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(16.h), topRight: Radius.circular(16.h))),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Row(children: [
-            Stack(
-              alignment: Alignment.centerLeft,
-              children: [
-                Container(
-                  padding: EdgeInsets.only(right: 4.h),
-                  alignment: Alignment.centerRight,
-                  height: 40..h,
-                  width: 80.h,
-                  decoration: BoxDecoration(
-                      color: AppColor.lightGrey,
-                      borderRadius: BorderRadius.circular(16.h)),
-                  child: Text(
-                    "Home",
-                    style: AppFonts.bold_13,
-                  ),
-                ),
-                CircleAvatar(
-                    radius: 16.h,
-                    backgroundColor: AppColor.blacK,
-                    child: Image.asset(
-                      AppAssets.home,
-                      height: 15.h,
-                    )),
-              ],
-            )
-          ]),
-          ...List.generate(navBarIcon.length, (i) {
-            return Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.h),
-              child: Image.asset(
-                navBarIcon[i].nameIcon,
-                height: 18.h,
-              ),
-            );
-          })
+      child: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              AppIcon.home,
+              color: AppColor.blacK,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              AppIcon.cart,
+              color: AppColor.blacK,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              AppIcon.favorite,
+              color: AppColor.blacK,
+            ),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              AppIcon.profile,
+              color: AppColor.blacK,
+            ),
+            label: '',
+          ),
         ],
+        currentIndex: currentIndex,
+        onTap: onTap,
+        type: BottomNavigationBarType.fixed,
       ),
     );
   }

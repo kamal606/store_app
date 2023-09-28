@@ -1,11 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/feautres/product/presentation/view/cart_view.dart';
+import 'package:store_app/feautres/product/presentation/view/favorite_view.dart';
 import 'package:store_app/feautres/product/presentation/view/home_view.dart';
 import 'package:store_app/core/utils/dependency_injection.dart' as di;
+import 'package:store_app/feautres/product/presentation/view/profile_view.dart';
 
 import '../../feautres/product/presentation/bloc/get_product_of_category/get_product_of_category_bloc.dart';
 
 abstract class AppRouter {
+  static const String cartView = "/cartView";
+  static const String favoriteView = "/favoriteView";
+  static const String profileView = "/profileView";
   static final router = GoRouter(
     routes: [
       // GoRoute(path: "/", builder: (context, state) => const MyApp()),
@@ -16,6 +22,18 @@ abstract class AppRouter {
               di.sl<GetProductOfCategoryBloc>()..add(GetProductOfCategory()),
           child: const HomeView(),
         ),
+      ),
+      GoRoute(
+        path: cartView,
+        builder: (context, state) => const CartView(),
+      ),
+      GoRoute(
+        path: favoriteView,
+        builder: (context, state) => const FavoriteView(),
+      ),
+      GoRoute(
+        path: profileView,
+        builder: (context, state) => const ProfileView(),
       ),
     ],
   );
