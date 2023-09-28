@@ -11,53 +11,40 @@ class CustomBottomNavBar extends StatelessWidget {
   final Function(int)? onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 10.h),
-      decoration: BoxDecoration(
-          color: AppColor.white,
-          boxShadow: [
-            BoxShadow(
-              color: AppColor.grey,
-              blurRadius: 5.h,
-              offset: Offset(0, -1.h),
-            )
-          ],
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(16.h), topRight: Radius.circular(16.h))),
-      child: BottomNavigationBar(
-        selectedItemColor: AppColor.blacK,
-        selectedLabelStyle: AppFonts.regular_11,
-        selectedIconTheme: const IconThemeData(color: AppColor.blacK),
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              AppIcon.home,
-            ),
-            label: 'Home',
+    return BottomNavigationBar(
+      selectedItemColor: AppColor.blacK,
+      selectedLabelStyle: AppFonts.regular_11,
+      selectedIconTheme: const IconThemeData(color: AppColor.blacK),
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(
+            AppIcon.home,
           ),
-          BottomNavigationBarItem(
-            icon: FaIcon(
-              AppIcon.cart,
-            ),
-            label: 'Cart',
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: FaIcon(
+            AppIcon.cart,
           ),
-          BottomNavigationBarItem(
-            icon: FaIcon(
-              AppIcon.favorite,
-            ),
-            label: 'Favorite',
+          label: 'Cart',
+        ),
+        BottomNavigationBarItem(
+          icon: FaIcon(
+            AppIcon.favorite,
           ),
-          BottomNavigationBarItem(
-            icon: FaIcon(
-              AppIcon.profile,
-            ),
-            label: 'Profile',
+          label: 'Favorite',
+        ),
+        BottomNavigationBarItem(
+          icon: FaIcon(
+            AppIcon.profile,
           ),
-        ],
-        currentIndex: currentIndex,
-        onTap: onTap,
-        type: BottomNavigationBarType.fixed,
-      ),
+          label: 'Profile',
+        ),
+      ],
+      currentIndex: currentIndex,
+      onTap: onTap,
+      elevation: 2.h,
+      type: BottomNavigationBarType.fixed,
     );
   }
 }

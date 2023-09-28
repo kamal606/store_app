@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/carouse_slider.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/custom_list_product_home.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/list_category_home.dart';
@@ -21,8 +20,6 @@ class HomeViewBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         CustomSliverAppBar(
-          iconLeading: AppIcon.solidChessRook,
-          onPressedLeading: () {},
           action: CircleAvatar(
             backgroundColor: AppColor.white,
             child: Image.asset(

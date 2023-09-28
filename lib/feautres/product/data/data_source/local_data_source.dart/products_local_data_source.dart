@@ -3,13 +3,13 @@ import 'package:store_app/core/classes/hive_const.dart';
 
 import '../../../domain/entities/product_entity.dart';
 
-abstract class ProductsLocalDataSource {
+abstract class AllProductsLocalDataSource {
   Future<Box> openBox();
-  Future<void> addProducts(Box box, List<ProductEntity> product);
-  List<ProductEntity> getProduct(Box box);
+  Future<void> addAllProducts(Box box, List<ProductEntity> product);
+  List<ProductEntity> getAllProducts(Box box);
 }
 
-class ProductsLocalDataSourceImpl implements ProductsLocalDataSource {
+class AllProductsLocalDataSourceImpl implements AllProductsLocalDataSource {
   @override
   Future<Box> openBox() async {
     Box box = await Hive.openBox(AppHive.productsBox);
@@ -17,12 +17,12 @@ class ProductsLocalDataSourceImpl implements ProductsLocalDataSource {
   }
 
   @override
-  Future<void> addProducts(Box box, List<ProductEntity> product) async {
+  Future<void> addAllProducts(Box box, List<ProductEntity> product) async {
     await box.addAll(product);
   }
 
   @override
-  List<ProductEntity> getProduct(Box box) {
+  List<ProductEntity> getAllProducts(Box box) {
     return box.values.toList().cast<ProductEntity>();
   }
 }

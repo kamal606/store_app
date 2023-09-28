@@ -11,30 +11,34 @@ class CustomSliverAppBar extends StatelessWidget
     super.key,
     this.action,
     this.onPressedLeading,
-    required this.iconLeading,
+    this.iconLeading,
+    this.isLeading = false,
   });
   final Widget? action;
 
   final Function()? onPressedLeading;
-  final IconData iconLeading;
+  final IconData? iconLeading;
+  final bool isLeading;
   @override
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      leading: Padding(
-        padding: EdgeInsets.only(left: 15.h, bottom: 5.h),
-        child: CircleAvatar(
-          backgroundColor: AppColor.white,
-          child: IconButton(
-            onPressed: onPressedLeading,
-            icon: FaIcon(
-              iconLeading,
-              size: 15.h,
-              color: AppColor.blacK,
-            ),
-          ),
-        ),
-      ),
+      leading: isLeading
+          ? Padding(
+              padding: EdgeInsets.only(left: 15.h, bottom: 5.h),
+              child: CircleAvatar(
+                backgroundColor: AppColor.white,
+                child: IconButton(
+                  onPressed: onPressedLeading,
+                  icon: FaIcon(
+                    iconLeading,
+                    size: 15.h,
+                    color: AppColor.blacK,
+                  ),
+                ),
+              ),
+            )
+          : null,
       actions: [
         Padding(
           padding: EdgeInsets.only(right: 15.h, bottom: 5.h),

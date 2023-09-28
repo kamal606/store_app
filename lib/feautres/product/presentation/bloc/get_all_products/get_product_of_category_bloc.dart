@@ -7,20 +7,19 @@ import 'package:store_app/feautres/product/domain/use_cases/get_products_of_cate
 part 'get_product_of_category_event.dart';
 part 'get_product_of_category_state.dart';
 
-class GetProductOfCategoryBloc
-    extends Bloc<GetProductOfCategoryEvent, GetProductOfCategoryState> {
-  final GetProductOfCategoryUseCase getProductOfCategoryUseCase;
+class AllProductsBloc extends Bloc<AllProductsStateEvent, AllProductsState> {
+  final AllProductsUseCase getProductOfCategoryUseCase;
 
-  GetProductOfCategoryBloc({
+  AllProductsBloc({
     required this.getProductOfCategoryUseCase,
-  }) : super(GetProductOfCategoryInitial()) {
-    on<GetProductOfCategoryEvent>((event, emit) async {
-      if (event is GetProductOfCategory) {
-        emit(GetProductOfCategoryLoading());
+  }) : super(AllProductsStateInitial()) {
+    on<AllProductsStateEvent>((event, emit) async {
+      if (event is GetAllProductsEvent) {
+        emit(AllProductsStateLoading());
         final getProducts = await getProductOfCategoryUseCase.call();
         getProducts.fold(
-            (l) => emit(GetProductOfCategoryFailure(errMessage: l.message)),
-            (r) => emit(GetProductOfCategorySuccess(products: r)));
+            (l) => emit(AllProductsStateFailure(errMessage: l.message)),
+            (r) => emit(AllProductsStateSuccess(products: r)));
       }
     });
   }

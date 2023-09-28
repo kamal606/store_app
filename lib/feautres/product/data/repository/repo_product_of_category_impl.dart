@@ -7,16 +7,15 @@ import 'package:store_app/feautres/product/data/data_source/remote_data_source/p
 import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 import 'package:store_app/feautres/product/domain/repository/repo_product.dart';
 
-class GetProductOfCategoryRepoImpl extends GetProductsOfCategoryRepo {
-  final ProductOfCategoryRemoteDataSourceImpl
-      productOfCategoryRemoteDataSourceImpl;
-  final ProductsLocalDataSourceImpl productsLocalDataSourceImpl;
+class GetProductOfCategoryRepoImpl extends AllProductsRepo {
+  final AllProductsRemoteDataSourceImpl productOfCategoryRemoteDataSourceImpl;
+  final AllProductsLocalDataSourceImpl productsLocalDataSourceImpl;
 
   GetProductOfCategoryRepoImpl(
       {required this.productOfCategoryRemoteDataSourceImpl,
       required this.productsLocalDataSourceImpl});
   @override
-  Future<Either<Failure, List<ProductEntity>>> getProductsOfCategory() async {
+  Future<Either<Failure, List<ProductEntity>>> getAllProducts() async {
     List<ProductEntity> productsLocal = await getProductsFromLocal();
     if (productsLocal.isNotEmpty) {
       return right(productsLocal);
@@ -24,7 +23,7 @@ class GetProductOfCategoryRepoImpl extends GetProductsOfCategoryRepo {
 
     try {
       final productsRemote =
-          await productOfCategoryRemoteDataSourceImpl.getProductOfCategory();
+          await productOfCategoryRemoteDataSourceImpl.getAllProducts();
 
       return right(productsRemote);
     } catch (e) {
@@ -37,7 +36,7 @@ class GetProductOfCategoryRepoImpl extends GetProductsOfCategoryRepo {
 
   Future<List<ProductEntity>> getProductsFromLocal() async {
     Box box = await productsLocalDataSourceImpl.openBox();
-    final products = productsLocalDataSourceImpl.getProduct(box);
+    final products = productsLocalDataSourceImpl.getAllProducts(box);
     return products;
   }
 }

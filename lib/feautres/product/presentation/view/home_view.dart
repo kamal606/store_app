@@ -38,6 +38,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const Drawer(),
       bottomNavigationBar: CustomBottomNavBar(
           currentIndex: _selectedIndex, onTap: _onItemTapped),
       body: _widgetOptions.elementAt(_selectedIndex),

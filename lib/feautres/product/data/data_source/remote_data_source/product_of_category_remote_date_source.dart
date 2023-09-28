@@ -4,33 +4,32 @@ import 'package:store_app/feautres/product/data/data_source/local_data_source.da
 import 'package:store_app/feautres/product/data/model/product_model.dart';
 import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 
-abstract class ProductOfCategoryRemoteDataSource {
-  Future<List<ProductEntity>> getProductOfCategory();
+abstract class AllProductsRemoteDataSource {
+  Future<List<ProductEntity>> getAllProducts();
 }
 
-class ProductOfCategoryRemoteDataSourceImpl
-    extends ProductOfCategoryRemoteDataSource {
+class AllProductsRemoteDataSourceImpl extends AllProductsRemoteDataSource {
   final ApiService apiService;
-  final ProductsLocalDataSourceImpl productsLocalDataSourceImpl;
+  final AllProductsLocalDataSourceImpl productsLocalDataSourceImpl;
 
-  ProductOfCategoryRemoteDataSourceImpl({
+  AllProductsRemoteDataSourceImpl({
     required this.apiService,
     required this.productsLocalDataSourceImpl,
   });
 
   @override
-  Future<List<ProductEntity>> getProductOfCategory() async {
+  Future<List<ProductEntity>> getAllProducts() async {
     final data = await apiService.get(endPoint: "products");
 
     List<ProductEntity> products = getProducts(data);
-    await addProductToLocal(products);
+    await addAllProductsToLocal(products);
     return products;
   }
 
 //method add products to box in local storage
-  Future<void> addProductToLocal(List<ProductEntity> products) async {
+  Future<void> addAllProductsToLocal(List<ProductEntity> products) async {
     Box box = await productsLocalDataSourceImpl.openBox();
-    await productsLocalDataSourceImpl.addProducts(box, products);
+    await productsLocalDataSourceImpl.addAllProducts(box, products);
   }
 
 //method parse Map<String, dynamic> to  ProductEntity

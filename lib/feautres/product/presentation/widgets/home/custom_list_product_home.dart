@@ -8,7 +8,7 @@ import 'package:store_app/feautres/product/presentation/widgets/home/custom_card
 
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/shimmer_loading/shimmer_loading_products.dart';
-import '../../bloc/get_product_of_category/get_product_of_category_bloc.dart';
+import '../../bloc/get_all_products/get_product_of_category_bloc.dart';
 
 class CustomListProductHome extends StatelessWidget {
   const CustomListProductHome({
@@ -47,15 +47,15 @@ class CustomListProductHome extends StatelessWidget {
         SizedBox(
           height: 30.h,
         ),
-        BlocConsumer<GetProductOfCategoryBloc, GetProductOfCategoryState>(
+        BlocConsumer<AllProductsBloc, AllProductsState>(
           listener: (context, state) {
-            if (state is GetProductOfCategoryFailure && !isErrorDisplayed) {
+            if (state is AllProductsStateFailure && !isErrorDisplayed) {
               toast(message: state.errMessage, color: AppColor.erorr);
               isErrorDisplayed = true;
             }
           },
           builder: (context, state) {
-            if (state is GetProductOfCategorySuccess) {
+            if (state is AllProductsStateSuccess) {
               return SizedBox(
                 height: 220.h,
                 child: ListView.builder(
