@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/utils/icons.dart';
@@ -28,9 +27,6 @@ class SectionTitleWithFormField extends StatelessWidget {
           prefixIcon: AppIcon.search,
           onPressed: () {},
         ),
-        SizedBox(
-          height: 20.h,
-        )
       ],
     );
   }

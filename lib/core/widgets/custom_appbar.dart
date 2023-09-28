@@ -18,56 +18,57 @@ class CustomSliverAppBar extends StatelessWidget
   final Function()? onPressedLeading;
   final IconData iconLeading;
   @override
+  @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      toolbarHeight: 150.h,
-      flexibleSpace: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(16.h),
-                bottomRight: Radius.circular(16.h)),
-            gradient: const LinearGradient(
-                colors: [
-                  AppColor.blacK,
-                  AppColor.grey,
-                ],
-                begin: FractionalOffset(0.0, 0.0),
-                end: FractionalOffset(0.5, 0.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp)),
-        child: const SectionTitleWithFormField(),
-      ),
-      leading: Align(
-        alignment: Alignment.bottomLeft,
-        child: Padding(
-          padding: EdgeInsets.only(left: 15.h, bottom: 15.h),
-          child: CircleAvatar(
-            backgroundColor: AppColor.white,
-            child: IconButton(
-              onPressed: onPressedLeading,
-              icon: FaIcon(
-                iconLeading,
-                size: 15.h,
-                color: AppColor.blacK,
+      bottom: PreferredSize(
+          preferredSize: preferredSize,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 15.h, bottom: 5.h),
+                child: CircleAvatar(
+                  backgroundColor: AppColor.white,
+                  child: IconButton(
+                    onPressed: onPressedLeading,
+                    icon: FaIcon(
+                      iconLeading,
+                      size: 15.h,
+                      color: AppColor.blacK,
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ),
-        ),
+              Padding(
+                padding: EdgeInsets.only(right: 15.h, bottom: 5.h),
+                child: action,
+              ),
+            ],
+          )),
+      pinned: true,
+      floating: true,
+      expandedHeight: 150.h,
+      flexibleSpace: const FlexibleSpaceBar(
+        background: SectionTitleWithFormField(),
       ),
-      actions: [
-        Align(
-          alignment: Alignment.bottomRight,
-          child: Padding(
-            padding: EdgeInsets.only(right: 15.h, bottom: 15.h),
-            child: action,
-          ),
-        ),
-      ],
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppColor.lightGrey,
       elevation: 0,
     );
   }
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+colo4() {
+  const LinearGradient(
+      colors: [
+        AppColor.blacK,
+        AppColor.grey,
+      ],
+      begin: FractionalOffset(0.0, 0.0),
+      end: FractionalOffset(0.5, 0.0),
+      stops: [0.0, 1.0],
+      tileMode: TileMode.clamp);
 }

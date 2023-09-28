@@ -8,7 +8,7 @@ import '../../feautres/product/presentation/bloc/get_product_of_category/get_pro
 abstract class AppRouter {
   static final router = GoRouter(
     routes: [
-      // GoRoute(path: "/", builder: (context, state) => const BaseLayout()),
+      // GoRoute(path: "/", builder: (context, state) => const MyApp()),
       GoRoute(
         path: "/",
         builder: (context, state) => BlocProvider(
