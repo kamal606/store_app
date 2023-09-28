@@ -7,6 +7,7 @@ import 'package:store_app/feautres/product/presentation/widgets/category/custom_
 import 'package:store_app/core/shimmer_loading/shimmer_loading_category.dart';
 
 import '../../../../../core/fonts/app_font.dart';
+import '../../../../../core/utils/error_display.dart';
 import '../../../../../core/utils/icon_category.dart';
 import '../../../../../core/widgets/custom_flutter_toast.dart';
 
@@ -37,8 +38,9 @@ class ListCategoryHome extends StatelessWidget {
             height: 120.h,
             child: BlocConsumer<GetCategoryBloc, GetCategoryState>(
               listener: (context, state) {
-                if (state is GetCategoryFailure) {
+                if (state is GetCategoryFailure && !isErrorDisplayed) {
                   toast(message: state.errMessage, color: AppColor.erorr);
+                  isErrorDisplayed = true;
                 }
               },
               builder: (context, state) {

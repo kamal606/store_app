@@ -10,8 +10,10 @@ part 'get_product_of_category_state.dart';
 class GetProductOfCategoryBloc
     extends Bloc<GetProductOfCategoryEvent, GetProductOfCategoryState> {
   final GetProductOfCategoryUseCase getProductOfCategoryUseCase;
-  GetProductOfCategoryBloc({required this.getProductOfCategoryUseCase})
-      : super(GetProductOfCategoryInitial()) {
+
+  GetProductOfCategoryBloc({
+    required this.getProductOfCategoryUseCase,
+  }) : super(GetProductOfCategoryInitial()) {
     on<GetProductOfCategoryEvent>((event, emit) async {
       if (event is GetProductOfCategory) {
         emit(GetProductOfCategoryLoading());

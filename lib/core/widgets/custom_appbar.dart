@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:store_app/core/color/app_color.dart';
 
+import '../../feautres/product/presentation/widgets/home/section_form_field_and_title.dart';
+
 class CustomSliverAppBar extends StatelessWidget
     implements PreferredSizeWidget {
   const CustomSliverAppBar({
@@ -18,9 +20,13 @@ class CustomSliverAppBar extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      toolbarHeight: 150.h,
       flexibleSpace: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(16.h),
+                bottomRight: Radius.circular(16.h)),
+            gradient: const LinearGradient(
                 colors: [
                   AppColor.blacK,
                   AppColor.grey,
@@ -29,27 +35,35 @@ class CustomSliverAppBar extends StatelessWidget
                 end: FractionalOffset(0.5, 0.0),
                 stops: [0.0, 1.0],
                 tileMode: TileMode.clamp)),
+        child: const SectionTitleWithFormField(),
       ),
-      leading: Padding(
-        padding: EdgeInsets.only(left: 15.h),
-        child: CircleAvatar(
-          backgroundColor: AppColor.white,
-          child: IconButton(
-            onPressed: onPressedLeading,
-            icon: FaIcon(
-              iconLeading,
-              size: 15.h,
-              color: AppColor.blacK,
+      leading: Align(
+        alignment: Alignment.bottomLeft,
+        child: Padding(
+          padding: EdgeInsets.only(left: 15.h, bottom: 15.h),
+          child: CircleAvatar(
+            backgroundColor: AppColor.white,
+            child: IconButton(
+              onPressed: onPressedLeading,
+              icon: FaIcon(
+                iconLeading,
+                size: 15.h,
+                color: AppColor.blacK,
+              ),
             ),
           ),
         ),
       ),
       actions: [
-        Padding(
-          padding: EdgeInsets.only(right: 15.h),
-          child: action,
+        Align(
+          alignment: Alignment.bottomRight,
+          child: Padding(
+            padding: EdgeInsets.only(right: 15.h, bottom: 15.h),
+            child: action,
+          ),
         ),
       ],
+      backgroundColor: Colors.transparent,
       elevation: 0,
     );
   }

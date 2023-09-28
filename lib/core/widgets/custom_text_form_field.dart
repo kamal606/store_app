@@ -37,8 +37,7 @@ class CutomTextFormField extends StatelessWidget {
           ),
           fillColor: AppColor.formField,
           filled: true,
-          contentPadding:
-              EdgeInsets.symmetric(vertical: 15.h, horizontal: 10.w),
+          contentPadding: EdgeInsets.symmetric(vertical: 5.h),
           hintText: hint,
           hintStyle: AppFonts.regular_13.copyWith(
             color: AppColor.lightGrey,

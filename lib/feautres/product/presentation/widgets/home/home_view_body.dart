@@ -3,9 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/utils/icons.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/carouse_slider.dart';
-import 'package:store_app/feautres/product/presentation/widgets/home/list_category_home.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/custom_list_product_home.dart';
-import 'package:store_app/feautres/product/presentation/widgets/home/section_form_field_and_title.dart';
+import 'package:store_app/feautres/product/presentation/widgets/home/list_category_home.dart';
 
 import '../../../../../core/constant/image_assets.dart';
 import '../../../../../core/widgets/custom_appbar.dart';
@@ -34,13 +33,9 @@ class HomeViewBody extends StatelessWidget {
         const CustomInternetStatus(),
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.only(right: 20.w, left: 20.w, top: 30.h),
+            padding: EdgeInsets.only(right: 20.w, left: 20.w),
             child: Column(
               children: [
-                const SectionTitleWithFormField(),
-                SizedBox(
-                  height: 15.h,
-                ),
                 const CustomCarouseSlider(),
                 SizedBox(
                   height: 15.h,
@@ -55,6 +50,13 @@ class HomeViewBody extends StatelessWidget {
                   colorStatus: AppColor.erorr,
                   isStatus: true,
                   isDiscount: true,
+                ),
+                const CustomListProductHome(
+                  titleList: "Recommended Product",
+                  categoryName: "fragrances",
+                  colorStatus: AppColor.blacK,
+                  isStatus: true,
+                  titleStatus: "NEW",
                 ),
                 const CustomListProductHome(
                   titleList: "Recommended Product",

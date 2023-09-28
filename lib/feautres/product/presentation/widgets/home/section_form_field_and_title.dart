@@ -11,25 +11,26 @@ class SectionTitleWithFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ListTile(
           title: Text(
             "Welcome,",
-            style: AppFonts.bold_25,
+            style: AppFonts.bold_14.copyWith(color: AppColor.white),
           ),
           subtitle: Text(
             "Our Ecommerce App",
-            style: AppFonts.semiBold_20.copyWith(color: AppColor.darkGrey),
+            style: AppFonts.semiBold_12.copyWith(color: AppColor.white),
           ),
-        ),
-        SizedBox(
-          height: 20.h,
         ),
         CutomTextFormField(
           hint: "Search Product Name",
           prefixIcon: AppIcon.search,
           onPressed: () {},
         ),
+        SizedBox(
+          height: 20.h,
+        )
       ],
     );
   }

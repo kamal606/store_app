@@ -12,13 +12,13 @@ class ProductEntity extends Equatable {
   @HiveField(2)
   final String descriptionProduct;
   @HiveField(3)
-  final int priceProduct;
+  final num priceProduct;
   @HiveField(4)
-  final double discountPercentageProduct;
+  final num discountPercentageProduct;
   @HiveField(5)
-  final double ratingProduct;
+  final num ratingProduct;
   @HiveField(6)
-  final int stockProduct;
+  final num stockProduct;
   @HiveField(7)
   final String brandProduct;
   @HiveField(8)

@@ -19,7 +19,7 @@ class CustomCardProduct extends StatelessWidget {
       this.priceDiscount});
   final String image;
   final String title;
-  final int price;
+  final num price;
   final Color? colorStatus;
   final String categoryName;
   final String? titleStatus;

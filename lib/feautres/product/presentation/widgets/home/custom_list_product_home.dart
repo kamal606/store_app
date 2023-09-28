@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
+import 'package:store_app/core/utils/error_display.dart';
 import 'package:store_app/core/widgets/custom_flutter_toast.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/custom_card_product.dart';
 
@@ -25,6 +26,7 @@ class CustomListProductHome extends StatelessWidget {
   final bool isStatus;
   final String? titleStatus;
   final bool isDiscount;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -47,8 +49,9 @@ class CustomListProductHome extends StatelessWidget {
         ),
         BlocConsumer<GetProductOfCategoryBloc, GetProductOfCategoryState>(
           listener: (context, state) {
-            if (state is GetProductOfCategoryFailure) {
+            if (state is GetProductOfCategoryFailure && !isErrorDisplayed) {
               toast(message: state.errMessage, color: AppColor.erorr);
+              isErrorDisplayed = true;
             }
           },
           builder: (context, state) {
