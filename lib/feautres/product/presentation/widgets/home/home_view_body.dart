@@ -30,31 +30,25 @@ class HomeViewBody extends StatelessWidget {
         const CustomInternetStatus(),
         SliverToBoxAdapter(
           child: Padding(
-            padding: EdgeInsets.only(right: 20.w, left: 20.w),
-            child: Column(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: const Column(
               children: [
-                const CustomCarouseSlider(),
-                SizedBox(
-                  height: 15.h,
-                ),
-                const ListCategoryHome(),
-                SizedBox(
-                  height: 15.h,
-                ),
-                const CustomListProductHome(
+                CustomCarouseSlider(),
+                ListCategoryHome(),
+                CustomListProductHome(
                   titleList: "Sale Product",
                   categoryName: "laptops",
                   colorStatus: AppColor.erorr,
                   isStatus: true,
                   isDiscount: true,
                 ),
-                const CustomListProductHome(
+                CustomListProductHome(
                   titleList: "New Arrivals",
                   categoryName: "fragrances",
                   isStatus: true,
                   titleStatus: "NEW",
                 ),
-                const CustomListProductHome(
+                CustomListProductHome(
                   titleList: "Recommended",
                   categoryName: "skincare",
                   colorStatus: AppColor.blacK,

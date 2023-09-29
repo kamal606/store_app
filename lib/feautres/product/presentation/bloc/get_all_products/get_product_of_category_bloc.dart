@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
+
 import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 import 'package:store_app/feautres/product/domain/use_cases/get_products_of_category_use_case.dart';
 

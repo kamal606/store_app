@@ -28,6 +28,7 @@ class StatusInternetBloc
         add(OfflineEvent());
       }
     });
+
     @override
     Future<void> close() {
       streamSubscription.cancel();

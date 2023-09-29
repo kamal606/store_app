@@ -10,7 +10,7 @@ class AppColor {
 
   static const Color formField = Color(0XFFF3F4F5);
   static const Color primary = Color(0XFFDB3022);
-  static const Color background = Color(0XFFEDEDED);
+  static const Color background = Color.fromARGB(255, 243, 239, 239);
   static const Color white = Color(0XFFFFFFFF);
   static const Color erorr = Color(0XFFF01F0E);
   static const Color darkTheme = Color(0XFF2E2E2E);

@@ -44,7 +44,7 @@ class CustomListProductHome extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 30.h,
+          height: 10.h,
         ),
         BlocConsumer<AllProductsBloc, AllProductsState>(
           listener: (context, state) {
@@ -56,7 +56,7 @@ class CustomListProductHome extends StatelessWidget {
           builder: (context, state) {
             if (state is AllProductsStateSuccess) {
               return SizedBox(
-                height: 220.h,
+                height: 200.h,
                 child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
                   clipBehavior: Clip.none,

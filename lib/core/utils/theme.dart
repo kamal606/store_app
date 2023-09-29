@@ -32,6 +32,7 @@ Map<AppTheme, ThemeData> theme = {
     ),
   ),
   AppTheme.light: ThemeData(
+    scaffoldBackgroundColor: AppColor.background,
     fontFamily: "Poppins",
     brightness: Brightness.light,
     elevatedButtonTheme: ElevatedButtonThemeData(

@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:store_app/feautres/product/domain/use_cases/get_category_use_case.dart';
 
 import '../../../domain/entities/category_entity.dart';

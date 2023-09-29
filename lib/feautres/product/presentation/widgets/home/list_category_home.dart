@@ -27,15 +27,15 @@ class ListCategoryHome extends StatelessWidget {
             ),
             Text(
               "See All",
-              style: AppFonts.semiBold_14.copyWith(color: AppColor.darkGrey),
+              style: AppFonts.semiBold_14,
             )
           ],
         ),
         SizedBox(
-          height: 20.h,
+          height: 15.h,
         ),
         SizedBox(
-            height: 120.h,
+            height: 90.h,
             child: BlocConsumer<GetCategoryBloc, GetCategoryState>(
               listener: (context, state) {
                 if (state is GetCategoryFailure && !isErrorDisplayed) {
