@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
 class CustomElvatedButton extends StatelessWidget {
@@ -18,7 +17,6 @@ class CustomElvatedButton extends StatelessWidget {
         ),
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.h)),
-        backgroundColor: AppColor.blacK,
       ),
       child: Text(
         title,

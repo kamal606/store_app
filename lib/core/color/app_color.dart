@@ -13,6 +13,7 @@ class AppColor {
   static const Color background = Color(0XFFEDEDED);
   static const Color white = Color(0XFFFFFFFF);
   static const Color erorr = Color(0XFFF01F0E);
+  static const Color darkTheme = Color(0XFF2E2E2E);
 
   static const Color star = Color(0XFFFFAB07);
   static const Color yellow = Colors.yellow;

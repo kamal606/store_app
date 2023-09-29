@@ -40,10 +40,7 @@ class CustomListProductHome extends StatelessWidget {
               titleList ?? "",
               style: AppFonts.semiBold_18,
             ),
-            Text(
-              "See All",
-              style: AppFonts.semiBold_14.copyWith(color: AppColor.darkGrey),
-            ),
+            Text("See All", style: AppFonts.semiBold_14),
           ],
         ),
         SizedBox(

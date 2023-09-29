@@ -63,7 +63,7 @@ class CustomCardProduct extends StatelessWidget {
               ),
               Text(
                 categoryName,
-                style: AppFonts.regular_11.copyWith(color: AppColor.grey),
+                style: AppFonts.regular_11,
               ),
               isDiscount
                   ? Row(
@@ -72,7 +72,6 @@ class CustomCardProduct extends StatelessWidget {
                         Text(
                           "\$${price.toStringAsFixed(1)}",
                           style: AppFonts.semiBold_14.copyWith(
-                            color: AppColor.blacK,
                             decoration: TextDecoration.lineThrough,
                           ),
                         ),
@@ -96,12 +95,13 @@ class CustomCardProduct extends StatelessWidget {
             ? Container(
                 padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 3.h),
                 decoration: BoxDecoration(
-                  color: colorStatus ?? AppColor.erorr,
+                  color: colorStatus ?? Theme.of(context).colorScheme.surface,
                   borderRadius: BorderRadius.circular(30.r),
                 ),
                 child: Text(
                   "$titleStatus",
-                  style: AppFonts.regular_13.copyWith(color: AppColor.white),
+                  style: AppFonts.bold_13.copyWith(
+                      color: Theme.of(context).colorScheme.primaryContainer),
                 ),
               )
             : const SizedBox(),

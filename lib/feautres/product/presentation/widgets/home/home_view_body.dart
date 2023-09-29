@@ -51,7 +51,6 @@ class HomeViewBody extends StatelessWidget {
                 const CustomListProductHome(
                   titleList: "New Arrivals",
                   categoryName: "fragrances",
-                  colorStatus: AppColor.blacK,
                   isStatus: true,
                   titleStatus: "NEW",
                 ),

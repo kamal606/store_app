@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
+import 'package:store_app/core/utils/theme.dart';
 
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
 import 'package:store_app/feautres/product/presentation/bloc/status_internet/status_internet_bloc.dart';
@@ -38,10 +38,7 @@ class StoreApp extends StatelessWidget {
           child: MaterialApp.router(
             routerConfig: AppRouter.router,
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-                brightness: Brightness.light,
-                fontFamily: "Poppins",
-                scaffoldBackgroundColor: AppColor.white),
+            theme: theme[AppTheme.dark],
           ),
         );
       },

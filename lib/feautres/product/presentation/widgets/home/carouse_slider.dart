@@ -41,7 +41,9 @@ class CustomCarouseSlider extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(i.title, style: AppFonts.bold_25),
+                      Text(i.title,
+                          style:
+                              AppFonts.bold_25.copyWith(color: AppColor.blacK)),
                       Text(i.subTitle,
                           style: AppFonts.regular_16
                               .copyWith(color: AppColor.blacK)),

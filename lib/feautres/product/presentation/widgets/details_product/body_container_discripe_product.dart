@@ -21,6 +21,7 @@ class BodyContainerDiscripeProduct extends StatelessWidget {
           top: 20.h,
         ),
         decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primaryContainer,
           boxShadow: [
             BoxShadow(
               color: AppColor.darkGrey,
@@ -28,7 +29,6 @@ class BodyContainerDiscripeProduct extends StatelessWidget {
               blurRadius: 12,
             ),
           ],
-          color: AppColor.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.h),
             topRight: Radius.circular(20.h),

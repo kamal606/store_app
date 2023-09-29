@@ -5,8 +5,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/feautres/product/domain/entities/product_entity.dart';
 
-import '../../../../../core/color/app_color.dart';
-
 class SectionImage extends StatelessWidget {
   const SectionImage({super.key, required this.productEntity});
   final ProductEntity productEntity;
@@ -16,7 +14,7 @@ class SectionImage extends StatelessWidget {
       alignment: Alignment.bottomRight,
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height / 2.5,
+          // height: MediaQuery.of(context).size.height / 2.5,
           child: Hero(
               tag: productEntity.idProduct,
               child: CachedNetworkImage(
@@ -25,13 +23,13 @@ class SectionImage extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(right: 20.h, bottom: 20.h),
           child: CircleAvatar(
-            backgroundColor: AppColor.white,
+            backgroundColor: Theme.of(context).colorScheme.primaryContainer,
             child: IconButton(
                 onPressed: () {},
                 icon: FaIcon(
                   AppIcon.favorite,
+                  color: Theme.of(context).colorScheme.surface,
                   size: 18.h,
-                  color: AppColor.blacK,
                 )),
           ),
         ),

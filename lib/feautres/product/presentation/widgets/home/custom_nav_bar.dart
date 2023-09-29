@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -12,9 +11,11 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      selectedItemColor: AppColor.blacK,
       selectedLabelStyle: AppFonts.regular_11,
-      selectedIconTheme: const IconThemeData(color: AppColor.blacK),
+      fixedColor: Theme.of(context)
+          .bottomNavigationBarTheme
+          .selectedLabelStyle!
+          .backgroundColor,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(
