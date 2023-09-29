@@ -4,6 +4,7 @@ import 'package:store_app/feautres/product/presentation/view/favorite_view.dart'
 import 'package:store_app/feautres/product/presentation/view/profile_view.dart';
 import 'package:store_app/feautres/product/presentation/widgets/home/home_view_body.dart';
 
+import '../widgets/drawer/drawer_body.dart';
 import '../widgets/home/custom_nav_bar.dart';
 
 class HomeView extends StatefulWidget {
@@ -38,7 +39,7 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const DrawerBody(),
       bottomNavigationBar: CustomBottomNavBar(
           currentIndex: _selectedIndex, onTap: _onItemTapped),
       body: _widgetOptions.elementAt(_selectedIndex),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/utils/theme.dart';
 
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
 import 'package:store_app/feautres/product/presentation/bloc/status_internet/status_internet_bloc.dart';
 import 'core/function/init_flutter.dart';
 import 'core/utils/go_router.dart';
 import 'core/utils/dependency_injection.dart' as di;
+import 'feautres/product/presentation/bloc/theme_app/theme_app_bloc.dart';
 
 Future<void> main() async {
   await initFlutter();
@@ -29,16 +29,28 @@ class StoreApp extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider(
+              create: (context) =>
+                  di.sl<ThemeAppBloc>()..add(CurrentThemeEvent()),
+            ),
+            BlocProvider(
               create: (context) => di.sl<GetCategoryBloc>()..add(GetCategory()),
             ),
             BlocProvider(
               create: (context) => di.sl<StatusInternetBloc>(),
             ),
           ],
-          child: MaterialApp.router(
-            routerConfig: AppRouter.router,
-            debugShowCheckedModeBanner: false,
-            theme: theme[AppTheme.dark],
+          child: BlocBuilder<ThemeAppBloc, ThemeAppState>(
+            builder: (context, state) {
+              if (state is ChangedThemeState) {
+                return MaterialApp.router(
+                  routerConfig: AppRouter.router,
+                  debugShowCheckedModeBanner: false,
+                  theme: state.changedTheme,
+                );
+              } else {
+                return const SizedBox();
+              }
+            },
           ),
         );
       },

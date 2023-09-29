@@ -5,6 +5,7 @@ import 'package:store_app/feautres/product/data/data_source/local_data_source.da
 import 'package:store_app/feautres/product/domain/repository/repo_category.dart';
 import 'package:store_app/feautres/product/domain/repository/repo_product.dart';
 import 'package:store_app/feautres/product/presentation/bloc/status_internet/status_internet_bloc.dart';
+import 'package:store_app/feautres/product/presentation/bloc/theme_app/theme_app_bloc.dart';
 
 import '../../feautres/product/presentation/bloc/get_all_products/get_product_of_category_bloc.dart';
 import 'api_services.dart';
@@ -20,6 +21,7 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
+  sl.registerFactory(() => ThemeAppBloc());
   sl.registerFactory(() => GetCategoryBloc(getCategoryUseCases: sl.call()));
   sl.registerFactory(
       () => AllProductsBloc(getProductOfCategoryUseCase: sl.call()));

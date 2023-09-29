@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
 class CustomElvatedButton extends StatelessWidget {
-  const CustomElvatedButton({super.key, this.onPressed, required this.title});
+  const CustomElvatedButton(
+      {super.key, required this.onPressed, required this.title});
   final void Function()? onPressed;
   final String title;
   @override
