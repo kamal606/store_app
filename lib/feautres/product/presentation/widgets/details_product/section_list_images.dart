@@ -14,6 +14,7 @@ class SectionListImages extends StatelessWidget {
       height: 80.h,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
+        clipBehavior: Clip.none,
         scrollDirection: Axis.horizontal,
         itemCount: productEntity.subImage.length,
         itemBuilder: ((context, i) {
@@ -26,14 +27,8 @@ class SectionListImages extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50.h),
                 child: CachedNetworkImage(
-                  progressIndicatorBuilder: (context, url, progress) =>
-                      const Center(
-                    child: CircularProgressIndicator(
-                      color: AppColor.darkGrey,
-                    ),
-                  ),
                   imageUrl: productEntity.subImage[i],
-                  fadeInCurve: Curves.bounceOut,
+                  fadeInCurve: Curves.easeIn,
                   fit: BoxFit.fill,
                   width: 100.h,
                 ),

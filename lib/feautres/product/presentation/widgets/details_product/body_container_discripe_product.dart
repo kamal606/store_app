@@ -14,12 +14,6 @@ class BodyContainerDiscripeProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 240,
-        padding: EdgeInsets.only(
-          left: 20.h,
-          right: 20.h,
-          top: 20.h,
-        ),
         decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.primaryContainer,
           boxShadow: [
@@ -34,36 +28,32 @@ class BodyContainerDiscripeProduct extends StatelessWidget {
             topRight: Radius.circular(20.h),
           ),
         ),
-        child: CustomScrollView(
-          slivers: [
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  SectionTitleWithQuantity(productEntity: productEntity),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  SectionDescription(productEntity: productEntity),
-                  SizedBox(
-                    height: 30.h,
-                  ),
-                  SectionListImages(productEntity: productEntity),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  const Spacer(),
-                  SectionPriceAndButtonCart(productEntity: productEntity),
-                  SizedBox(
-                    height: 70.h,
-                  ),
-                ],
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.h, vertical: 4.h),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 5.h,
               ),
-            )
-          ],
+              SectionTitleWithQuantity(productEntity: productEntity),
+              SizedBox(
+                height: 20.h,
+              ),
+              SectionDescription(productEntity: productEntity),
+              SizedBox(
+                height: 30.h,
+              ),
+              SectionListImages(productEntity: productEntity),
+              SizedBox(
+                height: 20.h,
+              ),
+              const Spacer(),
+              SectionPriceAndButtonCart(productEntity: productEntity),
+              SizedBox(
+                height: 10.h,
+              ),
+            ],
+          ),
         ));
   }
 }

@@ -12,18 +12,23 @@ class DetailsProductViewBody extends StatelessWidget {
   final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Expanded(
-            flex: 1,
-            child: SectionImage(
-              productEntity: productEntity,
-            )),
-        Expanded(
-            flex: 2,
-            child: BodyContainerDiscripeProduct(
-              productEntity: productEntity,
-            )),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            children: [
+              SectionImage(
+                productEntity: productEntity,
+              ),
+              Expanded(
+                  child: BodyContainerDiscripeProduct(
+                productEntity: productEntity,
+              )),
+            ],
+          ),
+        )
       ],
     );
   }
