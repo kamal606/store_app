@@ -5,7 +5,6 @@ import 'package:store_app/core/color/app_color.dart';
 
 import 'package:store_app/feautres/product/presentation/bloc/get_category/get_category_bloc.dart';
 import 'package:store_app/feautres/product/presentation/bloc/status_internet/status_internet_bloc.dart';
-import 'package:flutter/services.dart';
 import 'core/function/init_flutter.dart';
 import 'core/utils/go_router.dart';
 import 'core/utils/dependency_injection.dart' as di;
@@ -13,8 +12,7 @@ import 'core/utils/dependency_injection.dart' as di;
 Future<void> main() async {
   await initFlutter();
   await Future.delayed(const Duration(milliseconds: 300));
-  SystemChrome.setEnabledSystemUIMode(
-      overlays: [SystemUiOverlay.top], SystemUiMode.leanBack);
+
   runApp(const StoreApp());
 }
 

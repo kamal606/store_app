@@ -71,8 +71,7 @@ class CustomListProductHome extends StatelessWidget {
                     if (product.categoryProduct == categoryName) {
                       return InkWell(
                         onTap: () {
-                          GoRouter.of(context).push(
-                              AppRouter.detailsProductView,
+                          context.push(AppRouter.detailsProductView,
                               extra: state.products[i]);
                         },
                         child: CustomCardProduct(

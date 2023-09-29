@@ -6,7 +6,7 @@ import 'package:store_app/feautres/product/presentation/widgets/home/custom_list
 import 'package:store_app/feautres/product/presentation/widgets/home/list_category_home.dart';
 
 import '../../../../../core/classes/image_assets.dart';
-import '../../../../../core/widgets/custom_appbar.dart';
+import '../../../../../core/widgets/custom_sliver_appbar.dart';
 import '../../../../../core/widgets/custom_internet_status.dart';
 
 class HomeViewBody extends StatelessWidget {

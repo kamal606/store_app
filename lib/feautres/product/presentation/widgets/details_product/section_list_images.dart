@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 
-import '../../../../../core/shimmer_loading/shimmer_loading_list_image_details_products.dart';
 import '../../../domain/entities/product_entity.dart';
 
 class SectionListImages extends StatelessWidget {
@@ -28,7 +27,11 @@ class SectionListImages extends StatelessWidget {
                 borderRadius: BorderRadius.circular(50.h),
                 child: CachedNetworkImage(
                   progressIndicatorBuilder: (context, url, progress) =>
-                      const ShimmerLoadingListDetailsProduct(),
+                      const Center(
+                    child: CircularProgressIndicator(
+                      color: AppColor.darkGrey,
+                    ),
+                  ),
                   imageUrl: productEntity.subImage[i],
                   fadeInCurve: Curves.bounceOut,
                   fit: BoxFit.fill,

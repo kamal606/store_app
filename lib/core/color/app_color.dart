@@ -20,4 +20,13 @@ class AppColor {
   static const Color pink = Colors.pink;
   static const Color orange = Colors.orange;
   static const Color purple = Colors.purple;
+
+  //======================= linear gradient ======================
+  static LinearGradient linearGradientAppBar() {
+    return const LinearGradient(colors: [
+      AppColor.blacK,
+      AppColor.background,
+      AppColor.darkGrey,
+    ]);
+  }
 }
