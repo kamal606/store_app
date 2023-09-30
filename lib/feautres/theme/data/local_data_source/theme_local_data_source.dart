@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
-import '../../../../../core/classes/hive_const.dart';
-import '../../../../../core/utils/theme.dart';
+import 'package:store_app/feautres/theme/domain/model/theme.dart';
+import '../../../../core/classes/hive_const.dart';
 
 abstract class ThemeLocalDataSource {
   Future<Box> openBox();

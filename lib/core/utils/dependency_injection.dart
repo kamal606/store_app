@@ -1,9 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 import 'api_services.dart';
 import '../../feautres/products/data/data_source/local_data_source.dart/category_local_data_source.dart';
 import '../../feautres/products/data/data_source/local_data_source.dart/products_local_data_source.dart';
-import '../../feautres/products/data/data_source/local_data_source.dart/theme_local_data_source.dart';
+import '../../feautres/theme/data/local_data_source/theme_local_data_source.dart';
 import '../../feautres/products/data/data_source/remote_data_source/category_remote_data_source.dart';
 import '../../feautres/products/data/data_source/remote_data_source/product_of_category_remote_date_source.dart';
 import '../../feautres/products/data/repository/repo_category_impl.dart';
@@ -14,7 +15,6 @@ import '../../feautres/products/domain/use_cases/get_products_of_category_use_ca
 import '../../feautres/products/presentation/bloc/get_all_products/get_product_of_category_bloc.dart';
 import '../../feautres/products/presentation/bloc/get_category/get_category_bloc.dart';
 import '../../feautres/products/presentation/bloc/status_internet/status_internet_bloc.dart';
-import '../../feautres/products/presentation/bloc/theme_app/theme_app_bloc.dart';
 
 import '../../feautres/products/data/repository/repo_product_of_category_impl.dart';
 

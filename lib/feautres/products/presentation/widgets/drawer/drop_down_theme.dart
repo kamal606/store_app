@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../bloc/theme_app/theme_app_bloc.dart';
+import 'package:store_app/feautres/theme/domain/model/theme.dart';
+import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 
 import '../../../../../core/color/app_color.dart';
-import '../../../../../core/utils/theme.dart';
 
 class CustomDropDownButtonThemeApp extends StatelessWidget {
   const CustomDropDownButtonThemeApp({super.key});
