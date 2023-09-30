@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/feautres/theme/domain/model/theme.dart';
+import 'package:store_app/feautres/localization/domain/enum_locale.dart';
+import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
+
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
-import 'package:store_app/generated/l10n.dart';
 
 import '../../../../../core/color/app_color.dart';
 
@@ -17,7 +18,7 @@ class CustomDropDownButtonThemeApp extends StatelessWidget {
         return DropdownButtonHideUnderline(
           child: DropdownButton(
               dropdownColor: AppColor.blue,
-              items: [S.of(context).darkMode, S.of(context).lightMode]
+              items: [AppLanguage.arabic.name, AppLanguage.english.name]
                   .map<DropdownMenuItem<String>>((e) => DropdownMenuItem(
                         value: e,
                         child: Container(
@@ -34,13 +35,14 @@ class CustomDropDownButtonThemeApp extends StatelessWidget {
                       ))
                   .toList(),
               onChanged: (val) {
-                if (val == S.of(context).darkMode) {
-                  BlocProvider.of<ThemeAppBloc>(context)
-                      .add(const ChangeThemeEvent(changeTheme: AppTheme.dark));
+                if (val == AppLanguage.arabic.name) {
+                  BlocProvider.of<LocaleBloc>(context).add(
+                      const ChangeLocaleEvent(appLanguage: AppLanguage.arabic));
                 }
-                if (val == S.of(context).lightMode) {
-                  BlocProvider.of<ThemeAppBloc>(context)
-                      .add(const ChangeThemeEvent(changeTheme: AppTheme.light));
+                if (val == AppLanguage.english.name) {
+                  BlocProvider.of<LocaleBloc>(context).add(
+                      const ChangeLocaleEvent(
+                          appLanguage: AppLanguage.english));
                 }
               }),
         );

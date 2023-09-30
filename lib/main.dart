@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
+
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 import 'package:store_app/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -34,6 +36,10 @@ class StoreApp extends StatelessWidget {
                   di.sl<ThemeAppBloc>()..add(CurrentThemeEvent()),
             ),
             BlocProvider(
+              create: (context) =>
+                  di.sl<LocaleBloc>()..add(CurrentLocaleEvent()),
+            ),
+            BlocProvider(
               create: (context) => di.sl<GetCategoryBloc>()..add(GetCategory()),
             ),
             BlocProvider(
@@ -43,18 +49,26 @@ class StoreApp extends StatelessWidget {
           child: BlocBuilder<ThemeAppBloc, ThemeAppState>(
             builder: (context, state) {
               if (state is ChangedThemeState) {
-                return MaterialApp.router(
-                  localizationsDelegates: const [
-                    S.delegate,
-                    GlobalMaterialLocalizations.delegate,
-                    GlobalWidgetsLocalizations.delegate,
-                    GlobalCupertinoLocalizations.delegate,
-                  ],
-                  supportedLocales: S.delegate.supportedLocales,
-                  locale: const Locale("ar"),
-                  routerConfig: AppRouter.router,
-                  debugShowCheckedModeBanner: false,
-                  theme: state.changedTheme,
+                return BlocBuilder<LocaleBloc, LocaleState>(
+                  builder: (context, stateLocale) {
+                    if (stateLocale is ChangeLocaleState) {
+                      return MaterialApp.router(
+                        localizationsDelegates: const [
+                          S.delegate,
+                          GlobalMaterialLocalizations.delegate,
+                          GlobalWidgetsLocalizations.delegate,
+                          GlobalCupertinoLocalizations.delegate,
+                        ],
+                        supportedLocales: S.delegate.supportedLocales,
+                        routerConfig: AppRouter.router,
+                        debugShowCheckedModeBanner: false,
+                        theme: state.changedTheme,
+                        locale: stateLocale.locale,
+                      );
+                    } else {
+                      return const SizedBox();
+                    }
+                  },
                 );
               } else {
                 return const SizedBox();

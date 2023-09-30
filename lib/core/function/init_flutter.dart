@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:store_app/feautres/localization/domain/enum_locale.dart';
 import 'package:store_app/feautres/theme/domain/model/theme.dart';
 import '../utils/bloc_obeserver.dart';
 
@@ -17,4 +18,5 @@ Future<void> initFlutter() async {
   Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
   Hive.registerAdapter<ProductEntity>(ProductEntityAdapter());
   Hive.registerAdapter<AppTheme>(AppThemeAdapter());
+  Hive.registerAdapter<AppLanguage>(AppLanguageAdapter());
 }

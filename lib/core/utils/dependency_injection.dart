@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:store_app/feautres/localization/data/local_data_source/locale_local_data_source.dart';
+import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 import 'api_services.dart';
 import '../../feautres/products/data/data_source/local_data_source.dart/category_local_data_source.dart';
@@ -27,8 +29,10 @@ Future<void> initGetIt() async {
   sl.registerFactory(
       () => AllProductsBloc(getProductOfCategoryUseCase: sl.call()));
   sl.registerFactory(() => StatusInternetBloc());
+  sl.registerFactory(() => LocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
 
+  sl.registerLazySingleton(() => LocaleLocalDataSourceImpl());
   sl.registerLazySingleton(() => ThemeLocalDataSourceImpl());
   sl.registerLazySingleton(() => AllProductsLocalDataSourceImpl());
   sl.registerLazySingleton(() => CategoryLocalDataSourceImpl());

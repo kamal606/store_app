@@ -12,6 +12,7 @@ class DrawerBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomDropDownButtonThemeApp(),
+          CustomDropDownButtonThemeApp(),
         ],
       ),
     );
