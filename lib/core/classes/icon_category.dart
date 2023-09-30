@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/classes/image_assets.dart';
+import '../color/app_color.dart';
+import 'image_assets.dart';
 
 class AppCategoryIcon {
   final String icon;

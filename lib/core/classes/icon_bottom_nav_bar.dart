@@ -1,4 +1,4 @@
-import 'package:store_app/core/classes/image_assets.dart';
+import 'image_assets.dart';
 
 class NavBarIcon {
   final String nameIcon;

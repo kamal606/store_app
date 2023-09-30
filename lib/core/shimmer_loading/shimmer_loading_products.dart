@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:store_app/core/color/app_color.dart';
+import '../color/app_color.dart';
 
 class ShimmerLoadingProducts extends StatelessWidget {
   const ShimmerLoadingProducts({super.key});

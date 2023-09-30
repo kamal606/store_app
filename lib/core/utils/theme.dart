@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
-import 'package:store_app/core/color/app_color.dart';
+import '../color/app_color.dart';
 part 'theme.g.dart';
 
 @HiveType(typeId: 2)

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
+import '../color/app_color.dart';
+import '../../feautres/products/presentation/bloc/status_internet/status_internet_bloc.dart';
 
-import '../../feautres/product/presentation/bloc/status_internet/status_internet_bloc.dart';
 import '../fonts/app_font.dart';
 
 class CustomInternetStatus extends StatelessWidget {

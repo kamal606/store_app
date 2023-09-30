@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/classes/route_name.dart';
+import '../../../../core/classes/route_name.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/fonts/app_font.dart';
+import '../fonts/app_font.dart';
 
 class CustomElvatedButton extends StatelessWidget {
   const CustomElvatedButton(
