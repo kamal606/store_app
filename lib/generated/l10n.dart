@@ -49,6 +49,228 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Description`
+  String get description {
+    return Intl.message(
+      'Description',
+      name: 'description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stock`
+  String get stock {
+    return Intl.message(
+      'Stock',
+      name: 'stock',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Price`
+  String get totalPrice {
+    return Intl.message(
+      'Total Price',
+      name: 'totalPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to cart`
+  String get addToCart {
+    return Intl.message(
+      'Add to cart',
+      name: 'addToCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See All`
+  String get seeAll {
+    return Intl.message(
+      'See All',
+      name: 'seeAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cart`
+  String get cart {
+    return Intl.message(
+      'Cart',
+      name: 'cart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorite`
+  String get favorite {
+    return Intl.message(
+      'Favorite',
+      name: 'favorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sale Product`
+  String get saleProduct {
+    return Intl.message(
+      'Sale Product',
+      name: 'saleProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Arrivals`
+  String get newArrivals {
+    return Intl.message(
+      'New Arrivals',
+      name: 'newArrivals',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recommended`
+  String get recommended {
+    return Intl.message(
+      'Recommended',
+      name: 'recommended',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message(
+      'Categories',
+      name: 'categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our Ecommerce App`
+  String get ourEcommerceApp {
+    return Intl.message(
+      'Our Ecommerce App',
+      name: 'ourEcommerceApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search Product Name`
+  String get searchProductName {
+    return Intl.message(
+      'Search Product Name',
+      name: 'searchProductName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light Mode`
+  String get lightMode {
+    return Intl.message(
+      'Light Mode',
+      name: 'lightMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'darkMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  // skipped getter for the '50%Off' key
+
+  /// `On everything today`
+  String get onEverythingToday {
+    return Intl.message(
+      'On everything today',
+      name: 'onEverythingToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `With code:FSCREATION`
+  String get withCode {
+    return Intl.message(
+      'With code:FSCREATION',
+      name: 'withCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get ready`
+  String get getReady {
+    return Intl.message(
+      'Get ready',
+      name: 'getReady',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `to start with us`
+  String get toStartWithUs {
+    return Intl.message(
+      'to start with us',
+      name: 'toStartWithUs',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +279,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

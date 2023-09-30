@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/classes/icons.dart';
 import '../../../../../core/fonts/app_font.dart';
 
@@ -16,30 +17,30 @@ class CustomBottomNavBar extends StatelessWidget {
           .bottomNavigationBarTheme
           .selectedLabelStyle!
           .backgroundColor,
-      items: const <BottomNavigationBarItem>[
+      items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(
+          icon: const Icon(
             AppIcon.home,
           ),
-          label: 'Home',
+          label: S.of(context).home,
         ),
         BottomNavigationBarItem(
-          icon: FaIcon(
+          icon: const FaIcon(
             AppIcon.cart,
           ),
-          label: 'Cart',
+          label: S.of(context).cart,
         ),
         BottomNavigationBarItem(
-          icon: FaIcon(
+          icon: const FaIcon(
             AppIcon.favorite,
           ),
-          label: 'Favorite',
+          label: S.of(context).favorite,
         ),
         BottomNavigationBarItem(
-          icon: FaIcon(
+          icon: const FaIcon(
             AppIcon.profile,
           ),
-          label: 'Profile',
+          label: S.of(context).profile,
         ),
       ],
       currentIndex: currentIndex,

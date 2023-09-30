@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 import '../color/app_color.dart';
 import '../../feautres/products/presentation/widgets/home/section_form_field_and_title.dart';
 
@@ -24,7 +25,11 @@ class CustomSliverAppBar extends StatelessWidget
     return SliverAppBar(
       leading: isLeading
           ? Padding(
-              padding: EdgeInsets.only(left: 15.h, bottom: 5.h),
+              padding: EdgeInsets.only(
+                left: isArabicLocale() ? 0 : 15.h,
+                right: isArabicLocale() ? 15.h : 0,
+                bottom: 5.h,
+              ),
               child: CircleAvatar(
                 backgroundColor: AppColor.white,
                 child: IconButton(
@@ -40,7 +45,10 @@ class CustomSliverAppBar extends StatelessWidget
           : null,
       actions: [
         Padding(
-          padding: EdgeInsets.only(right: 15.h, bottom: 5.h),
+          padding: EdgeInsets.only(
+              left: isArabicLocale() ? 15.h : 0,
+              right: isArabicLocale() ? 0 : 15.h,
+              bottom: 5.h),
           child: action,
         ),
       ],

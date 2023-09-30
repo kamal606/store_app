@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/classes/icons.dart';
@@ -14,16 +15,16 @@ class SectionTitleWithFormField extends StatelessWidget {
       children: [
         ListTile(
           title: Text(
-            "Welcome ‌🙋",
+            "${S.of(context).welcome} ‌🙋",
             style: AppFonts.bold_14.copyWith(color: AppColor.white),
           ),
           subtitle: Text(
-            "Our Ecommerce App",
+            S.of(context).ourEcommerceApp,
             style: AppFonts.semiBold_12.copyWith(color: AppColor.white),
           ),
         ),
         CutomTextFormField(
-          hint: "Search Product Name",
+          hint: S.of(context).searchProductName,
           prefixIcon: AppIcon.search,
           onPressed: () {},
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/widgets/custom_elvated_button.dart';
 
@@ -16,7 +17,7 @@ class SectionPriceAndButtonCart extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Total Price",
+              S.of(context).totalPrice,
               style: AppFonts.regular_9,
             ),
             Text(
@@ -27,7 +28,7 @@ class SectionPriceAndButtonCart extends StatelessWidget {
         ),
         CustomElvatedButton(
           onPressed: () {},
-          title: "Add to cart",
+          title: S.of(context).addToCart,
         )
       ],
     );

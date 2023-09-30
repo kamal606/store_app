@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
-
+import 'package:store_app/generated/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'core/function/init_flutter.dart';
 import 'core/utils/dependency_injection.dart' as di;
 import 'core/utils/go_router.dart';
@@ -43,6 +44,14 @@ class StoreApp extends StatelessWidget {
             builder: (context, state) {
               if (state is ChangedThemeState) {
                 return MaterialApp.router(
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                  locale: const Locale("ar"),
                   routerConfig: AppRouter.router,
                   debugShowCheckedModeBanner: false,
                   theme: state.changedTheme,

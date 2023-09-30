@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/classes/image_assets.dart';
 
@@ -27,7 +28,9 @@ class CustomCarouseSlider extends StatelessWidget {
         return Builder(
           builder: (BuildContext context) {
             return Stack(
-              alignment: Alignment.centerLeft,
+              alignment: isArabicLocale()
+                  ? Alignment.centerRight
+                  : Alignment.centerLeft,
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(16.r)),
@@ -38,8 +41,6 @@ class CustomCarouseSlider extends StatelessWidget {
                 Positioned(
                   left: 10.h,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(i.title,
                           style:
@@ -80,14 +81,16 @@ class AppSlider {
   static List<AppSlider> sliderImage = [
     AppSlider(
       imageName: AppAssets.slider1,
-      title: "50% Off",
-      subTitle: "On everything today",
-      code: " With code:FSCREATION",
+      title: isArabicLocale() ? "خصم %50" : "50% Off",
+      subTitle: isArabicLocale() ? "على كل شيء اليوم" : "On everything today",
+      code: isArabicLocale()
+          ? "باستخدام الكود: FSCREATION"
+          : " With code:FSCREATION",
     ),
     AppSlider(
       imageName: AppAssets.slider2,
-      title: "Get ready",
-      subTitle: "to start with us",
+      title: isArabicLocale() ? "استعد" : "Get ready",
+      subTitle: isArabicLocale() ? "للبدء معنا" : "to start with us",
       code: "",
     ),
   ];

@@ -21,5 +21,32 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
+        "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+        "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
+        "getReady": MessageLookupByLibrary.simpleMessage("Get ready"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
+        "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
+        "onEverythingToday":
+            MessageLookupByLibrary.simpleMessage("On everything today"),
+        "ourEcommerceApp":
+            MessageLookupByLibrary.simpleMessage("Our Ecommerce App"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
+        "saleProduct": MessageLookupByLibrary.simpleMessage("Sale Product"),
+        "searchProductName":
+            MessageLookupByLibrary.simpleMessage("Search Product Name"),
+        "seeAll": MessageLookupByLibrary.simpleMessage("See All"),
+        "stock": MessageLookupByLibrary.simpleMessage("Stock"),
+        "toStartWithUs":
+            MessageLookupByLibrary.simpleMessage("to start with us"),
+        "totalPrice": MessageLookupByLibrary.simpleMessage("Total Price"),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "withCode": MessageLookupByLibrary.simpleMessage("With code:FSCREATION")
+      };
 }

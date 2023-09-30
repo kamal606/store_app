@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 import '../../../../../core/color/app_color.dart';
 
 import '../../../domain/entities/product_entity.dart';
@@ -19,7 +20,10 @@ class SectionListImages extends StatelessWidget {
         itemCount: productEntity.subImage.length,
         itemBuilder: ((context, i) {
           return Padding(
-            padding: EdgeInsets.only(right: 10.h),
+            padding: EdgeInsets.only(
+              right: isArabicLocale() ? 0 : 10.h,
+              left: isArabicLocale() ? 10.h : 0,
+            ),
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50.h),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 import '../color/app_color.dart';
 
 class ShimmerLoadingProducts extends StatelessWidget {
@@ -26,7 +27,10 @@ class ShimmerLoadingProducts extends StatelessWidget {
                         Column(
                           children: [
                             Container(
-                              margin: EdgeInsets.only(right: 20.h),
+                              margin: EdgeInsets.only(
+                                right: isArabicLocale() ? 0 : 20.w,
+                                left: isArabicLocale() ? 20.w : 0,
+                              ),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8.r),
                                 color: AppColor.grey,

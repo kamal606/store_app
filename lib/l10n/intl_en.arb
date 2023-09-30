@@ -1,1 +1,28 @@
-{}
+{
+ "description":"Description",
+ "stock":"Stock",
+ "totalPrice":"Total Price",
+ "addToCart":"Add to cart",
+ "seeAll":"See All",
+ "home":"Home",
+ "cart":"Cart",
+ "favorite":"Favorite",
+ "profile":"Profile",
+ "saleProduct":"Sale Product",
+ "newArrivals":"New Arrivals",
+ "recommended":"Recommended",
+ "categories":"Categories",
+ "welcome":"Welcome",
+ "ourEcommerceApp":"Our Ecommerce App",
+ "searchProductName":"Search Product Name",
+ "lightMode":"Light Mode",
+ "darkMode":"Dark Mode",
+ "50%Off":"50% Off",
+ "onEverythingToday":"On everything today",
+ "withCode":"With code:FSCREATION",
+ "getReady":"Get ready",
+ "toStartWithUs":"to start with us"
+
+}
+
+

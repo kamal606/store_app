@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
+import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 
 import '../../../../../core/shimmer_loading/shimmer_loading_category.dart';
@@ -23,11 +25,11 @@ class ListCategoryHome extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Categories",
+              S.of(context).categories,
               style: AppFonts.semiBold_18,
             ),
             Text(
-              "See All",
+              S.of(context).seeAll,
               style: AppFonts.semiBold_14,
             )
           ],
@@ -55,7 +57,10 @@ class ListCategoryHome extends StatelessWidget {
                         return Row(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(right: 30.w),
+                              padding: EdgeInsets.only(
+                                right: isArabicLocale() ? 0 : 30.w,
+                                left: isArabicLocale() ? 30.w : 0,
+                              ),
                               child: InkWell(
                                 onTap: () {},
                                 child: CustomBoxCategory(

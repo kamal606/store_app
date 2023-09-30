@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/classes/image_assets.dart';
 import '../../../../../core/fonts/app_font.dart';
@@ -31,12 +32,15 @@ class CustomCardProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      alignment: Alignment.topLeft,
+      alignment: isArabicLocale() ? Alignment.topRight : Alignment.topLeft,
       children: [
         Container(
           padding: EdgeInsets.all(5.h),
           width: 155.h,
-          margin: EdgeInsets.only(right: 20.h),
+          margin: EdgeInsets.only(
+            right: isArabicLocale() ? 0 : 20.h,
+            left: isArabicLocale() ? 20.h : 0,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [

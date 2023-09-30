@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/feautres/theme/domain/model/theme.dart';
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
+import 'package:store_app/generated/l10n.dart';
 
 import '../../../../../core/color/app_color.dart';
 
@@ -16,7 +17,7 @@ class CustomDropDownButtonThemeApp extends StatelessWidget {
         return DropdownButtonHideUnderline(
           child: DropdownButton(
               dropdownColor: AppColor.blue,
-              items: [AppTheme.dark.name, AppTheme.light.name]
+              items: [S.of(context).darkMode, S.of(context).lightMode]
                   .map<DropdownMenuItem<String>>((e) => DropdownMenuItem(
                         value: e,
                         child: Container(
@@ -33,11 +34,11 @@ class CustomDropDownButtonThemeApp extends StatelessWidget {
                       ))
                   .toList(),
               onChanged: (val) {
-                if (val == AppTheme.dark.name) {
+                if (val == S.of(context).darkMode) {
                   BlocProvider.of<ThemeAppBloc>(context)
                       .add(const ChangeThemeEvent(changeTheme: AppTheme.dark));
                 }
-                if (val == AppTheme.light.name) {
+                if (val == S.of(context).lightMode) {
                   BlocProvider.of<ThemeAppBloc>(context)
                       .add(const ChangeThemeEvent(changeTheme: AppTheme.light));
                 }

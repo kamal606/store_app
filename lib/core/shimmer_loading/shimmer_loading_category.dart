@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 import '../color/app_color.dart';
 import '../classes/icon_category.dart';
 
@@ -25,7 +26,10 @@ class ShimmerLoadingCategory extends StatelessWidget {
                     return Row(
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(right: 40.w),
+                          padding: EdgeInsets.only(
+                            right: isArabicLocale() ? 0 : 40.w,
+                            left: isArabicLocale() ? 40.w : 0,
+                          ),
                           child: Column(
                             children: [
                               Container(

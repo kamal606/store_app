@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import 'carouse_slider.dart';
 import 'custom_list_product_home.dart';
@@ -31,25 +32,25 @@ class HomeViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: const Column(
+            child: Column(
               children: [
-                CustomCarouseSlider(),
-                ListCategoryHome(),
+                const CustomCarouseSlider(),
+                const ListCategoryHome(),
                 CustomListProductHome(
-                  titleList: "Sale Product",
+                  titleList: S.of(context).saleProduct,
                   categoryName: "laptops",
                   colorStatus: AppColor.erorr,
                   isStatus: true,
                   isDiscount: true,
                 ),
                 CustomListProductHome(
-                  titleList: "New Arrivals",
+                  titleList: S.of(context).newArrivals,
                   categoryName: "fragrances",
                   isStatus: true,
                   titleStatus: "NEW",
                 ),
                 CustomListProductHome(
-                  titleList: "Recommended",
+                  titleList: S.of(context).recommended,
                   categoryName: "skincare",
                   colorStatus: AppColor.blacK,
                 ),
