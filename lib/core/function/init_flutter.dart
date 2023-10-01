@@ -18,5 +18,5 @@ Future<void> initFlutter() async {
   Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
   Hive.registerAdapter<ProductEntity>(ProductEntityAdapter());
   Hive.registerAdapter<AppTheme>(AppThemeAdapter());
-  Hive.registerAdapter<AppLanguage>(AppLanguageAdapter());
+  Hive.registerAdapter<AppLocale>(AppLanguageAdapter());
 }

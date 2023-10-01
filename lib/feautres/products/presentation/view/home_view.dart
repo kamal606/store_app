@@ -19,7 +19,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   int _selectedIndex = 0;
-  static final List<Widget> _widgetOptions = <Widget>[
+  final List<Widget> _widgetOptions = [
     const HomeViewBody(),
     const CartView(),
     const FavoriteView(),

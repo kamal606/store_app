@@ -10,7 +10,7 @@ sealed class LocaleEvent extends Equatable {
 class CurrentLocaleEvent extends LocaleEvent {}
 
 class ChangeLocaleEvent extends LocaleEvent {
-  final AppLanguage appLanguage;
+  final AppLocale appLanguage;
 
   const ChangeLocaleEvent({required this.appLanguage});
   @override

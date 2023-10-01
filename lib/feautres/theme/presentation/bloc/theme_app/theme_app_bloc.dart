@@ -9,9 +9,9 @@ import '../../../../theme/data/local_data_source/theme_local_data_source.dart';
 part 'theme_app_event.dart';
 part 'theme_app_state.dart';
 
-class ThemeAppBloc extends Bloc<ThemeAppEvent, ThemeAppState> {
+class AppThemeBloc extends Bloc<ThemeAppEvent, AppThemeState> {
   final ThemeLocalDataSourceImpl themeLocalDataSourceImpl;
-  ThemeAppBloc({required this.themeLocalDataSourceImpl})
+  AppThemeBloc({required this.themeLocalDataSourceImpl})
       : super(ThemeAppInitial()) {
     on<ThemeAppEvent>((event, emit) async {
       if (event is CurrentThemeEvent) {

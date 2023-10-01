@@ -271,6 +271,16 @@ class S {
       args: [],
     );
   }
+
+  /// `NEW`
+  String get newArrival {
+    return Intl.message(
+      'NEW',
+      name: 'newArrival',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

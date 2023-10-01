@@ -6,29 +6,29 @@ part of 'enum_locale.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class AppLanguageAdapter extends TypeAdapter<AppLanguage> {
+class AppLanguageAdapter extends TypeAdapter<AppLocale> {
   @override
   final int typeId = 3;
 
   @override
-  AppLanguage read(BinaryReader reader) {
+  AppLocale read(BinaryReader reader) {
     switch (reader.readByte()) {
       case 0:
-        return AppLanguage.arabic;
+        return AppLocale.arabic;
       case 1:
-        return AppLanguage.english;
+        return AppLocale.english;
       default:
-        return AppLanguage.arabic;
+        return AppLocale.arabic;
     }
   }
 
   @override
-  void write(BinaryWriter writer, AppLanguage obj) {
+  void write(BinaryWriter writer, AppLocale obj) {
     switch (obj) {
-      case AppLanguage.arabic:
+      case AppLocale.arabic:
         writer.writeByte(0);
         break;
-      case AppLanguage.english:
+      case AppLocale.english:
         writer.writeByte(1);
         break;
     }

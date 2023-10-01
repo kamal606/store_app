@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/classes/icons.dart';
 import '../../../../../core/fonts/app_font.dart';

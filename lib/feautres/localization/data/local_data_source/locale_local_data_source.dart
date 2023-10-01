@@ -4,8 +4,8 @@ import 'package:store_app/feautres/localization/domain/enum_locale.dart';
 
 abstract class LocaleLocalDataSource {
   Future<Box> openBox();
-  Future<void> addLocale(Box box, AppLanguage appLanguage);
-  Future<AppLanguage> getLocale(Box box);
+  Future<void> addLocale(Box box, AppLocale appLanguage);
+  Future<AppLocale> getLocale(Box box);
 }
 
 class LocaleLocalDataSourceImpl implements LocaleLocalDataSource {
@@ -16,15 +16,15 @@ class LocaleLocalDataSourceImpl implements LocaleLocalDataSource {
   }
 
   @override
-  Future<void> addLocale(Box box, AppLanguage appLanguage) async {
+  Future<void> addLocale(Box box, AppLocale appLanguage) async {
     await box.put(AppHive.locale, appLanguage);
   }
 
   @override
-  Future<AppLanguage> getLocale(Box box) async {
+  Future<AppLocale> getLocale(Box box) async {
     final locale = box.get(AppHive.locale);
     if (locale == null) {
-      return AppLanguage.english;
+      return AppLocale.english;
     } else {
       return locale;
     }

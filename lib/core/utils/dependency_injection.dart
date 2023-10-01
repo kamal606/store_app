@@ -24,12 +24,12 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
-  sl.registerFactory(() => ThemeAppBloc(themeLocalDataSourceImpl: sl.call()));
+  sl.registerFactory(() => AppThemeBloc(themeLocalDataSourceImpl: sl.call()));
   sl.registerFactory(() => GetCategoryBloc(getCategoryUseCases: sl.call()));
   sl.registerFactory(
       () => AllProductsBloc(getProductOfCategoryUseCase: sl.call()));
   sl.registerFactory(() => StatusInternetBloc());
-  sl.registerFactory(() => LocaleBloc(localeLocalDataSourceImpl: sl.call()));
+  sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
 
   sl.registerLazySingleton(() => LocaleLocalDataSourceImpl());

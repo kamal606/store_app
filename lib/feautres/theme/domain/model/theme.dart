@@ -30,6 +30,7 @@ Map<AppTheme, ThemeData> theme = {
       selectedIconTheme: IconThemeData(color: AppColor.white),
       unselectedIconTheme: IconThemeData(color: AppColor.grey),
       selectedLabelStyle: TextStyle(backgroundColor: AppColor.white),
+      backgroundColor: AppColor.blacK,
     ),
   ),
   AppTheme.light: ThemeData(

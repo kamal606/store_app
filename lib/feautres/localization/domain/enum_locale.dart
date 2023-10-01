@@ -4,17 +4,17 @@ import 'package:hive_flutter/adapters.dart';
 part 'enum_locale.g.dart';
 
 @HiveType(typeId: 3)
-enum AppLanguage {
+enum AppLocale {
   @HiveField(0)
   arabic("Arabic"),
   @HiveField(1)
   english("English");
 
-  const AppLanguage(this.name);
+  const AppLocale(this.name);
   final String name;
 }
 
-Map<AppLanguage, Locale> language = {
-  AppLanguage.arabic: const Locale("ar"),
-  AppLanguage.english: const Locale("en"),
+Map<AppLocale, Locale> language = {
+  AppLocale.arabic: const Locale("ar"),
+  AppLocale.english: const Locale("en"),
 };

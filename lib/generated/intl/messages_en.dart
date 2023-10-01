@@ -31,6 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "getReady": MessageLookupByLibrary.simpleMessage("Get ready"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
+        "newArrival": MessageLookupByLibrary.simpleMessage("NEW"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
         "onEverythingToday":
             MessageLookupByLibrary.simpleMessage("On everything today"),

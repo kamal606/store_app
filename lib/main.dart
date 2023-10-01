@@ -33,11 +33,11 @@ class StoreApp extends StatelessWidget {
           providers: [
             BlocProvider(
               create: (context) =>
-                  di.sl<ThemeAppBloc>()..add(CurrentThemeEvent()),
+                  di.sl<AppThemeBloc>()..add(CurrentThemeEvent()),
             ),
             BlocProvider(
               create: (context) =>
-                  di.sl<LocaleBloc>()..add(CurrentLocaleEvent()),
+                  di.sl<AppLocaleBloc>()..add(CurrentLocaleEvent()),
             ),
             BlocProvider(
               create: (context) => di.sl<GetCategoryBloc>()..add(GetCategory()),
@@ -46,10 +46,10 @@ class StoreApp extends StatelessWidget {
               create: (context) => di.sl<StatusInternetBloc>(),
             ),
           ],
-          child: BlocBuilder<ThemeAppBloc, ThemeAppState>(
+          child: BlocBuilder<AppThemeBloc, AppThemeState>(
             builder: (context, state) {
               if (state is ChangedThemeState) {
-                return BlocBuilder<LocaleBloc, LocaleState>(
+                return BlocBuilder<AppLocaleBloc, LocaleState>(
                   builder: (context, stateLocale) {
                     if (stateLocale is ChangeLocaleState) {
                       return MaterialApp.router(

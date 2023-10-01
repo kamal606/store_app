@@ -17,4 +17,7 @@ abstract class AppIcon {
   static const IconData minus = FontAwesomeIcons.minus;
   static const IconData arrowLeft = FontAwesomeIcons.arrowLeftLong;
   static const IconData arrowRight = FontAwesomeIcons.arrowRightLong;
+  static const IconData settings = FontAwesomeIcons.gear;
+  static const IconData signOut = FontAwesomeIcons.arrowRightFromBracket;
+  static const IconData about = FontAwesomeIcons.circleInfo;
 }

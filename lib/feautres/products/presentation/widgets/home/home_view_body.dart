@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import 'carouse_slider.dart';
@@ -47,7 +48,7 @@ class HomeViewBody extends StatelessWidget {
                   titleList: S.of(context).newArrivals,
                   categoryName: "fragrances",
                   isStatus: true,
-                  titleStatus: "NEW",
+                  titleStatus: S.of(context).newArrival,
                 ),
                 CustomListProductHome(
                   titleList: S.of(context).recommended,
