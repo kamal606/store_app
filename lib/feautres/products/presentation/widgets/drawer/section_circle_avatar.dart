@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 
 class SectionCircleAvatar extends StatelessWidget {
   const SectionCircleAvatar({super.key, required this.isDarkTheme});
@@ -11,7 +12,7 @@ class SectionCircleAvatar extends StatelessWidget {
       right: -30.h,
       top: -60.h,
       child: Stack(
-        alignment: Alignment.topLeft,
+        alignment: isArabicLocale() ? Alignment.topRight : Alignment.topLeft,
         children: [
           CircleAvatar(
             radius: 200.h,

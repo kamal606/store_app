@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 import 'package:store_app/feautres/localization/domain/enum_locale.dart';
 import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 import 'package:store_app/feautres/products/presentation/widgets/drawer/section_circle_avatar.dart';
@@ -34,7 +35,10 @@ class DrawerBody extends StatelessWidget {
                     children: [
                       SectionCircleAvatar(isDarkTheme: isDarkTheme),
                       Padding(
-                        padding: EdgeInsets.only(left: 20.h, top: 50.h),
+                        padding: EdgeInsets.only(
+                            left: isArabicLocale() ? 0 : 20.h,
+                            right: isArabicLocale() ? 20.h : 0,
+                            top: 50.h),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

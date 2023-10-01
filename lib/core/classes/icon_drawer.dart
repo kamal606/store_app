@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
 
 class ItemsDrawer {
   final IconData nameIcon;
@@ -23,16 +22,9 @@ class ItemsDrawer {
         colorIcon = colorIcon ?? AppColor.darkGrey;
 
   static List<ItemsDrawer> itemsDrawer = [
-    ItemsDrawer(
-        nameIcon: AppIcon.home,
-        title: isArabicLocale() ? "القائمة الرئيسية" : "Home"),
-    ItemsDrawer(
-        nameIcon: AppIcon.profile,
-        title: isArabicLocale() ? "الملف الشخصي" : "Profile"),
-    ItemsDrawer(
-        nameIcon: AppIcon.settings,
-        title: isArabicLocale() ? "الاعدادت" : "Settings"),
-    ItemsDrawer(
-        nameIcon: AppIcon.about, title: isArabicLocale() ? "حول" : "About"),
+    ItemsDrawer(nameIcon: AppIcon.home, title: "Home"),
+    ItemsDrawer(nameIcon: AppIcon.profile, title: "Profile"),
+    ItemsDrawer(nameIcon: AppIcon.settings, title: "Settings"),
+    ItemsDrawer(nameIcon: AppIcon.about, title: "About"),
   ];
 }
