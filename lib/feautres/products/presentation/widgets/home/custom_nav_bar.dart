@@ -13,7 +13,6 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      selectedLabelStyle: AppFonts.regular_11,
       fixedColor: Theme.of(context)
           .bottomNavigationBarTheme
           .selectedLabelStyle!
@@ -47,6 +46,9 @@ class CustomBottomNavBar extends StatelessWidget {
       currentIndex: currentIndex,
       onTap: onTap,
       elevation: 2.h,
+      iconSize: 16.h,
+      unselectedLabelStyle: AppFonts.regular_10,
+      selectedLabelStyle: AppFonts.regular_10,
       type: BottomNavigationBarType.fixed,
     );
   }
