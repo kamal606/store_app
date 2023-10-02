@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 
+import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 import 'package:store_app/generated/l10n.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'core/function/init_flutter.dart';
 import 'core/utils/dependency_injection.dart' as di;
 import 'core/utils/go_router.dart';

@@ -47,5 +47,10 @@ abstract class AppAssets {
   //======================splash==============================
   static const String logoApp =
       "assets/images/splash/shopping-cart-3d-render-icon-modified.jpg";
-  static const String s = "assets/images/splash/splash(1).jpg";
+  //======================onBording==============================
+  static const String laptop = "assets/images/onbording/4FodSLhVlNY.jpg";
+  static const String womenClothing =
+      "assets/images/onbording/68f902e911bb1f20fa1c09866236f11f.jpg";
+  static const String shoes =
+      "assets/images/onbording/sneakers_legs_shoes_backlight_116317_2560x1440.jpg";
 }
