@@ -31,7 +31,7 @@ class SectionImage extends StatelessWidget {
               left: isArabicLocale() ? 20.h : 0,
               bottom: 20.h),
           child: CircleAvatar(
-            backgroundColor: AppColor.lightGrey,
+            backgroundColor: AppColor.background,
             child: IconButton(
                 onPressed: () {},
                 icon: FaIcon(

@@ -22,8 +22,13 @@
  "withCode":"With code:FSCREATION",
  "getReady":"Get ready",
  "toStartWithUs":"to start with us",
- "newArrival":"NEW"
-
+ "newArrival":"NEW",
+ "drawerItems":[
+    "Home",
+    "Profile",
+    "Settings",
+    "About"
+ ]
 
 
 }

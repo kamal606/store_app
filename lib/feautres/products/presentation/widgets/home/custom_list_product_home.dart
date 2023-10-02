@@ -22,6 +22,7 @@ class CustomListProductHome extends StatelessWidget {
     this.isStatus = false,
     this.titleStatus,
     this.isDiscount = false,
+    this.colorList,
   });
   final String? titleList;
   final String categoryName;
@@ -29,73 +30,81 @@ class CustomListProductHome extends StatelessWidget {
   final bool isStatus;
   final String? titleStatus;
   final bool isDiscount;
-
+  final Color? colorList;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              titleList ?? "",
-              style: AppFonts.semiBold_18,
-            ),
-            Text(S.of(context).seeAll, style: AppFonts.semiBold_14),
-          ],
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        BlocConsumer<AllProductsBloc, AllProductsState>(
-          listener: (context, state) {
-            if (state is AllProductsStateFailure && !isErrorDisplayed) {
-              toast(message: state.errMessage, color: AppColor.erorr);
-              isErrorDisplayed = true;
-            }
-          },
-          builder: (context, state) {
-            if (state is AllProductsStateSuccess) {
-              return SizedBox(
-                height: 200.h,
-                child: ListView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  clipBehavior: Clip.none,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: state.products.length,
-                  itemBuilder: (context, i) {
-                    final product = state.products[i];
+    return Container(
+      padding: EdgeInsets.only(
+        left: 20.w,
+        right: 20.h,
+        top: 20.h,
+      ),
+      color: colorList,
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                titleList ?? "",
+                style: AppFonts.semiBold_18,
+              ),
+              Text(S.of(context).seeAll, style: AppFonts.semiBold_14),
+            ],
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          BlocConsumer<AllProductsBloc, AllProductsState>(
+            listener: (context, state) {
+              if (state is AllProductsStateFailure && !isErrorDisplayed) {
+                toast(message: state.errMessage, color: AppColor.erorr);
+                isErrorDisplayed = true;
+              }
+            },
+            builder: (context, state) {
+              if (state is AllProductsStateSuccess) {
+                return SizedBox(
+                  height: 200.h,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    clipBehavior: Clip.none,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: state.products.length,
+                    itemBuilder: (context, i) {
+                      final product = state.products[i];
 
-                    if (product.categoryProduct == categoryName) {
-                      return InkWell(
-                        onTap: () {
-                          context.push(AppRouter.detailsProductView,
-                              extra: state.products[i]);
-                        },
-                        child: CustomCardProduct(
-                            id: product.idProduct,
-                            priceDiscount: product.discountPercentageProduct,
-                            isDiscount: isDiscount,
-                            titleStatus: titleStatus ??
-                                "${product.discountPercentageProduct} %",
-                            colorStatus: colorStatus,
-                            isStatus: isStatus,
-                            image: product.image,
-                            title: product.titleProduct,
-                            price: product.priceProduct,
-                            categoryName: product.categoryProduct),
-                      );
-                    }
-                    return Container();
-                  },
-                ),
-              );
-            } else {
-              return const ShimmerLoadingProducts();
-            }
-          },
-        )
-      ],
+                      if (product.categoryProduct == categoryName) {
+                        return InkWell(
+                          onTap: () {
+                            context.push(AppRouter.detailsProductView,
+                                extra: state.products[i]);
+                          },
+                          child: CustomCardProduct(
+                              id: product.idProduct,
+                              priceDiscount: product.discountPercentageProduct,
+                              isDiscount: isDiscount,
+                              titleStatus: titleStatus ??
+                                  "${product.discountPercentageProduct} %",
+                              colorStatus: colorStatus,
+                              isStatus: isStatus,
+                              image: product.image,
+                              title: product.titleProduct,
+                              price: product.priceProduct,
+                              categoryName: product.categoryProduct),
+                        );
+                      }
+                      return Container();
+                    },
+                  ),
+                );
+              } else {
+                return const ShimmerLoadingProducts();
+              }
+            },
+          )
+        ],
+      ),
     );
   }
 }

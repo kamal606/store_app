@@ -26,7 +26,7 @@ class SectionRateWithTitle extends StatelessWidget {
           height: 5.h,
         ),
         Text(
-          productEntity.categoryProduct,
+          productEntity.brandProduct,
           style: AppFonts.regular_11,
         ),
         SizedBox(

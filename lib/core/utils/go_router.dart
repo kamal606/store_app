@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/feautres/start_app/presentation/view/onbording_view.dart';
+import 'package:store_app/feautres/start_app/presentation/view/splash_view.dart';
 
 import 'dependency_injection.dart' as di;
 import '../../feautres/products/domain/entities/product_entity.dart';
@@ -15,11 +17,21 @@ abstract class AppRouter {
   static const String favoriteView = "/favoriteView";
   static const String profileView = "/profileView";
   static const String detailsProductView = "/detailsProductView";
+  static const String homeView = "/homeView";
+  static const String onBordingView = "/onBordingView";
   static final router = GoRouter(
     routes: [
       // GoRoute(path: "/", builder: (context, state) => const MyApp()),
       GoRoute(
         path: "/",
+        builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: onBordingView,
+        builder: (context, state) => const OnBordingView(),
+      ),
+      GoRoute(
+        path: homeView,
         builder: (context, state) => BlocProvider(
           create: (context) =>
               di.sl<AllProductsBloc>()..add(GetAllProductsEvent()),

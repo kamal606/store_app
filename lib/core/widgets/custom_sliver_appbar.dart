@@ -31,7 +31,7 @@ class CustomSliverAppBar extends StatelessWidget
                 bottom: 5.h,
               ),
               child: CircleAvatar(
-                backgroundColor: AppColor.white,
+                backgroundColor: AppColor.background,
                 child: IconButton(
                   onPressed: onPressedLeading,
                   icon: FaIcon(

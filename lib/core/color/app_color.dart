@@ -36,4 +36,16 @@ class AppColor {
       AppColor.darkGrey,
     ]);
   }
+
+  static LinearGradient linearGradientSplashBody() {
+    return const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [
+          AppColor.darkTheme,
+          AppColor.white,
+          AppColor.white,
+          AppColor.darkTheme,
+        ]);
+  }
 }

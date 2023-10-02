@@ -25,7 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         icon: FaIcon(
           iconLeading,
           size: 22.h,
-          color: AppColor.white,
+          color: AppColor.background,
         ),
       ),
       actions: [
@@ -34,7 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             icon: FaIcon(
               iconAction,
               size: 18.h,
-              color: AppColor.white,
+              color: AppColor.background,
             )),
       ],
     );

@@ -19,68 +19,71 @@ class ListCategoryHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              S.of(context).categories,
-              style: AppFonts.semiBold_18,
-            ),
-            Text(
-              S.of(context).seeAll,
-              style: AppFonts.semiBold_14,
-            )
-          ],
-        ),
-        SizedBox(
-          height: 15.h,
-        ),
-        SizedBox(
-            height: 90.h,
-            child: BlocConsumer<GetCategoryBloc, GetCategoryState>(
-              listener: (context, state) {
-                if (state is GetCategoryFailure && !isErrorDisplayed) {
-                  toast(message: state.errMessage, color: AppColor.erorr);
-                  isErrorDisplayed = true;
-                }
-              },
-              builder: (context, state) {
-                if (state is GetCategorySuccess) {
-                  return ListView.builder(
-                      clipBehavior: Clip.none,
-                      scrollDirection: Axis.horizontal,
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: state.category.length,
-                      itemBuilder: (context, i) {
-                        return Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(
-                                right: isArabicLocale() ? 0 : 30.w,
-                                left: isArabicLocale() ? 30.w : 0,
-                              ),
-                              child: InkWell(
-                                onTap: () {},
-                                child: CustomBoxCategory(
-                                  image:
-                                      AppCategoryIcon.categoryListIcon[i].icon,
-                                  title: state.category[i].categoryName,
-                                  colorbox: AppCategoryIcon
-                                      .categoryListIcon[i].colorbox,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                S.of(context).categories,
+                style: AppFonts.semiBold_18,
+              ),
+              Text(
+                S.of(context).seeAll,
+                style: AppFonts.semiBold_14,
+              )
+            ],
+          ),
+          SizedBox(
+            height: 15.h,
+          ),
+          SizedBox(
+              height: 90.h,
+              child: BlocConsumer<GetCategoryBloc, GetCategoryState>(
+                listener: (context, state) {
+                  if (state is GetCategoryFailure && !isErrorDisplayed) {
+                    toast(message: state.errMessage, color: AppColor.erorr);
+                    isErrorDisplayed = true;
+                  }
+                },
+                builder: (context, state) {
+                  if (state is GetCategorySuccess) {
+                    return ListView.builder(
+                        clipBehavior: Clip.none,
+                        scrollDirection: Axis.horizontal,
+                        physics: const BouncingScrollPhysics(),
+                        itemCount: state.category.length,
+                        itemBuilder: (context, i) {
+                          return Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  right: isArabicLocale() ? 0 : 30.w,
+                                  left: isArabicLocale() ? 30.w : 0,
+                                ),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: CustomBoxCategory(
+                                    image: AppCategoryIcon
+                                        .categoryListIcon[i].icon,
+                                    title: state.category[i].categoryName,
+                                    colorbox: AppCategoryIcon
+                                        .categoryListIcon[i].colorbox,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        );
-                      });
-                } else {
-                  return const ShimmerLoadingCategory();
-                }
-              },
-            ))
-      ],
+                            ],
+                          );
+                        });
+                  } else {
+                    return const ShimmerLoadingCategory();
+                  }
+                },
+              ))
+        ],
+      ),
     );
   }
 }

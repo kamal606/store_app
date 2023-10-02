@@ -22,7 +22,12 @@
 "withCode": "باستخدام الكود: FSCREATION",
 "getReady": "استعد",
 "toStartWithUs": "للبدء معنا",
-"newArrival":"جديد"
-
+"newArrival":"جديد",
+"drawerItems":[
+    "القائمة الرئيسية",
+    "الملف الشخصي",
+    "الاعدادت",
+    "حول"
+ ]
 
 }

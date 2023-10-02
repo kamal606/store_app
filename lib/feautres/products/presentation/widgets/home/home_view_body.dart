@@ -23,40 +23,38 @@ class HomeViewBody extends StatelessWidget {
       slivers: [
         CustomSliverAppBar(
           action: CircleAvatar(
-            backgroundColor: AppColor.white,
-            child: Image.asset(
-              AppAssets.avatarProfile,
-            ),
+            radius: 18.h,
+            backgroundColor: AppColor.background,
+            backgroundImage: const AssetImage(AppAssets.avatarProfile),
           ),
         ),
         const CustomInternetStatus(),
         SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
-            child: Column(
-              children: [
-                const CustomCarouseSlider(),
-                const ListCategoryHome(),
-                CustomListProductHome(
-                  titleList: S.of(context).saleProduct,
-                  categoryName: "laptops",
-                  colorStatus: AppColor.erorr,
-                  isStatus: true,
-                  isDiscount: true,
-                ),
-                CustomListProductHome(
-                  titleList: S.of(context).newArrivals,
-                  categoryName: "fragrances",
-                  isStatus: true,
-                  titleStatus: S.of(context).newArrival,
-                ),
-                CustomListProductHome(
-                  titleList: S.of(context).recommended,
-                  categoryName: "skincare",
-                  colorStatus: AppColor.blacK,
-                ),
-              ],
-            ),
+          child: Column(
+            children: [
+              const CustomCarouseSlider(),
+              const ListCategoryHome(),
+              CustomListProductHome(
+                titleList: S.of(context).saleProduct,
+                categoryName: "laptops",
+                colorStatus: AppColor.erorr,
+                isStatus: true,
+                isDiscount: true,
+                colorList: AppColor.white,
+              ),
+              CustomListProductHome(
+                titleList: S.of(context).newArrivals,
+                categoryName: "fragrances",
+                isStatus: true,
+                titleStatus: S.of(context).newArrival,
+              ),
+              CustomListProductHome(
+                titleList: S.of(context).recommended,
+                categoryName: "skincare",
+                colorStatus: AppColor.blacK,
+                colorList: AppColor.white,
+              ),
+            ],
           ),
         )
       ],

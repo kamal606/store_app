@@ -42,4 +42,10 @@ abstract class AppAssets {
   static const String profile = "assets/images/icons/profile.png";
   static const String favorite = "assets/images/icons/love.png";
   static const String favoriteNavBar = "assets/images/icons/heart_2077502.png";
+  static const String iconLeft = "assets/images/icons/iconLeft.png";
+  static const String iconRight = "assets/images/icons/iconRight.png";
+  //======================splash==============================
+  static const String logoApp =
+      "assets/images/splash/shopping-cart-3d-render-icon-modified.jpg";
+  static const String s = "assets/images/splash/splash(1).jpg";
 }
