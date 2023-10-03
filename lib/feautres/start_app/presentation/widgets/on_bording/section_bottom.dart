@@ -37,7 +37,7 @@ class SectionBottom extends StatelessWidget {
                 duration: const Duration(seconds: 1), curve: Curves.easeInOut);
 
             if (index >= 2) {
-              context.pushReplacement(AppRouter.homeView);
+              context.replace(AppRouter.homeView);
             }
           },
         )

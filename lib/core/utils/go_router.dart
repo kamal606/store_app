@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:store_app/feautres/start_app/presentation/view/onbording_view.dart';
+
 import 'package:store_app/feautres/start_app/presentation/view/splash_view.dart';
 
 import 'dependency_injection.dart' as di;
@@ -27,11 +28,12 @@ abstract class AppRouter {
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: onBordingView,
+        path: AppRouter.onBordingView,
         builder: (context, state) => const OnBordingView(),
       ),
+
       GoRoute(
-        path: homeView,
+        path: AppRouter.homeView,
         builder: (context, state) => BlocProvider(
           create: (context) =>
               di.sl<AllProductsBloc>()..add(GetAllProductsEvent()),
@@ -39,19 +41,19 @@ abstract class AppRouter {
         ),
       ),
       GoRoute(
-        path: cartView,
+        path: AppRouter.cartView,
         builder: (context, state) => const CartView(),
       ),
       GoRoute(
-        path: favoriteView,
+        path: AppRouter.favoriteView,
         builder: (context, state) => const FavoriteView(),
       ),
       GoRoute(
-        path: profileView,
+        path: AppRouter.profileView,
         builder: (context, state) => const ProfileView(),
       ),
       GoRoute(
-        path: detailsProductView,
+        path: AppRouter.detailsProductView,
         builder: (context, state) =>
             DetailsProductView(productEntity: state.extra as ProductEntity),
       ),

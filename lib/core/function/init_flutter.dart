@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
+
 import 'package:store_app/feautres/localization/domain/enum_locale.dart';
 import 'package:store_app/feautres/theme/domain/model/theme.dart';
 import '../utils/bloc_obeserver.dart';
@@ -12,6 +13,7 @@ import '../utils/dependency_injection.dart';
 
 Future<void> initFlutter() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await initGetIt();
   await Hive.initFlutter();
   Bloc.observer = MyBlocObserver();

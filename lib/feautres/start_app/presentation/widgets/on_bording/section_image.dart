@@ -11,7 +11,11 @@ class SectionImageOnBording extends StatelessWidget {
     return Container(
       height: heightContainer,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(image), fit: BoxFit.cover),
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.cover,
+          alignment: Alignment.center,
+        ),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30.h),
           topRight: Radius.circular(30.h),

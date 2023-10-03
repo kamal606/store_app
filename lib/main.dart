@@ -16,6 +16,7 @@ import 'feautres/products/presentation/bloc/status_internet/status_internet_bloc
 
 Future<void> main() async {
   await initFlutter();
+
   await Future.delayed(const Duration(milliseconds: 300));
 
   runApp(const StoreApp());
