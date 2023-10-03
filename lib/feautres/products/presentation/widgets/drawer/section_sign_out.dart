@@ -4,6 +4,7 @@ import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/color/app_color.dart';
 
 import 'package:store_app/core/fonts/app_font.dart';
+import 'package:store_app/generated/l10n.dart';
 
 class SectionSignOut extends StatelessWidget {
   const SectionSignOut({super.key, required this.isDarkTheme});
@@ -23,7 +24,7 @@ class SectionSignOut extends StatelessWidget {
           width: 40.h,
         ),
         Text(
-          "Sign Out",
+          S.of(context).signOut,
           style: AppFonts.bold_16,
         )
       ],

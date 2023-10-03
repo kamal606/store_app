@@ -281,6 +281,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About`
+  String get about {
+    return Intl.message(
+      'About',
+      name: 'about',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Out`
+  String get signOut {
+    return Intl.message(
+      'Sign Out',
+      name: 'signOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `20% Discount\nNew Arrival Products`
+  String get onBordingDiscount {
+    return Intl.message(
+      '20% Discount\nNew Arrival Products',
+      name: 'onBordingDiscount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take Advantage\nOf The Offer Shopping`
+  String get onBordingTakeAdvantage {
+    return Intl.message(
+      'Take Advantage\nOf The Offer Shopping',
+      name: 'onBordingTakeAdvantage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Types Offers\nWithin Your Reach`
+  String get onBordingAllTypes {
+    return Intl.message(
+      'All Types Offers\nWithin Your Reach',
+      name: 'onBordingAllTypes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `publish up your selfies to make your self more beuatiful with this app`
+  String get onBordingSubTitle {
+    return Intl.message(
+      'publish up your selfies to make your self more beuatiful with this app',
+      name: 'onBordingSubTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

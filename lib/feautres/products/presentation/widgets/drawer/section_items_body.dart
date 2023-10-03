@@ -13,26 +13,28 @@ class SectionItemsBody extends StatelessWidget {
     return Column(
       children: [
         ...List.generate(
-          ItemsDrawer.itemsDrawer.length,
+          ItemsDrawer.itemsDrawer(context).length,
           // ItemsDrawer.itemsDrawer.length,
           (i) => Container(
-            padding: EdgeInsets.only(bottom: 20.h),
-            width: widthDrawer - 50.h,
+            padding: EdgeInsets.only(
+              bottom: 20.h,
+            ),
+            width: widthDrawer,
             child: Row(
               children: [
                 Icon(
-                  ItemsDrawer.itemsDrawer[i].nameIcon,
-                  size: ItemsDrawer.itemsDrawer[i].sizedIcon,
+                  ItemsDrawer.itemsDrawer(context)[i].nameIcon,
+                  size: ItemsDrawer.itemsDrawer(context)[i].sizedIcon,
                   color: isDarkTheme
                       ? AppColor.white
-                      : ItemsDrawer.itemsDrawer[i].colorIcon,
+                      : ItemsDrawer.itemsDrawer(context)[i].colorIcon,
                 ),
                 SizedBox(
                   width: 40.h,
                 ),
                 Text(
-                  ItemsDrawer.itemsDrawer[i].title,
-                  style: ItemsDrawer.itemsDrawer[i].sizedFont,
+                  ItemsDrawer.itemsDrawer(context)[i].title,
+                  style: ItemsDrawer.itemsDrawer(context)[i].sizedFont,
                 ),
               ],
             ),

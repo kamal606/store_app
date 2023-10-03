@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "about": MessageLookupByLibrary.simpleMessage("About"),
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
@@ -33,6 +34,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
         "newArrival": MessageLookupByLibrary.simpleMessage("NEW"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
+        "onBordingAllTypes": MessageLookupByLibrary.simpleMessage(
+            "All Types Offers\nWithin Your Reach"),
+        "onBordingDiscount": MessageLookupByLibrary.simpleMessage(
+            "20% Discount\nNew Arrival Products"),
+        "onBordingSubTitle": MessageLookupByLibrary.simpleMessage(
+            "publish up your selfies to make your self more beuatiful with this app"),
+        "onBordingTakeAdvantage": MessageLookupByLibrary.simpleMessage(
+            "Take Advantage\nOf The Offer Shopping"),
         "onEverythingToday":
             MessageLookupByLibrary.simpleMessage("On everything today"),
         "ourEcommerceApp":
@@ -43,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchProductName":
             MessageLookupByLibrary.simpleMessage("Search Product Name"),
         "seeAll": MessageLookupByLibrary.simpleMessage("See All"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
         "stock": MessageLookupByLibrary.simpleMessage("Stock"),
         "toStartWithUs":
             MessageLookupByLibrary.simpleMessage("to start with us"),

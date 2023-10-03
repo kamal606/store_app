@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 
 class SectionImageOnBording extends StatelessWidget {
   const SectionImageOnBording(
@@ -19,8 +20,10 @@ class SectionImageOnBording extends StatelessWidget {
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(30.h),
           topRight: Radius.circular(30.h),
-          bottomLeft: Radius.circular(30.h),
-          bottomRight: Radius.circular(120.h),
+          bottomLeft:
+              isArabicLocale() ? Radius.circular(120.h) : Radius.circular(30.h),
+          bottomRight:
+              isArabicLocale() ? Radius.circular(30.h) : Radius.circular(120.h),
         ),
       ),
     );

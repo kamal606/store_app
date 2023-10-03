@@ -23,11 +23,11 @@
 "getReady": "استعد",
 "toStartWithUs": "للبدء معنا",
 "newArrival":"جديد",
-"drawerItems":[
-    "القائمة الرئيسية",
-    "الملف الشخصي",
-    "الاعدادت",
-    "حول"
- ]
-
+"settings":"الاعدادت",
+"about":"حول",
+"signOut":"تسجيل الخروج",
+"onBordingDiscount":"خصم 20%\nعلى المنتجات الجديدة",
+"onBordingTakeAdvantage":"استفد من\nعرض التسوق",
+"onBordingAllTypes":"جميع أنواع العروض\nفي متناول يدك",
+"onBordingSubTitle": "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق"
 }

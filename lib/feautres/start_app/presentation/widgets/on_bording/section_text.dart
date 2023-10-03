@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/color/app_color.dart';
+
 import 'package:store_app/core/fonts/app_font.dart';
 
 class SectionText extends StatelessWidget {
@@ -25,7 +25,7 @@ class SectionText extends StatelessWidget {
         ),
         Text(
           subtitle,
-          style: AppFonts.regular_13.copyWith(color: AppColor.darkGrey),
+          style: AppFonts.regular_13,
         )
       ],
     );

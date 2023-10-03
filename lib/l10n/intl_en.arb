@@ -23,14 +23,13 @@
  "getReady":"Get ready",
  "toStartWithUs":"to start with us",
  "newArrival":"NEW",
- "drawerItems":[
-    "Home",
-    "Profile",
-    "Settings",
-    "About"
- ]
-
-
+ "settings":"Settings",
+ "about":"About",
+ "signOut":"Sign Out",
+ "onBordingDiscount":"20% Discount\nNew Arrival Products",
+ "onBordingTakeAdvantage":"Take Advantage\nOf The Offer Shopping",
+ "onBordingAllTypes":"All Types Offers\nWithin Your Reach",
+ "onBordingSubTitle": "publish up your selfies to make your self more beuatiful with this app"
 }
 
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
 
 class CustomIconLeftOrRight extends StatelessWidget {
   const CustomIconLeftOrRight(
@@ -24,11 +23,12 @@ class CustomIconLeftOrRight extends StatelessWidget {
       onTap: onPressed,
       child: CircleAvatar(
         radius: radiusCircle ?? 26.h,
-        backgroundColor: colorCircleAvatar ?? AppColor.blacK,
+        backgroundColor:
+            colorCircleAvatar ?? Theme.of(context).colorScheme.surface,
         child: Image.asset(
           image,
           height: heightIcon ?? 12.h,
-          color: colorImage ?? AppColor.white,
+          color: colorImage ?? Theme.of(context).colorScheme.primaryContainer,
         ),
       ),
     );

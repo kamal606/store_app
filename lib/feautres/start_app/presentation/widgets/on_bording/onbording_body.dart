@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/image_onbording.dart';
+import 'package:store_app/core/classes/onbording.dart';
 import 'package:store_app/feautres/start_app/presentation/widgets/on_bording/section_bottom.dart';
 import 'package:store_app/feautres/start_app/presentation/widgets/on_bording/section_image.dart';
 import 'package:store_app/feautres/start_app/presentation/widgets/on_bording/section_text.dart';
@@ -27,11 +27,11 @@ class _OnBordingViewBodyState extends State<OnBordingViewBody> {
 
     return PageView.builder(
         controller: pageController,
-        itemCount: ClassOnBording.onBordingList.length,
+        itemCount: ClassOnBording.onBordingList(context).length,
         itemBuilder: (context, i) {
           index = i;
 
-          final onBording = ClassOnBording.onBordingList[i];
+          final onBording = ClassOnBording.onBordingList(context)[i];
           return CustomScrollView(
             slivers: [
               SliverFillRemaining(

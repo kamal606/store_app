@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "about": MessageLookupByLibrary.simpleMessage("حول"),
         "addToCart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
         "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
@@ -33,6 +34,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
         "newArrival": MessageLookupByLibrary.simpleMessage("جديد"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("وصول جديد"),
+        "onBordingAllTypes": MessageLookupByLibrary.simpleMessage(
+            "جميع أنواع العروض\nفي متناول يدك"),
+        "onBordingDiscount": MessageLookupByLibrary.simpleMessage(
+            "خصم 20%\nعلى المنتجات الجديدة"),
+        "onBordingSubTitle": MessageLookupByLibrary.simpleMessage(
+            "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق"),
+        "onBordingTakeAdvantage":
+            MessageLookupByLibrary.simpleMessage("استفد من\nعرض التسوق"),
         "onEverythingToday":
             MessageLookupByLibrary.simpleMessage("على كل شيء اليوم"),
         "ourEcommerceApp": MessageLookupByLibrary.simpleMessage(
@@ -43,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchProductName":
             MessageLookupByLibrary.simpleMessage("ابحث عن اسم المنتج"),
         "seeAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
+        "settings": MessageLookupByLibrary.simpleMessage("الاعدادت"),
+        "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "stock": MessageLookupByLibrary.simpleMessage("متوفر"),
         "toStartWithUs": MessageLookupByLibrary.simpleMessage("للبدء معنا"),
         "totalPrice": MessageLookupByLibrary.simpleMessage("السعر الإجمالي"),
