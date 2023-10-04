@@ -57,6 +57,8 @@ abstract class AppAssets {
   static const String flagSyria = "assets/images/flags/Flag_of_Syria.svg.png";
   static const String flagUsa =
       "assets/images/flags/Flag-United-States-of-America.png";
+  //======================wishlist==============================
+  static const String wishlist = "assets/images/wishlist/no_favorite.png";
   //======================chooseLanguage==============================
   static const String chooseLanguage =
       "assets/images/choose_language/Finally, a Foolproof Guide to the Best Online Consignment Stores.jpeg";

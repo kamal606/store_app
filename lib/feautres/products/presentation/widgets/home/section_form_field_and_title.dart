@@ -23,7 +23,7 @@ class SectionTitleWithFormField extends StatelessWidget {
             style: AppFonts.semiBold_12.copyWith(color: AppColor.white),
           ),
         ),
-        CutomTextFormField(
+        CustomTextFormField(
           hint: S.of(context).searchProductName,
           prefixIcon: AppIcon.search,
           onPressed: () {},

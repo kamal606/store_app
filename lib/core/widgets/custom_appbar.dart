@@ -8,10 +8,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       {super.key,
       this.onPressedLeading,
       this.onPressedAction,
-      this.iconAction});
+      this.iconAction,
+      this.isAction = false});
   final void Function()? onPressedLeading;
   final void Function()? onPressedAction;
-
+  final bool isAction;
   final IconData? iconAction;
   @override
   Widget build(BuildContext context) {
@@ -29,24 +30,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: const CustomIconLeftOrRight(isAppbar: true),
         ),
         actions: [
-          Material(
-            elevation: 3.h,
-            shape: const CircleBorder(),
-            shadowColor: AppColor.darkGrey,
-            child: IconButton(
-                padding: EdgeInsets.zero,
-                onPressed: onPressedAction,
-                icon: CircleAvatar(
-                  backgroundColor:
-                      Theme.of(context).colorScheme.primaryContainer,
-                  radius: 40,
-                  child: Icon(
-                    iconAction,
-                    size: 16.h,
-                    color: Theme.of(context).colorScheme.surface,
-                  ),
-                )),
-          ),
+          isAction
+              ? Material(
+                  elevation: 3.h,
+                  shape: const CircleBorder(),
+                  shadowColor: AppColor.darkGrey,
+                  child: IconButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: onPressedAction,
+                      icon: CircleAvatar(
+                        backgroundColor:
+                            Theme.of(context).colorScheme.primaryContainer,
+                        radius: 40,
+                        child: Icon(
+                          iconAction,
+                          size: 16.h,
+                          color: Theme.of(context).colorScheme.surface,
+                        ),
+                      )),
+                )
+              : const SizedBox(),
         ],
       ),
     );

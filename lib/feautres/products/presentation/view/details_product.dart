@@ -14,6 +14,7 @@ class DetailsProductView extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
+        isAction: true,
         iconAction: AppIcon.bagShopping,
         onPressedAction: () {},
         onPressedLeading: () {

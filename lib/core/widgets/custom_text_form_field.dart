@@ -5,8 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../color/app_color.dart';
 import '../fonts/app_font.dart';
 
-class CutomTextFormField extends StatelessWidget {
-  const CutomTextFormField({
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({
     super.key,
     required this.hint,
     this.prefixIcon,
@@ -30,11 +30,17 @@ class CutomTextFormField extends StatelessWidget {
             ),
             color: AppColor.blacK,
           ),
-          border: OutlineInputBorder(
+          enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(25.r),
             ),
-            borderSide: BorderSide.none,
+            borderSide: const BorderSide(color: AppColor.lightGrey),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(25.r),
+            ),
+            borderSide: const BorderSide(color: AppColor.lightGrey),
           ),
           fillColor: AppColor.formField,
           filled: true,
