@@ -15,41 +15,46 @@ class SectionIncrementQuantity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          width: 100.h,
-          height: 35.h,
-          decoration: BoxDecoration(
-            color: AppColor.background,
-            borderRadius: BorderRadius.circular(16.h),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(),
-                onPressed: () {},
-                icon: FaIcon(
-                  AppIcon.minus,
-                  size: 15.h,
-                  color: AppColor.blacK,
+        Material(
+          elevation: 3.h,
+          shadowColor: AppColor.darkGrey,
+          borderRadius: BorderRadius.circular(16.h),
+          child: Container(
+            width: 100.h,
+            height: 35.h,
+            decoration: BoxDecoration(
+              color: AppColor.background,
+              borderRadius: BorderRadius.circular(16.h),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  onPressed: () {},
+                  icon: FaIcon(
+                    AppIcon.minus,
+                    size: 15.h,
+                    color: AppColor.blacK,
+                  ),
                 ),
-              ),
-              Text(
-                "1",
-                style: AppFonts.regular_13.copyWith(color: AppColor.blacK),
-              ),
-              IconButton(
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(),
-                onPressed: () {},
-                icon: FaIcon(
-                  AppIcon.plus,
-                  size: 15.h,
-                  color: AppColor.blacK,
+                Text(
+                  "1",
+                  style: AppFonts.regular_13.copyWith(color: AppColor.blacK),
                 ),
-              ),
-            ],
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  onPressed: () {},
+                  icon: FaIcon(
+                    AppIcon.plus,
+                    size: 15.h,
+                    color: AppColor.blacK,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         SizedBox(

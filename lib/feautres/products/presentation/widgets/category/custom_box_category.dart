@@ -22,22 +22,27 @@ class CustomBoxCategory extends StatelessWidget {
       width: 60.h,
       child: Column(
         children: [
-          Container(
-            width: 40.h,
-            height: 40.h,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.r),
-              color: colorbox,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                  image,
-                  color: AppColor.white,
-                  height: 20.h,
-                ),
-              ],
+          Material(
+            elevation: 3.h,
+            shadowColor: AppColor.darkGrey,
+            borderRadius: BorderRadius.circular(8.r),
+            child: Container(
+              width: 40.h,
+              height: 40.h,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.r),
+                color: colorbox,
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    image,
+                    color: AppColor.white,
+                    height: 20.h,
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(

@@ -30,15 +30,20 @@ class SectionImage extends StatelessWidget {
               right: isArabicLocale() ? 0 : 20.h,
               left: isArabicLocale() ? 20.h : 0,
               bottom: 20.h),
-          child: CircleAvatar(
-            backgroundColor: AppColor.background,
-            child: IconButton(
-                onPressed: () {},
-                icon: FaIcon(
-                  AppIcon.favorite,
-                  color: AppColor.darkTheme,
-                  size: 18.h,
-                )),
+          child: Material(
+            elevation: 3.h,
+            shape: const CircleBorder(),
+            shadowColor: AppColor.darkGrey,
+            child: CircleAvatar(
+              backgroundColor: AppColor.background,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: FaIcon(
+                    AppIcon.favorite,
+                    color: AppColor.darkTheme,
+                    size: 18.h,
+                  )),
+            ),
           ),
         ),
       ],

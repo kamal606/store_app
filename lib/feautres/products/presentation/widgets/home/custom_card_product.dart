@@ -96,16 +96,21 @@ class CustomCardProduct extends StatelessWidget {
           ),
         ),
         isStatus == true
-            ? Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 3.h),
-                decoration: BoxDecoration(
-                  color: colorStatus ?? Theme.of(context).colorScheme.surface,
-                  borderRadius: BorderRadius.circular(30.r),
-                ),
-                child: Text(
-                  "$titleStatus",
-                  style: AppFonts.bold_13.copyWith(
-                      color: Theme.of(context).colorScheme.primaryContainer),
+            ? Material(
+                elevation: 3.h,
+                shadowColor: AppColor.darkGrey,
+                borderRadius: BorderRadius.circular(30.r),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.h, vertical: 3.h),
+                  decoration: BoxDecoration(
+                    color: colorStatus ?? Theme.of(context).colorScheme.surface,
+                    borderRadius: BorderRadius.circular(30.r),
+                  ),
+                  child: Text(
+                    "$titleStatus",
+                    style: AppFonts.bold_13.copyWith(
+                        color: Theme.of(context).colorScheme.primaryContainer),
+                  ),
                 ),
               )
             : const SizedBox(),

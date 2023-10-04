@@ -32,10 +32,15 @@ class CustomCarouseSlider extends StatelessWidget {
                   ? Alignment.centerRight
                   : Alignment.centerLeft,
               children: [
-                ClipRRect(
+                Material(
+                  elevation: 3.h,
+                  shadowColor: AppColor.darkGrey,
                   borderRadius: BorderRadius.all(Radius.circular(16.r)),
-                  child: Image.asset(
-                    i.imageName,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(16.r)),
+                    child: Image.asset(
+                      i.imageName,
+                    ),
                   ),
                 ),
                 Positioned(

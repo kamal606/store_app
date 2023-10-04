@@ -22,10 +22,15 @@ class HomeViewBody extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       slivers: [
         CustomSliverAppBar(
-          action: CircleAvatar(
-            radius: 18.h,
-            backgroundColor: AppColor.background,
-            backgroundImage: const AssetImage(AppAssets.avatarProfile),
+          action: Material(
+            elevation: 3.h,
+            shadowColor: AppColor.darkGrey,
+            borderRadius: BorderRadius.circular(22.r),
+            child: CircleAvatar(
+              radius: 22.r,
+              backgroundColor: AppColor.background,
+              backgroundImage: const AssetImage(AppAssets.avatarProfile),
+            ),
           ),
         ),
         const CustomInternetStatus(),
