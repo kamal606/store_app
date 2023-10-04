@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
 
 import '../../../../core/classes/icons.dart';
 import '../../../../core/widgets/custom_appbar.dart';
@@ -13,9 +12,9 @@ class DetailsProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
-        iconAction: AppIcon.cart,
-        iconLeading: isArabicLocale() ? AppIcon.arrowRight : AppIcon.arrowLeft,
+        iconAction: AppIcon.bagShopping,
         onPressedAction: () {},
         onPressedLeading: () {
           context.pop();

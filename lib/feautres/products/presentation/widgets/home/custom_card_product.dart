@@ -12,7 +12,7 @@ class CustomCardProduct extends StatelessWidget {
       required this.image,
       required this.title,
       required this.price,
-      required this.categoryName,
+      required this.brandProduct,
       this.colorStatus,
       this.titleStatus,
       this.isStatus = false,
@@ -23,7 +23,7 @@ class CustomCardProduct extends StatelessWidget {
   final String title;
   final num price;
   final Color? colorStatus;
-  final String categoryName;
+  final String brandProduct;
   final String? titleStatus;
   final bool isStatus;
   final bool isDiscount;
@@ -66,7 +66,7 @@ class CustomCardProduct extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
               Text(
-                categoryName,
+                brandProduct,
                 style: AppFonts.regular_11,
               ),
               isDiscount

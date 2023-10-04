@@ -18,7 +18,7 @@ class SectionImage extends StatelessWidget {
           isArabicLocale() ? Alignment.bottomLeft : Alignment.bottomRight,
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height / 3.5,
+          height: MediaQuery.of(context).size.height / 2.8,
           width: MediaQuery.of(context).size.width,
           child: Hero(
               tag: productEntity.idProduct,

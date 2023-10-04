@@ -9,7 +9,7 @@ import '../../feautres/products/domain/entities/product_entity.dart';
 import '../../feautres/products/presentation/bloc/get_all_products/get_product_of_category_bloc.dart';
 import '../../feautres/products/presentation/view/cart_view.dart';
 import '../../feautres/products/presentation/view/details_product.dart';
-import '../../feautres/products/presentation/view/favorite_view.dart';
+import '../../feautres/favorite/presentation/view/favorite_view.dart';
 import '../../feautres/products/presentation/view/home_view.dart';
 import '../../feautres/products/presentation/view/profile_view.dart';
 

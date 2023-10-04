@@ -40,7 +40,6 @@ class HomeViewBody extends StatelessWidget {
                 colorStatus: AppColor.erorr,
                 isStatus: true,
                 isDiscount: true,
-                colorList: AppColor.white,
               ),
               CustomListProductHome(
                 titleList: S.of(context).newArrivals,
@@ -51,8 +50,6 @@ class HomeViewBody extends StatelessWidget {
               CustomListProductHome(
                 titleList: S.of(context).recommended,
                 categoryName: "skincare",
-                colorStatus: AppColor.blacK,
-                colorList: AppColor.white,
               ),
             ],
           ),

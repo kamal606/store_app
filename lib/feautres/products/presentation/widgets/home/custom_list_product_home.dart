@@ -8,7 +8,6 @@ import '../../../../../core/utils/error_display.dart';
 import '../../../../../core/utils/go_router.dart';
 import '../../../../../core/widgets/custom_flutter_toast.dart';
 import 'custom_card_product.dart';
-
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/shimmer_loading/shimmer_loading_products.dart';
 import '../../bloc/get_all_products/get_product_of_category_bloc.dart';
@@ -22,7 +21,6 @@ class CustomListProductHome extends StatelessWidget {
     this.isStatus = false,
     this.titleStatus,
     this.isDiscount = false,
-    this.colorList,
   });
   final String? titleList;
   final String categoryName;
@@ -30,7 +28,7 @@ class CustomListProductHome extends StatelessWidget {
   final bool isStatus;
   final String? titleStatus;
   final bool isDiscount;
-  final Color? colorList;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,7 +37,6 @@ class CustomListProductHome extends StatelessWidget {
         right: 20.h,
         top: 20.h,
       ),
-      color: colorList,
       child: Column(
         children: [
           Row(
@@ -91,7 +88,7 @@ class CustomListProductHome extends StatelessWidget {
                               image: product.image,
                               title: product.titleProduct,
                               price: product.priceProduct,
-                              categoryName: product.categoryProduct),
+                              brandProduct: product.brandProduct),
                         );
                       }
                       return Container();
