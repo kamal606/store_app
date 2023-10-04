@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/feautres/start_app/presentation/view/choose_language_view.dart';
 import 'package:store_app/feautres/start_app/presentation/view/onbording_view.dart';
 
 import 'package:store_app/feautres/start_app/presentation/view/splash_view.dart';
@@ -20,12 +21,18 @@ abstract class AppRouter {
   static const String detailsProductView = "/detailsProductView";
   static const String homeView = "/homeView";
   static const String onBordingView = "/onBordingView";
+  static const String chooseLanguageView = "/chooseLanguageView";
+
   static final router = GoRouter(
     routes: [
       // GoRoute(path: "/", builder: (context, state) => const MyApp()),
       GoRoute(
         path: "/",
         builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: chooseLanguageView,
+        builder: (context, state) => const ChooseLanguageView(),
       ),
       GoRoute(
         path: AppRouter.onBordingView,

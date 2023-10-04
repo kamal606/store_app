@@ -1,15 +1,15 @@
 part of 'locale_bloc.dart';
 
-sealed class LocaleEvent extends Equatable {
-  const LocaleEvent();
+sealed class AppLocalEvent extends Equatable {
+  const AppLocalEvent();
 
   @override
   List<Object> get props => [];
 }
 
-class CurrentLocaleEvent extends LocaleEvent {}
+class CurrentLocaleEvent extends AppLocalEvent {}
 
-class ChangeLocaleEvent extends LocaleEvent {
+class ChangeLocaleEvent extends AppLocalEvent {
   final AppLocale appLanguage;
 
   const ChangeLocaleEvent({required this.appLanguage});

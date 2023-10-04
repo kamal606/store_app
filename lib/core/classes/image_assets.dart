@@ -53,4 +53,11 @@ abstract class AppAssets {
       "assets/images/onbording/68f902e911bb1f20fa1c09866236f11f.jpg";
   static const String shoes =
       "assets/images/onbording/sneakers_legs_shoes_backlight_116317_2560x1440.jpg";
+  //======================flags==============================
+  static const String flagSyria = "assets/images/flags/Flag_of_Syria.svg.png";
+  static const String flagUsa =
+      "assets/images/flags/Flag-United-States-of-America.png";
+  //======================chooseLanguage==============================
+  static const String chooseLanguage =
+      "assets/images/choose_language/Finally, a Foolproof Guide to the Best Online Consignment Stores.jpeg";
 }

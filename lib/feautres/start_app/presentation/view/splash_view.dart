@@ -28,13 +28,13 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
     //show on boring just once
     Future.delayed(const Duration(milliseconds: 2300), () async {
       //open box
-      Box box = await SaveOnBordingOnceLocalImpl.openBox();
+      Box box = await SaveStartViewAppLocal.openBox();
       //if value box == false : put the value true and go to onbording
       //else if the value == true go to the home
-      if (await SaveOnBordingOnceLocalImpl.getIsOpen(box) == false) {
-        SaveOnBordingOnceLocalImpl.addOnBording(box);
+      if (await SaveStartViewAppLocal.getIsOpen(box) == false) {
         if (!context.mounted) return;
-        context.replace(AppRouter.onBordingView);
+        context.replace(AppRouter.chooseLanguageView);
+        await SaveStartViewAppLocal.addViewStartApp(box);
       } else {
         if (!context.mounted) return;
         context.replace(AppRouter.homeView);

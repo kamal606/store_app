@@ -52,7 +52,7 @@ class StoreApp extends StatelessWidget {
           child: BlocBuilder<AppThemeBloc, AppThemeState>(
             builder: (context, state) {
               if (state is ChangedThemeState) {
-                return BlocBuilder<AppLocaleBloc, LocaleState>(
+                return BlocBuilder<AppLocaleBloc, AppLocaleState>(
                   builder: (context, stateLocale) {
                     if (stateLocale is ChangeLocaleState) {
                       return MaterialApp.router(

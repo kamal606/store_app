@@ -8,11 +8,11 @@ import 'package:store_app/feautres/localization/domain/enum_locale.dart';
 part 'locale_event.dart';
 part 'locale_state.dart';
 
-class AppLocaleBloc extends Bloc<LocaleEvent, LocaleState> {
+class AppLocaleBloc extends Bloc<AppLocalEvent, AppLocaleState> {
   final LocaleLocalDataSourceImpl localeLocalDataSourceImpl;
   AppLocaleBloc({required this.localeLocalDataSourceImpl})
       : super(LocaleInitial()) {
-    on<LocaleEvent>((event, emit) async {
+    on<AppLocalEvent>((event, emit) async {
       if (event is CurrentLocaleEvent) {
         Box box = await localeLocalDataSourceImpl.openBox();
         final locale = await localeLocalDataSourceImpl.getLocale(box);

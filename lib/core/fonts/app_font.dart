@@ -51,6 +51,10 @@ class AppFonts {
     fontSize: 25.sp,
     fontWeight: FontWeight.w700,
   );
+  static TextStyle bold_30 = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeight.w700,
+  );
 //========================= semi bold ===========================
   static TextStyle semiBold_11 = TextStyle(
     fontSize: 11.sp,

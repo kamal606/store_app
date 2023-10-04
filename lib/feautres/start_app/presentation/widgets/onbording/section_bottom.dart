@@ -27,9 +27,8 @@ class SectionBottom extends StatelessWidget {
               ),
               child: CircleAvatar(
                 radius: 4.h,
-                backgroundColor: index == this.index
-                    ? AppColor.erorr
-                    : Theme.of(context).colorScheme.surface,
+                backgroundColor:
+                    index == this.index ? AppColor.darkTheme : AppColor.grey,
               ),
             );
           },

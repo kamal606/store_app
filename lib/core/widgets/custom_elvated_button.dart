@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:store_app/core/color/app_color.dart';
 import '../fonts/app_font.dart';
 
 class CustomElvatedButton extends StatelessWidget {
   const CustomElvatedButton(
-      {super.key, required this.onPressed, required this.title});
+      {super.key,
+      required this.onPressed,
+      this.title,
+      this.titleAction,
+      this.imageAction,
+      this.isAction = false});
   final void Function()? onPressed;
-  final String title;
+  final String? title;
+  final String? titleAction;
+  final String? imageAction;
+  final bool isAction;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -24,10 +33,25 @@ class CustomElvatedButton extends StatelessWidget {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.r)),
         ),
-        child: Text(
-          title,
-          style: AppFonts.semiBold_16,
-        ),
+        child: isAction
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    titleAction ?? "",
+                    style: AppFonts.semiBold_16,
+                  ),
+                  CircleAvatar(
+                    foregroundImage: AssetImage(
+                      imageAction!,
+                    ),
+                  ),
+                ],
+              )
+            : Text(
+                title ?? "",
+                style: AppFonts.semiBold_16,
+              ),
       ),
     );
   }
