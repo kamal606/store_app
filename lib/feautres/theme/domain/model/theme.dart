@@ -25,6 +25,7 @@ Map<AppTheme, ThemeData> theme = {
     colorScheme: const ColorScheme.dark(
       surface: AppColor.white,
       primaryContainer: AppColor.darkTheme,
+      secondary: AppColor.darkGrey,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedIconTheme: IconThemeData(color: AppColor.white),
@@ -43,6 +44,7 @@ Map<AppTheme, ThemeData> theme = {
     colorScheme: const ColorScheme.light(
       surface: AppColor.darkTheme,
       primaryContainer: AppColor.white,
+      secondary: AppColor.white,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedIconTheme: IconThemeData(color: AppColor.darkTheme),

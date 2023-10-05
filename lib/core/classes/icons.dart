@@ -21,4 +21,6 @@ abstract class AppIcon {
   static const IconData settings = FontAwesomeIcons.gear;
   static const IconData signOut = FontAwesomeIcons.arrowRightFromBracket;
   static const IconData about = FontAwesomeIcons.circleInfo;
+  static const IconData xmark = FontAwesomeIcons.xmark;
+  static const IconData trash = FontAwesomeIcons.trash;
 }

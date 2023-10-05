@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
+import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_icon_left_right.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -9,26 +10,38 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.onPressedLeading,
       this.onPressedAction,
       this.iconAction,
-      this.isAction = false});
+      this.isAction = false,
+      this.leading = false,
+      this.titleAppbar});
   final void Function()? onPressedLeading;
   final void Function()? onPressedAction;
   final bool isAction;
+  final bool leading;
   final IconData? iconAction;
+  final String? titleAppbar;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.h),
       child: AppBar(
+        centerTitle: true,
+        titleTextStyle: AppFonts.bold_25
+            .copyWith(color: Theme.of(context).colorScheme.surface),
+        title: Text(
+          titleAppbar ?? "",
+        ),
         leadingWidth: 40.h,
         backgroundColor: Colors.transparent,
         elevation: 0,
         flexibleSpace: Container(
           decoration: const BoxDecoration(color: Colors.transparent),
         ),
-        leading: InkWell(
-          onTap: onPressedLeading,
-          child: const CustomIconLeftOrRight(isAppbar: true),
-        ),
+        leading: leading
+            ? InkWell(
+                onTap: onPressedLeading,
+                child: const CustomIconLeftOrRight(isAppbar: true),
+              )
+            : const SizedBox(),
         actions: [
           isAction
               ? Material(

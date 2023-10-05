@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:store_app/feautres/favorite/presentation/widget/section_empty_favorite.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_form_field.dart';
+import 'package:store_app/feautres/favorite/presentation/widget/section_list_product.dart';
 
 class FavoriteViewBody extends StatelessWidget {
   const FavoriteViewBody({super.key});
@@ -10,21 +9,18 @@ class FavoriteViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.h),
-      child: const CustomScrollView(
-        physics: BouncingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(
-            child: SectionFormField(),
+      padding: EdgeInsets.only(
+        left: 20.h,
+        right: 20.h,
+        top: 20.h,
+      ),
+      child: Column(
+        children: [
+          const SectionFormFieldAndDeleteAll(),
+          SizedBox(
+            height: 30.h,
           ),
-          SliverFillRemaining(
-            hasScrollBody: false,
-            child: Column(
-              children: [
-                SectionEmptyFavorite(),
-              ],
-            ),
-          )
+          const SectionListProduct(),
         ],
       ),
     );

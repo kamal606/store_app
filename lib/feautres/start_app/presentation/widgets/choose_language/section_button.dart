@@ -36,6 +36,7 @@ class SectionButtonLanguage extends StatelessWidget {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 100.h,
+                height: 40.h,
                 child: CustomElvatedButton(
                   imageAction: AppAssets.flagUsa,
                   isAction: true,
@@ -50,6 +51,7 @@ class SectionButtonLanguage extends StatelessWidget {
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 100.h,
+                height: 40.h,
                 child: CustomElvatedButton(
                   imageAction: AppAssets.flagSyria,
                   isAction: true,

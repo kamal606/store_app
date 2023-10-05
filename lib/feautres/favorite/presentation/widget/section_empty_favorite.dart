@@ -12,11 +12,11 @@ class SectionEmptyFavorite extends StatelessWidget {
       children: [
         Image.asset(
           AppAssets.wishlist,
-          height: 120.h,
+          height: 80.h,
         ),
         Text(
           "Favorites are empty",
-          style: AppFonts.semiBold_12,
+          style: AppFonts.regular_10,
         ),
       ],
     );

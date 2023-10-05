@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/widgets/custom_elvated_button.dart';
@@ -26,9 +27,13 @@ class SectionPriceAndButtonCart extends StatelessWidget {
             ),
           ],
         ),
-        CustomElvatedButton(
-          onPressed: () {},
-          title: S.of(context).addToCart,
+        SizedBox(
+          width: 140.h,
+          height: 40.h,
+          child: CustomElvatedButton(
+            onPressed: () {},
+            title: S.of(context).addToCart,
+          ),
         )
       ],
     );

@@ -14,8 +14,7 @@ import '../utils/dependency_injection.dart';
 Future<void> initFlutter() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await initGetIt();
-  await Hive.initFlutter();
+  await Future.wait([initGetIt(), Hive.initFlutter()]);
   Bloc.observer = MyBlocObserver();
   Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
   Hive.registerAdapter<ProductEntity>(ProductEntityAdapter());

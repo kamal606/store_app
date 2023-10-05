@@ -11,10 +11,12 @@ class CustomTextFormField extends StatelessWidget {
     required this.hint,
     this.prefixIcon,
     this.onPressed,
+    this.color,
   });
   final String hint;
   final IconData? prefixIcon;
   final void Function()? onPressed;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -42,7 +44,7 @@ class CustomTextFormField extends StatelessWidget {
             ),
             borderSide: const BorderSide(color: AppColor.lightGrey),
           ),
-          fillColor: AppColor.formField,
+          fillColor: color ?? AppColor.formField,
           filled: true,
           contentPadding: EdgeInsets.symmetric(vertical: 5.h),
           hintText: hint,
