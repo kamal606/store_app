@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:store_app/core/classes/hive_const.dart';
 
 import 'package:store_app/feautres/localization/domain/enum_locale.dart';
 import 'package:store_app/feautres/theme/domain/model/theme.dart';
@@ -14,7 +15,12 @@ import '../utils/dependency_injection.dart';
 Future<void> initFlutter() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Future.wait([initGetIt(), Hive.initFlutter()]);
+  await Future.wait([
+    initGetIt(),
+    Hive.initFlutter(),
+  ]);
+  await Hive.openBox(AppHive.iconFavorite);
+
   Bloc.observer = MyBlocObserver();
   Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());
   Hive.registerAdapter<ProductEntity>(ProductEntityAdapter());

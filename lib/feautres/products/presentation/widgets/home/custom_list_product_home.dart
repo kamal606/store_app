@@ -6,7 +6,7 @@ import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/utils/error_display.dart';
 import '../../../../../core/utils/go_router.dart';
-import '../../../../../core/widgets/custom_flutter_toast.dart';
+import '../../../../../core/function/toast_flutter.dart';
 import 'custom_card_product.dart';
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/shimmer_loading/shimmer_loading_products.dart';

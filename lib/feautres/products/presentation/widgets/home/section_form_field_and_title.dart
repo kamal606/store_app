@@ -26,7 +26,7 @@ class SectionTitleWithFormField extends StatelessWidget {
         CustomTextFormField(
           hint: S.of(context).searchProductName,
           prefixIcon: AppIcon.search,
-          onPressed: () {},
+          onPressedPrefixIcon: () {},
         ),
       ],
     );

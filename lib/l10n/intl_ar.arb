@@ -29,5 +29,12 @@
 "onBordingDiscount":"خصم 20%\nعلى المنتجات الجديدة",
 "onBordingTakeAdvantage":"استفد من\nعرض التسوق",
 "onBordingAllTypes":"جميع أنواع العروض\nفي متناول يدك",
-"onBordingSubTitle": "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق"
+"onBordingSubTitle": "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق",
+"favoritesEmpty": "المفضلة فارغة",
+"Search": "ابحث...",
+"dialogFavorite": "هل أنت متأكد من حذف كل المفضلة؟",
+"cancel": "الغاء",
+"agree": "موافق",
+"favoriteView":"المفضلة"
+
 }

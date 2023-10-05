@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/classes/icons.dart';
-
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
+import 'package:store_app/feautres/favorite/data/local_data_source/icon_favorite_save_local.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
-
 import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
+import 'package:store_app/generated/l10n.dart';
 
 class CustomCardWishlist extends StatelessWidget {
   const CustomCardWishlist({super.key, required this.productEntity});
@@ -66,10 +66,12 @@ class CustomCardWishlist extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {
+                          onPressed: () async {
                             BlocProvider.of<FavoriteBloc>(context).add(
                                 RemoveFavoriteEvent(
                                     productEntity: productEntity));
+                            await FavoriteIconSaveLocal.removeColorToIcon(
+                                productEntity);
                           },
                           icon: Icon(
                             AppIcon.xmark,
@@ -90,7 +92,7 @@ class CustomCardWishlist extends StatelessWidget {
                         ),
                         CustomElvatedButton(
                           onPressed: () {},
-                          title: "add to cart",
+                          title: S.of(context).addToCart,
                           fontTitle: AppFonts.semiBold_12,
                         ),
                       ],

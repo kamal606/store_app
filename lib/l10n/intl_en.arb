@@ -29,7 +29,15 @@
  "onBordingDiscount":"20% Discount\nNew Arrival Products",
  "onBordingTakeAdvantage":"Take Advantage\nOf The Offer Shopping",
  "onBordingAllTypes":"All Types Offers\nWithin Your Reach",
- "onBordingSubTitle": "publish up your selfies to make your self more beuatiful with this app"
+ "onBordingSubTitle": "publish up your selfies to make your self more beuatiful with this app",
+ "favoritesEmpty": "Favorite are empty",
+ "Search": "Search...",
+"dialogFavorite":"Are you sure to delete all favorites?",
+"cancel": "Cancel",
+"agree": "Agree",
+"favoriteView":"Favorite"
+
+ 
 }
 
 

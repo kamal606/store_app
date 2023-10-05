@@ -96,6 +96,10 @@ flutter:
     - family: metropolis
       fonts:
         - asset: assets/fonts/metropolis.regular.otf
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-VariableFont_slnt,wght.ttf
+        
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

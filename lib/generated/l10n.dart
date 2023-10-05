@@ -351,6 +351,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Favorite are empty`
+  String get favoritesEmpty {
+    return Intl.message(
+      'Favorite are empty',
+      name: 'favoritesEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search...`
+  String get Search {
+    return Intl.message(
+      'Search...',
+      name: 'Search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure to delete all favorites?`
+  String get dialogFavorite {
+    return Intl.message(
+      'Are you sure to delete all favorites?',
+      name: 'dialogFavorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Agree`
+  String get agree {
+    return Intl.message(
+      'Agree',
+      name: 'agree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorite`
+  String get favoriteView {
+    return Intl.message(
+      'Favorite',
+      name: 'favoriteView',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

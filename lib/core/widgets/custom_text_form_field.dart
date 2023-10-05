@@ -10,22 +10,25 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.hint,
     this.prefixIcon,
-    this.onPressed,
+    this.onPressedPrefixIcon,
     this.color,
+    this.onChanged,
   });
   final String hint;
   final IconData? prefixIcon;
-  final void Function()? onPressed;
+  final void Function()? onPressedPrefixIcon;
+  final void Function(String)? onChanged;
   final Color? color;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width - 10.w,
       child: TextFormField(
+        onChanged: onChanged,
         cursorColor: AppColor.blacK,
         decoration: InputDecoration(
           prefixIcon: IconButton(
-            onPressed: onPressed,
+            onPressed: onPressedPrefixIcon,
             icon: FaIcon(
               prefixIcon,
               size: 20.h,

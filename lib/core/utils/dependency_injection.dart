@@ -26,6 +26,7 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
+
   sl.registerFactory(
       () => FavoriteBloc(favoriteLocalDataSourceImpl: sl.call()));
   sl.registerFactory(() => AppThemeBloc(themeLocalDataSourceImpl: sl.call()));

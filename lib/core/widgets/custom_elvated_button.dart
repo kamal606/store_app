@@ -11,6 +11,7 @@ class CustomElvatedButton extends StatelessWidget {
     this.imageAction,
     this.isAction = false,
     this.fontTitle,
+    this.backgroundColor,
   });
   final void Function()? onPressed;
   final String? title;
@@ -18,12 +19,14 @@ class CustomElvatedButton extends StatelessWidget {
   final String? imageAction;
   final bool isAction;
   final TextStyle? fontTitle;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
+        backgroundColor: backgroundColor,
         shape:
             RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.r)),
       ),

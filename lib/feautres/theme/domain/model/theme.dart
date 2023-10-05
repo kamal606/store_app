@@ -17,7 +17,7 @@ enum AppTheme {
 
 Map<AppTheme, ThemeData> theme = {
   AppTheme.dark: ThemeData(
-    fontFamily: "Poppins",
+    fontFamily: "Cairo",
     brightness: Brightness.dark,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(backgroundColor: AppColor.white),
@@ -36,7 +36,7 @@ Map<AppTheme, ThemeData> theme = {
   ),
   AppTheme.light: ThemeData(
     scaffoldBackgroundColor: AppColor.background,
-    fontFamily: "Poppins",
+    fontFamily: "Cairo",
     brightness: Brightness.light,
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(backgroundColor: AppColor.darkTheme),

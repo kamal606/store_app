@@ -22,13 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Search": MessageLookupByLibrary.simpleMessage("Search..."),
         "about": MessageLookupByLibrary.simpleMessage("About"),
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
+        "agree": MessageLookupByLibrary.simpleMessage("Agree"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "dialogFavorite": MessageLookupByLibrary.simpleMessage(
+            "Are you sure to delete all favorites?"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
+        "favoriteView": MessageLookupByLibrary.simpleMessage("Favorite"),
+        "favoritesEmpty":
+            MessageLookupByLibrary.simpleMessage("Favorite are empty"),
         "getReady": MessageLookupByLibrary.simpleMessage("Get ready"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),

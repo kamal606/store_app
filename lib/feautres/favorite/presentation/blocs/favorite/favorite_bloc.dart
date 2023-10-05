@@ -11,13 +11,13 @@ part 'favorite_state.dart';
 class FavoriteBloc extends Bloc<FavoriteEvent, FavoriteState> {
   final FavoriteLocalDataSourceImpl favoriteLocalDataSourceImpl;
   FavoriteBloc({required this.favoriteLocalDataSourceImpl})
-      : super(FavoriteInitial()) {
+      : super(FavoriteLoading()) {
     on<FavoriteEvent>((event, emit) async {
       //================== start event =========================
       if (event is FavoriteStartAppEvent) {
         emit(FavoriteLoading());
         try {
-          await Future.delayed(const Duration(seconds: 1));
+          await Future.delayed(const Duration(milliseconds: 500));
           Box box = await favoriteLocalDataSourceImpl.openBox();
           List<ProductEntity> getProducts =
               favoriteLocalDataSourceImpl.getProducts(box);
@@ -96,6 +96,27 @@ class FavoriteBloc extends Bloc<FavoriteEvent, FavoriteState> {
         } on Exception {
           emit(const FavoriteFailure(
               errorMessage: "There was an error when clear products"));
+        }
+      }
+      //================== Search event =========================
+      if (event is SearchFavoriteEvent) {
+        try {
+          Box box = await favoriteLocalDataSourceImpl.openBox();
+          List<ProductEntity> allProducts =
+              favoriteLocalDataSourceImpl.getProducts(box);
+          final searchInAllProducts = allProducts.where(
+            (product) {
+              final productSearch = product.titleProduct.toLowerCase();
+              final query = event.query.toLowerCase();
+              return productSearch.contains(query);
+            },
+          ).toList();
+          emit(FavoriteSuccess(
+              favoriteEntity:
+                  FavoriteEntity(listProductEntity: searchInAllProducts)));
+        } on Exception {
+          emit(const FavoriteFailure(
+              errorMessage: "There was an error in search products"));
         }
       }
     });

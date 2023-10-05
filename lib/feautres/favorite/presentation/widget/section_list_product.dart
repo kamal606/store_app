@@ -4,7 +4,7 @@ import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_card_product.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_empty_favorite.dart';
-import '../../../../../core/widgets/custom_flutter_toast.dart';
+import '../../../../core/function/toast_flutter.dart';
 
 class SectionListProduct extends StatelessWidget {
   const SectionListProduct({super.key});
@@ -19,11 +19,12 @@ class SectionListProduct extends StatelessWidget {
       },
       builder: (context, state) {
         if (state is FavoriteLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Expanded(
+              child: Center(child: CircularProgressIndicator()));
         }
         if (state is FavoriteSuccess) {
           if (state.favoriteEntity.listProductEntity.isEmpty) {
-            return const Center(child: SectionEmptyFavorite());
+            return const Expanded(child: SectionEmptyFavorite());
           } else {
             return Expanded(
               child: ListView.builder(
