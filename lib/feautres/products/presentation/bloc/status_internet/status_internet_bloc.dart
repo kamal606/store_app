@@ -11,9 +11,12 @@ class StatusInternetBloc
     extends Bloc<StatusInternetEvent, StatusInternetState> {
   StatusInternetBloc() : super(StatusInternetInitial()) {
     on<StatusInternetEvent>((event, emit) {
+      //================== online event =========================
       if (event is OnlineEvent) {
         emit(const StatusInternetOnline(message: "internet is back"));
       }
+
+      //================== offline event =========================
       if (event is OfflineEvent) {
         emit(const StatusInternetOffline(message: "No internet Connection"));
       }

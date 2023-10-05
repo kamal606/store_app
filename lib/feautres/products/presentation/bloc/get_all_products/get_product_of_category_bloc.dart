@@ -13,6 +13,7 @@ class AllProductsBloc extends Bloc<AllProductsStateEvent, AllProductsState> {
     required this.getProductOfCategoryUseCase,
   }) : super(AllProductsStateInitial()) {
     on<AllProductsStateEvent>((event, emit) async {
+      //================== get all products event =========================
       if (event is GetAllProductsEvent) {
         emit(AllProductsStateLoading());
         final getProducts = await getProductOfCategoryUseCase.call();

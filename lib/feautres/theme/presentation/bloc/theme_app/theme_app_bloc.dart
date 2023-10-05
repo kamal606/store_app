@@ -14,11 +14,14 @@ class AppThemeBloc extends Bloc<ThemeAppEvent, AppThemeState> {
   AppThemeBloc({required this.themeLocalDataSourceImpl})
       : super(ThemeAppInitial()) {
     on<ThemeAppEvent>((event, emit) async {
+      //================== current theme event =========================
       if (event is CurrentThemeEvent) {
         Box box = await themeLocalDataSourceImpl.openBox();
         final themeBox = await themeLocalDataSourceImpl.getTheme(box);
         emit(ChangedThemeState(changedTheme: theme[themeBox]!));
       }
+
+      //================== change theme event =========================
       if (event is ChangeThemeEvent) {
         Box box = await themeLocalDataSourceImpl.openBox();
         themeLocalDataSourceImpl.addTheme(box, event.changeTheme);

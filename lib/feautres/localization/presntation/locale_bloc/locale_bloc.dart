@@ -13,10 +13,13 @@ class AppLocaleBloc extends Bloc<AppLocalEvent, AppLocaleState> {
   AppLocaleBloc({required this.localeLocalDataSourceImpl})
       : super(LocaleInitial()) {
     on<AppLocalEvent>((event, emit) async {
+      //================== current locale event =========================
       if (event is CurrentLocaleEvent) {
         Box box = await localeLocalDataSourceImpl.openBox();
         final locale = await localeLocalDataSourceImpl.getLocale(box);
         emit(ChangeLocaleState(locale: language[locale]!));
+
+        //================== change locale event =========================
       } else if (event is ChangeLocaleEvent) {
         Box box = await localeLocalDataSourceImpl.openBox();
         await localeLocalDataSourceImpl.addLocale(box, event.appLanguage);

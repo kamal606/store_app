@@ -12,6 +12,7 @@ class GetCategoryBloc extends Bloc<GetCategoryEvent, GetCategoryState> {
   GetCategoryBloc({required this.getCategoryUseCases})
       : super(GetCategoryInitial()) {
     on<GetCategoryEvent>((event, emit) async {
+      //================== get category event =========================
       if (event is GetCategory) {
         emit(GetCategoryLoading());
         final category = await getCategoryUseCases.call();
