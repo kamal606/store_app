@@ -1,14 +1,19 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/classes/image_assets.dart';
+
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
+import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
+
+import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
 
 class CustomCardWishlist extends StatelessWidget {
-  const CustomCardWishlist({super.key});
-
+  const CustomCardWishlist({super.key, required this.productEntity});
+  final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,14 +33,14 @@ class CustomCardWishlist extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(14.h),
-                child: Image.asset(
-                  AppAssets.shoes,
-                  fit: BoxFit.cover,
-                  height: 90.h,
-                  width: 90.h,
-                ),
-              ),
+                  borderRadius: BorderRadius.circular(14.h),
+                  child: CachedNetworkImage(
+                    fadeInCurve: Curves.easeIn,
+                    imageUrl: productEntity.image,
+                    fit: BoxFit.fill,
+                    height: 90.h,
+                    width: 90.h,
+                  )),
               SizedBox(
                 width: 10.h,
               ),
@@ -45,21 +50,27 @@ class CustomCardWishlist extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Roller Rabbit",
-                              style: AppFonts.bold_14,
-                            ),
-                            Text(
-                              "Vado Odelle Dress",
-                              style: AppFonts.regular_11,
-                            ),
-                          ],
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                productEntity.titleProduct,
+                                style: AppFonts.bold_14,
+                              ),
+                              Text(
+                                productEntity.brandProduct,
+                                style: AppFonts.regular_11,
+                              ),
+                            ],
+                          ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            BlocProvider.of<FavoriteBloc>(context).add(
+                                RemoveFavoriteEvent(
+                                    productEntity: productEntity));
+                          },
                           icon: Icon(
                             AppIcon.xmark,
                             size: 16.h,
@@ -74,7 +85,7 @@ class CustomCardWishlist extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          r"$198.00",
+                          "\$${productEntity.priceProduct.toStringAsFixed(2)}",
                           style: AppFonts.bold_14,
                         ),
                         CustomElvatedButton(

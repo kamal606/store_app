@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
 
 import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
@@ -47,6 +48,10 @@ class StoreApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => di.sl<StatusInternetBloc>(),
+            ),
+            BlocProvider(
+              create: (context) =>
+                  di.sl<FavoriteBloc>()..add(FavoriteStartAppEvent()),
             ),
           ],
           child: BlocBuilder<AppThemeBloc, AppThemeState>(
