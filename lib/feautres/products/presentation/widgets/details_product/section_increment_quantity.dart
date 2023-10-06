@@ -12,7 +12,7 @@ class SectionIncrementQuantity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const CustomIncrementQuantity(),
+        CustomIncrementQuantity(quantity: 21, productEntity: productEntity),
         SizedBox(
           height: 10.h,
         ),

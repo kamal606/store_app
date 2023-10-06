@@ -72,6 +72,7 @@ class SectionListProductFavorite extends StatelessWidget {
                         return true;
                       },
                       child: CustomCardWishlistAndCart(
+                        quantity: 1,
                         isCart: false,
                         onPressed: () async {
                           BlocProvider.of<FavoriteBloc>(context).add(

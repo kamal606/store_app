@@ -23,4 +23,6 @@ abstract class AppIcon {
   static const IconData about = FontAwesomeIcons.circleInfo;
   static const IconData xmark = FontAwesomeIcons.xmark;
   static const IconData trash = FontAwesomeIcons.trash;
+  static const IconData notExpand = FontAwesomeIcons.sortDown;
+  static const IconData expand = FontAwesomeIcons.sortUp;
 }

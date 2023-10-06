@@ -35,7 +35,11 @@ class SectionListProductCart extends StatelessWidget {
             return Expanded(
               child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
-                  itemCount: state.cartEntity.listProductEntity.length,
+                  itemCount: state.cartEntity
+                      .updateQuantity(
+                          productEntity: state.cartEntity.listProductEntity)
+                      .keys
+                      .length,
                   itemBuilder: (context, i) {
                     return Dismissible(
                       background: Container(
@@ -72,6 +76,12 @@ class SectionListProductCart extends StatelessWidget {
                         return true;
                       },
                       child: CustomCardWishlistAndCart(
+                        quantity: state.cartEntity
+                            .updateQuantity(
+                                productEntity:
+                                    state.cartEntity.listProductEntity)
+                            .values
+                            .elementAt(i),
                         isCart: true,
                         onPressed: () async {
                           BlocProvider.of<CartBloc>(context).add(
@@ -79,7 +89,12 @@ class SectionListProductCart extends StatelessWidget {
                                   productEntity:
                                       state.cartEntity.listProductEntity[i]));
                         },
-                        productEntity: state.cartEntity.listProductEntity[i],
+                        productEntity: state.cartEntity
+                            .updateQuantity(
+                                productEntity:
+                                    state.cartEntity.listProductEntity)
+                            .keys
+                            .elementAt(i),
                       ),
                     );
                   }),

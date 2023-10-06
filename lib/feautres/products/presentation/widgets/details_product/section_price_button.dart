@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/widgets/custom_elvated_button.dart';
@@ -11,6 +13,7 @@ class SectionPriceAndButtonCart extends StatelessWidget {
   final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
+    bool isAddToCart = false;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -30,9 +33,21 @@ class SectionPriceAndButtonCart extends StatelessWidget {
         SizedBox(
           width: 140.h,
           height: 40.h,
-          child: CustomElvatedButton(
-            onPressed: () {},
-            title: S.of(context).addToCart,
+          child: BlocBuilder<CartBloc, CartState>(
+            builder: (context, state) {
+              return CustomElvatedButton(
+                isAddToCart: isAddToCart,
+                onPressed: () {
+                  if (!isAddToCart) {
+                    BlocProvider.of<CartBloc>(context).add(
+                      AddToCartEvent(productEntity: productEntity),
+                    );
+                  }
+                  isAddToCart = !isAddToCart;
+                },
+                title: S.of(context).addToCart,
+              );
+            },
           ),
         )
       ],

@@ -16,7 +16,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       if (event is CartStartAppEvent) {
         emit(CartLoading());
         try {
-          await Future.delayed(const Duration(milliseconds: 500));
           final Box box = await cartLocalDataSourceImpl.openBox();
           final getAllProduct = cartLocalDataSourceImpl.getAllCartProduct(box);
 
@@ -30,23 +29,17 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       //================ add to cart event ====================
       if (event is AddToCartEvent) {
         try {
-          bool isAddToCart = (state as CartSuccess)
-              .cartEntity
-              .listProductEntity
-              .contains(event.productEntity);
-          if (!isAddToCart) {
-            final Box box = await cartLocalDataSourceImpl.openBox();
-            await cartLocalDataSourceImpl.addToCart(box, event.productEntity);
-            emit(
-              CartSuccess(
-                cartEntity: CartEntity(
-                  listProductEntity: List.from(
-                      (state as CartSuccess).cartEntity.listProductEntity)
-                    ..add(event.productEntity),
-                ),
+          final Box box = await cartLocalDataSourceImpl.openBox();
+          await cartLocalDataSourceImpl.addToCart(box, event.productEntity);
+          emit(
+            CartSuccess(
+              cartEntity: CartEntity(
+                listProductEntity: List.from(
+                    (state as CartSuccess).cartEntity.listProductEntity)
+                  ..add(event.productEntity),
               ),
-            );
-          }
+            ),
+          );
         } on Exception {
           emit(const CartFailure(
               errorMessage: "There was an error when add to cart"));

@@ -40,6 +40,9 @@ class CustomCarouseSlider extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(16.r)),
                     child: Image.asset(
                       i.imageName,
+                      fit: BoxFit.fill,
+                      height: 160.h,
+                      width: 300.w,
                     ),
                   ),
                 ),

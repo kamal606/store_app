@@ -16,12 +16,15 @@ class CustomCardWishlistAndCart extends StatelessWidget {
       {super.key,
       required this.productEntity,
       this.onPressed,
-      this.isCart = false});
+      this.isCart = false,
+      required this.quantity});
   final ProductEntity productEntity;
   final Function()? onPressed;
   final bool isCart;
+  final num quantity;
   @override
   Widget build(BuildContext context) {
+    bool isAddToCart = false;
     return Padding(
       padding: EdgeInsets.only(bottom: 15.h),
       child: Material(
@@ -92,16 +95,27 @@ class CustomCardWishlistAndCart extends StatelessWidget {
                           style: AppFonts.bold_14,
                         ),
                         isCart
-                            ? const CustomIncrementQuantity()
-                            : CustomElvatedButton(
-                                onPressed: () {
-                                  BlocProvider.of<CartBloc>(context).add(
-                                    AddToCartEvent(
-                                        productEntity: productEntity),
+                            ? CustomIncrementQuantity(
+                                productEntity: productEntity,
+                                quantity: quantity,
+                              )
+                            : BlocBuilder<CartBloc, CartState>(
+                                builder: (context, state) {
+                                  return CustomElvatedButton(
+                                    isAddToCart: isAddToCart,
+                                    onPressed: () {
+                                      if (!isAddToCart) {
+                                        BlocProvider.of<CartBloc>(context).add(
+                                          AddToCartEvent(
+                                              productEntity: productEntity),
+                                        );
+                                      }
+                                      isAddToCart = !isAddToCart;
+                                    },
+                                    title: S.of(context).addToCart,
+                                    fontTitle: AppFonts.semiBold_12,
                                   );
                                 },
-                                title: S.of(context).addToCart,
-                                fontTitle: AppFonts.semiBold_12,
                               ),
                       ],
                     )

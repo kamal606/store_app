@@ -12,6 +12,7 @@ class CustomElvatedButton extends StatelessWidget {
     this.isAction = false,
     this.fontTitle,
     this.backgroundColor,
+    this.isAddToCart = false,
   });
   final void Function()? onPressed;
   final String? title;
@@ -20,35 +21,49 @@ class CustomElvatedButton extends StatelessWidget {
   final bool isAction;
   final TextStyle? fontTitle;
   final Color? backgroundColor;
+  final bool isAddToCart;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.r)),
-      ),
-      child: isAction
-          ? Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  titleAction ?? "",
-                  style: AppFonts.semiBold_16,
-                ),
-                CircleAvatar(
-                  foregroundImage: AssetImage(
-                    imageAction!,
-                  ),
-                ),
-              ],
-            )
-          : Text(
-              title ?? "",
+    return isAddToCart
+        ? ElevatedButton(
+            onPressed: null,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: backgroundColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.r)),
+            ),
+            child: Text(
+              "added",
               style: fontTitle ?? AppFonts.semiBold_16,
             ),
-    );
+          )
+        : ElevatedButton(
+            onPressed: onPressed,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: backgroundColor,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.r)),
+            ),
+            child: isAction
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        titleAction ?? "",
+                        style: AppFonts.semiBold_16,
+                      ),
+                      CircleAvatar(
+                        foregroundImage: AssetImage(
+                          imageAction!,
+                        ),
+                      ),
+                    ],
+                  )
+                : Text(
+                    title ?? "",
+                    style: fontTitle ?? AppFonts.semiBold_16,
+                  ),
+          );
   }
 }
