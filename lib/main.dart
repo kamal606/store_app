@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
 
 import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
@@ -52,6 +53,9 @@ class StoreApp extends StatelessWidget {
             BlocProvider(
               create: (context) =>
                   di.sl<FavoriteBloc>()..add(FavoriteStartAppEvent()),
+            ),
+            BlocProvider(
+              create: (context) => di.sl<CartBloc>()..add(CartStartAppEvent()),
             ),
           ],
           child: BlocBuilder<AppThemeBloc, AppThemeState>(

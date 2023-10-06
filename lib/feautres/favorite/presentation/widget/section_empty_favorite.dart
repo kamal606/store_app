@@ -4,20 +4,20 @@ import 'package:store_app/core/classes/image_assets.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/generated/l10n.dart';
 
-class SectionEmptyFavorite extends StatelessWidget {
-  const SectionEmptyFavorite({super.key});
-
+class SectionEmptyFavoriteOrCart extends StatelessWidget {
+  const SectionEmptyFavoriteOrCart({super.key, this.isCart = false});
+  final bool isCart;
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Image.asset(
-          AppAssets.wishlist,
+          isCart ? AppAssets.cartEmpty : AppAssets.favoriteEmpty,
           height: 80.h,
         ),
         Text(
-          S.of(context).favoritesEmpty,
+          isCart ? S.of(context).cartEmpty : S.of(context).favoritesEmpty,
           style: AppFonts.regular_10,
         ),
       ],

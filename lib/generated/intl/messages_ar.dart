@@ -28,9 +28,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "agree": MessageLookupByLibrary.simpleMessage("موافق"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+        "cartEmpty": MessageLookupByLibrary.simpleMessage("عربة التسوق فارغة"),
+        "cartView": MessageLookupByLibrary.simpleMessage("عربة التسوق"),
         "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "description": MessageLookupByLibrary.simpleMessage("وصف"),
+        "dialogCart": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من حذف كل السلة لديك؟"),
         "dialogFavorite": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد من حذف كل المفضلة؟"),
         "favorite": MessageLookupByLibrary.simpleMessage("المفضلة"),

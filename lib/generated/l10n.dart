@@ -362,6 +362,16 @@ class S {
     );
   }
 
+  /// `Cart are empty`
+  String get cartEmpty {
+    return Intl.message(
+      'Cart are empty',
+      name: 'cartEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Search...`
   String get Search {
     return Intl.message(
@@ -377,6 +387,16 @@ class S {
     return Intl.message(
       'Are you sure to delete all favorites?',
       name: 'dialogFavorite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure to delete all Cart you have?`
+  String get dialogCart {
+    return Intl.message(
+      'Are you sure to delete all Cart you have?',
+      name: 'dialogCart',
       desc: '',
       args: [],
     );
@@ -402,11 +422,21 @@ class S {
     );
   }
 
-  /// `Favorite`
+  /// `My Favorite`
   String get favoriteView {
     return Intl.message(
-      'Favorite',
+      'My Favorite',
       name: 'favoriteView',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Cart`
+  String get cartView {
+    return Intl.message(
+      'My Cart',
+      name: 'cartView',
       desc: '',
       args: [],
     );

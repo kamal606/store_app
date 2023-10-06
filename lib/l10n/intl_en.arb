@@ -31,12 +31,14 @@
  "onBordingAllTypes":"All Types Offers\nWithin Your Reach",
  "onBordingSubTitle": "publish up your selfies to make your self more beuatiful with this app",
  "favoritesEmpty": "Favorite are empty",
+ "cartEmpty": "Cart are empty",
  "Search": "Search...",
 "dialogFavorite":"Are you sure to delete all favorites?",
+"dialogCart":"Are you sure to delete all Cart you have?",
 "cancel": "Cancel",
 "agree": "Agree",
-"favoriteView":"Favorite"
-
+"favoriteView":"My Favorite",
+"cartView":"My Cart"
  
 }
 

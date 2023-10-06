@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:store_app/feautres/cart/data/local_data_source/cart_local_data_source.dart';
+import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/data/local_data_source/favorite_local_data_source.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
 import 'package:store_app/feautres/localization/data/local_data_source/locale_local_data_source.dart';
@@ -26,7 +28,7 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
-
+  sl.registerFactory(() => CartBloc(cartLocalDataSourceImpl: sl.call()));
   sl.registerFactory(
       () => FavoriteBloc(favoriteLocalDataSourceImpl: sl.call()));
   sl.registerFactory(() => AppThemeBloc(themeLocalDataSourceImpl: sl.call()));
@@ -37,6 +39,7 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
 
+  sl.registerLazySingleton(() => CartLocalDataSourceImpl());
   sl.registerLazySingleton(() => FavoriteLocalDataSourceImpl());
   sl.registerLazySingleton(() => LocaleLocalDataSourceImpl());
   sl.registerLazySingleton(() => ThemeLocalDataSourceImpl());

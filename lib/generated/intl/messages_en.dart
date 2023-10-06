@@ -28,13 +28,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+        "cartEmpty": MessageLookupByLibrary.simpleMessage("Cart are empty"),
+        "cartView": MessageLookupByLibrary.simpleMessage("My Cart"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
+        "dialogCart": MessageLookupByLibrary.simpleMessage(
+            "Are you sure to delete all Cart you have?"),
         "dialogFavorite": MessageLookupByLibrary.simpleMessage(
             "Are you sure to delete all favorites?"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
-        "favoriteView": MessageLookupByLibrary.simpleMessage("Favorite"),
+        "favoriteView": MessageLookupByLibrary.simpleMessage("My Favorite"),
         "favoritesEmpty":
             MessageLookupByLibrary.simpleMessage("Favorite are empty"),
         "getReady": MessageLookupByLibrary.simpleMessage("Get ready"),

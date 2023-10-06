@@ -31,10 +31,13 @@
 "onBordingAllTypes":"جميع أنواع العروض\nفي متناول يدك",
 "onBordingSubTitle": "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق",
 "favoritesEmpty": "المفضلة فارغة",
+"cartEmpty": "عربة التسوق فارغة",
 "Search": "ابحث...",
 "dialogFavorite": "هل أنت متأكد من حذف كل المفضلة؟",
+"dialogCart": "هل أنت متأكد من حذف كل السلة لديك؟",
 "cancel": "الغاء",
 "agree": "موافق",
-"favoriteView":"المفضلة"
+"favoriteView":"المفضلة",
+"cartView":"عربة التسوق"
 
 }

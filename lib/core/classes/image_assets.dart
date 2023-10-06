@@ -58,8 +58,11 @@ abstract class AppAssets {
   static const String flagUsa =
       "assets/images/flags/Flag-United-States-of-America.png";
   //======================wishlist==============================
-  static const String wishlist = "assets/images/wishlist/no_favorite.png";
+  static const String favoriteEmpty = "assets/images/wishlist/no_favorite.png";
   //======================chooseLanguage==============================
   static const String chooseLanguage =
       "assets/images/choose_language/Finally, a Foolproof Guide to the Best Online Consignment Stores.jpeg";
+  //======================chooseLanguage==============================
+  static const String cartEmpty =
+      "assets/images/cart/sadcart-6cf6790b85ed0f96c69fdb322328d145.png";
 }

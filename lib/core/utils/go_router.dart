@@ -2,13 +2,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:store_app/feautres/start_app/presentation/view/choose_language_view.dart';
 import 'package:store_app/feautres/start_app/presentation/view/onbording_view.dart';
-
 import 'package:store_app/feautres/start_app/presentation/view/splash_view.dart';
-
 import 'dependency_injection.dart' as di;
 import '../../feautres/products/domain/entities/product_entity.dart';
 import '../../feautres/products/presentation/bloc/get_all_products/get_product_of_category_bloc.dart';
-import '../../feautres/products/presentation/view/cart_view.dart';
+import '../../feautres/cart/presentation/view/cart_view.dart';
 import '../../feautres/products/presentation/view/details_product.dart';
 import '../../feautres/favorite/presentation/view/favorite_view.dart';
 import '../../feautres/products/presentation/view/home_view.dart';

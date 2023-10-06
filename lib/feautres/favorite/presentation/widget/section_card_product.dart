@@ -6,14 +6,20 @@ import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
-import 'package:store_app/feautres/favorite/data/local_data_source/icon_favorite_save_local.dart';
-import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
+import 'package:store_app/core/widgets/custom_increment_quantity.dart';
+import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
 import 'package:store_app/generated/l10n.dart';
 
-class CustomCardWishlist extends StatelessWidget {
-  const CustomCardWishlist({super.key, required this.productEntity});
+class CustomCardWishlistAndCart extends StatelessWidget {
+  const CustomCardWishlistAndCart(
+      {super.key,
+      required this.productEntity,
+      this.onPressed,
+      this.isCart = false});
   final ProductEntity productEntity;
+  final Function()? onPressed;
+  final bool isCart;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -67,13 +73,7 @@ class CustomCardWishlist extends StatelessWidget {
                           ),
                         ),
                         IconButton(
-                          onPressed: () async {
-                            BlocProvider.of<FavoriteBloc>(context).add(
-                                RemoveFavoriteEvent(
-                                    productEntity: productEntity));
-                            await FavoriteIconSaveLocal.removeColorToIcon(
-                                productEntity);
-                          },
+                          onPressed: onPressed,
                           icon: Icon(
                             AppIcon.xmark,
                             size: 16.h,
@@ -91,11 +91,18 @@ class CustomCardWishlist extends StatelessWidget {
                           "\$${productEntity.priceProduct.toStringAsFixed(2)}",
                           style: AppFonts.bold_14,
                         ),
-                        CustomElvatedButton(
-                          onPressed: () {},
-                          title: S.of(context).addToCart,
-                          fontTitle: AppFonts.semiBold_12,
-                        ),
+                        isCart
+                            ? const CustomIncrementQuantity()
+                            : CustomElvatedButton(
+                                onPressed: () {
+                                  BlocProvider.of<CartBloc>(context).add(
+                                    AddToCartEvent(
+                                        productEntity: productEntity),
+                                  );
+                                },
+                                title: S.of(context).addToCart,
+                                fontTitle: AppFonts.semiBold_12,
+                              ),
                       ],
                     )
                   ],

@@ -4,36 +4,38 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/function/check_local_arabic.dart';
-import 'package:store_app/feautres/favorite/data/local_data_source/icon_favorite_save_local.dart';
-import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
+import 'package:store_app/core/function/toast_flutter.dart';
+import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_card_product.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_empty_favorite.dart';
-import '../../../../core/function/toast_flutter.dart';
 
-class SectionListProductFavorite extends StatelessWidget {
-  const SectionListProductFavorite({super.key});
+class SectionListProductCart extends StatelessWidget {
+  const SectionListProductCart({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<FavoriteBloc, FavoriteState>(
+    return BlocConsumer<CartBloc, CartState>(
       listener: (context, state) {
-        if (state is FavoriteFailure) {
+        if (state is CartFailure) {
           toast(message: state.errorMessage, color: AppColor.erorr);
         }
       },
       builder: (context, state) {
-        if (state is FavoriteLoading) {
+        if (state is CartLoading) {
           return const Expanded(
               child: Center(child: CircularProgressIndicator()));
         }
-        if (state is FavoriteSuccess) {
-          if (state.favoriteEntity.listProductEntity.isEmpty) {
-            return const Expanded(child: SectionEmptyFavoriteOrCart());
+        if (state is CartSuccess) {
+          if (state.cartEntity.listProductEntity.isEmpty) {
+            return const Expanded(
+                child: SectionEmptyFavoriteOrCart(
+              isCart: true,
+            ));
           } else {
             return Expanded(
               child: ListView.builder(
                   physics: const BouncingScrollPhysics(),
-                  itemCount: state.favoriteEntity.listProductEntity.length,
+                  itemCount: state.cartEntity.listProductEntity.length,
                   itemBuilder: (context, i) {
                     return Dismissible(
                       background: Container(
@@ -57,12 +59,10 @@ class SectionListProductFavorite extends StatelessWidget {
                       key: UniqueKey(),
                       onDismissed: (direction) {
                         if (direction == DismissDirection.endToStart) {
-                          BlocProvider.of<FavoriteBloc>(context).add(
-                              RemoveFavoriteEvent(
-                                  productEntity: state
-                                      .favoriteEntity.listProductEntity[i]));
-                          FavoriteIconSaveLocal.removeColorToIcon(
-                              state.favoriteEntity.listProductEntity[i]);
+                          BlocProvider.of<CartBloc>(context).add(
+                              RemoveFromCartEvent(
+                                  productEntity:
+                                      state.cartEntity.listProductEntity[i]));
                         }
                       },
                       confirmDismiss: (direction) async {
@@ -72,17 +72,14 @@ class SectionListProductFavorite extends StatelessWidget {
                         return true;
                       },
                       child: CustomCardWishlistAndCart(
-                        isCart: false,
+                        isCart: true,
                         onPressed: () async {
-                          BlocProvider.of<FavoriteBloc>(context).add(
-                              RemoveFavoriteEvent(
-                                  productEntity: state
-                                      .favoriteEntity.listProductEntity[i]));
-                          await FavoriteIconSaveLocal.removeColorToIcon(
-                              state.favoriteEntity.listProductEntity[i]);
+                          BlocProvider.of<CartBloc>(context).add(
+                              RemoveFromCartEvent(
+                                  productEntity:
+                                      state.cartEntity.listProductEntity[i]));
                         },
-                        productEntity:
-                            state.favoriteEntity.listProductEntity[i],
+                        productEntity: state.cartEntity.listProductEntity[i],
                       ),
                     );
                   }),

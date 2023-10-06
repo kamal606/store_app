@@ -52,13 +52,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       padding: EdgeInsets.zero,
                       onPressed: onPressedAction,
                       icon: CircleAvatar(
-                        backgroundColor:
-                            Theme.of(context).colorScheme.primaryContainer,
+                        backgroundColor: Theme.of(context).colorScheme.surface,
                         radius: 40,
                         child: Icon(
                           iconAction,
                           size: 16.h,
-                          color: Theme.of(context).colorScheme.surface,
+                          color: Theme.of(context).colorScheme.primaryContainer,
                         ),
                       )),
                 )

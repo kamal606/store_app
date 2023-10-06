@@ -10,7 +10,7 @@ class FavoriteView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        titleAppbar: S.of(context).favorite,
+        titleAppbar: S.of(context).favoriteView,
       ),
       body: const FavoriteViewBody(),
     );
