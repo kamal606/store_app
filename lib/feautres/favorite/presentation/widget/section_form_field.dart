@@ -22,7 +22,6 @@ class SectionFormFieldAndDeleteAll extends StatelessWidget {
           child: CustomTextFormField(
             hint: S.of(context).Search,
             prefixIcon: AppIcon.search,
-            onPressedPrefixIcon: () {},
             color: AppColor.white,
             onChanged: (value) {
               BlocProvider.of<FavoriteBloc>(context)
