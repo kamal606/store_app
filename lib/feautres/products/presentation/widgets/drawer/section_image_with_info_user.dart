@@ -21,7 +21,7 @@ class SectionImageWithInfoUser extends StatelessWidget {
           child: ListTile(
             title: Text(
               "Kamal mahmoud ibrahim",
-              style: AppFonts.bold_16.copyWith(color: AppColor.drawerName),
+              style: AppFonts.bold_16.copyWith(color: AppColor.jGDark),
             ),
             subtitle: Text(
               "kamalibrahim@gmail.com",

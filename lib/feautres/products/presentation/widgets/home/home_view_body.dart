@@ -42,7 +42,7 @@ class HomeViewBody extends StatelessWidget {
               CustomListProductHome(
                 titleList: S.of(context).saleProduct,
                 categoryName: "laptops",
-                colorStatus: AppColor.erorr,
+                colorStatus: AppColor.jGDark,
                 isStatus: true,
                 isDiscount: true,
               ),

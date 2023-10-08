@@ -12,8 +12,8 @@ class FavoriteIconSaveLocal {
     await Hive.box(AppHive.iconFavorite).delete(productEntity.idProduct);
   }
 
-  static Future<void> clearAllColorIcon() {
-    return Hive.box(AppHive.iconFavorite).clear();
+  static Future<void> clearAllColorIcon() async {
+    await Hive.box(AppHive.iconFavorite).clear();
   }
 
   static bool getColorIcon(ProductEntity productEntity) {

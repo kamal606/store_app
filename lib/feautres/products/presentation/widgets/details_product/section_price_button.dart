@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
+import 'package:store_app/feautres/favorite/data/local_data_source/icon_button_to_cart.dart';
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/widgets/custom_elvated_button.dart';
@@ -13,7 +15,6 @@ class SectionPriceAndButtonCart extends StatelessWidget {
   final ProductEntity productEntity;
   @override
   Widget build(BuildContext context) {
-    bool isAddToCart = false;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -26,7 +27,7 @@ class SectionPriceAndButtonCart extends StatelessWidget {
             ),
             Text(
               "\$${productEntity.priceProduct.toStringAsFixed(2)}",
-              style: AppFonts.bold_18,
+              style: AppFonts.bold_18.copyWith(color: AppColor.jGDark),
             ),
           ],
         ),
@@ -36,14 +37,16 @@ class SectionPriceAndButtonCart extends StatelessWidget {
           child: BlocBuilder<CartBloc, CartState>(
             builder: (context, state) {
               return CustomElvatedButton(
-                isAddToCart: isAddToCart,
-                onPressed: () {
-                  if (!isAddToCart) {
+                isAddToCart: AddToCartButtonSaveLocal.getButton(productEntity),
+                onPressed: () async {
+                  if (AddToCartButtonSaveLocal.getButton(productEntity) ==
+                      false) {
+                    await AddToCartButtonSaveLocal.addButton(productEntity);
+                    if (!context.mounted) return;
                     BlocProvider.of<CartBloc>(context).add(
                       AddToCartEvent(productEntity: productEntity),
                     );
                   }
-                  isAddToCart = !isAddToCart;
                 },
                 title: S.of(context).addToCart,
               );

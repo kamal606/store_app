@@ -1,69 +1,85 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_icon_left_right.dart';
+import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar(
-      {super.key,
-      this.onPressedLeading,
-      this.onPressedAction,
-      this.iconAction,
-      this.isAction = false,
-      this.leading = false,
-      this.titleAppbar});
+  const CustomAppBar({
+    super.key,
+    this.onPressedLeading,
+    this.onPressedAction,
+    this.iconAction,
+    this.isAction = false,
+    this.leading = false,
+    this.titleAppbar,
+    this.colorCircleAvatar,
+  });
   final void Function()? onPressedLeading;
   final void Function()? onPressedAction;
   final bool isAction;
   final bool leading;
   final IconData? iconAction;
   final String? titleAppbar;
+  final Color? colorCircleAvatar;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10.h),
-      child: AppBar(
-        centerTitle: true,
-        titleTextStyle: AppFonts.bold_25
-            .copyWith(color: Theme.of(context).colorScheme.surface),
-        title: Text(
-          titleAppbar ?? "",
-        ),
-        leadingWidth: 40.h,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(color: Colors.transparent),
-        ),
-        leading: leading
-            ? InkWell(
-                onTap: onPressedLeading,
-                child: const CustomIconLeftOrRight(isAppbar: true),
+    return AppBar(
+      centerTitle: true,
+      titleTextStyle: AppFonts.bold_25.copyWith(color: AppColor.white),
+      title: Text(
+        titleAppbar ?? "",
+      ),
+      leadingWidth: 40.h,
+      elevation: 0,
+      flexibleSpace: Container(
+        decoration: BoxDecoration(gradient: AppColor.linearGradient()),
+      ),
+      leading: leading
+          ? InkWell(
+              onTap: onPressedLeading,
+              child: CustomIconLeftOrRight(
+                isAppbar: true,
+                colorCircleAvatar: colorCircleAvatar,
+              ),
+            )
+          : const SizedBox(),
+      actions: [
+        isAction
+            ? BlocBuilder<CartBloc, CartState>(
+                builder: (context, state) {
+                  if (state is CartLoading) {
+                    return const Center(child: CircularProgressIndicator());
+                  }
+                  if (state is CartSuccess) {
+                    return Padding(
+                      padding: EdgeInsets.all(8.h),
+                      child: Badge(
+                        largeSize: 18.h,
+                        label: Text(
+                          "${state.cartEntity.listProductEntity.length}",
+                          style: AppFonts.semiBold_11,
+                        ),
+                        child: IconButton(
+                            padding: EdgeInsets.zero,
+                            onPressed: onPressedAction,
+                            icon: Icon(
+                              iconAction,
+                              size: 16.h,
+                              color: AppColor.white,
+                            )),
+                      ),
+                    );
+                  } else {
+                    return const SizedBox();
+                  }
+                },
               )
             : const SizedBox(),
-        actions: [
-          isAction
-              ? Material(
-                  elevation: 3.h,
-                  shape: const CircleBorder(),
-                  shadowColor: AppColor.darkGrey,
-                  child: IconButton(
-                      padding: EdgeInsets.zero,
-                      onPressed: onPressedAction,
-                      icon: CircleAvatar(
-                        backgroundColor: Theme.of(context).colorScheme.surface,
-                        radius: 40,
-                        child: Icon(
-                          iconAction,
-                          size: 16.h,
-                          color: Theme.of(context).colorScheme.primaryContainer,
-                        ),
-                      )),
-                )
-              : const SizedBox(),
-        ],
-      ),
+      ],
     );
   }
 

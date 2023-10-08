@@ -28,12 +28,8 @@ class ListCategoryHome extends StatelessWidget {
             children: [
               Text(
                 S.of(context).categories,
-                style: AppFonts.semiBold_18,
+                style: AppFonts.semiBold_18.copyWith(color: AppColor.jGDark),
               ),
-              Text(
-                S.of(context).seeAll,
-                style: AppFonts.semiBold_14,
-              )
             ],
           ),
           SizedBox(

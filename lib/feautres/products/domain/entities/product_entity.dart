@@ -41,6 +41,7 @@ class ProductEntity extends Equatable {
     required this.image,
     required this.subImage,
   });
+
   @override
   List<Object?> get props => [
         idProduct,

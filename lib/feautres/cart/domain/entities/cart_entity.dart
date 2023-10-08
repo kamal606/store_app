@@ -5,13 +5,14 @@ class CartEntity {
 
   const CartEntity({this.listProductEntity = const <ProductEntity>[]});
 
-  Map updateQuantity({required List<ProductEntity> productEntity}) {
-    var productQuantities = {};
+  Map<ProductEntity, int> updateQuantity(
+      {required List<ProductEntity> productEntity}) {
+    var productQuantities = <ProductEntity, int>{};
     for (var product in productEntity) {
       if (!productQuantities.containsKey(product)) {
         productQuantities[product] = 1;
       } else {
-        productQuantities[product] += 1;
+        productQuantities[product] = (productQuantities[product] ?? 0) + 1;
       }
     }
     return productQuantities;

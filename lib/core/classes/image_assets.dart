@@ -46,7 +46,7 @@ abstract class AppAssets {
   static const String iconRight = "assets/images/icons/iconRight.png";
   //======================splash==============================
   static const String logoApp =
-      "assets/images/splash/shopping-cart-3d-render-icon-modified.jpg";
+      "assets/images/splash/shopping-cart-icon-614x460.png";
   //======================onBording==============================
   static const String laptop = "assets/images/onbording/4FodSLhVlNY.jpg";
   static const String womenClothing =

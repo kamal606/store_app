@@ -57,7 +57,7 @@ class CustomSliverAppBar extends StatelessWidget
       expandedHeight: 180.h,
       flexibleSpace: Container(
         padding: EdgeInsets.only(top: 30.h),
-        decoration: BoxDecoration(gradient: AppColor.linearGradientAppBar()),
+        decoration: BoxDecoration(gradient: AppColor.linearGradient()),
         child: const FlexibleSpaceBar(
           collapseMode: CollapseMode.parallax,
           background: SectionTitleWithFormField(),

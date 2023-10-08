@@ -19,11 +19,11 @@ class SectionButtonLanguage extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 2.6,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
+        gradient: AppColor.linearGradient(),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(16.r),
           topRight: Radius.circular(16.r),
         ),
-        color: AppColor.white,
       ),
       child: BlocBuilder<AppLocaleBloc, AppLocaleState>(
         builder: (context, state) {
@@ -32,12 +32,13 @@ class SectionButtonLanguage extends StatelessWidget {
             children: [
               Text(
                 "Select Language",
-                style: AppFonts.bold_18,
+                style: AppFonts.bold_18.copyWith(color: AppColor.white),
               ),
               SizedBox(
                 width: MediaQuery.of(context).size.width - 100.h,
                 height: 40.h,
                 child: CustomElvatedButton(
+                  backgroundColor: AppColor.darkGrey,
                   imageAction: AppAssets.flagUsa,
                   isAction: true,
                   onPressed: () {
@@ -53,6 +54,7 @@ class SectionButtonLanguage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width - 100.h,
                 height: 40.h,
                 child: CustomElvatedButton(
+                  backgroundColor: AppColor.darkGrey,
                   imageAction: AppAssets.flagSyria,
                   isAction: true,
                   onPressed: () {

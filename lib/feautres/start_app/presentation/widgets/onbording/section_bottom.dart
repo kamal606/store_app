@@ -28,7 +28,7 @@ class SectionBottom extends StatelessWidget {
               child: CircleAvatar(
                 radius: 4.h,
                 backgroundColor:
-                    index == this.index ? AppColor.darkTheme : AppColor.grey,
+                    index == this.index ? AppColor.jGLight : AppColor.grey,
               ),
             );
           },

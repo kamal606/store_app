@@ -19,6 +19,8 @@ Future<void> initFlutter() async {
     initGetIt(),
     Hive.initFlutter(),
   ]);
+  await Hive.openBox(AppHive.quantity);
+  await Hive.openBox(AppHive.addToCartButton);
   await Hive.openBox(AppHive.iconFavorite);
 
   Bloc.observer = MyBlocObserver();

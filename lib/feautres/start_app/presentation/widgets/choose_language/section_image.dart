@@ -21,7 +21,7 @@ class SectionImageChooseLanguage extends StatelessWidget {
         ),
         Container(
           height: MediaQuery.of(context).size.height,
-          color: AppColor.chooseLanguage.withOpacity(0.6),
+          color: AppColor.blacK.withAlpha(75),
         )
       ],
     );

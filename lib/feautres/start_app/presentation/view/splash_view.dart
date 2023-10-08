@@ -1,6 +1,8 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:hive/hive.dart';
 import 'package:store_app/core/classes/image_assets.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/utils/go_router.dart';
@@ -13,35 +15,41 @@ class SplashView extends StatefulWidget {
   State<SplashView> createState() => _SplashViewState();
 }
 
-class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
-  late final AnimationController _animationController;
+class _SplashViewState extends State<SplashView>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _animation;
 
   @override
   void initState() {
-    //initlize controller
+    super.initState();
+    //========= animate logo ==============
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 2000));
-
-    //transation animate controller
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeIn,
+      ),
+    );
     _animationController.forward();
 
-    //show on boring just once
-    Future.delayed(const Duration(milliseconds: 2300), () async {
+    Timer(const Duration(seconds: 2), () async {
       //open box
       Box box = await SaveStartViewAppLocal.openBox();
       //if value box == false : put the value true and go to onbording
       //else if the value == true go to the home
       if (await SaveStartViewAppLocal.getIsOpen(box) == false) {
         if (!context.mounted) return;
-        context.replace(AppRouter.chooseLanguageView);
+        context.replace(AppRouter.loginOrSkip);
         await SaveStartViewAppLocal.addViewStartApp(box);
       } else {
         if (!context.mounted) return;
         context.replace(AppRouter.homeView);
       }
     });
-
-    super.initState();
   }
 
   @override
@@ -53,22 +61,16 @@ class _SplashViewState extends State<SplashView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration:
-            BoxDecoration(gradient: AppColor.linearGradientSplashBody()),
-        child: Center(
-          child: AnimatedBuilder(
-            animation: _animationController,
+      body: FadeTransition(
+        opacity: _animation,
+        child: Container(
+          decoration: BoxDecoration(gradient: AppColor.linearGradient()),
+          child: Center(
             child: Image.asset(
               AppAssets.logoApp,
-              width: MediaQuery.of(context).size.width / 2,
+              height: 250.h,
+              width: 250.h,
             ),
-            builder: (context, child) {
-              return Transform.rotate(
-                angle: _animationController.value * 6.3,
-                child: child,
-              );
-            },
           ),
         ),
       ),

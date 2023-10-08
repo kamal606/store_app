@@ -8,6 +8,7 @@ import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
 import 'package:store_app/core/widgets/custom_increment_quantity.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
+import 'package:store_app/feautres/favorite/data/local_data_source/icon_button_to_cart.dart';
 import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
 import 'package:store_app/generated/l10n.dart';
 
@@ -24,7 +25,6 @@ class CustomCardWishlistAndCart extends StatelessWidget {
   final num quantity;
   @override
   Widget build(BuildContext context) {
-    bool isAddToCart = false;
     return Padding(
       padding: EdgeInsets.only(bottom: 15.h),
       child: Material(
@@ -70,7 +70,8 @@ class CustomCardWishlistAndCart extends StatelessWidget {
                               ),
                               Text(
                                 productEntity.brandProduct,
-                                style: AppFonts.regular_11,
+                                style: AppFonts.regular_11
+                                    .copyWith(color: AppColor.jGMedium),
                               ),
                             ],
                           ),
@@ -80,6 +81,7 @@ class CustomCardWishlistAndCart extends StatelessWidget {
                           icon: Icon(
                             AppIcon.xmark,
                             size: 16.h,
+                            color: AppColor.jGDark,
                           ),
                         ),
                       ],
@@ -92,7 +94,8 @@ class CustomCardWishlistAndCart extends StatelessWidget {
                       children: [
                         Text(
                           "\$${productEntity.priceProduct.toStringAsFixed(2)}",
-                          style: AppFonts.bold_14,
+                          style:
+                              AppFonts.bold_14.copyWith(color: AppColor.jGDark),
                         ),
                         isCart
                             ? CustomIncrementQuantity(
@@ -101,19 +104,29 @@ class CustomCardWishlistAndCart extends StatelessWidget {
                               )
                             : BlocBuilder<CartBloc, CartState>(
                                 builder: (context, state) {
-                                  return CustomElvatedButton(
-                                    isAddToCart: isAddToCart,
-                                    onPressed: () {
-                                      if (!isAddToCart) {
-                                        BlocProvider.of<CartBloc>(context).add(
-                                          AddToCartEvent(
-                                              productEntity: productEntity),
-                                        );
-                                      }
-                                      isAddToCart = !isAddToCart;
-                                    },
-                                    title: S.of(context).addToCart,
-                                    fontTitle: AppFonts.semiBold_12,
+                                  return SizedBox(
+                                    width: 85.h,
+                                    height: 25.h,
+                                    child: CustomElvatedButton(
+                                      isAddToCart:
+                                          AddToCartButtonSaveLocal.getButton(
+                                              productEntity),
+                                      onPressed: () async {
+                                        if (AddToCartButtonSaveLocal.getButton(
+                                                productEntity) ==
+                                            false) {
+                                          BlocProvider.of<CartBloc>(context)
+                                              .add(
+                                            AddToCartEvent(
+                                                productEntity: productEntity),
+                                          );
+                                          await AddToCartButtonSaveLocal
+                                              .addButton(productEntity);
+                                        }
+                                      },
+                                      title: S.of(context).addToCart,
+                                      fontTitle: AppFonts.semiBold_12,
+                                    ),
                                   );
                                 },
                               ),

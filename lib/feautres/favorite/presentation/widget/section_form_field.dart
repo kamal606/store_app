@@ -27,6 +27,7 @@ class SectionFormFieldAndDeleteAllFavoriteAndCart extends StatelessWidget {
             icon: Icon(
               AppIcon.trash,
               size: 22.h,
+              color: AppColor.jGDark,
             ))
       ],
     );

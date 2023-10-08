@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'section_increment_quantity.dart';
-import 'section_rate_with_title.dart';
+import 'section_increment_quantity_with_rate.dart';
+import 'section_title_with_brand.dart';
 
 import '../../../domain/entities/product_entity.dart';
 

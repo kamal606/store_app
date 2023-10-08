@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/utils/error_display.dart';
 import '../../../../../core/utils/go_router.dart';
@@ -44,9 +43,8 @@ class CustomListProductHome extends StatelessWidget {
             children: [
               Text(
                 titleList ?? "",
-                style: AppFonts.semiBold_18,
+                style: AppFonts.semiBold_18.copyWith(color: AppColor.jGDark),
               ),
-              Text(S.of(context).seeAll, style: AppFonts.semiBold_14),
             ],
           ),
           SizedBox(

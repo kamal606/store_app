@@ -12,8 +12,8 @@ class DetailsProductView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
       appBar: CustomAppBar(
+        colorCircleAvatar: Colors.transparent,
         leading: true,
         isAction: true,
         iconAction: AppIcon.bagShopping,

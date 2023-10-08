@@ -6,6 +6,7 @@ import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
+import 'package:store_app/generated/l10n.dart';
 
 class SectionPriceAndProceedCart extends StatefulWidget {
   const SectionPriceAndProceedCart({super.key});
@@ -54,7 +55,7 @@ class _SectionPriceAndProceedCartState
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              "BagTotal:",
+                              S.of(context).bagTotla,
                               style: AppFonts.bold_16,
                             ),
                             const Spacer(),
@@ -71,13 +72,14 @@ class _SectionPriceAndProceedCartState
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              "SubTotal",
+                              S.of(context).subTotal,
                               style: AppFonts.bold_16,
                             ),
                             const Spacer(),
                             Text(
                               "\$${state.cartEntity.stringSubTotal}",
-                              style: AppFonts.bold_16,
+                              style: AppFonts.bold_16
+                                  .copyWith(color: AppColor.jGDark),
                             )
                           ],
                         ),
@@ -87,13 +89,14 @@ class _SectionPriceAndProceedCartState
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              "Shipping",
+                              S.of(context).tax,
                               style: AppFonts.bold_16,
                             ),
                             const Spacer(),
                             Text(
                               "\$${state.cartEntity.stringShippingPrice}",
-                              style: AppFonts.bold_16,
+                              style: AppFonts.bold_16
+                                  .copyWith(color: AppColor.jGDark),
                             )
                           ],
                         ),
@@ -103,13 +106,14 @@ class _SectionPriceAndProceedCartState
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Text(
-                              "BagTotal",
+                              S.of(context).bagTotla,
                               style: AppFonts.bold_16,
                             ),
                             const Spacer(),
                             Text(
                               "\$${state.cartEntity.stringBagTotal}",
-                              style: AppFonts.bold_16,
+                              style: AppFonts.bold_16
+                                  .copyWith(color: AppColor.jGDark),
                             )
                           ],
                         ),
@@ -119,7 +123,7 @@ class _SectionPriceAndProceedCartState
                           height: 40.h,
                           child: CustomElvatedButton(
                             onPressed: () {},
-                            title: "Proceed to Checkout",
+                            title: S.of(context).checkout,
                           ),
                         )
                       ]
@@ -132,7 +136,10 @@ class _SectionPriceAndProceedCartState
                         expanded = !expanded;
                       });
                     },
-                    icon: Icon(expanded ? AppIcon.expand : AppIcon.notExpand))
+                    icon: Icon(
+                      expanded ? AppIcon.expand : AppIcon.notExpand,
+                      color: AppColor.jGDark,
+                    ))
               ],
             );
           } else {

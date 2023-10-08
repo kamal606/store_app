@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:store_app/feautres/start_app/presentation/view/choose_language_view.dart';
+import 'package:store_app/feautres/start_app/presentation/view/login_or_skip.dart';
 import 'package:store_app/feautres/start_app/presentation/view/onbording_view.dart';
 import 'package:store_app/feautres/start_app/presentation/view/splash_view.dart';
 import 'dependency_injection.dart' as di;
@@ -20,13 +21,18 @@ abstract class AppRouter {
   static const String homeView = "/homeView";
   static const String onBordingView = "/onBordingView";
   static const String chooseLanguageView = "/chooseLanguageView";
+  static const String loginOrSkip = "/loginOrSkip";
 
   static final router = GoRouter(
     routes: [
-      // GoRoute(path: "/", builder: (context, state) => const MyApp()),
+      // GoRoute(path: "/", builder: (context, state) => const Testt()),
       GoRoute(
         path: "/",
         builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: loginOrSkip,
+        builder: (context, state) => const LoginOrSkip(),
       ),
       GoRoute(
         path: chooseLanguageView,
@@ -36,7 +42,6 @@ abstract class AppRouter {
         path: AppRouter.onBordingView,
         builder: (context, state) => const OnBordingView(),
       ),
-
       GoRoute(
         path: AppRouter.homeView,
         builder: (context, state) => BlocProvider(

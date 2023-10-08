@@ -6,7 +6,7 @@ abstract class CartLocalDataSource {
   Future<Box> openBox();
   Future<void> addToCart(Box box, ProductEntity productEntity);
   Future<void> removeFromCart(Box box, ProductEntity productEntity);
-  Future<void> removeIndexFromCart(Box box, int index);
+
   Future<void> clearAllCart(Box box);
   List<ProductEntity> getAllCartProduct(Box box);
 }
@@ -26,11 +26,6 @@ class CartLocalDataSourceImpl implements CartLocalDataSource {
   @override
   Future<void> removeFromCart(Box box, ProductEntity productEntity) async {
     await box.delete(productEntity.idProduct);
-  }
-
-  @override
-  Future<void> removeIndexFromCart(Box box, int index) async {
-    return await box.deleteAt(index);
   }
 
   @override

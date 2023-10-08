@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/fonts/app_font.dart';
 
@@ -17,7 +18,7 @@ class SectionDescription extends StatelessWidget {
         children: [
           Text(
             S.of(context).description,
-            style: AppFonts.semiBold_16,
+            style: AppFonts.semiBold_16.copyWith(color: AppColor.jGMedium),
           ),
           SizedBox(
             height: 10.h,

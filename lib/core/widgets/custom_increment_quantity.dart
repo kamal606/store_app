@@ -24,45 +24,43 @@ class CustomIncrementQuantity extends StatelessWidget {
         height: 28.h,
         padding: EdgeInsets.symmetric(horizontal: 10.h),
         decoration: BoxDecoration(
-          color: AppColor.background,
+          color: AppColor.jGMediumDark,
           borderRadius: BorderRadius.circular(16.h),
         ),
-        child: Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(),
-                onPressed: () {
-                  BlocProvider.of<CartBloc>(context)
-                      .add(RemoveFromCartEvent(productEntity: productEntity));
-                },
-                icon: FaIcon(
-                  AppIcon.minus,
-                  size: 15.h,
-                  color: AppColor.blacK,
-                ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints(),
+              onPressed: () {
+                BlocProvider.of<CartBloc>(context)
+                    .add(RemoveFromCartEvent(productEntity: productEntity));
+              },
+              icon: FaIcon(
+                AppIcon.minus,
+                size: 15.h,
+                color: AppColor.white,
               ),
-              Text(
-                "$quantity",
-                style: AppFonts.regular_13.copyWith(color: AppColor.blacK),
+            ),
+            Text(
+              "$quantity",
+              style: AppFonts.regular_13.copyWith(color: AppColor.white),
+            ),
+            IconButton(
+              padding: EdgeInsets.zero,
+              constraints: const BoxConstraints(),
+              onPressed: () {
+                BlocProvider.of<CartBloc>(context)
+                    .add(AddToCartEvent(productEntity: productEntity));
+              },
+              icon: FaIcon(
+                AppIcon.plus,
+                size: 15.h,
+                color: AppColor.white,
               ),
-              IconButton(
-                padding: EdgeInsets.zero,
-                constraints: const BoxConstraints(),
-                onPressed: () {
-                  BlocProvider.of<CartBloc>(context)
-                      .add(AddToCartEvent(productEntity: productEntity));
-                },
-                icon: FaIcon(
-                  AppIcon.plus,
-                  size: 15.h,
-                  color: AppColor.blacK,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

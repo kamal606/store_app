@@ -47,6 +47,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   shimmer: ^3.0.0
+  video_player: ^2.7.2
 
 dev_dependencies:
   build_runner: ^2.4.6
@@ -77,6 +78,8 @@ flutter:
     - assets/images/flags/
     - assets/images/wishlist/
     - assets/images/cart/
+    - assets/videos/
+    
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -97,7 +100,6 @@ flutter:
     - family: Cairo
       fonts:
         - asset: assets/fonts/Cairo-VariableFont_slnt,wght.ttf
-        
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

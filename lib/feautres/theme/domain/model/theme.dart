@@ -25,12 +25,12 @@ Map<AppTheme, ThemeData> theme = {
     colorScheme: const ColorScheme.dark(
       surface: AppColor.white,
       primaryContainer: AppColor.darkTheme,
-      secondary: AppColor.darkGrey,
+      secondary: AppColor.blacK,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      selectedIconTheme: IconThemeData(color: AppColor.white),
-      unselectedIconTheme: IconThemeData(color: AppColor.grey),
-      selectedLabelStyle: TextStyle(backgroundColor: AppColor.white),
+      selectedIconTheme: IconThemeData(color: AppColor.jGDark),
+      unselectedIconTheme: IconThemeData(color: AppColor.darkGrey),
+      selectedLabelStyle: TextStyle(backgroundColor: AppColor.jGDark),
       backgroundColor: AppColor.blacK,
     ),
   ),
@@ -39,7 +39,7 @@ Map<AppTheme, ThemeData> theme = {
     fontFamily: "Cairo",
     brightness: Brightness.light,
     elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(backgroundColor: AppColor.darkTheme),
+      style: ElevatedButton.styleFrom(backgroundColor: AppColor.jGDark),
     ),
     colorScheme: const ColorScheme.light(
       surface: AppColor.darkTheme,
@@ -47,9 +47,9 @@ Map<AppTheme, ThemeData> theme = {
       secondary: AppColor.white,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      selectedIconTheme: IconThemeData(color: AppColor.darkTheme),
-      unselectedIconTheme: IconThemeData(color: AppColor.grey),
-      selectedLabelStyle: TextStyle(backgroundColor: AppColor.darkTheme),
+      selectedIconTheme: IconThemeData(color: AppColor.jGDark),
+      unselectedIconTheme: IconThemeData(color: AppColor.darkGrey),
+      selectedLabelStyle: TextStyle(backgroundColor: AppColor.darkGrey),
     ),
   ),
 };

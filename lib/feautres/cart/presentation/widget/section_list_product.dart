@@ -6,6 +6,7 @@ import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/function/check_local_arabic.dart';
 import 'package:store_app/core/function/toast_flutter.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
+import 'package:store_app/feautres/favorite/data/local_data_source/icon_button_to_cart.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_card_product.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_empty_favorite.dart';
 
@@ -61,13 +62,15 @@ class SectionListProductCart extends StatelessWidget {
                         ),
                       ),
                       key: UniqueKey(),
-                      onDismissed: (direction) {
+                      onDismissed: (direction) async {
                         if (direction == DismissDirection.endToStart) {
                           BlocProvider.of<CartBloc>(context).add(
-                              RemoveFromCartEvent(
+                              RemoveIndexFromCart(
                                   productEntity:
                                       state.cartEntity.listProductEntity[i]));
                         }
+                        await AddToCartButtonSaveLocal.removeButton(
+                            state.cartEntity.listProductEntity[i]);
                       },
                       confirmDismiss: (direction) async {
                         if (direction == DismissDirection.startToEnd) {
@@ -75,26 +78,30 @@ class SectionListProductCart extends StatelessWidget {
                         }
                         return true;
                       },
-                      child: CustomCardWishlistAndCart(
-                        quantity: state.cartEntity
-                            .updateQuantity(
-                                productEntity:
-                                    state.cartEntity.listProductEntity)
-                            .values
-                            .elementAt(i),
-                        isCart: true,
-                        onPressed: () async {
-                          BlocProvider.of<CartBloc>(context).add(
-                              RemoveFromCartEvent(
+                      child: SizedBox(
+                        child: CustomCardWishlistAndCart(
+                          quantity: state.cartEntity
+                              .updateQuantity(
                                   productEntity:
-                                      state.cartEntity.listProductEntity[i]));
-                        },
-                        productEntity: state.cartEntity
-                            .updateQuantity(
-                                productEntity:
-                                    state.cartEntity.listProductEntity)
-                            .keys
-                            .elementAt(i),
+                                      state.cartEntity.listProductEntity)
+                              .values
+                              .elementAt(i),
+                          isCart: true,
+                          onPressed: () async {
+                            BlocProvider.of<CartBloc>(context).add(
+                                RemoveIndexFromCart(
+                                    productEntity:
+                                        state.cartEntity.listProductEntity[i]));
+                            await AddToCartButtonSaveLocal.removeButton(
+                                state.cartEntity.listProductEntity[i]);
+                          },
+                          productEntity: state.cartEntity
+                              .updateQuantity(
+                                  productEntity:
+                                      state.cartEntity.listProductEntity)
+                              .keys
+                              .elementAt(i),
+                        ),
                       ),
                     );
                   }),

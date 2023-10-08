@@ -26,9 +26,12 @@
 "settings":"الاعدادت",
 "about":"حول",
 "signOut":"تسجيل الخروج",
-"onBordingDiscount":"خصم 20%\nعلى المنتجات الجديدة",
-"onBordingTakeAdvantage":"استفد من\nعرض التسوق",
-"onBordingAllTypes":"جميع أنواع العروض\nفي متناول يدك",
+"onBordingDiscount1":"خصم 20%\n",
+"onBordingDiscount2":"المنتجات الجديدة",
+"onBordingTakeAdvantage1":"استفد من\n",
+"onBordingTakeAdvantage2":"التسوق",
+"onBordingAllTypes1":"جميع أنواع العروض\n",
+"onBordingAllTypes2":"متناول يدك",
 "onBordingSubTitle": "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق",
 "favoritesEmpty": "المفضلة فارغة",
 "cartEmpty": "عربة التسوق فارغة",
@@ -38,6 +41,11 @@
 "cancel": "الغاء",
 "agree": "موافق",
 "favoriteView":"المفضلة",
-"cartView":"عربة التسوق"
+"cartView":"عربة التسوق",
+"bagTotla":"إجمالي الحقيبة:",
+"subTotal":"المجموع الفرعي:",
+"tax":"ضريبة:",
+"checkout":"معالجة الدفع",
+"added":"أضيفت"
 
 }

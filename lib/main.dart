@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
-
 import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 import 'package:store_app/generated/l10n.dart';
-
 import 'core/function/init_flutter.dart';
 import 'core/utils/dependency_injection.dart' as di;
 import 'core/utils/go_router.dart';
@@ -18,8 +17,10 @@ import 'feautres/products/presentation/bloc/status_internet/status_internet_bloc
 
 Future<void> main() async {
   await initFlutter();
-
   await Future.delayed(const Duration(milliseconds: 300));
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+  ));
 
   runApp(const StoreApp());
 }

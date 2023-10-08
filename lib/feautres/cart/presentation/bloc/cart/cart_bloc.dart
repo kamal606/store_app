@@ -65,6 +65,27 @@ class CartBloc extends Bloc<CartEvent, CartState> {
               errorMessage: "There was an error when remove from cart"));
         }
       }
+      //================ remove index from cart event ====================
+      if (event is RemoveIndexFromCart) {
+        try {
+          final Box box = await cartLocalDataSourceImpl.openBox();
+          await cartLocalDataSourceImpl.removeFromCart(
+              box, event.productEntity);
+          emit(
+            CartSuccess(
+              cartEntity: CartEntity(
+                listProductEntity: List.from(
+                    (state as CartSuccess).cartEntity.listProductEntity)
+                  ..removeWhere((element) =>
+                      element.idProduct == event.productEntity.idProduct),
+              ),
+            ),
+          );
+        } on Exception {
+          emit(const CartFailure(
+              errorMessage: "There was an error when remove index cart"));
+        }
+      }
       //================ clear all from cart event ====================
       if (event is ClearAllFromCartEvent) {
         try {

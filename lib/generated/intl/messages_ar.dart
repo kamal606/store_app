@@ -25,12 +25,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "Search": MessageLookupByLibrary.simpleMessage("ابحث..."),
         "about": MessageLookupByLibrary.simpleMessage("حول"),
         "addToCart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
+        "added": MessageLookupByLibrary.simpleMessage("أضيفت"),
         "agree": MessageLookupByLibrary.simpleMessage("موافق"),
+        "bagTotla": MessageLookupByLibrary.simpleMessage("إجمالي الحقيبة:"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
         "cartEmpty": MessageLookupByLibrary.simpleMessage("عربة التسوق فارغة"),
         "cartView": MessageLookupByLibrary.simpleMessage("عربة التسوق"),
         "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
+        "checkout": MessageLookupByLibrary.simpleMessage("معالجة الدفع"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "description": MessageLookupByLibrary.simpleMessage("وصف"),
         "dialogCart": MessageLookupByLibrary.simpleMessage(
@@ -45,14 +48,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
         "newArrival": MessageLookupByLibrary.simpleMessage("جديد"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("وصول جديد"),
-        "onBordingAllTypes": MessageLookupByLibrary.simpleMessage(
-            "جميع أنواع العروض\nفي متناول يدك"),
-        "onBordingDiscount": MessageLookupByLibrary.simpleMessage(
-            "خصم 20%\nعلى المنتجات الجديدة"),
+        "onBordingAllTypes1":
+            MessageLookupByLibrary.simpleMessage("جميع أنواع العروض\n"),
+        "onBordingAllTypes2":
+            MessageLookupByLibrary.simpleMessage("متناول يدك"),
+        "onBordingDiscount1": MessageLookupByLibrary.simpleMessage("خصم 20%\n"),
+        "onBordingDiscount2":
+            MessageLookupByLibrary.simpleMessage("المنتجات الجديدة"),
         "onBordingSubTitle": MessageLookupByLibrary.simpleMessage(
             "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق"),
-        "onBordingTakeAdvantage":
-            MessageLookupByLibrary.simpleMessage("استفد من\nعرض التسوق"),
+        "onBordingTakeAdvantage1":
+            MessageLookupByLibrary.simpleMessage("استفد من\n"),
+        "onBordingTakeAdvantage2":
+            MessageLookupByLibrary.simpleMessage("التسوق"),
         "onEverythingToday":
             MessageLookupByLibrary.simpleMessage("على كل شيء اليوم"),
         "ourEcommerceApp": MessageLookupByLibrary.simpleMessage(
@@ -66,6 +74,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "settings": MessageLookupByLibrary.simpleMessage("الاعدادت"),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "stock": MessageLookupByLibrary.simpleMessage("متوفر"),
+        "subTotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي:"),
+        "tax": MessageLookupByLibrary.simpleMessage("ضريبة:"),
         "toStartWithUs": MessageLookupByLibrary.simpleMessage("للبدء معنا"),
         "totalPrice": MessageLookupByLibrary.simpleMessage("السعر الإجمالي"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا"),

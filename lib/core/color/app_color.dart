@@ -21,21 +21,29 @@ class AppColor {
   static const Color drawerBlackDark = Color(0XFF292929);
   static const Color drawerBlackRegular = Color(0XFF3F3F3F);
   static const Color drawerBlackLight = Color(0XFF535353);
-  static const Color drawerName = Color(0XFF11AF8E);
   static const Color star = Color(0XFFFFAB07);
   static const Color yellow = Colors.yellow;
   static const Color success = Color(0XFF2AA952);
   static const Color pink = Colors.pink;
   static const Color orange = Colors.orange;
   static const Color purple = Colors.purple;
+//============== Jungle Green =======================
+  static const Color jGDark = Color(0XFF0B7A64);
+  static const Color jGMediumDark = Color(0XFF0E9376);
+  static const Color jGMedium = Color(0XFF11AF8E);
+  static const Color jGMediumLight = Color(0XFF24C7A6);
+  static const Color jGLight = Color(0XFF37E5BD);
 
   //======================= linear gradient ======================
-  static LinearGradient linearGradientAppBar() {
-    return const LinearGradient(colors: [
-      AppColor.blacK,
-      AppColor.background,
-      AppColor.darkGrey,
-    ]);
+  static LinearGradient linearGradient() {
+    return const LinearGradient(
+        begin: Alignment.topLeft,
+        end: Alignment.bottomRight,
+        colors: [
+          AppColor.jGLight,
+          AppColor.jGMedium,
+          AppColor.jGDark,
+        ]);
   }
 
   static LinearGradient linearGradientSplashBody() {

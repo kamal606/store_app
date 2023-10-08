@@ -4,12 +4,14 @@ import 'package:store_app/generated/l10n.dart';
 
 class ClassOnBording {
   final String image;
-  final String title;
+  final String title1;
+  final String title2;
   final String subTitle;
 
   ClassOnBording({
     required this.image,
-    required this.title,
+    required this.title1,
+    required this.title2,
     required this.subTitle,
   });
 
@@ -17,17 +19,20 @@ class ClassOnBording {
     return [
       ClassOnBording(
         image: AppAssets.womenClothing,
-        title: S.of(context).onBordingDiscount,
+        title1: S.of(context).onBordingDiscount1,
+        title2: S.of(context).onBordingDiscount2,
         subTitle: S.of(context).onBordingSubTitle,
       ),
       ClassOnBording(
         image: AppAssets.laptop,
-        title: S.of(context).onBordingTakeAdvantage,
+        title1: S.of(context).onBordingTakeAdvantage1,
+        title2: S.of(context).onBordingTakeAdvantage2,
         subTitle: S.of(context).onBordingSubTitle,
       ),
       ClassOnBording(
         image: AppAssets.shoes,
-        title: S.of(context).onBordingAllTypes,
+        title1: S.of(context).onBordingAllTypes1,
+        title2: S.of(context).onBordingAllTypes2,
         subTitle: S.of(context).onBordingSubTitle,
       ),
     ];

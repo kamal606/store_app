@@ -67,7 +67,7 @@ class CustomCardProduct extends StatelessWidget {
               ),
               Text(
                 brandProduct,
-                style: AppFonts.regular_11,
+                style: AppFonts.regular_11.copyWith(color: AppColor.jGMedium),
               ),
               isDiscount
                   ? Row(
@@ -85,7 +85,7 @@ class CustomCardProduct extends StatelessWidget {
                         Text(
                           "\$${(price - price * priceDiscount! / 100).toStringAsFixed(1)}",
                           style: AppFonts.semiBold_14.copyWith(
-                            color: AppColor.erorr,
+                            color: AppColor.jGDark,
                           ),
                         ),
                       ],

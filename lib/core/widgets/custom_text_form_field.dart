@@ -33,7 +33,7 @@ class CustomTextFormField extends StatelessWidget {
               prefixIcon,
               size: 20.h,
             ),
-            color: AppColor.blacK,
+            color: AppColor.jGDark,
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(

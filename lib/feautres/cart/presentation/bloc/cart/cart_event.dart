@@ -31,6 +31,15 @@ class RemoveFromCartEvent extends CartEvent {
 //================ clear all from cart event ====================
 class ClearAllFromCartEvent extends CartEvent {}
 
+//================ remove index item  event ====================
+class RemoveIndexFromCart extends CartEvent {
+  final ProductEntity productEntity;
+
+  const RemoveIndexFromCart({required this.productEntity});
+  @override
+  List<Object> get props => [productEntity];
+}
+
 //================ search by query event ====================
 class SearchInCartEvent extends CartEvent {
   final String query;

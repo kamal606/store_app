@@ -312,31 +312,61 @@ class S {
     );
   }
 
-  /// `20% Discount\nNew Arrival Products`
-  String get onBordingDiscount {
+  /// `20% Discount\n`
+  String get onBordingDiscount1 {
     return Intl.message(
-      '20% Discount\nNew Arrival Products',
-      name: 'onBordingDiscount',
+      '20% Discount\n',
+      name: 'onBordingDiscount1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Take Advantage\nOf The Offer Shopping`
-  String get onBordingTakeAdvantage {
+  /// `New Arrival Products`
+  String get onBordingDiscount2 {
     return Intl.message(
-      'Take Advantage\nOf The Offer Shopping',
-      name: 'onBordingTakeAdvantage',
+      'New Arrival Products',
+      name: 'onBordingDiscount2',
       desc: '',
       args: [],
     );
   }
 
-  /// `All Types Offers\nWithin Your Reach`
-  String get onBordingAllTypes {
+  /// `Take Advantage\n`
+  String get onBordingTakeAdvantage1 {
     return Intl.message(
-      'All Types Offers\nWithin Your Reach',
-      name: 'onBordingAllTypes',
+      'Take Advantage\n',
+      name: 'onBordingTakeAdvantage1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Of The Offer Shopping`
+  String get onBordingTakeAdvantage2 {
+    return Intl.message(
+      'Of The Offer Shopping',
+      name: 'onBordingTakeAdvantage2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Types Offers\n`
+  String get onBordingAllTypes1 {
+    return Intl.message(
+      'All Types Offers\n',
+      name: 'onBordingAllTypes1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Within Your Reach`
+  String get onBordingAllTypes2 {
+    return Intl.message(
+      'Within Your Reach',
+      name: 'onBordingAllTypes2',
       desc: '',
       args: [],
     );
@@ -437,6 +467,56 @@ class S {
     return Intl.message(
       'My Cart',
       name: 'cartView',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bag Total:`
+  String get bagTotla {
+    return Intl.message(
+      'Bag Total:',
+      name: 'bagTotla',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SubTotal:`
+  String get subTotal {
+    return Intl.message(
+      'SubTotal:',
+      name: 'subTotal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tax:`
+  String get tax {
+    return Intl.message(
+      'Tax:',
+      name: 'tax',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed to Checkout`
+  String get checkout {
+    return Intl.message(
+      'Proceed to Checkout',
+      name: 'checkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `added`
+  String get added {
+    return Intl.message(
+      'added',
+      name: 'added',
       desc: '',
       args: [],
     );

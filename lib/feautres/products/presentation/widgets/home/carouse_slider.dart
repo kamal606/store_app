@@ -49,19 +49,20 @@ class CustomCarouseSlider extends StatelessWidget {
                 Positioned(
                   left: 10.h,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(i.title,
-                          style:
-                              AppFonts.bold_25.copyWith(color: AppColor.blacK)),
+                          style: AppFonts.bold_25
+                              .copyWith(color: AppColor.jGDark)),
                       Text(i.subTitle,
                           style: AppFonts.regular_16
-                              .copyWith(color: AppColor.blacK)),
+                              .copyWith(color: AppColor.darkGrey)),
                       SizedBox(
                         height: 10.h,
                       ),
                       Text(i.code,
                           style: AppFonts.semiBold_11
-                              .copyWith(color: AppColor.darkGrey)),
+                              .copyWith(color: AppColor.jGMedium)),
                     ],
                   ),
                 )

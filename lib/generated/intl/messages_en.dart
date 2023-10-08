@@ -25,12 +25,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "Search": MessageLookupByLibrary.simpleMessage("Search..."),
         "about": MessageLookupByLibrary.simpleMessage("About"),
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
+        "added": MessageLookupByLibrary.simpleMessage("added"),
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
+        "bagTotla": MessageLookupByLibrary.simpleMessage("Bag Total:"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "cartEmpty": MessageLookupByLibrary.simpleMessage("Cart are empty"),
         "cartView": MessageLookupByLibrary.simpleMessage("My Cart"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "checkout": MessageLookupByLibrary.simpleMessage("Proceed to Checkout"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "dialogCart": MessageLookupByLibrary.simpleMessage(
@@ -46,14 +49,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
         "newArrival": MessageLookupByLibrary.simpleMessage("NEW"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
-        "onBordingAllTypes": MessageLookupByLibrary.simpleMessage(
-            "All Types Offers\nWithin Your Reach"),
-        "onBordingDiscount": MessageLookupByLibrary.simpleMessage(
-            "20% Discount\nNew Arrival Products"),
+        "onBordingAllTypes1":
+            MessageLookupByLibrary.simpleMessage("All Types Offers\n"),
+        "onBordingAllTypes2":
+            MessageLookupByLibrary.simpleMessage("Within Your Reach"),
+        "onBordingDiscount1":
+            MessageLookupByLibrary.simpleMessage("20% Discount\n"),
+        "onBordingDiscount2":
+            MessageLookupByLibrary.simpleMessage("New Arrival Products"),
         "onBordingSubTitle": MessageLookupByLibrary.simpleMessage(
             "publish up your selfies to make your self more beuatiful with this app"),
-        "onBordingTakeAdvantage": MessageLookupByLibrary.simpleMessage(
-            "Take Advantage\nOf The Offer Shopping"),
+        "onBordingTakeAdvantage1":
+            MessageLookupByLibrary.simpleMessage("Take Advantage\n"),
+        "onBordingTakeAdvantage2":
+            MessageLookupByLibrary.simpleMessage("Of The Offer Shopping"),
         "onEverythingToday":
             MessageLookupByLibrary.simpleMessage("On everything today"),
         "ourEcommerceApp":
@@ -67,6 +76,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
         "stock": MessageLookupByLibrary.simpleMessage("Stock"),
+        "subTotal": MessageLookupByLibrary.simpleMessage("SubTotal:"),
+        "tax": MessageLookupByLibrary.simpleMessage("Tax:"),
         "toStartWithUs":
             MessageLookupByLibrary.simpleMessage("to start with us"),
         "totalPrice": MessageLookupByLibrary.simpleMessage("Total Price"),

@@ -16,20 +16,17 @@ class SectionCircleAvatar extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 200.h,
-            backgroundColor:
-                isDarkTheme ? AppColor.blacK : AppColor.drawerBlueLight,
+            backgroundColor: isDarkTheme ? AppColor.blacK : AppColor.jGDark,
           ),
           CircleAvatar(
             radius: 180.h,
-            backgroundColor: isDarkTheme
-                ? AppColor.drawerBlackRegular
-                : AppColor.drawerBlueRegular,
+            backgroundColor:
+                isDarkTheme ? AppColor.drawerBlackRegular : AppColor.jGMedium,
           ),
           CircleAvatar(
             radius: 160.h,
-            backgroundColor: isDarkTheme
-                ? AppColor.drawerBlackLight
-                : AppColor.drawerBlueDark,
+            backgroundColor:
+                isDarkTheme ? AppColor.drawerBlackLight : AppColor.jGLight,
           ),
         ],
       ),

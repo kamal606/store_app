@@ -22,21 +22,15 @@ class CustomIconLeftOrRight extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onPressed,
-      child: Material(
-        elevation: 3.h,
-        shape: const CircleBorder(),
-        shadowColor: AppColor.darkGrey,
-        child: CircleAvatar(
-          radius: 26.h,
-          backgroundColor:
-              colorCircleAvatar ?? Theme.of(context).colorScheme.surface,
-          child: Image.asset(
-            isArabicLocale()
-                ? (isAppbar ? AppAssets.iconRight : AppAssets.iconLeft)
-                : (isAppbar ? AppAssets.iconLeft : AppAssets.iconRight),
-            height: heightIcon ?? 13.h,
-            color: colorImage ?? Theme.of(context).colorScheme.primaryContainer,
-          ),
+      child: CircleAvatar(
+        backgroundColor: colorCircleAvatar ?? AppColor.jGLight,
+        radius: 25.h,
+        child: Image.asset(
+          isArabicLocale()
+              ? (isAppbar ? AppAssets.iconRight : AppAssets.iconLeft)
+              : (isAppbar ? AppAssets.iconLeft : AppAssets.iconRight),
+          height: heightIcon ?? 13.h,
+          color: colorImage ?? AppColor.white,
         ),
       ),
     );

@@ -38,7 +38,7 @@ class CustomIconFavorite extends StatelessWidget {
                       await FavoriteIconSaveLocal.addColorToIcon(productEntity);
                       toast(
                           message: "Add Product Success",
-                          color: AppColor.success);
+                          color: AppColor.jGDark);
                     } else {
                       if (!context.mounted) return;
                       BlocProvider.of<FavoriteBloc>(context).add(
@@ -51,7 +51,7 @@ class CustomIconFavorite extends StatelessWidget {
                     FavoriteIconSaveLocal.getColorIcon(productEntity) == false
                         ? AppIcon.favorite
                         : AppIcon.favoriteSolid,
-                    color: AppColor.darkTheme,
+                    color: AppColor.jGDark,
                     size: 18.h,
                   ));
             },

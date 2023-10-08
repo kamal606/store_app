@@ -49,7 +49,8 @@ class _OnBordingViewBodyState extends State<OnBordingViewBody> {
                       SizedBox(height: heightContainer / 8),
                       //titles
                       SectionText(
-                        title: onBording.title,
+                        title1: onBording.title1,
+                        title2: onBording.title2,
                         subtitle: onBording.subTitle,
                         heightContainer: heightContainer,
                       ),
