@@ -63,7 +63,8 @@ class ListCategoryHome extends StatelessWidget {
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    context.go(AppRouter.productCategory);
+                                    context.push(AppRouter.productCategory,
+                                        extra: state.category[i]);
                                   },
                                   child: CustomBoxCategory(
                                     image: AppCategoryIcon

@@ -3,15 +3,15 @@ import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
 import '../../../../core/utils/failure.dart';
 import '../data_source/local_data_source.dart/products_local_data_source.dart';
-import '../data_source/remote_data_source/product_of_category_remote_date_source.dart';
+import '../data_source/remote_data_source/all_products.dart';
 import '../../domain/entities/product_entity.dart';
 import '../../domain/repository/repo_product.dart';
 
-class GetProductOfCategoryRepoImpl extends AllProductsRepo {
+class GetAllProductsRepoImpl extends AllProductsRepo {
   final AllProductsRemoteDataSourceImpl productOfCategoryRemoteDataSourceImpl;
   final AllProductsLocalDataSourceImpl productsLocalDataSourceImpl;
 
-  GetProductOfCategoryRepoImpl(
+  GetAllProductsRepoImpl(
       {required this.productOfCategoryRemoteDataSourceImpl,
       required this.productsLocalDataSourceImpl});
   @override

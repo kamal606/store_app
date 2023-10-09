@@ -55,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
         "newArrival": MessageLookupByLibrary.simpleMessage("NEW"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
+        "notResult":
+            MessageLookupByLibrary.simpleMessage("There are no results"),
         "onBordingAllTypes1":
             MessageLookupByLibrary.simpleMessage("Every Good Sale Now\n"),
         "onBordingAllTypes2":
@@ -76,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "saleProduct": MessageLookupByLibrary.simpleMessage("Sale Product"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchProductName":
             MessageLookupByLibrary.simpleMessage("Search Product Name"),
         "seeAll": MessageLookupByLibrary.simpleMessage("See All"),

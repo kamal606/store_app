@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:store_app/core/utils/go_router.dart';
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/fonts/app_font.dart';
@@ -24,6 +26,11 @@ class SectionTitleWithFormField extends StatelessWidget {
           ),
         ),
         CustomTextFormField(
+          onChanged: (value) {
+            if (value.isNotEmpty) {
+              context.push(AppRouter.searchHomeView);
+            }
+          },
           hint: S.of(context).searchProductName,
           prefixIcon: AppIcon.search,
           onPressedPrefixIcon: () {},

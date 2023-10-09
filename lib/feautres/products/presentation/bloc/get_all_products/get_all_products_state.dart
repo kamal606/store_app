@@ -1,4 +1,4 @@
-part of 'get_product_of_category_bloc.dart';
+part of 'get_all_products_bloc.dart';
 
 sealed class AllProductsState extends Equatable {
   @override
@@ -19,6 +19,14 @@ final class AllProductsStateSuccess extends AllProductsState {
   final List<ProductEntity> products;
 
   AllProductsStateSuccess({required this.products});
+  @override
+  List<Object?> get props => [products];
+}
+
+final class AllProductsStateSearch extends AllProductsState {
+  final List<ProductEntity> products;
+
+  AllProductsStateSearch({this.products = const []});
   @override
   List<Object?> get props => [products];
 }

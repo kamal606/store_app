@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
         "newArrival": MessageLookupByLibrary.simpleMessage("جديد"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("وصول جديد"),
+        "notResult": MessageLookupByLibrary.simpleMessage("لا يوجد نتائج"),
         "onBordingAllTypes1":
             MessageLookupByLibrary.simpleMessage("كل عملية بيع جيدة\n"),
         "onBordingAllTypes2":

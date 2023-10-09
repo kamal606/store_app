@@ -31,7 +31,8 @@ abstract class AppAssets {
       "assets/images/category/woman-clothes.png";
 
   //=======================icons============================
-  static const String avatarProfile = "assets/images/icons/Rectangle 97.png";
+  static const String avatarProfile =
+      "assets/images/icons/male_man_people_person_avatar_white_tone_icon_159363.png";
   static const String iconLeft = "assets/images/icons/iconLeft.png";
   static const String iconRight = "assets/images/icons/iconRight.png";
   //======================splash==============================

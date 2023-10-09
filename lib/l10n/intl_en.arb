@@ -55,7 +55,9 @@
 "language": "Language",
 "arabic": "Arabic",
 "english": "English",
-"chooseLang":  "Choose Language"
+"chooseLang":  "Choose Language",
+"search":   "Search",
+"notResult":     "There are no results"
 
 }
 
