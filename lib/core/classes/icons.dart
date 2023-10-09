@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 abstract class AppIcon {
+  static const IconData language = Icons.language;
   static const IconData notifcation = FontAwesomeIcons.bell;
   static const IconData solidChessRook = FontAwesomeIcons.barsStaggered;
   static const IconData cart = FontAwesomeIcons.cartShopping;
@@ -25,4 +26,7 @@ abstract class AppIcon {
   static const IconData trash = FontAwesomeIcons.trash;
   static const IconData notExpand = FontAwesomeIcons.sortDown;
   static const IconData expand = FontAwesomeIcons.sortUp;
+  static const IconData lightMode = FontAwesomeIcons.moon;
+  static const IconData darkMode = FontAwesomeIcons.solidMoon;
+  static const IconData circle = Icons.circle_outlined;
 }

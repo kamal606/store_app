@@ -13,14 +13,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.onPressedAction,
     this.iconAction,
     this.isAction = false,
-    this.leading = false,
+    this.isLeading = false,
     this.titleAppbar,
     this.colorCircleAvatar,
+    this.isCircleOnLeading = false,
   });
   final void Function()? onPressedLeading;
   final void Function()? onPressedAction;
   final bool isAction;
-  final bool leading;
+  final bool isLeading;
+  final bool isCircleOnLeading;
   final IconData? iconAction;
   final String? titleAppbar;
   final Color? colorCircleAvatar;
@@ -38,10 +40,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       flexibleSpace: Container(
         decoration: BoxDecoration(gradient: AppColor.linearGradient()),
       ),
-      leading: leading
+      leading: isLeading
           ? InkWell(
               onTap: onPressedLeading,
               child: CustomIconLeftOrRight(
+                isCircleOnLeading: isCircleOnLeading,
                 isAppbar: true,
                 colorCircleAvatar: colorCircleAvatar,
               ),

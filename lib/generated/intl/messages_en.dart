@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
         "added": MessageLookupByLibrary.simpleMessage("added"),
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
+        "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "bagTotla": MessageLookupByLibrary.simpleMessage("Bag Total:"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
@@ -34,35 +35,40 @@ class MessageLookup extends MessageLookupByLibrary {
         "cartView": MessageLookupByLibrary.simpleMessage("My Cart"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "checkout": MessageLookupByLibrary.simpleMessage("Proceed to Checkout"),
+        "chooseLang": MessageLookupByLibrary.simpleMessage("Choose Language"),
+        "codeCarouselSlider":
+            MessageLookupByLibrary.simpleMessage("With code:FSCREATION"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "dialogCart": MessageLookupByLibrary.simpleMessage(
             "Are you sure to delete all Cart you have?"),
         "dialogFavorite": MessageLookupByLibrary.simpleMessage(
             "Are you sure to delete all favorites?"),
+        "english": MessageLookupByLibrary.simpleMessage("English"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
         "favoriteView": MessageLookupByLibrary.simpleMessage("My Favorite"),
         "favoritesEmpty":
             MessageLookupByLibrary.simpleMessage("Favorite are empty"),
         "getReady": MessageLookupByLibrary.simpleMessage("Get ready"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
         "newArrival": MessageLookupByLibrary.simpleMessage("NEW"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
         "onBordingAllTypes1":
-            MessageLookupByLibrary.simpleMessage("All Types Offers\n"),
+            MessageLookupByLibrary.simpleMessage("Every Good Sale Now\n"),
         "onBordingAllTypes2":
-            MessageLookupByLibrary.simpleMessage("Within Your Reach"),
+            MessageLookupByLibrary.simpleMessage("Within Your Range"),
         "onBordingDiscount1":
             MessageLookupByLibrary.simpleMessage("20% Discount\n"),
         "onBordingDiscount2":
             MessageLookupByLibrary.simpleMessage("New Arrival Products"),
         "onBordingSubTitle": MessageLookupByLibrary.simpleMessage(
-            "publish up your selfies to make your self more beuatiful with this app"),
+            "Surround yourself with every new coming product, sale, deal, and information about the current and the future market"),
         "onBordingTakeAdvantage1":
             MessageLookupByLibrary.simpleMessage("Take Advantage\n"),
         "onBordingTakeAdvantage2":
-            MessageLookupByLibrary.simpleMessage("Of The Offer Shopping"),
+            MessageLookupByLibrary.simpleMessage("Of The Shopping Offers"),
         "onEverythingToday":
             MessageLookupByLibrary.simpleMessage("On everything today"),
         "ourEcommerceApp":
@@ -76,8 +82,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
         "stock": MessageLookupByLibrary.simpleMessage("Stock"),
+        "subTitleCarouselSlider1":
+            MessageLookupByLibrary.simpleMessage("On everything today"),
+        "subTitleCarouselSlider2":
+            MessageLookupByLibrary.simpleMessage("to start with us"),
         "subTotal": MessageLookupByLibrary.simpleMessage("SubTotal:"),
         "tax": MessageLookupByLibrary.simpleMessage("Tax:"),
+        "titleCarouselSlider1": MessageLookupByLibrary.simpleMessage("50% Off"),
+        "titleCarouselSlider2":
+            MessageLookupByLibrary.simpleMessage("Get ready"),
         "toStartWithUs":
             MessageLookupByLibrary.simpleMessage("to start with us"),
         "totalPrice": MessageLookupByLibrary.simpleMessage("Total Price"),

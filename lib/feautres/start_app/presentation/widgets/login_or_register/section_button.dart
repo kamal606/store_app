@@ -23,6 +23,9 @@ class SectionButtonLoginOrRegister extends StatelessWidget {
           ),
         ),
         SizedBox(
+          height: 10.h,
+        ),
+        SizedBox(
           width: MediaQuery.of(context).size.width - 100.h,
           child: OutlinedButton(
             style: OutlinedButton.styleFrom(
@@ -35,7 +38,7 @@ class SectionButtonLoginOrRegister extends StatelessWidget {
               context.replace(AppRouter.chooseLanguageView);
             },
             child: Text(
-              "Skip",
+              "Guest Login",
               style: AppFonts.semiBold_16.copyWith(color: AppColor.white),
             ),
           ),

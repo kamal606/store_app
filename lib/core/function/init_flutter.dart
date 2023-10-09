@@ -22,6 +22,8 @@ Future<void> initFlutter() async {
   await Hive.openBox(AppHive.quantity);
   await Hive.openBox(AppHive.addToCartButton);
   await Hive.openBox(AppHive.iconFavorite);
+  await Hive.openBox(AppHive.checkLanguage);
+  await Hive.openBox(AppHive.checkLightOrDark);
 
   Bloc.observer = MyBlocObserver();
   Hive.registerAdapter<CategoryEntity>(CategoryEntityAdapter());

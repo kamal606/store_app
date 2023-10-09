@@ -6,7 +6,7 @@ import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
 import 'package:store_app/generated/l10n.dart';
 
-Future<void> customShowMyDialog(
+Future<void> customDialogDeleteCartAndFavorite(
     {required BuildContext context,
     required Function()? onPressedCancel,
     required Function()? onPressedAgree,
@@ -32,7 +32,7 @@ Future<void> customShowMyDialog(
             SizedBox(
               width: 100.h,
               child: CustomElvatedButton(
-                backgroundColor: AppColor.success,
+                backgroundColor: AppColor.jGDark,
                 onPressed: onPressedAgree,
                 title: S.of(context).agree,
                 fontTitle: AppFonts.bold_13,

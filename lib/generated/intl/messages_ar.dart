@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addToCart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
         "added": MessageLookupByLibrary.simpleMessage("أضيفت"),
         "agree": MessageLookupByLibrary.simpleMessage("موافق"),
+        "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "bagTotla": MessageLookupByLibrary.simpleMessage("إجمالي الحقيبة:"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
@@ -34,29 +35,34 @@ class MessageLookup extends MessageLookupByLibrary {
         "cartView": MessageLookupByLibrary.simpleMessage("عربة التسوق"),
         "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
         "checkout": MessageLookupByLibrary.simpleMessage("معالجة الدفع"),
+        "chooseLang": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
+        "codeCarouselSlider":
+            MessageLookupByLibrary.simpleMessage("باستخدام الكود:FSCREATION"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "description": MessageLookupByLibrary.simpleMessage("وصف"),
         "dialogCart": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد من حذف كل السلة لديك؟"),
         "dialogFavorite": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد من حذف كل المفضلة؟"),
+        "english": MessageLookupByLibrary.simpleMessage("الانكليزية"),
         "favorite": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "favoriteView": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "favoritesEmpty": MessageLookupByLibrary.simpleMessage("المفضلة فارغة"),
         "getReady": MessageLookupByLibrary.simpleMessage("استعد"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
+        "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
         "newArrival": MessageLookupByLibrary.simpleMessage("جديد"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("وصول جديد"),
         "onBordingAllTypes1":
-            MessageLookupByLibrary.simpleMessage("جميع أنواع العروض\n"),
+            MessageLookupByLibrary.simpleMessage("كل عملية بيع جيدة\n"),
         "onBordingAllTypes2":
-            MessageLookupByLibrary.simpleMessage("متناول يدك"),
+            MessageLookupByLibrary.simpleMessage("نطاقك الآن ضمن"),
         "onBordingDiscount1": MessageLookupByLibrary.simpleMessage("خصم 20%\n"),
         "onBordingDiscount2":
             MessageLookupByLibrary.simpleMessage("المنتجات الجديدة"),
         "onBordingSubTitle": MessageLookupByLibrary.simpleMessage(
-            "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق"),
+            "أحط نفسك بكل منتج وبيع وصفقة ومعلومات جديدة قادمة حول السوق الحالي والمستقبلي"),
         "onBordingTakeAdvantage1":
             MessageLookupByLibrary.simpleMessage("استفد من\n"),
         "onBordingTakeAdvantage2":
@@ -74,8 +80,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "settings": MessageLookupByLibrary.simpleMessage("الاعدادت"),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "stock": MessageLookupByLibrary.simpleMessage("متوفر"),
+        "subTitleCarouselSlider1":
+            MessageLookupByLibrary.simpleMessage("على كل شيء اليوم"),
+        "subTitleCarouselSlider2":
+            MessageLookupByLibrary.simpleMessage("للبدء معنا"),
         "subTotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي:"),
         "tax": MessageLookupByLibrary.simpleMessage("ضريبة:"),
+        "titleCarouselSlider1": MessageLookupByLibrary.simpleMessage("خصم %50"),
+        "titleCarouselSlider2": MessageLookupByLibrary.simpleMessage("استعد"),
         "toStartWithUs": MessageLookupByLibrary.simpleMessage("للبدء معنا"),
         "totalPrice": MessageLookupByLibrary.simpleMessage("السعر الإجمالي"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا"),

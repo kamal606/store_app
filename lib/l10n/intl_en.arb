@@ -29,10 +29,10 @@
  "onBordingDiscount1":"20% Discount\n",
  "onBordingDiscount2":"New Arrival Products",
  "onBordingTakeAdvantage1":"Take Advantage\n",
- "onBordingTakeAdvantage2":"Of The Offer Shopping",
- "onBordingAllTypes1":"All Types Offers\n",
- "onBordingAllTypes2":"Within Your Reach",
- "onBordingSubTitle": "publish up your selfies to make your self more beuatiful with this app",
+ "onBordingTakeAdvantage2":"Of The Shopping Offers",
+ "onBordingAllTypes1":"Every Good Sale Now\n",
+ "onBordingAllTypes2":"Within Your Range",
+ "onBordingSubTitle": "Surround yourself with every new coming product, sale, deal, and information about the current and the future market",
  "favoritesEmpty": "Favorite are empty",
  "cartEmpty": "Cart are empty",
  "Search": "Search...",
@@ -46,8 +46,17 @@
 "subTotal":"SubTotal:",
 "tax":"Tax:",
 "checkout":"Proceed to Checkout",
-"added":"added"
- 
+"added":"added",
+"titleCarouselSlider1": "50% Off",
+"subTitleCarouselSlider1":"On everything today",
+"titleCarouselSlider2": "Get ready",
+"subTitleCarouselSlider2":"to start with us",
+"codeCarouselSlider": "With code:FSCREATION",
+"language": "Language",
+"arabic": "Arabic",
+"english": "English",
+"chooseLang":  "Choose Language"
+
 }
 
 

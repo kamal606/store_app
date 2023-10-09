@@ -49,7 +49,7 @@ Map<AppTheme, ThemeData> theme = {
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedIconTheme: IconThemeData(color: AppColor.jGDark),
       unselectedIconTheme: IconThemeData(color: AppColor.darkGrey),
-      selectedLabelStyle: TextStyle(backgroundColor: AppColor.darkGrey),
+      selectedLabelStyle: TextStyle(backgroundColor: AppColor.jGDark),
     ),
   ),
 };

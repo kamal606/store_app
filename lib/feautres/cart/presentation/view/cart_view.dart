@@ -13,7 +13,7 @@ class CartView extends StatelessWidget {
       appBar: CustomAppBar(
         titleAppbar: S.of(context).cartView,
         iconAction: AppIcon.bagShopping,
-        onPressedAction: () {},
+        onPressedAction: null,
         isAction: true,
       ),
       body: const CartViewBody(),

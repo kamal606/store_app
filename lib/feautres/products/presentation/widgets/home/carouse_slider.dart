@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/function/check_local_arabic.dart';
+import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/classes/image_assets.dart';
 
@@ -24,7 +25,7 @@ class CustomCarouseSlider extends StatelessWidget {
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,
       ),
-      items: AppSlider.sliderImage.map((i) {
+      items: AppSlider.sliderImage(context).map((i) {
         return Builder(
           builder: (BuildContext context) {
             return Stack(
@@ -49,7 +50,9 @@ class CustomCarouseSlider extends StatelessWidget {
                 Positioned(
                   left: 10.h,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: isArabicLocale()
+                        ? CrossAxisAlignment.end
+                        : CrossAxisAlignment.start,
                     children: [
                       Text(i.title,
                           style: AppFonts.bold_25
@@ -87,20 +90,20 @@ class AppSlider {
       required this.subTitle,
       required this.code});
 
-  static List<AppSlider> sliderImage = [
-    AppSlider(
-      imageName: AppAssets.slider1,
-      title: isArabicLocale() ? "خصم %50" : "50% Off",
-      subTitle: isArabicLocale() ? "على كل شيء اليوم" : "On everything today",
-      code: isArabicLocale()
-          ? "باستخدام الكود: FSCREATION"
-          : " With code:FSCREATION",
-    ),
-    AppSlider(
-      imageName: AppAssets.slider2,
-      title: isArabicLocale() ? "استعد" : "Get ready",
-      subTitle: isArabicLocale() ? "للبدء معنا" : "to start with us",
-      code: "",
-    ),
-  ];
+  static List<AppSlider> sliderImage(BuildContext context) {
+    return [
+      AppSlider(
+        imageName: AppAssets.slider1,
+        title: S.of(context).titleCarouselSlider1,
+        subTitle: S.of(context).subTitleCarouselSlider1,
+        code: S.of(context).codeCarouselSlider,
+      ),
+      AppSlider(
+        imageName: AppAssets.slider2,
+        title: S.of(context).titleCarouselSlider2,
+        subTitle: S.of(context).subTitleCarouselSlider2,
+        code: "",
+      ),
+    ];
+  }
 }

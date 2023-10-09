@@ -14,7 +14,7 @@ class DetailsProductView extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         colorCircleAvatar: Colors.transparent,
-        leading: true,
+        isLeading: true,
         isAction: true,
         iconAction: AppIcon.bagShopping,
         onPressedAction: () {},

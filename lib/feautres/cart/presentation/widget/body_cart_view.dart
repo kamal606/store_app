@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/function/dialog.dart';
+import 'package:store_app/core/function/dialog_cart_and_favorite.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/cart/presentation/widget/section_list_product.dart';
 import 'package:store_app/feautres/cart/presentation/widget/section_price_and_proceed.dart';
@@ -32,7 +32,7 @@ class CartViewBody extends StatelessWidget {
                       .add(SearchInCartEvent(query: value));
                 },
                 onPressedIconDelete: () async {
-                  await customShowMyDialog(
+                  await customDialogDeleteCartAndFavorite(
                     context: context,
                     onPressedCancel: () {
                       context.pop();

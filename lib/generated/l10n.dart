@@ -342,40 +342,40 @@ class S {
     );
   }
 
-  /// `Of The Offer Shopping`
+  /// `Of The Shopping Offers`
   String get onBordingTakeAdvantage2 {
     return Intl.message(
-      'Of The Offer Shopping',
+      'Of The Shopping Offers',
       name: 'onBordingTakeAdvantage2',
       desc: '',
       args: [],
     );
   }
 
-  /// `All Types Offers\n`
+  /// `Every Good Sale Now\n`
   String get onBordingAllTypes1 {
     return Intl.message(
-      'All Types Offers\n',
+      'Every Good Sale Now\n',
       name: 'onBordingAllTypes1',
       desc: '',
       args: [],
     );
   }
 
-  /// `Within Your Reach`
+  /// `Within Your Range`
   String get onBordingAllTypes2 {
     return Intl.message(
-      'Within Your Reach',
+      'Within Your Range',
       name: 'onBordingAllTypes2',
       desc: '',
       args: [],
     );
   }
 
-  /// `publish up your selfies to make your self more beuatiful with this app`
+  /// `Surround yourself with every new coming product, sale, deal, and information about the current and the future market`
   String get onBordingSubTitle {
     return Intl.message(
-      'publish up your selfies to make your self more beuatiful with this app',
+      'Surround yourself with every new coming product, sale, deal, and information about the current and the future market',
       name: 'onBordingSubTitle',
       desc: '',
       args: [],
@@ -517,6 +517,96 @@ class S {
     return Intl.message(
       'added',
       name: 'added',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `50% Off`
+  String get titleCarouselSlider1 {
+    return Intl.message(
+      '50% Off',
+      name: 'titleCarouselSlider1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `On everything today`
+  String get subTitleCarouselSlider1 {
+    return Intl.message(
+      'On everything today',
+      name: 'subTitleCarouselSlider1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get ready`
+  String get titleCarouselSlider2 {
+    return Intl.message(
+      'Get ready',
+      name: 'titleCarouselSlider2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `to start with us`
+  String get subTitleCarouselSlider2 {
+    return Intl.message(
+      'to start with us',
+      name: 'subTitleCarouselSlider2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `With code:FSCREATION`
+  String get codeCarouselSlider {
+    return Intl.message(
+      'With code:FSCREATION',
+      name: 'codeCarouselSlider',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message(
+      'Arabic',
+      name: 'arabic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Language`
+  String get chooseLang {
+    return Intl.message(
+      'Choose Language',
+      name: 'chooseLang',
       desc: '',
       args: [],
     );

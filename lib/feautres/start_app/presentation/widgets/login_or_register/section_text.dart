@@ -13,7 +13,7 @@ class SectionTextLoginOrRegister extends StatelessWidget {
         text: TextSpan(
           children: [
             TextSpan(
-              text: "Ecommers\n",
+              text: "Ecommerce\n",
               style: AppFonts.bold_40.copyWith(
                 color: AppColor.white,
               ),

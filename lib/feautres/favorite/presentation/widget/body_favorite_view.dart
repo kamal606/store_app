@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/function/dialog.dart';
+import 'package:store_app/core/function/dialog_cart_and_favorite.dart';
 import 'package:store_app/feautres/favorite/data/local_data_source/icon_favorite_save_local.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_form_field.dart';
@@ -28,7 +28,7 @@ class FavoriteViewBody extends StatelessWidget {
                   .add(SearchFavoriteEvent(query: value));
             },
             onPressedIconDelete: () async {
-              await customShowMyDialog(
+              await customDialogDeleteCartAndFavorite(
                 context: context,
                 onPressedCancel: () {
                   context.pop();

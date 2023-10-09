@@ -30,9 +30,9 @@
 "onBordingDiscount2":"المنتجات الجديدة",
 "onBordingTakeAdvantage1":"استفد من\n",
 "onBordingTakeAdvantage2":"التسوق",
-"onBordingAllTypes1":"جميع أنواع العروض\n",
-"onBordingAllTypes2":"متناول يدك",
-"onBordingSubTitle": "انشر صورك الشخصية لتجعل نفسك أكثر جمالا مع هذا التطبيق",
+"onBordingAllTypes1":"كل عملية بيع جيدة\n",
+"onBordingAllTypes2":"نطاقك الآن ضمن",
+"onBordingSubTitle": "أحط نفسك بكل منتج وبيع وصفقة ومعلومات جديدة قادمة حول السوق الحالي والمستقبلي",
 "favoritesEmpty": "المفضلة فارغة",
 "cartEmpty": "عربة التسوق فارغة",
 "Search": "ابحث...",
@@ -46,6 +46,14 @@
 "subTotal":"المجموع الفرعي:",
 "tax":"ضريبة:",
 "checkout":"معالجة الدفع",
-"added":"أضيفت"
-
+"added":"أضيفت",
+"titleCarouselSlider1": "خصم %50",
+"subTitleCarouselSlider1":"على كل شيء اليوم",
+"titleCarouselSlider2": "استعد",
+"subTitleCarouselSlider2":"للبدء معنا",
+"codeCarouselSlider": "باستخدام الكود:FSCREATION",
+"language": "اللغة",
+"arabic": "العربية",
+"english": "الانكليزية",
+"chooseLang":  "اختر اللغة"
 }

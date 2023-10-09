@@ -13,7 +13,7 @@ class SectionImageWithInfoUser extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 45.h,
-          backgroundColor: AppColor.blacK,
+          backgroundColor: AppColor.white,
           backgroundImage: const AssetImage(AppAssets.avatarProfile),
         ),
         SizedBox(
@@ -21,11 +21,11 @@ class SectionImageWithInfoUser extends StatelessWidget {
           child: ListTile(
             title: Text(
               "Kamal mahmoud ibrahim",
-              style: AppFonts.bold_16.copyWith(color: AppColor.jGDark),
+              style: AppFonts.bold_16.copyWith(color: AppColor.white),
             ),
             subtitle: Text(
               "kamalibrahim@gmail.com",
-              style: AppFonts.semiBold_11,
+              style: AppFonts.semiBold_11.copyWith(color: AppColor.blacK),
             ),
           ),
         ),

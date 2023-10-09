@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:store_app/core/function/check_local_arabic.dart';
+import 'package:store_app/core/utils/go_router.dart';
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 
@@ -60,7 +62,9 @@ class ListCategoryHome extends StatelessWidget {
                                   left: isArabicLocale() ? 30.w : 0,
                                 ),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    context.go(AppRouter.productCategory);
+                                  },
                                   child: CustomBoxCategory(
                                     image: AppCategoryIcon
                                         .categoryListIcon[i].icon,

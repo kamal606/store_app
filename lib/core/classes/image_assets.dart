@@ -17,9 +17,7 @@ abstract class AppAssets {
   static const String womensShoes = "assets/images/category/high-heels.png";
   static const String houseDecoration =
       "assets/images/category/house-decoration.png";
-
   static const String laptops = "assets/images/category/laptop.png";
-
   static const String mensShirt = "assets/images/category/mens-clothing.png";
   static const String smartPhone = "assets/images/category/mobile-phone.png";
   static const String motorbike = "assets/images/category/motorbike.png";
@@ -33,15 +31,7 @@ abstract class AppAssets {
       "assets/images/category/woman-clothes.png";
 
   //=======================icons============================
-  static const String cart = "assets/images/icons/cart.png";
-  static const String bell = "assets/images/icons/bell.png";
-  static const String welcome = "assets/images/icons/welcome.png";
   static const String avatarProfile = "assets/images/icons/Rectangle 97.png";
-  static const String home = "assets/images/icons/home.png";
-  static const String notification = "assets/images/icons/notification.png";
-  static const String profile = "assets/images/icons/profile.png";
-  static const String favorite = "assets/images/icons/love.png";
-  static const String favoriteNavBar = "assets/images/icons/heart_2077502.png";
   static const String iconLeft = "assets/images/icons/iconLeft.png";
   static const String iconRight = "assets/images/icons/iconRight.png";
   //======================splash==============================
@@ -62,7 +52,7 @@ abstract class AppAssets {
   //======================chooseLanguage==============================
   static const String chooseLanguage =
       "assets/images/choose_language/Finally, a Foolproof Guide to the Best Online Consignment Stores.jpeg";
-  //======================chooseLanguage==============================
+  //======================cart==============================
   static const String cartEmpty =
       "assets/images/cart/sadcart-6cf6790b85ed0f96c69fdb322328d145.png";
 }
