@@ -24,7 +24,6 @@ class CustomTextFormField extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width - 10.w,
       child: TextFormField(
-        autofocus: true,
         onChanged: onChanged,
         cursorColor: AppColor.blacK,
         decoration: InputDecoration(

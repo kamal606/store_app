@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/core/utils/go_router.dart';
 
 import '../../../../core/classes/icons.dart';
 import '../../../../core/widgets/custom_appbar.dart';
@@ -17,7 +18,9 @@ class DetailsProductView extends StatelessWidget {
         isLeading: true,
         isAction: true,
         iconAction: AppIcon.bagShopping,
-        onPressedAction: () {},
+        onPressedAction: () {
+          context.push(AppRouter.cartView);
+        },
         onPressedLeading: () {
           context.pop();
         },

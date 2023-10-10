@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:store_app/core/classes/hive_const.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 
 class CheckLanguageSettings {
   static Future<void> putLanguage() async {
@@ -11,6 +12,10 @@ class CheckLanguageSettings {
   }
 
   static bool getLanguage() {
-    return Hive.box(AppHive.checkLanguage).get(AppHive.checkLanguage) ?? false;
+    if (isArabicLocale()) {
+      return Hive.box(AppHive.checkLanguage).get(AppHive.checkLanguage) ?? true;
+    } else {
+      return false;
+    }
   }
 }

@@ -10,13 +10,13 @@ import 'package:store_app/generated/l10n.dart';
 Future<void> methodChooseLanguage(BuildContext context) async {
   await customLanguageAndTheme(
       isEnglish: CheckLanguageSettings.getLanguage(),
-      titleChoose1: S.of(context).english,
-      titleChoose2: S.of(context).arabic,
+      titleChoose1: S.of(context).arabic,
+      titleChoose2: S.of(context).english,
       context: context,
       onPressedChoose1: () async {
         if (CheckLanguageSettings.getLanguage() == false) {
           BlocProvider.of<AppLocaleBloc>(context)
-              .add(const ChangeLocaleEvent(appLanguage: AppLocale.english));
+              .add(const ChangeLocaleEvent(appLanguage: AppLocale.arabic));
           await CheckLanguageSettings.putLanguage();
         }
         if (!context.mounted) return;
@@ -25,7 +25,7 @@ Future<void> methodChooseLanguage(BuildContext context) async {
       onPressedChoose2: () async {
         if (CheckLanguageSettings.getLanguage() == true) {
           BlocProvider.of<AppLocaleBloc>(context)
-              .add(const ChangeLocaleEvent(appLanguage: AppLocale.arabic));
+              .add(const ChangeLocaleEvent(appLanguage: AppLocale.english));
           await CheckLanguageSettings.deleteLanguage();
         }
         if (!context.mounted) return;

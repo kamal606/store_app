@@ -80,6 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "seeAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
         "settings": MessageLookupByLibrary.simpleMessage("الاعدادت"),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "stock": MessageLookupByLibrary.simpleMessage("متوفر"),
         "subTitleCarouselSlider1":
             MessageLookupByLibrary.simpleMessage("على كل شيء اليوم"),

@@ -26,9 +26,9 @@ class SectionTitleWithFormField extends StatelessWidget {
           ),
         ),
         CustomTextFormField(
-          onChanged: (value) {
+          onChanged: (value) async {
             if (value.isNotEmpty) {
-              context.push(AppRouter.searchHomeView);
+              await context.push(AppRouter.searchHomeView, extra: value);
             }
           },
           hint: S.of(context).searchProductName,

@@ -8,6 +8,7 @@ import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/function/check_local_arabic.dart';
 import 'package:store_app/core/utils/go_router.dart';
 import 'package:store_app/core/widgets/custom_icon_left_right.dart';
+import 'package:store_app/generated/l10n.dart';
 
 class SectionBottom extends StatelessWidget {
   const SectionBottom(
@@ -44,7 +45,7 @@ class SectionBottom extends StatelessWidget {
             context.replace(AppRouter.homeView);
           },
           child: Text(
-            "Skip",
+            S.of(context).skip,
             style: AppFonts.bold_18.copyWith(color: AppColor.jGLight),
           ),
         ),

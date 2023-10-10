@@ -10,13 +10,13 @@ import 'package:store_app/generated/l10n.dart';
 Future<void> methodChooseTheme(BuildContext context) async {
   return await customLanguageAndTheme(
       isLight: CheckDarkOrLightMode.getMode(),
-      titleChoose1: S.of(context).lightMode,
-      titleChoose2: S.of(context).darkMode,
+      titleChoose1: S.of(context).darkMode,
+      titleChoose2: S.of(context).lightMode,
       context: context,
       onPressedChoose1: () async {
         if (CheckDarkOrLightMode.getMode() == false) {
           BlocProvider.of<AppThemeBloc>(context)
-              .add(const ChangeThemeEvent(changeTheme: AppTheme.light));
+              .add(const ChangeThemeEvent(changeTheme: AppTheme.dark));
           await CheckDarkOrLightMode.putMode();
         }
         if (!context.mounted) return;
@@ -25,7 +25,7 @@ Future<void> methodChooseTheme(BuildContext context) async {
       onPressedChoose2: () async {
         if (CheckDarkOrLightMode.getMode() == true) {
           BlocProvider.of<AppThemeBloc>(context)
-              .add(const ChangeThemeEvent(changeTheme: AppTheme.dark));
+              .add(const ChangeThemeEvent(changeTheme: AppTheme.light));
           await CheckDarkOrLightMode.deleteMode();
         }
         if (!context.mounted) return;
