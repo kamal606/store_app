@@ -10,53 +10,60 @@ import 'package:store_app/feautres/products/presentation/bloc/get_products_of_ca
 import 'package:store_app/feautres/products/presentation/widgets/home/custom_card_product.dart';
 
 class ProductCategoryBody extends StatelessWidget {
-  const ProductCategoryBody({super.key});
-
+  const ProductCategoryBody({super.key, required this.nameCategory});
+  final String nameCategory;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.h),
-      child:
-          BlocConsumer<GetProductsOfCategoryBloc, GetProductsOfCategoryState>(
-        listener: (context, state) {
-          if (state is GetProductsOfCategoryFailure) {
-            toast(message: state.errorMessage, color: AppColor.erorr);
-          }
-        },
-        builder: (context, state) {
-          if (state is GetProductsOfCategoryLoading) {
-            return const ShimmerLoadingProductsOfCategory();
-          }
-          if (state is GetProductsOfCategorySuccess) {
-            return GridView.builder(
-              physics: const BouncingScrollPhysics(),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                mainAxisSpacing: 40.h,
-                crossAxisSpacing: 8,
-                childAspectRatio: 0.54.h,
-              ),
-              itemCount: state.listProducts.length,
-              itemBuilder: (context, i) {
-                final product = state.listProducts[i];
-                return InkWell(
-                  onTap: () {
-                    context.push(AppRouter.detailsProductView, extra: product);
-                  },
-                  child: CustomCardProduct(
-                    brandProduct: product.brandProduct,
-                    id: product.idProduct,
-                    image: product.image,
-                    price: product.priceProduct,
-                    title: product.titleProduct,
-                  ),
-                );
-              },
-            );
-          } else {
-            return const SizedBox();
-          }
-        },
+    return RefreshIndicator(
+      onRefresh: () async {
+        BlocProvider.of<GetProductsOfCategoryBloc>(context)
+            .add(GetProductsOfCategoryNameEvent(nameCategory: nameCategory));
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 20.h),
+        child:
+            BlocConsumer<GetProductsOfCategoryBloc, GetProductsOfCategoryState>(
+          listener: (context, state) {
+            if (state is GetProductsOfCategoryFailure) {
+              toast(message: state.errorMessage, color: AppColor.erorr);
+            }
+          },
+          builder: (context, state) {
+            if (state is GetProductsOfCategoryLoading) {
+              return const ShimmerLoadingProductsOfCategory();
+            }
+            if (state is GetProductsOfCategorySuccess) {
+              return GridView.builder(
+                physics: const BouncingScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 40.h,
+                  crossAxisSpacing: 8,
+                  childAspectRatio: 0.54.h,
+                ),
+                itemCount: state.listProducts.length,
+                itemBuilder: (context, i) {
+                  final product = state.listProducts[i];
+                  return InkWell(
+                    onTap: () {
+                      context.push(AppRouter.detailsProductView,
+                          extra: product);
+                    },
+                    child: CustomCardProduct(
+                      brandProduct: product.brandProduct,
+                      id: product.idProduct,
+                      image: product.image,
+                      price: product.priceProduct,
+                      title: product.titleProduct,
+                    ),
+                  );
+                },
+              );
+            } else {
+              return const SizedBox();
+            }
+          },
+        ),
       ),
     );
   }

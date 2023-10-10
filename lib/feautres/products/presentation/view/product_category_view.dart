@@ -24,7 +24,7 @@ class ProductCategoryView extends StatelessWidget {
         create: (context) => di.sl<GetProductsOfCategoryBloc>()
           ..add(GetProductsOfCategoryNameEvent(
               nameCategory: categoryEntity.categoryName)),
-        child: const ProductCategoryBody(),
+        child: ProductCategoryBody(nameCategory: categoryEntity.categoryName),
       ),
     );
   }

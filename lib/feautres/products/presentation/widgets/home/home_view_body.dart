@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/feautres/products/presentation/bloc/get_all_products/get_all_products_bloc.dart';
+import 'package:store_app/feautres/products/presentation/bloc/get_category/get_category_bloc.dart';
 
 import 'package:store_app/generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
@@ -18,48 +21,56 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        CustomSliverAppBar(
-          action: Material(
-            elevation: 3.h,
-            shadowColor: AppColor.darkGrey,
-            borderRadius: BorderRadius.circular(22.r),
-            child: CircleAvatar(
-              radius: 22.r,
-              backgroundColor: AppColor.background,
-              backgroundImage: const AssetImage(AppAssets.avatarProfile),
+    return RefreshIndicator(
+      onRefresh: () async {
+        BlocProvider.of<AllProductsBloc>(context)
+            .add(const GetAllProductsEvent());
+        BlocProvider.of<GetCategoryBloc>(context).add(const GetCategory());
+      },
+      color: AppColor.jGDark,
+      child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          CustomSliverAppBar(
+            action: Material(
+              elevation: 3.h,
+              shadowColor: AppColor.darkGrey,
+              borderRadius: BorderRadius.circular(22.r),
+              child: CircleAvatar(
+                radius: 22.r,
+                backgroundColor: AppColor.background,
+                backgroundImage: const AssetImage(AppAssets.avatarProfile),
+              ),
             ),
           ),
-        ),
-        const CustomInternetStatus(),
-        SliverToBoxAdapter(
-          child: Column(
-            children: [
-              const CustomCarouseSlider(),
-              const ListCategoryHome(),
-              CustomListProductHome(
-                titleList: S.of(context).saleProduct,
-                categoryName: "laptops",
-                colorStatus: AppColor.jGDark,
-                isStatus: true,
-                isDiscount: true,
-              ),
-              CustomListProductHome(
-                titleList: S.of(context).newArrivals,
-                categoryName: "fragrances",
-                isStatus: true,
-                titleStatus: S.of(context).newArrival,
-              ),
-              CustomListProductHome(
-                titleList: S.of(context).recommended,
-                categoryName: "skincare",
-              ),
-            ],
-          ),
-        )
-      ],
+          const CustomInternetStatus(),
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                const CustomCarouseSlider(),
+                const ListCategoryHome(),
+                CustomListProductHome(
+                  titleList: S.of(context).saleProduct,
+                  categoryName: "laptops",
+                  colorStatus: AppColor.jGDark,
+                  isStatus: true,
+                  isDiscount: true,
+                ),
+                CustomListProductHome(
+                  titleList: S.of(context).newArrivals,
+                  categoryName: "fragrances",
+                  isStatus: true,
+                  titleStatus: S.of(context).newArrival,
+                ),
+                CustomListProductHome(
+                  titleList: S.of(context).recommended,
+                  categoryName: "skincare",
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
