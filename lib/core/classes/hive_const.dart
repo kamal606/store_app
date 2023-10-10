@@ -12,4 +12,7 @@ abstract class AppHive {
   static const String checkLanguage = "CheckLanguage_Box";
   static const String checkLightOrDark = "CheckLightOrDark_Box";
   static const String getProductsOfCategory = "GetProductsOfCategory_Box";
+  static const String loginOrRegister = "LoginOrRegister_Box";
+  static const String chooseLanguage = "ChooseLanguage_Box";
+  static const String onBording = "OnBording_Box";
 }

@@ -21,8 +21,9 @@ Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
   ));
-
-  runApp(const StoreApp());
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]).then((value) => runApp(const StoreApp()));
 }
 
 class StoreApp extends StatelessWidget {
@@ -46,7 +47,8 @@ class StoreApp extends StatelessWidget {
                   di.sl<AppLocaleBloc>()..add(CurrentLocaleEvent()),
             ),
             BlocProvider(
-              create: (context) => di.sl<GetCategoryBloc>()..add(GetCategory()),
+              create: (context) =>
+                  di.sl<GetCategoryBloc>()..add(const GetCategory()),
             ),
             BlocProvider(
               create: (context) => di.sl<StatusInternetBloc>(),

@@ -28,48 +28,51 @@ class HomeViewBody extends StatelessWidget {
         BlocProvider.of<GetCategoryBloc>(context).add(const GetCategory());
       },
       color: AppColor.jGDark,
-      child: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: [
-          CustomSliverAppBar(
-            action: Material(
-              elevation: 3.h,
-              shadowColor: AppColor.darkGrey,
-              borderRadius: BorderRadius.circular(22.r),
-              child: CircleAvatar(
-                radius: 22.r,
-                backgroundColor: AppColor.background,
-                backgroundImage: const AssetImage(AppAssets.avatarProfile),
+      child: WillPopScope(
+        onWillPop: () async => false,
+        child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            CustomSliverAppBar(
+              action: Material(
+                elevation: 3.h,
+                shadowColor: AppColor.darkGrey,
+                borderRadius: BorderRadius.circular(22.r),
+                child: CircleAvatar(
+                  radius: 22.r,
+                  backgroundColor: AppColor.background,
+                  backgroundImage: const AssetImage(AppAssets.avatarProfile),
+                ),
               ),
             ),
-          ),
-          const CustomInternetStatus(),
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                const CustomCarouseSlider(),
-                const ListCategoryHome(),
-                CustomListProductHome(
-                  titleList: S.of(context).saleProduct,
-                  categoryName: "laptops",
-                  colorStatus: AppColor.jGDark,
-                  isStatus: true,
-                  isDiscount: true,
-                ),
-                CustomListProductHome(
-                  titleList: S.of(context).newArrivals,
-                  categoryName: "fragrances",
-                  isStatus: true,
-                  titleStatus: S.of(context).newArrival,
-                ),
-                CustomListProductHome(
-                  titleList: S.of(context).recommended,
-                  categoryName: "skincare",
-                ),
-              ],
-            ),
-          )
-        ],
+            const CustomInternetStatus(),
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  const CustomCarouseSlider(),
+                  const ListCategoryHome(),
+                  CustomListProductHome(
+                    titleList: S.of(context).saleProduct,
+                    categoryName: "laptops",
+                    colorStatus: AppColor.jGDark,
+                    isStatus: true,
+                    isDiscount: true,
+                  ),
+                  CustomListProductHome(
+                    titleList: S.of(context).newArrivals,
+                    categoryName: "fragrances",
+                    isStatus: true,
+                    titleStatus: S.of(context).newArrival,
+                  ),
+                  CustomListProductHome(
+                    titleList: S.of(context).recommended,
+                    categoryName: "skincare",
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
