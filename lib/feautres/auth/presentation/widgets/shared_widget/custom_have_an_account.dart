@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
-class SectionBottomHaveAnAccount extends StatelessWidget {
-  const SectionBottomHaveAnAccount(
+class CustomBottomHaveAnAccount extends StatelessWidget {
+  const CustomBottomHaveAnAccount(
       {super.key,
       required this.title,
       this.onPressed,

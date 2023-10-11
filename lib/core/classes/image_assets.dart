@@ -57,8 +57,9 @@ abstract class AppAssets {
   static const String cartEmpty =
       "assets/images/cart/sadcart-6cf6790b85ed0f96c69fdb322328d145.png";
   //======================social media==============================
-  static const String facbook =
-      "assets/images/social_media/4844422.png";
+  static const String facbook = "assets/images/social_media/4844422.png";
   static const String google =
       "assets/images/social_media/google-icon-512x512-tqc9el3r.png";
+  //======================auth==============================
+  static const String lock = "assets/images/auth/678129.png";
 }

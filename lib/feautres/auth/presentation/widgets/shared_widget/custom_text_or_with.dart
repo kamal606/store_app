@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
-class SectionTextOrLoginWith extends StatelessWidget {
-  const SectionTextOrLoginWith({super.key});
-
+class CustomTextOrWith extends StatelessWidget {
+  const CustomTextOrWith({super.key, required this.title});
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +17,7 @@ class SectionTextOrLoginWith extends StatelessWidget {
           ),
         ),
         Text(
-          "Or Login With",
+          title,
           style: AppFonts.semiBold_14.copyWith(color: AppColor.background),
         ),
         const Expanded(

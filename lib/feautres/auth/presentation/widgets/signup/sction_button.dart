@@ -4,8 +4,8 @@ import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
 import 'package:store_app/generated/l10n.dart';
 
-class SectionButtonLogin extends StatelessWidget {
-  const SectionButtonLogin({super.key});
+class SectionButtonSignUp extends StatelessWidget {
+  const SectionButtonSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class SectionButtonLogin extends StatelessWidget {
       child: CustomElvatedButton(
         isRadius: false,
         colorTitle: AppColor.blacK,
-        title: S.of(context).login,
+        title: S.of(context).signUp,
         backgroundColor: AppColor.white,
         onPressed: () {},
       ),

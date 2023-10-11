@@ -5,8 +5,8 @@ import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/widgets/custom_text_form_field.dart';
 import 'package:store_app/generated/l10n.dart';
 
-class SectionTextFormFieldLogin extends StatelessWidget {
-  const SectionTextFormFieldLogin({super.key});
+class SectionTextFormFieldSignUp extends StatelessWidget {
+  const SectionTextFormFieldSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +24,20 @@ class SectionTextFormFieldLogin extends StatelessWidget {
         ),
         CustomTextFormField(
           prefixIcon: AppIcon.password,
-          suffixIcon: AppIcon.eyeLock,
           fillColor: AppColor.lightGrey.withAlpha(170),
           isRaiusEnabled: false,
           isRaiusfocused: false,
           hint: S.of(context).password,
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        CustomTextFormField(
+          prefixIcon: AppIcon.password,
+          fillColor: AppColor.lightGrey.withAlpha(170),
+          isRaiusEnabled: false,
+          isRaiusfocused: false,
+          hint: S.of(context).confirmPassword,
         ),
       ],
     );

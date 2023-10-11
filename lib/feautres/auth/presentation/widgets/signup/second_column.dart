@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/feautres/auth/presentation/widgets/shared_widget/custom_have_an_account.dart';
 import 'package:store_app/generated/l10n.dart';
 
-class SecondCoulmnLogin extends StatelessWidget {
-  const SecondCoulmnLogin({super.key});
+class SecondCoulmnSignUp extends StatelessWidget {
+  const SecondCoulmnSignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +12,8 @@ class SecondCoulmnLogin extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         CustomBottomHaveAnAccount(
-          title: S.of(context).dontHaveAccount,
-          titleButton: S.of(context).signUpNow,
+          title: S.of(context).alreadyHaveAccount,
+          titleButton: S.of(context).loginNow,
           onPressed: () {},
         ),
         SizedBox(

@@ -58,7 +58,30 @@
 "chooseLang":  "Choose Language",
 "search":   "Search",
 "notResult":     "There are no results",
-"skip":   "Skip"
+"skip":   "Skip",
+"dontHaveAccount":"Don't have an account?",
+"signUpNow": "Sign Up Now",
+"login":"Login",
+"signUp":"Sign Up",
+"forgetPassword":"Forget Password?",
+"emailAddress": "Email Address",
+"password" : "Password",
+"orLogin":  "Or Login With",
+"orSignUp":  "Or Sign Up With",
+"welcomeLogin": "Welcome,\n",
+"glad": "Glad to see you!",
+"createAccount": "Create Account\n",
+"toGetStarted":"To get started now!",
+"confirmPassword":"Confirm Password",
+"alreadyHaveAccount":"Already have an account?",
+"loginNow":"Login Now",
+"forgetPass":"Forget Password\n",
+"titleForgetpassword":"Enter your email to receive an email to\nreset your password",
+"send":"Send",
+"congratulations":"Congratulations\n",
+"changeSuccess":"Your password has been\nchanged successfully",
+"continuee":"Continue"
+
 }
 
 

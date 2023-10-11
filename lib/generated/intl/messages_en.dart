@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
         "added": MessageLookupByLibrary.simpleMessage("added"),
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
+        "alreadyHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "bagTotla": MessageLookupByLibrary.simpleMessage("Bag Total:"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -34,25 +36,43 @@ class MessageLookup extends MessageLookupByLibrary {
         "cartEmpty": MessageLookupByLibrary.simpleMessage("Cart are empty"),
         "cartView": MessageLookupByLibrary.simpleMessage("My Cart"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "changeSuccess": MessageLookupByLibrary.simpleMessage(
+            "Your password has been\nchanged successfully"),
         "checkout": MessageLookupByLibrary.simpleMessage("Proceed to Checkout"),
         "chooseLang": MessageLookupByLibrary.simpleMessage("Choose Language"),
         "codeCarouselSlider":
             MessageLookupByLibrary.simpleMessage("With code:FSCREATION"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "congratulations":
+            MessageLookupByLibrary.simpleMessage("Congratulations\n"),
+        "continuee": MessageLookupByLibrary.simpleMessage("Continue"),
+        "createAccount":
+            MessageLookupByLibrary.simpleMessage("Create Account\n"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "dialogCart": MessageLookupByLibrary.simpleMessage(
             "Are you sure to delete all Cart you have?"),
         "dialogFavorite": MessageLookupByLibrary.simpleMessage(
             "Are you sure to delete all favorites?"),
+        "dontHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
         "favoriteView": MessageLookupByLibrary.simpleMessage("My Favorite"),
         "favoritesEmpty":
             MessageLookupByLibrary.simpleMessage("Favorite are empty"),
+        "forgetPass": MessageLookupByLibrary.simpleMessage("Forget Password\n"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "getReady": MessageLookupByLibrary.simpleMessage("Get ready"),
+        "glad": MessageLookupByLibrary.simpleMessage("Glad to see you!"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginNow": MessageLookupByLibrary.simpleMessage("Login Now"),
         "newArrival": MessageLookupByLibrary.simpleMessage("NEW"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
         "notResult":
@@ -73,8 +93,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Of The Shopping Offers"),
         "onEverythingToday":
             MessageLookupByLibrary.simpleMessage("On everything today"),
+        "orLogin": MessageLookupByLibrary.simpleMessage("Or Login With"),
+        "orSignUp": MessageLookupByLibrary.simpleMessage("Or Sign Up With"),
         "ourEcommerceApp":
             MessageLookupByLibrary.simpleMessage("Our Ecommerce App"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "saleProduct": MessageLookupByLibrary.simpleMessage("Sale Product"),
@@ -82,8 +105,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchProductName":
             MessageLookupByLibrary.simpleMessage("Search Product Name"),
         "seeAll": MessageLookupByLibrary.simpleMessage("See All"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "signUpNow": MessageLookupByLibrary.simpleMessage("Sign Up Now"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "stock": MessageLookupByLibrary.simpleMessage("Stock"),
         "subTitleCarouselSlider1":
@@ -95,10 +121,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "titleCarouselSlider1": MessageLookupByLibrary.simpleMessage("50% Off"),
         "titleCarouselSlider2":
             MessageLookupByLibrary.simpleMessage("Get ready"),
+        "titleForgetpassword": MessageLookupByLibrary.simpleMessage(
+            "Enter your email to receive an email to\nreset your password"),
+        "toGetStarted":
+            MessageLookupByLibrary.simpleMessage("To get started now!"),
         "toStartWithUs":
             MessageLookupByLibrary.simpleMessage("to start with us"),
         "totalPrice": MessageLookupByLibrary.simpleMessage("Total Price"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "welcomeLogin": MessageLookupByLibrary.simpleMessage("Welcome,\n"),
         "withCode": MessageLookupByLibrary.simpleMessage("With code:FSCREATION")
       };
 }

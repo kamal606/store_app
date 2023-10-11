@@ -641,6 +641,226 @@ class S {
       args: [],
     );
   }
+
+  /// `Don't have an account?`
+  String get dontHaveAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up Now`
+  String get signUpNow {
+    return Intl.message(
+      'Sign Up Now',
+      name: 'signUpNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message(
+      'Login',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get signUp {
+    return Intl.message(
+      'Sign Up',
+      name: 'signUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password?`
+  String get forgetPassword {
+    return Intl.message(
+      'Forget Password?',
+      name: 'forgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email Address`
+  String get emailAddress {
+    return Intl.message(
+      'Email Address',
+      name: 'emailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or Login With`
+  String get orLogin {
+    return Intl.message(
+      'Or Login With',
+      name: 'orLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or Sign Up With`
+  String get orSignUp {
+    return Intl.message(
+      'Or Sign Up With',
+      name: 'orSignUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome,\n`
+  String get welcomeLogin {
+    return Intl.message(
+      'Welcome,\n',
+      name: 'welcomeLogin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Glad to see you!`
+  String get glad {
+    return Intl.message(
+      'Glad to see you!',
+      name: 'glad',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account\n`
+  String get createAccount {
+    return Intl.message(
+      'Create Account\n',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To get started now!`
+  String get toGetStarted {
+    return Intl.message(
+      'To get started now!',
+      name: 'toGetStarted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login Now`
+  String get loginNow {
+    return Intl.message(
+      'Login Now',
+      name: 'loginNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password\n`
+  String get forgetPass {
+    return Intl.message(
+      'Forget Password\n',
+      name: 'forgetPass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your email to receive an email to\nreset your password`
+  String get titleForgetpassword {
+    return Intl.message(
+      'Enter your email to receive an email to\nreset your password',
+      name: 'titleForgetpassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congratulations\n`
+  String get congratulations {
+    return Intl.message(
+      'Congratulations\n',
+      name: 'congratulations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your password has been\nchanged successfully`
+  String get changeSuccess {
+    return Intl.message(
+      'Your password has been\nchanged successfully',
+      name: 'changeSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continuee {
+    return Intl.message(
+      'Continue',
+      name: 'continuee',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,6 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/feautres/auth/presentation/view/change_pass_success.dart';
+import 'package:store_app/feautres/auth/presentation/view/forget_passwod.dart';
 import 'package:store_app/feautres/auth/presentation/view/login.dart';
+import 'package:store_app/feautres/auth/presentation/view/signup.dart';
 import 'package:store_app/feautres/products/domain/entities/category_entity.dart';
 import 'package:store_app/feautres/products/presentation/view/product_category_view.dart';
 import 'package:store_app/feautres/products/presentation/view/search_home_view.dart';
@@ -31,16 +34,32 @@ abstract class AppRouter {
   static const String productCategory = "/productCategory";
   static const String searchHomeView = "/searchHomeView";
   static const String login = "/login";
+  static const String signUp = "/signUp";
+  static const String forgetPassword = "/forgetPassword";
+  static const String successChangePassword = "/successChangePassword";
 
   static final router = GoRouter(
     routes: [
       // GoRoute(path: "/", builder: (context, state) => const Testt()),
+
       GoRoute(
         path: "/as",
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
         path: "/",
+        builder: (context, state) => const SuccessChangePasswordView(),
+      ),
+      GoRoute(
+        path: AppRouter.forgetPassword,
+        builder: (context, state) => const ForgetPasswordView(),
+      ),
+      GoRoute(
+        path: AppRouter.signUp,
+        builder: (context, state) => const SignUpView(),
+      ),
+      GoRoute(
+        path: AppRouter.login,
         builder: (context, state) => const LoginView(),
       ),
       GoRoute(
