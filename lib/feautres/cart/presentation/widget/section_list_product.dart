@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/function/check_local_arabic.dart';
 import 'package:store_app/core/function/toast_flutter.dart';
+import 'package:store_app/core/utils/go_router.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/data/local_data_source/icon_button_to_cart.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_card_product.dart';
@@ -79,28 +81,34 @@ class SectionListProductCart extends StatelessWidget {
                         return true;
                       },
                       child: SizedBox(
-                        child: CustomCardWishlistAndCart(
-                          quantity: state.cartEntity
-                              .updateQuantity(
-                                  productEntity:
-                                      state.cartEntity.listProductEntity)
-                              .values
-                              .elementAt(i),
-                          isCart: true,
-                          onPressed: () async {
-                            BlocProvider.of<CartBloc>(context).add(
-                                RemoveIndexFromCart(
-                                    productEntity:
-                                        state.cartEntity.listProductEntity[i]));
-                            await AddToCartButtonSaveLocal.removeButton(
-                                state.cartEntity.listProductEntity[i]);
+                        child: InkWell(
+                          onTap: () {
+                            context.push(AppRouter.detailsProductView,
+                                extra: state.cartEntity.listProductEntity[i]);
                           },
-                          productEntity: state.cartEntity
-                              .updateQuantity(
-                                  productEntity:
-                                      state.cartEntity.listProductEntity)
-                              .keys
-                              .elementAt(i),
+                          child: CustomCardWishlistAndCart(
+                            quantity: state.cartEntity
+                                .updateQuantity(
+                                    productEntity:
+                                        state.cartEntity.listProductEntity)
+                                .values
+                                .elementAt(i),
+                            isCart: true,
+                            onPressed: () async {
+                              BlocProvider.of<CartBloc>(context).add(
+                                  RemoveIndexFromCart(
+                                      productEntity: state
+                                          .cartEntity.listProductEntity[i]));
+                              await AddToCartButtonSaveLocal.removeButton(
+                                  state.cartEntity.listProductEntity[i]);
+                            },
+                            productEntity: state.cartEntity
+                                .updateQuantity(
+                                    productEntity:
+                                        state.cartEntity.listProductEntity)
+                                .keys
+                                .elementAt(i),
+                          ),
                         ),
                       ),
                     );

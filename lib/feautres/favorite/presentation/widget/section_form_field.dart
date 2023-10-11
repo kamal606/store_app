@@ -18,7 +18,7 @@ class SectionFormFieldAndDeleteAllFavoriteAndCart extends StatelessWidget {
           child: CustomTextFormField(
             hint: S.of(context).Search,
             prefixIcon: AppIcon.search,
-            color: AppColor.white,
+            fillColor: AppColor.white,
             onChanged: onChanged,
           ),
         ),

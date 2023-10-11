@@ -11,16 +11,26 @@ class CustomTextFormField extends StatelessWidget {
     required this.hint,
     this.prefixIcon,
     this.onPressedPrefixIcon,
-    this.color,
+    this.fillColor,
     this.onChanged,
     this.focusNode,
+    this.isRaiusEnabled = true,
+    this.isRaiusfocused = true,
+    this.colorIcon,
+    this.suffixIcon,
+    this.onPressedSuffixIcon,
   });
   final String hint;
   final IconData? prefixIcon;
+  final IconData? suffixIcon;
   final void Function()? onPressedPrefixIcon;
+  final void Function()? onPressedSuffixIcon;
   final void Function(String)? onChanged;
-  final Color? color;
+  final Color? colorIcon;
   final FocusNode? focusNode;
+  final bool isRaiusEnabled;
+  final bool isRaiusfocused;
+  final Color? fillColor;
 
   @override
   Widget build(BuildContext context) {
@@ -29,34 +39,50 @@ class CustomTextFormField extends StatelessWidget {
       child: TextFormField(
         focusNode: focusNode,
         onChanged: onChanged,
-        cursorColor: AppColor.blacK,
+        cursorColor: AppColor.white,
         decoration: InputDecoration(
+          suffixIcon: IconButton(
+            onPressed: onPressedSuffixIcon,
+            icon: FaIcon(
+              suffixIcon,
+              size: 16.h,
+              color: colorIcon ?? AppColor.background,
+            ),
+          ),
           prefixIcon: IconButton(
             onPressed: onPressedPrefixIcon,
             icon: FaIcon(
               prefixIcon,
-              size: 20.h,
+              size: 16.h,
+              color: colorIcon ?? AppColor.background,
             ),
-            color: AppColor.jGDark,
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(25.r),
-            ),
-            borderSide: const BorderSide(color: AppColor.lightGrey),
+            borderRadius: isRaiusEnabled
+                ? BorderRadius.all(
+                    Radius.circular(25.r),
+                  )
+                : BorderRadius.all(
+                    Radius.circular(6.r),
+                  ),
+            borderSide: const BorderSide(color: AppColor.white),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(25.r),
-            ),
-            borderSide: const BorderSide(color: AppColor.lightGrey),
+            borderRadius: isRaiusfocused
+                ? BorderRadius.all(
+                    Radius.circular(25.r),
+                  )
+                : BorderRadius.all(
+                    Radius.circular(6.r),
+                  ),
+            borderSide: const BorderSide(color: AppColor.white),
           ),
-          fillColor: color ?? AppColor.formField,
+          fillColor: fillColor ?? AppColor.formField,
           filled: true,
           contentPadding: EdgeInsets.symmetric(vertical: 5.h),
           hintText: hint,
           hintStyle: AppFonts.regular_13.copyWith(
-            color: AppColor.grey,
+            color: AppColor.white,
           ),
         ),
       ),

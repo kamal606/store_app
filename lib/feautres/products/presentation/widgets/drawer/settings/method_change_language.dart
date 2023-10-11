@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/feautres/products/presentation/widgets/settings/dialog_langage_and_theme.dart';
+import 'package:store_app/feautres/products/presentation/widgets/drawer/settings/dialog_langage_and_theme.dart';
 import 'package:store_app/feautres/localization/domain/enum_locale.dart';
 import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 import 'package:store_app/feautres/products/data/data_source/local_data_source.dart/save_check__lang_settings.dart';

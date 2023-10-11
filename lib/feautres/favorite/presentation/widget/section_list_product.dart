@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/function/check_local_arabic.dart';
+import 'package:store_app/core/utils/go_router.dart';
 import 'package:store_app/feautres/favorite/data/local_data_source/icon_favorite_save_local.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
 import 'package:store_app/feautres/favorite/presentation/widget/section_card_product.dart';
@@ -71,19 +73,25 @@ class SectionListProductFavorite extends StatelessWidget {
                         }
                         return true;
                       },
-                      child: CustomCardWishlistAndCart(
-                        quantity: 1,
-                        isCart: false,
-                        onPressed: () async {
-                          BlocProvider.of<FavoriteBloc>(context).add(
-                              RemoveFavoriteEvent(
-                                  productEntity: state
-                                      .favoriteEntity.listProductEntity[i]));
-                          await FavoriteIconSaveLocal.removeColorToIcon(
-                              state.favoriteEntity.listProductEntity[i]);
+                      child: InkWell(
+                        onTap: () {
+                          context.push(AppRouter.detailsProductView,
+                              extra: state.favoriteEntity.listProductEntity[i]);
                         },
-                        productEntity:
-                            state.favoriteEntity.listProductEntity[i],
+                        child: CustomCardWishlistAndCart(
+                          quantity: 1,
+                          isCart: false,
+                          onPressed: () async {
+                            BlocProvider.of<FavoriteBloc>(context).add(
+                                RemoveFavoriteEvent(
+                                    productEntity: state
+                                        .favoriteEntity.listProductEntity[i]));
+                            await FavoriteIconSaveLocal.removeColorToIcon(
+                                state.favoriteEntity.listProductEntity[i]);
+                          },
+                          productEntity:
+                              state.favoriteEntity.listProductEntity[i],
+                        ),
                       ),
                     );
                   }),

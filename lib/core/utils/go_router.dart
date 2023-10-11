@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/feautres/auth/presentation/view/login.dart';
 import 'package:store_app/feautres/products/domain/entities/category_entity.dart';
 import 'package:store_app/feautres/products/presentation/view/product_category_view.dart';
 import 'package:store_app/feautres/products/presentation/view/search_home_view.dart';
@@ -29,13 +30,18 @@ abstract class AppRouter {
   static const String settings = "/settings";
   static const String productCategory = "/productCategory";
   static const String searchHomeView = "/searchHomeView";
+  static const String login = "/login";
 
   static final router = GoRouter(
     routes: [
       // GoRoute(path: "/", builder: (context, state) => const Testt()),
       GoRoute(
-        path: "/",
+        path: "/as",
         builder: (context, state) => const SplashView(),
+      ),
+      GoRoute(
+        path: "/",
+        builder: (context, state) => const LoginView(),
       ),
       GoRoute(
         path: AppRouter.loginOrSkip,

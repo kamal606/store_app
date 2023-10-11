@@ -25,8 +25,16 @@ class AppFonts {
     fontSize: 13.sp,
     fontWeight: FontWeight.w400,
   );
+  static TextStyle regular_14 = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w400,
+  );
   static TextStyle regular_16 = TextStyle(
     fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+  );
+  static TextStyle regular_25 = TextStyle(
+    fontSize: 25.sp,
     fontWeight: FontWeight.w400,
   );
 

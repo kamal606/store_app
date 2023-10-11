@@ -15,6 +15,8 @@ class CustomElvatedButton extends StatelessWidget {
     this.fontTitle,
     this.backgroundColor,
     this.isAddToCart = false,
+    this.colorTitle,
+    this.isRadius = true,
   });
   final void Function()? onPressed;
   final String? title;
@@ -23,7 +25,9 @@ class CustomElvatedButton extends StatelessWidget {
   final bool isAction;
   final TextStyle? fontTitle;
   final Color? backgroundColor;
+  final Color? colorTitle;
   final bool isAddToCart;
+  final bool isRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +37,9 @@ class CustomElvatedButton extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: backgroundColor ?? AppColor.jGDark,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.r)),
+                  borderRadius: isRadius
+                      ? BorderRadius.circular(30.r)
+                      : BorderRadius.circular(6.r)),
             ),
             child: Text(
               S.of(context).added,
@@ -46,7 +52,9 @@ class CustomElvatedButton extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               backgroundColor: backgroundColor ?? AppColor.jGDark,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30.r)),
+                  borderRadius: isRadius
+                      ? BorderRadius.circular(30.r)
+                      : BorderRadius.circular(6.r)),
             ),
             child: isAction
                 ? Row(
@@ -68,7 +76,8 @@ class CustomElvatedButton extends StatelessWidget {
                 : Text(
                     title ?? "",
                     style: fontTitle ??
-                        AppFonts.semiBold_16.copyWith(color: AppColor.white),
+                        AppFonts.semiBold_16
+                            .copyWith(color: colorTitle ?? AppColor.white),
                   ),
           );
   }
