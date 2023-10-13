@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class Failure {
   final String message;
@@ -8,6 +9,67 @@ abstract class Failure {
 
 class CachedFailure extends Failure {
   CachedFailure({required super.message});
+}
+
+class FirebaseAuthExceptionHandler extends Failure {
+  FirebaseAuthExceptionHandler({required super.message});
+  factory FirebaseAuthExceptionHandler.fromFirebase(
+      FirebaseAuthException exception) {
+    switch (exception.code) {
+      case 'invalid-email':
+        return FirebaseAuthExceptionHandler(message: 'Invalid email address.');
+
+      case 'user-not-found':
+        return FirebaseAuthExceptionHandler(message: 'User not found.');
+
+      case 'wrong-password':
+        return FirebaseAuthExceptionHandler(message: 'Incorrect password.');
+
+      case 'user-disabled':
+        return FirebaseAuthExceptionHandler(message: 'User has been disabled.');
+
+      case 'too-many-requests':
+        return FirebaseAuthExceptionHandler(
+            message: 'Too many requests. Please try again later.');
+
+      case 'operation-not-allowed':
+        return FirebaseAuthExceptionHandler(message: 'Operation not allowed.');
+      case 'email-already-in-use':
+        return FirebaseAuthExceptionHandler(
+            message: 'The email address is already in use by another account.');
+
+      case 'weak-password':
+        return FirebaseAuthExceptionHandler(
+            message: 'The password is too weak.');
+
+      case 'invalid-credential':
+        return FirebaseAuthExceptionHandler(
+            message:
+                'The supplied auth credential is malformed or has expired.');
+
+      case 'account-exists-with-different-credential':
+        return FirebaseAuthExceptionHandler(
+            message:
+                'An account already exists with the same email address but different sign-in credentials.');
+
+      case 'invalid-verification-code':
+        return FirebaseAuthExceptionHandler(
+            message: 'The verification code is invalid.');
+
+      case 'invalid-verification-id':
+        return FirebaseAuthExceptionHandler(
+            message: 'The verification ID is invalid.');
+
+      case 'network-request-failed':
+        return FirebaseAuthExceptionHandler(
+            message:
+                'A network error occurred. Please check your internet connection and try again.');
+
+      default:
+        return FirebaseAuthExceptionHandler(
+            message: 'An error occurred. Please try again.');
+    }
+  }
 }
 
 class NetworkFailure extends Failure {

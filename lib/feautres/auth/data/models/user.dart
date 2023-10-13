@@ -2,30 +2,22 @@ import 'package:store_app/feautres/auth/domain/entity/user_entity.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserModel extends UserEntity {
-  final String? id;
-  final String fullName;
-  final String email;
-  final String address;
-  final String city;
-  final String country;
-  final String zipCode;
-
-  const UserModel(
-      {this.id,
-      this.fullName = "",
-      this.email = "",
-      this.address = "",
-      this.city = "",
-      this.country = "",
-      this.zipCode = ""})
-      : super(
-          idUser: id,
-          fullNameUser: fullName,
-          emailUser: email,
-          addressUser: address,
-          cityUser: city,
-          countryUser: country,
-          zipCodeUser: zipCode,
+  const UserModel({
+    String? id,
+    String fullName = "",
+    String email = "",
+    String address = "",
+    String city = "",
+    String country = "",
+    String zipCode = "",
+  }) : super(
+          id: id,
+          fullName: fullName,
+          email: email,
+          address: address,
+          city: city,
+          country: country,
+          zipCode: zipCode,
         );
 
   factory UserModel.fromSnapshot(DocumentSnapshot snap) {
@@ -39,8 +31,10 @@ class UserModel extends UserEntity {
       zipCode: snap["zipCode"],
     );
   }
-  Map<String, Object> toDocument() {
+
+  Map<String, dynamic> toDocument() {
     return {
+      "id": id,
       "fullName": fullName,
       "email": email,
       "address": address,
@@ -49,4 +43,8 @@ class UserModel extends UserEntity {
       "zipCode": zipCode,
     };
   }
+
+  @override
+  List<Object?> get props =>
+      [id, fullName, email, address, city, country, zipCode];
 }

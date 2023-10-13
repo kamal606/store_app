@@ -7,7 +7,7 @@ class GetUserUseCase {
   final GetUserRepo getUserRepo;
 
   GetUserUseCase({required this.getUserRepo});
-  Stream<Either<Failure, UserEntity>> call(String userId) {
+  Either<Failure, Stream<UserEntity>> call(String userId) {
     return getUserRepo.getUser(userId);
   }
 }

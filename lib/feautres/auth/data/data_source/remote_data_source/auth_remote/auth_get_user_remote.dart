@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
 abstract class AuthGetUserRemoteDataSource {
-  Stream<auth.User?> get getUser;
+  Stream<auth.User?> getUser();
 }
 
 class AuthGetUserRemoteDataSourceImpl implements AuthGetUserRemoteDataSource {
@@ -10,5 +10,7 @@ class AuthGetUserRemoteDataSourceImpl implements AuthGetUserRemoteDataSource {
   AuthGetUserRemoteDataSourceImpl({auth.FirebaseAuth? firebaseAuth})
       : _firebaseAuth = firebaseAuth ?? auth.FirebaseAuth.instance;
   @override
-  Stream<auth.User?> get getUser => _firebaseAuth.userChanges();
+  Stream<auth.User?> getUser() {
+    return _firebaseAuth.userChanges();
+  }
 }

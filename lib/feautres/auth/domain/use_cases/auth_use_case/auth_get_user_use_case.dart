@@ -7,7 +7,7 @@ class AuthGetUserUseCase {
   final AuthGetUserRepo authGetUserRepo;
   AuthGetUserUseCase({required this.authGetUserRepo});
 
-  Stream<Either<Failure, auth.User?>> call() {
-    return authGetUserRepo.user;
+  Either<Failure, Stream<auth.User?>> call() {
+    return authGetUserRepo.getUser();
   }
 }
