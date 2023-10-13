@@ -47,9 +47,9 @@ class SectionButtonLanguage extends StatelessWidget {
                     BlocProvider.of<AppLocaleBloc>(context).add(
                         const ChangeLocaleEvent(
                             appLanguage: AppLocale.english));
-                    Box box = await SaveStartViewAppLocal.openBox();
-                    await SaveStartViewAppLocal.chooseLanguage(box);
-                    if (!context.mounted) return;
+                    // Box box = await SaveStartViewAppLocal.openBox();
+                    // await SaveStartViewAppLocal.chooseLanguage(box);
+                    // if (!context.mounted) return;
                     context.replace(AppRouter.onBordingView);
                   },
                   titleAction: "ENGLISH",
@@ -65,9 +65,9 @@ class SectionButtonLanguage extends StatelessWidget {
                   onPressed: () async {
                     BlocProvider.of<AppLocaleBloc>(context).add(
                         const ChangeLocaleEvent(appLanguage: AppLocale.arabic));
-                    Box box = await SaveStartViewAppLocal.openBox();
-                    await SaveStartViewAppLocal.chooseLanguage(box);
-                    if (!context.mounted) return;
+                    // Box box = await SaveStartViewAppLocal.openBox();
+                    // await SaveStartViewAppLocal.chooseLanguage(box);
+                    // if (!context.mounted) return;
                     context.replace(AppRouter.onBordingView);
                   },
                   titleAction: "ARABIC",

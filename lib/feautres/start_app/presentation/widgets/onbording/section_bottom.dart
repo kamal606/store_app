@@ -44,9 +44,9 @@ class SectionBottom extends StatelessWidget {
         ),
         TextButton(
           onPressed: () async {
-            Box box = await SaveStartViewAppLocal.openBox();
-            await SaveStartViewAppLocal.onBording(box);
-            if (!context.mounted) return;
+            // Box box = await SaveStartViewAppLocal.openBox();
+            // await SaveStartViewAppLocal.onBording(box);
+            // if (!context.mounted) return;
             context.replace(AppRouter.homeView);
           },
           child: Text(
@@ -62,9 +62,9 @@ class SectionBottom extends StatelessWidget {
                 duration: const Duration(seconds: 1), curve: Curves.easeInOut);
 
             if (index >= 2) {
-              Box box = await SaveStartViewAppLocal.openBox();
-              await SaveStartViewAppLocal.onBording(box);
-              if (!context.mounted) return;
+              // Box box = await SaveStartViewAppLocal.openBox();
+              // await SaveStartViewAppLocal.onBording(box);
+              // if (!context.mounted) return;
               context.replace(AppRouter.homeView);
             }
           },

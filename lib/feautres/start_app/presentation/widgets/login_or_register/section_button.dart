@@ -20,7 +20,9 @@ class SectionButtonLoginOrRegister extends StatelessWidget {
           width: MediaQuery.of(context).size.width - 100.h,
           height: 35.h,
           child: CustomElvatedButton(
-            onPressed: () {},
+            onPressed: () {
+              context.replace(AppRouter.login);
+            },
             title: "Login or Register",
           ),
         ),
@@ -37,9 +39,9 @@ class SectionButtonLoginOrRegister extends StatelessWidget {
               ),
             ),
             onPressed: () async {
-              Box box = await SaveStartViewAppLocal.openBox();
-              await SaveStartViewAppLocal.loginOrRegister(box);
-              if (!context.mounted) return;
+              // Box box = await SaveStartViewAppLocal.openBox();
+              // await SaveStartViewAppLocal.loginOrRegister(box);
+              // if (!context.mounted) return;
               context.replace(AppRouter.chooseLanguageView);
             },
             child: Text(

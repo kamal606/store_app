@@ -43,11 +43,11 @@ abstract class AppRouter {
       // GoRoute(path: "/", builder: (context, state) => const Testt()),
 
       GoRoute(
-        path: "/as",
+        path: "/",
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: "/",
+        path: AppRouter.successChangePassword,
         builder: (context, state) => const SuccessChangePasswordView(),
       ),
       GoRoute(
