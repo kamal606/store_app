@@ -1,17 +1,23 @@
+import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:store_app/core/utils/failure.dart';
+import 'package:store_app/feautres/auth/data/models/user.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_sign_up_use_case.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/user_bloc.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthSignUpUseCase authSignUpUseCase;
+  final UserBloc userBloc;
   String email = "";
   String password = "";
   String confirmPassword = "";
-  AuthBloc({required this.authSignUpUseCase}) : super(AuthInitial()) {
+
+  AuthBloc({required this.authSignUpUseCase, required this.userBloc})
+      : super(AuthInitial()) {
     on<AuthEvent>((event, emit) async {
       //=================== email changed event =================
       if (event is EmailChangedEvent) {
@@ -59,8 +65,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           if (l is FirebaseAuthFailure) {
             return emit(AuthFailure(errorAuth: l.message));
           }
-        }, (r) {
-          return emit(AuthSuccess());
+        }, (r) async {
+          UserModel userModel = UserModel(id: r!.uid, email: email);
+          userBloc.add(CreateUserEvent(userModel: userModel));
+          return emit(AuthSuccess(authUser: r));
         });
       }
     });

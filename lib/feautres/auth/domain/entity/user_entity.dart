@@ -11,12 +11,12 @@ class UserEntity extends Equatable {
 
   const UserEntity({
     this.id,
-    required this.fullName,
-    required this.email,
-    required this.address,
-    required this.city,
-    required this.country,
-    required this.zipCode,
+    this.fullName = "",
+    this.email = "",
+    this.address = "",
+    this.city = "",
+    this.country = "",
+    this.zipCode = "",
   });
   @override
   List<Object?> get props =>
