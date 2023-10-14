@@ -20,7 +20,17 @@ class AuthSignUpUserRepoImpl implements AuthSignUpUserRepo {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
       } else if (e is FirebaseAuthException) {
-        return left(FirebaseAuthExceptionHandler.fromFirebase(e));
+        if (e.code == 'invalid-email' ||
+            e.code == 'user-not-found' ||
+            e.code == 'user-disabled' ||
+            e.code == 'email-already-in-use' ||
+            e.code == 'account-exists-with-different-credential') {
+          return left(EmailAuthFailure.fromFirebase(e));
+        } else if (e.code == 'wrong-password' || e.code == 'weak-password') {
+          return left(PasswordAuthFailure.fromFirebase(e));
+        } else {
+          return left(FirebaseAuthFailure.fromFirebase(e));
+        }
       } else {
         return left(ServerFailure(message: e.toString()));
       }

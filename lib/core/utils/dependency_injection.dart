@@ -1,5 +1,21 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_get_user_remote.dart';
+import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_sign_up_remote.dart';
+import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/get_user_remote.dart';
+import 'package:store_app/feautres/auth/data/repository/auth_repository/get_user_repo_impl.dart';
+import 'package:store_app/feautres/auth/data/repository/auth_repository/signup_repo_impl.dart';
+import 'package:store_app/feautres/auth/data/repository/user_repository/get_user_repo_impl.dart';
+import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_get_user_repo.dart';
+import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_sign_up_repo.dart';
+import 'package:store_app/feautres/auth/domain/repository/user_repository/get_user_repo.dart';
+import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_get_user_use_case.dart';
+import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_sign_up_use_case.dart';
+import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/get_user_use_case.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
 import 'package:store_app/feautres/cart/data/local_data_source/cart_local_data_source.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/data/local_data_source/favorite_local_data_source.dart';
@@ -34,7 +50,9 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
-
+  sl.registerFactory(() => AuthBloc(authSignUpUseCase: sl.call()));
+  sl.registerFactory(() =>
+      AuthListenBloc(authGetUserUseCase: sl.call(), getUserUseCase: sl.call()));
   sl.registerFactory(
       () => GetProductsOfCategoryBloc(getProductsUseCase: sl.call()));
   sl.registerFactory(() => CartBloc(cartLocalDataSourceImpl: sl.call()));
@@ -47,7 +65,12 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => StatusInternetBloc());
   sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
-
+  sl.registerLazySingleton(
+      () => AuthSignUpRemoteDataSourceImpl(firebaseAuth: sl.call()));
+  sl.registerLazySingleton(
+      () => GetUserRemoteDataSourceImpl(firebaseFirestore: sl.call()));
+  sl.registerLazySingleton<AuthGetUserRemoteDataSource>(
+      () => AuthGetUserRemoteDataSourceImpl(firebaseAuth: sl.call()));
   sl.registerLazySingleton(() => GetProductsOfCategoryLocalDataSourceImpl());
   sl.registerLazySingleton(() => GetProductsOfCategoryRemoteDataSourceImpl(
       apiService: sl.call(), gerProductsLocal: sl.call()));
@@ -67,6 +90,15 @@ Future<void> initGetIt() async {
           apiService: sl.call(), productsLocalDataSourceImpl: sl.call()));
 
   //! Repository
+  sl.registerLazySingleton<AuthSignUpUserRepo>(
+    () => AuthSignUpUserRepoImpl(authSignUpRemoteDataSourceImpl: sl.call()),
+  );
+  sl.registerLazySingleton<AuthGetUserRepo>(
+    () => AuthGetUserRepoImpl(authGetUserRemoteDataSource: sl.call()),
+  );
+  sl.registerLazySingleton<GetUserRepo>(
+    () => GetUserRepoImpl(getUserRemoteDataSourceImpl: sl.call()),
+  );
   sl.registerLazySingleton<GetProductsOfCategoryRepo>(
     () => GetProductsOfCategoryRepoImpl(
         getProductsLocal: sl.call(), getProductsRemote: sl.call()),
@@ -83,6 +115,10 @@ Future<void> initGetIt() async {
   );
 
   //! Use Cases
+  sl.registerLazySingleton(() => AuthSignUpUseCase(signUpUserRepo: sl.call()));
+  sl.registerLazySingleton(() => GetUserUseCase(getUserRepo: sl.call()));
+  sl.registerLazySingleton(
+      () => AuthGetUserUseCase(authGetUserRepo: sl.call()));
   sl.registerLazySingleton(
       () => GetProductsOfCategoryUseCase(getProductsOfCategoryRepo: sl.call()));
   sl.registerLazySingleton(
@@ -94,6 +130,7 @@ Future<void> initGetIt() async {
   sl.registerLazySingleton<ApiService>(() => ApiService(sl.call()));
 
   //! External
-
+  sl.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
+  sl.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   sl.registerLazySingleton<Dio>(() => Dio());
 }

@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
@@ -6,6 +8,9 @@ import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 import 'package:store_app/core/utils/go_router.dart';
 import 'package:store_app/core/widgets/custom_elvated_button.dart';
+import 'package:store_app/feautres/auth/domain/entity/user_entity.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
+
 import 'package:store_app/feautres/start_app/data/local_data_source/save_start_app.dart';
 
 class SectionButtonLoginOrRegister extends StatelessWidget {
@@ -19,11 +24,17 @@ class SectionButtonLoginOrRegister extends StatelessWidget {
         SizedBox(
           width: MediaQuery.of(context).size.width - 100.h,
           height: 35.h,
-          child: CustomElvatedButton(
-            onPressed: () {
-              context.replace(AppRouter.login);
+          child: BlocBuilder<AuthListenBloc, AuthListenState>(
+            builder: (context, state) {
+              return CustomElvatedButton(
+                onPressed: () {
+                  BlocProvider.of<AuthListenBloc>(context)
+                      .add(const AuthUserChanged());
+                  context.replace(AppRouter.login);
+                },
+                title: "Login or Register",
+              );
             },
-            title: "Login or Register",
           ),
         ),
         SizedBox(

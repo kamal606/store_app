@@ -11,62 +11,79 @@ class CachedFailure extends Failure {
   CachedFailure({required super.message});
 }
 
-class FirebaseAuthExceptionHandler extends Failure {
-  FirebaseAuthExceptionHandler({required super.message});
-  factory FirebaseAuthExceptionHandler.fromFirebase(
-      FirebaseAuthException exception) {
+class EmailAuthFailure extends Failure {
+  EmailAuthFailure({required super.message});
+
+  factory EmailAuthFailure.fromFirebase(FirebaseAuthException exception) {
     switch (exception.code) {
       case 'invalid-email':
-        return FirebaseAuthExceptionHandler(message: 'Invalid email address.');
-
+        return EmailAuthFailure(message: 'Invalid email address.');
       case 'user-not-found':
-        return FirebaseAuthExceptionHandler(message: 'User not found.');
-
-      case 'wrong-password':
-        return FirebaseAuthExceptionHandler(message: 'Incorrect password.');
-
+        return EmailAuthFailure(message: 'User not found.');
       case 'user-disabled':
-        return FirebaseAuthExceptionHandler(message: 'User has been disabled.');
-
-      case 'too-many-requests':
-        return FirebaseAuthExceptionHandler(
-            message: 'Too many requests. Please try again later.');
-
-      case 'operation-not-allowed':
-        return FirebaseAuthExceptionHandler(message: 'Operation not allowed.');
+        return EmailAuthFailure(message: 'User has been disabled.');
       case 'email-already-in-use':
-        return FirebaseAuthExceptionHandler(
+        return EmailAuthFailure(
             message: 'The email address is already in use by another account.');
-
-      case 'weak-password':
-        return FirebaseAuthExceptionHandler(
-            message: 'The password is too weak.');
-
-      case 'invalid-credential':
-        return FirebaseAuthExceptionHandler(
-            message:
-                'The supplied auth credential is malformed or has expired.');
-
       case 'account-exists-with-different-credential':
-        return FirebaseAuthExceptionHandler(
+        return EmailAuthFailure(
             message:
                 'An account already exists with the same email address but different sign-in credentials.');
 
+      default:
+        return EmailAuthFailure(
+            message: 'An error occurred. Please try again.');
+    }
+  }
+}
+
+class PasswordAuthFailure extends Failure {
+  PasswordAuthFailure({required super.message});
+
+  factory PasswordAuthFailure.fromFirebase(FirebaseAuthException exception) {
+    switch (exception.code) {
+      case 'wrong-password':
+        return PasswordAuthFailure(message: 'Incorrect password.');
+      case 'weak-password':
+        return PasswordAuthFailure(message: 'The password is too weak.');
+
+      default:
+        return PasswordAuthFailure(
+            message: 'An error occurred. Please try again.');
+    }
+  }
+}
+
+class FirebaseAuthFailure extends Failure {
+  FirebaseAuthFailure({required super.message});
+  factory FirebaseAuthFailure.fromFirebase(FirebaseAuthException exception) {
+    switch (exception.code) {
+      case 'too-many-requests':
+        return FirebaseAuthFailure(
+            message: 'Too many requests. Please try again later.');
+
+      case 'operation-not-allowed':
+        return FirebaseAuthFailure(message: 'Operation not allowed.');
+
+      case 'invalid-credential':
+        return FirebaseAuthFailure(
+            message:
+                'The supplied auth credential is malformed or has expired.');
+
       case 'invalid-verification-code':
-        return FirebaseAuthExceptionHandler(
+        return FirebaseAuthFailure(
             message: 'The verification code is invalid.');
 
       case 'invalid-verification-id':
-        return FirebaseAuthExceptionHandler(
-            message: 'The verification ID is invalid.');
+        return FirebaseAuthFailure(message: 'The verification ID is invalid.');
 
       case 'network-request-failed':
-        return FirebaseAuthExceptionHandler(
+        return FirebaseAuthFailure(
             message:
                 'A network error occurred. Please check your internet connection and try again.');
 
       default:
-        return FirebaseAuthExceptionHandler(
+        return FirebaseAuthFailure(
             message: 'An error occurred. Please try again.');
     }
   }

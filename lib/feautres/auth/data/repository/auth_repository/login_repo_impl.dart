@@ -21,7 +21,7 @@ class AuthLoginUserRepoImpl implements AuthLoginUserRepo {
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
       } else if (e is FirebaseAuthException) {
-        return left(FirebaseAuthExceptionHandler.fromFirebase(e));
+        return left(FirebaseAuthFailure.fromFirebase(e));
       } else {
         return left(ServerFailure(message: e.toString()));
       }

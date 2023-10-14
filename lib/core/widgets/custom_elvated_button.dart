@@ -5,19 +5,19 @@ import 'package:store_app/generated/l10n.dart';
 import '../fonts/app_font.dart';
 
 class CustomElvatedButton extends StatelessWidget {
-  const CustomElvatedButton({
-    super.key,
-    required this.onPressed,
-    this.title,
-    this.titleAction,
-    this.imageAction,
-    this.isAction = false,
-    this.fontTitle,
-    this.backgroundColor,
-    this.isAddToCart = false,
-    this.colorTitle,
-    this.isRadius = true,
-  });
+  const CustomElvatedButton(
+      {super.key,
+      required this.onPressed,
+      this.title,
+      this.titleAction,
+      this.imageAction,
+      this.isAction = false,
+      this.fontTitle,
+      this.backgroundColor,
+      this.isAddToCart = false,
+      this.colorTitle,
+      this.isRadius = true,
+      this.isTitle = true});
   final void Function()? onPressed;
   final String? title;
   final String? titleAction;
@@ -28,7 +28,7 @@ class CustomElvatedButton extends StatelessWidget {
   final Color? colorTitle;
   final bool isAddToCart;
   final bool isRadius;
-
+  final bool isTitle;
   @override
   Widget build(BuildContext context) {
     return isAddToCart
@@ -73,12 +73,14 @@ class CustomElvatedButton extends StatelessWidget {
                       ),
                     ],
                   )
-                : Text(
-                    title ?? "",
-                    style: fontTitle ??
-                        AppFonts.semiBold_16
-                            .copyWith(color: colorTitle ?? AppColor.white),
-                  ),
+                : isTitle
+                    ? Text(
+                        title ?? "",
+                        style: fontTitle ??
+                            AppFonts.semiBold_16
+                                .copyWith(color: colorTitle ?? AppColor.white),
+                      )
+                    : const CircularProgressIndicator(),
           );
   }
 }

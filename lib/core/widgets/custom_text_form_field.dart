@@ -19,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
     this.colorIcon,
     this.suffixIcon,
     this.onPressedSuffixIcon,
+    this.errorText,
   });
   final String hint;
   final IconData? prefixIcon;
@@ -31,7 +32,7 @@ class CustomTextFormField extends StatelessWidget {
   final bool isRaiusEnabled;
   final bool isRaiusfocused;
   final Color? fillColor;
-
+  final String? errorText;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -41,6 +42,7 @@ class CustomTextFormField extends StatelessWidget {
         onChanged: onChanged,
         cursorColor: AppColor.white,
         decoration: InputDecoration(
+          errorText: errorText,
           suffixIcon: IconButton(
             onPressed: onPressedSuffixIcon,
             icon: FaIcon(
