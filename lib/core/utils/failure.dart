@@ -29,7 +29,8 @@ class EmailAuthFailure extends Failure {
         return EmailAuthFailure(
             message:
                 'An account already exists with the same email address but different sign-in credentials.');
-
+      case 'INVALID_LOGIN_CREDENTIALS':
+        return EmailAuthFailure(message: 'Invalid Login Credentials.');
       default:
         return EmailAuthFailure(
             message: 'An error occurred. Please try again.');
@@ -46,7 +47,8 @@ class PasswordAuthFailure extends Failure {
         return PasswordAuthFailure(message: 'Incorrect password.');
       case 'weak-password':
         return PasswordAuthFailure(message: 'The password is too weak.');
-
+      case 'INVALID_LOGIN_CREDENTIALS':
+        return PasswordAuthFailure(message: 'Invalid Login Credentials.');
       default:
         return PasswordAuthFailure(
             message: 'An error occurred. Please try again.');

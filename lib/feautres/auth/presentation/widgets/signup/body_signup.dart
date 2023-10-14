@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:store_app/core/function/toast_flutter.dart';
+import 'package:store_app/core/utils/go_router.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/widgets/signup/first_column.dart';
 import 'package:store_app/feautres/auth/presentation/widgets/signup/second_column.dart';
 
@@ -11,7 +14,15 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
+    return BlocConsumer<SignUpBloc, SignUpState>(
+      listener: (context, state) {
+        if (state is SignUpSuccess) {
+          context.replace(AppRouter.homeView);
+        }
+        if (state is SignUpFailure) {
+          toast(message: state.errorAuth, color: AppColor.erorr);
+        }
+      },
       builder: (context, state) {
         return CustomScrollView(
           slivers: [
@@ -25,7 +36,7 @@ class SignUpViewBody extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20.h),
                     child: AbsorbPointer(
-                      absorbing: state is AuthLoading ? true : false,
+                      absorbing: state is SignUpLoading ? true : false,
                       child: const Column(
                         children: [
                           Expanded(
@@ -43,7 +54,7 @@ class SignUpViewBody extends StatelessWidget {
                     ),
                   ),
                 ),
-                state is AuthLoading
+                state is SignUpLoading
                     ? Container(
                         height: MediaQuery.of(context).size.height,
                         color: AppColor.grey.withAlpha(80),

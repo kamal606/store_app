@@ -4,23 +4,24 @@ import 'package:store_app/feautres/auth/data/models/user.dart';
 
 import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/create_user_use_case.dart';
 
-part 'user_event.dart';
-part 'user_state.dart';
+part 'create_user_event.dart';
+part 'create_user_state.dart';
 
-class UserBloc extends Bloc<UserEvent, UserState> {
+class CreateUserBloc extends Bloc<CreateUserEvent, CreateUserState> {
   final CreateUserUseCase createUserUseCase;
 
-  UserBloc({
+  CreateUserBloc({
     required this.createUserUseCase,
-  }) : super(UserLoding()) {
-    on<UserEvent>((event, emit) async {
-      if (event is CreateUserEvent) {
-        emit(UserLoding());
+  }) : super(CreateUserLoding()) {
+    on<CreateUserEvent>((event, emit) async {
+      //this event add when sign up success (add in signup bloc)
+      if (event is CreateUserChangedEvent) {
+        emit(CreateUserLoding());
         final createUser = await createUserUseCase.call(event.userModel);
         createUser.fold((l) {
-          emit(UserFailure(errorMessage: l.message));
+          emit(CreateUserFailure(errorMessage: l.message));
         }, (r) {
-          emit(UserSuccess());
+          emit(CreateUserSuccess());
         });
       }
     });

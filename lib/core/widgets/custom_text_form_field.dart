@@ -20,6 +20,7 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.onPressedSuffixIcon,
     this.errorText,
+    this.onFieldSubmitted,
   });
   final String hint;
   final IconData? prefixIcon;
@@ -33,11 +34,13 @@ class CustomTextFormField extends StatelessWidget {
   final bool isRaiusfocused;
   final Color? fillColor;
   final String? errorText;
+  final Function(String)? onFieldSubmitted;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width - 10.w,
       child: TextFormField(
+        onFieldSubmitted: onFieldSubmitted,
         focusNode: focusNode,
         onChanged: onChanged,
         cursorColor: AppColor.white,

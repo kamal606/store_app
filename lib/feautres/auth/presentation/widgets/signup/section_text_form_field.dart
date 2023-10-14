@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/classes/icons.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/widgets/custom_text_form_field.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
 import 'package:store_app/generated/l10n.dart';
 
 class SectionTextFormFieldSignUp extends StatelessWidget {
@@ -14,13 +14,14 @@ class SectionTextFormFieldSignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        BlocBuilder<AuthBloc, AuthState>(
+        BlocBuilder<SignUpBloc, SignUpState>(
           builder: (context, state) {
             return CustomTextFormField(
-              errorText: state is EmailFailure ? (state).errorEmail : null,
+              errorText:
+                  state is SignUpEmailFailure ? (state).errorEmail : null,
               onChanged: (value) {
-                BlocProvider.of<AuthBloc>(context)
-                    .add(EmailChangedEvent(email: value));
+                BlocProvider.of<SignUpBloc>(context)
+                    .add(SignUpEmailChangedEvent(email: value));
               },
               prefixIcon: AppIcon.email,
               fillColor: AppColor.lightGrey.withAlpha(170),
@@ -33,14 +34,14 @@ class SectionTextFormFieldSignUp extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        BlocBuilder<AuthBloc, AuthState>(
+        BlocBuilder<SignUpBloc, SignUpState>(
           builder: (context, state) {
             return CustomTextFormField(
               errorText:
-                  state is PasswordFailure ? (state).errorPassword : null,
+                  state is SignUpPasswordFailure ? (state).errorPassword : null,
               onChanged: (value) {
-                BlocProvider.of<AuthBloc>(context)
-                    .add(PasswordChangedEvent(password: value));
+                BlocProvider.of<SignUpBloc>(context)
+                    .add(SignUpPasswordChangedEvent(password: value));
               },
               prefixIcon: AppIcon.password,
               fillColor: AppColor.lightGrey.withAlpha(170),
@@ -53,15 +54,15 @@ class SectionTextFormFieldSignUp extends StatelessWidget {
         SizedBox(
           height: 10.h,
         ),
-        BlocBuilder<AuthBloc, AuthState>(
+        BlocBuilder<SignUpBloc, SignUpState>(
           builder: (context, state) {
             return CustomTextFormField(
-              errorText: state is ConfirmPasswordFailure
+              errorText: state is SignUpConfirmPasswordFailure
                   ? (state).errorConfirmPassword
                   : null,
               onChanged: (value) {
-                BlocProvider.of<AuthBloc>(context)
-                    .add(ConfirmPasswordChangedEvent(confirmPassword: value));
+                BlocProvider.of<SignUpBloc>(context).add(
+                    SignUpConfirmPasswordChangedEvent(confirmPassword: value));
               },
               prefixIcon: AppIcon.password,
               fillColor: AppColor.lightGrey.withAlpha(170),

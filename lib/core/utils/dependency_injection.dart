@@ -3,24 +3,29 @@ import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
 import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_get_user_remote.dart';
+import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_login_remote.dart';
 import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_sign_up_remote.dart';
 import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/create_user_remote.dart';
 import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/get_user_remote.dart';
 import 'package:store_app/feautres/auth/data/repository/auth_repository/get_user_repo_impl.dart';
+import 'package:store_app/feautres/auth/data/repository/auth_repository/login_repo_impl.dart';
 import 'package:store_app/feautres/auth/data/repository/auth_repository/signup_repo_impl.dart';
 import 'package:store_app/feautres/auth/data/repository/user_repository/create_user_repo_impl.dart';
 import 'package:store_app/feautres/auth/data/repository/user_repository/get_user_repo_impl.dart';
 import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_get_user_repo.dart';
+import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_login_user_repo.dart';
 import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_sign_up_repo.dart';
 import 'package:store_app/feautres/auth/domain/repository/user_repository/create_user_repo.dart';
 import 'package:store_app/feautres/auth/domain/repository/user_repository/get_user_repo.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_get_user_use_case.dart';
+import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_login_use_case.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_sign_up_use_case.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/create_user_use_case.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/get_user_use_case.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/auth_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/login_bloc/login_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/user_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
 import 'package:store_app/feautres/cart/data/local_data_source/cart_local_data_source.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/data/local_data_source/favorite_local_data_source.dart';
@@ -55,8 +60,9 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
-  sl.registerFactory(() => UserBloc(createUserUseCase: sl.call()));
-  sl.registerFactory(() => AuthBloc(
+  sl.registerFactory(() => LoginBloc(authLogInUseCase: sl.call()));
+  sl.registerFactory(() => CreateUserBloc(createUserUseCase: sl.call()));
+  sl.registerFactory(() => SignUpBloc(
         userBloc: sl.call(),
         authSignUpUseCase: sl.call(),
       ));
@@ -74,6 +80,8 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => StatusInternetBloc());
   sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
+  sl.registerLazySingleton(
+      () => AuthLogInRemoteDataSourceImpl(firebaseAuth: sl.call()));
   sl.registerLazySingleton(
       () => CreateUserRemoteDataSourceImpl(firebaseFirestore: sl.call()));
   sl.registerLazySingleton(
@@ -101,6 +109,9 @@ Future<void> initGetIt() async {
           apiService: sl.call(), productsLocalDataSourceImpl: sl.call()));
 
   //! Repository
+  sl.registerLazySingleton<AuthLoginUserRepo>(
+    () => AuthLoginUserRepoImpl(authLogInRemoteDataSourceImpl: sl.call()),
+  );
   sl.registerLazySingleton<CreateUserRepo>(
     () => CreateUserRepoImpl(createUserRemoteDataSourceImpl: sl.call()),
   );
@@ -129,6 +140,7 @@ Future<void> initGetIt() async {
   );
 
   //! Use Cases
+  sl.registerLazySingleton(() => AuthLogInUseCase(loginUserRepo: sl.call()));
   sl.registerLazySingleton(() => CreateUserUseCase(createUserRepo: sl.call()));
   sl.registerLazySingleton(() => AuthSignUpUseCase(signUpUserRepo: sl.call()));
   sl.registerLazySingleton(() => GetUserUseCase(getUserRepo: sl.call()));

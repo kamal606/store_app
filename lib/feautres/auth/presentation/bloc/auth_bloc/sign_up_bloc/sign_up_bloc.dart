@@ -4,50 +4,50 @@ import 'package:equatable/equatable.dart';
 import 'package:store_app/core/utils/failure.dart';
 import 'package:store_app/feautres/auth/data/models/user.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_sign_up_use_case.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/user_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
 
-part 'auth_event.dart';
-part 'auth_state.dart';
+part 'sign_up_event.dart';
+part 'sign_up_state.dart';
 
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
+class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final AuthSignUpUseCase authSignUpUseCase;
-  final UserBloc userBloc;
+  final CreateUserBloc userBloc;
   String email = "";
   String password = "";
   String confirmPassword = "";
 
-  AuthBloc({required this.authSignUpUseCase, required this.userBloc})
-      : super(AuthInitial()) {
-    on<AuthEvent>((event, emit) async {
+  SignUpBloc({required this.authSignUpUseCase, required this.userBloc})
+      : super(SignUpInitial()) {
+    on<SignUpEvent>((event, emit) async {
       //=================== email changed event =================
-      if (event is EmailChangedEvent) {
+      if (event is SignUpEmailChangedEvent) {
         email = event.email;
       }
 
       //=================== password changed event =================
-      if (event is PasswordChangedEvent) {
+      if (event is SignUpPasswordChangedEvent) {
         password = event.password;
       }
 
       //=================== confirm Password changed event =================
-      if (event is ConfirmPasswordChangedEvent) {
+      if (event is SignUpConfirmPasswordChangedEvent) {
         confirmPassword = event.confirmPassword;
       }
 
       //=================== sign up event =================
-      if (event is AuthSignUpEvent) {
-        emit(AuthLoading());
+      if (event is SignUpAuthEvent) {
+        emit(SignUpLoading());
         //=============== check email or password empty and confirm password match ==========
         if (email.isEmpty) {
-          return emit(
-              const EmailFailure(errorEmail: "Email or password is empty"));
+          return emit(const SignUpEmailFailure(
+              errorEmail: "Email or password is empty"));
         }
         if (password.isEmpty) {
-          return emit(const PasswordFailure(
+          return emit(const SignUpPasswordFailure(
               errorPassword: "Email or password is empty"));
         }
         if (password != confirmPassword) {
-          return emit(const ConfirmPasswordFailure(
+          return emit(const SignUpConfirmPasswordFailure(
               errorConfirmPassword: "No match in password"));
         }
 
@@ -57,18 +57,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         //======================= Either fold to return left failure or right User? ==============
         signUp.fold((l) {
           if (l is EmailAuthFailure) {
-            return emit(EmailFailure(errorEmail: l.message));
+            return emit(SignUpEmailFailure(errorEmail: l.message));
           }
           if (l is PasswordAuthFailure) {
-            return emit(PasswordFailure(errorPassword: l.message));
+            return emit(SignUpPasswordFailure(errorPassword: l.message));
           }
           if (l is FirebaseAuthFailure) {
-            return emit(AuthFailure(errorAuth: l.message));
+            return emit(SignUpFailure(errorAuth: l.message));
           }
-        }, (r) async {
+        }, (r) {
           UserModel userModel = UserModel(id: r!.uid, email: email);
-          userBloc.add(CreateUserEvent(userModel: userModel));
-          return emit(AuthSuccess(authUser: r));
+          userBloc.add(CreateUserChangedEvent(userModel: userModel));
+          return emit(SignUpSuccess(authUser: r));
         });
       }
     });

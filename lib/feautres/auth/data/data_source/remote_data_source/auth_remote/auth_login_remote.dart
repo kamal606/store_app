@@ -1,8 +1,7 @@
-import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
 abstract class AuthLogInRemoteDataSource {
-  Future<Unit> login({required String email, required String password});
+  Future<auth.User?> login({required String email, required String password});
 }
 
 class AuthLogInRemoteDataSourceImpl implements AuthLogInRemoteDataSource {
@@ -12,9 +11,11 @@ class AuthLogInRemoteDataSourceImpl implements AuthLogInRemoteDataSource {
       : _firebaseAuth = firebaseAuth ?? auth.FirebaseAuth.instance;
 
   @override
-  Future<Unit> login({required String email, required String password}) async {
-    await _firebaseAuth.signInWithEmailAndPassword(
+  Future<auth.User?> login(
+      {required String email, required String password}) async {
+    final credintial = await _firebaseAuth.signInWithEmailAndPassword(
         email: email, password: password);
-    return unit;
+    final user = credintial.user;
+    return user;
   }
 }
