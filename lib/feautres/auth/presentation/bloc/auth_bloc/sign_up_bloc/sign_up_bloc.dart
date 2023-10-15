@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:store_app/core/utils/failure.dart';
-import 'package:store_app/feautres/auth/data/models/user.dart';
-import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_sign_up_use_case.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
+import '../../../../../../core/utils/failure.dart';
+import '../../../../data/models/user.dart';
+import '../../../../domain/use_cases/auth_use_case/auth_sign_up_use_case.dart';
+import '../../user_bloc/create_user_bloc/create_user_bloc.dart';
 
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';

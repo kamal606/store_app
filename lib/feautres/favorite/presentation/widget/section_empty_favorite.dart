@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/image_assets.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../core/classes/image_assets.dart';
+import '../../../../core/fonts/app_font.dart';
+import '../../../../generated/l10n.dart';
 
 class SectionEmptyFavoriteOrCart extends StatelessWidget {
   const SectionEmptyFavoriteOrCart({super.key, this.isCart = false});

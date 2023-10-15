@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/widgets/custom_icon_left_right.dart';
-import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
+
+import '../../feautres/cart/presentation/bloc/cart/cart_bloc.dart';
+import '../color/app_color.dart';
+import '../fonts/app_font.dart';
+import 'custom_icon_left_right.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/widgets/custom_elvated_button.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../generated/l10n.dart';
+import '../color/app_color.dart';
+import '../fonts/app_font.dart';
+import '../widgets/custom_elvated_button.dart';
 
 Future<void> customDialogDeleteCartAndFavorite(
     {required BuildContext context,

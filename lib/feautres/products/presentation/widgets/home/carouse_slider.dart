@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
-import 'package:store_app/generated/l10n.dart';
-import '../../../../../core/color/app_color.dart';
-import '../../../../../core/classes/image_assets.dart';
 
+import '../../../../../core/classes/image_assets.dart';
+import '../../../../../core/color/app_color.dart';
 import '../../../../../core/fonts/app_font.dart';
+import '../../../../../core/function/check_local_arabic.dart';
+import '../../../../../generated/l10n.dart';
 
 class CustomCarouseSlider extends StatelessWidget {
   const CustomCarouseSlider({super.key});

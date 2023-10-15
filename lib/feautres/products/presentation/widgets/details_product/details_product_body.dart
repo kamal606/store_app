@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:store_app/feautres/products/presentation/bloc/get_all_products/get_all_products_bloc.dart';
+import '../../bloc/get_all_products/get_all_products_bloc.dart';
 
 import '../../../domain/entities/product_entity.dart';
 import 'body_container_discripe_product.dart';

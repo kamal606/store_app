@@ -23,3 +23,11 @@ class LoginPasswordChangedEvent extends LoginEvent {
 }
 
 class LoginAuthEvent extends LoginEvent {}
+
+class ObscureTextLoginEvent extends LoginEvent {
+  final bool obscureText;
+
+  const ObscureTextLoginEvent({required this.obscureText});
+  @override
+  List<Object> get props => [obscureText];
+}

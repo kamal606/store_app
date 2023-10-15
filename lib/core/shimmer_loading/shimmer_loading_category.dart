@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
-import '../color/app_color.dart';
+
 import '../classes/icon_category.dart';
+import '../color/app_color.dart';
+import '../function/check_local_arabic.dart';
 
 class ShimmerLoadingCategory extends StatelessWidget {
   const ShimmerLoadingCategory({super.key});

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/feautres/products/presentation/widgets/drawer/settings/dialog_langage_and_theme.dart';
-import 'package:store_app/feautres/products/data/data_source/local_data_source.dart/save_check_dark_or_light_mode.dart';
-import 'package:store_app/feautres/theme/domain/model/theme.dart';
-import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
-import 'package:store_app/generated/l10n.dart';
+import 'dialog_langage_and_theme.dart';
+import '../../../../data/data_source/local_data_source.dart/save_check_dark_or_light_mode.dart';
+import '../../../../../theme/domain/model/theme.dart';
+import '../../../../../theme/presentation/bloc/theme_app/theme_app_bloc.dart';
+import '../../../../../../generated/l10n.dart';
 
 Future<void> methodChooseTheme(BuildContext context) async {
   return await customLanguageAndTheme(

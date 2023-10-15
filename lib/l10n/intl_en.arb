@@ -79,8 +79,11 @@
 "titleForgetpassword":"Enter your email to receive an email to\nreset your password",
 "send":"Send",
 "congratulations":"Congratulations\n",
-"changeSuccess":"Your password has been\nchanged successfully",
-"continuee":"Continue"
+"changeSuccess":"An email has been sent to your\nemail to reset your password",
+"continuee":"Continue",
+"sendEmail": "Send Email\n",
+"guest":"Guest Login",
+"loginOrRegister": "Login or Register"
 
 }
 

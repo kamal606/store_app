@@ -40,3 +40,12 @@ class LoginPasswordFailure extends LoginState {
   @override
   List<Object> get props => [errorPassword];
 }
+
+class ObscureTextLoginState extends LoginState {
+  final bool obscureText;
+
+  const ObscureTextLoginState({required this.obscureText});
+
+  @override
+  List<Object> get props => [obscureText];
+}

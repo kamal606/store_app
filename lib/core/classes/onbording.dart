@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/classes/image_assets.dart';
-import 'package:store_app/generated/l10n.dart';
+import 'image_assets.dart';
+import '../../generated/l10n.dart';
 
 class ClassOnBording {
   final String image;

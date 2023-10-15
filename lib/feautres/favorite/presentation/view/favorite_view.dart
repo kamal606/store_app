@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/core/widgets/custom_appbar.dart';
-import 'package:store_app/feautres/favorite/presentation/widget/body_favorite_view.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../core/classes/icons.dart';
+import '../../../../core/utils/go_router.dart';
+import '../../../../core/widgets/custom_appbar.dart';
+import '../widget/body_favorite_view.dart';
+import '../../../../generated/l10n.dart';
 
 class FavoriteView extends StatelessWidget {
   const FavoriteView({super.key});

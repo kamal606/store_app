@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/feautres/start_app/presentation/widgets/choose_language/section_button.dart';
-import 'package:store_app/feautres/start_app/presentation/widgets/choose_language/section_image.dart';
-import 'package:store_app/feautres/start_app/presentation/widgets/choose_language/section_text.dart';
+import 'section_button.dart';
+import 'section_image.dart';
+import 'section_text.dart';
 
 class ChooseLanguageViewBody extends StatelessWidget {
   const ChooseLanguageViewBody({super.key});

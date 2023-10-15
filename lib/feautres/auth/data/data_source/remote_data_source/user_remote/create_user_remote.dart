@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:store_app/feautres/auth/data/models/user.dart';
+import '../../../models/user.dart';
 
 abstract class CreateUserRemoteDataSource {
   Future<Unit> createUser(UserModel userModel);

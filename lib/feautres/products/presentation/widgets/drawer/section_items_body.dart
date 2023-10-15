@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/classes/icon_drawer.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/classes/icon_drawer.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../../../../generated/l10n.dart';
 
 class SectionItemsBody extends StatelessWidget {
   const SectionItemsBody({super.key, required this.widthDrawer});

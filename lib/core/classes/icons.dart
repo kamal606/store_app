@@ -33,5 +33,4 @@ abstract class AppIcon {
   static const IconData password = FontAwesomeIcons.lock;
   static const IconData eye = FontAwesomeIcons.solidEye;
   static const IconData eyeLock = FontAwesomeIcons.solidEyeSlash;
-  static const IconData check = FontAwesomeIcons.check;
 }

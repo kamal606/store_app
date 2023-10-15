@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/widgets/custom_appbar.dart';
-import 'package:store_app/feautres/cart/presentation/widget/body_cart_view.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../core/classes/icons.dart';
+import '../../../../core/widgets/custom_appbar.dart';
+import '../widget/body_cart_view.dart';
+import '../../../../generated/l10n.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});

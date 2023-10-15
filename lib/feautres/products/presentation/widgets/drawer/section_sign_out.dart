@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/generated/l10n.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../core/classes/icons.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/fonts/app_font.dart';
+import '../../../../../core/function/toast_flutter.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../../../auth/presentation/bloc/auth_bloc/sign_out/sign_out_bloc.dart';
+import '../../../../../generated/l10n.dart';
 
 class SectionSignOut extends StatelessWidget {
   const SectionSignOut({super.key});
@@ -12,12 +17,26 @@ class SectionSignOut extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            AppIcon.signOut,
-            color: AppColor.white,
-          ),
+        BlocConsumer<SignOutBloc, SignOutState>(
+          listener: (context, state) {
+            if (state is SignOutFailure) {
+              toast(message: state.errorMessage, color: AppColor.erorr);
+            }
+            if (state is SignOutSuccess) {
+              context.replace(AppRouter.login);
+            }
+          },
+          builder: (context, state) {
+            return IconButton(
+              onPressed: () {
+                BlocProvider.of<SignOutBloc>(context).add(SignOutTappedEvent());
+              },
+              icon: const Icon(
+                AppIcon.signOut,
+                color: AppColor.white,
+              ),
+            );
+          },
         ),
         SizedBox(
           width: 40.h,

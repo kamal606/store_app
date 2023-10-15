@@ -1,10 +1,10 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:store_app/feautres/theme/domain/model/theme.dart';
 
 import '../../../../theme/data/local_data_source/theme_local_data_source.dart';
+import '../../../domain/model/theme.dart';
 
 part 'theme_app_event.dart';
 part 'theme_app_state.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../../core/fonts/app_font.dart';
 
 import '../../../domain/entities/product_entity.dart';

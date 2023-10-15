@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cartView": MessageLookupByLibrary.simpleMessage("My Cart"),
         "categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "changeSuccess": MessageLookupByLibrary.simpleMessage(
-            "Your password has been\nchanged successfully"),
+            "An email has been sent to your\nemail to reset your password"),
         "checkout": MessageLookupByLibrary.simpleMessage("Proceed to Checkout"),
         "chooseLang": MessageLookupByLibrary.simpleMessage("Choose Language"),
         "codeCarouselSlider":
@@ -68,11 +68,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "getReady": MessageLookupByLibrary.simpleMessage("Get ready"),
         "glad": MessageLookupByLibrary.simpleMessage("Glad to see you!"),
+        "guest": MessageLookupByLibrary.simpleMessage("Guest Login"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "language": MessageLookupByLibrary.simpleMessage("Language"),
         "lightMode": MessageLookupByLibrary.simpleMessage("Light Mode"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginNow": MessageLookupByLibrary.simpleMessage("Login Now"),
+        "loginOrRegister":
+            MessageLookupByLibrary.simpleMessage("Login or Register"),
         "newArrival": MessageLookupByLibrary.simpleMessage("NEW"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
         "notResult":
@@ -106,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Search Product Name"),
         "seeAll": MessageLookupByLibrary.simpleMessage("See All"),
         "send": MessageLookupByLibrary.simpleMessage("Send"),
+        "sendEmail": MessageLookupByLibrary.simpleMessage("Send Email\n"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signOut": MessageLookupByLibrary.simpleMessage("Sign Out"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),

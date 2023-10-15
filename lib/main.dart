@@ -4,7 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/forget_password_bloc/forget_password_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/login_bloc/login_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_out/sign_out_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
@@ -13,6 +15,7 @@ import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite
 import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 import 'package:store_app/generated/l10n.dart';
+
 import 'core/function/init_flutter.dart';
 import 'core/utils/dependency_injection.dart' as di;
 import 'core/utils/go_router.dart';
@@ -42,6 +45,12 @@ class StoreApp extends StatelessWidget {
       builder: (_, child) {
         return MultiBlocProvider(
           providers: [
+            BlocProvider(
+              create: (context) => di.sl<SignOutBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => di.sl<ForgetPasswordBloc>(),
+            ),
             BlocProvider(
               create: (context) => di.sl<LoginBloc>(),
             ),

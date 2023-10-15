@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/feautres/products/presentation/bloc/get_all_products/get_all_products_bloc.dart';
-import 'package:store_app/feautres/products/presentation/bloc/get_category/get_category_bloc.dart';
+import '../../bloc/get_all_products/get_all_products_bloc.dart';
+import '../../bloc/get_category/get_category_bloc.dart';
 
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import 'carouse_slider.dart';
 import 'custom_list_product_home.dart';

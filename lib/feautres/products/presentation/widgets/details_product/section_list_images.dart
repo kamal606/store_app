@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
+import '../../../../../core/function/check_local_arabic.dart';
 import '../../../../../core/color/app_color.dart';
 
 import '../../../domain/entities/product_entity.dart';

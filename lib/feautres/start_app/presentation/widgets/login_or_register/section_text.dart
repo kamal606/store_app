@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/fonts/app_font.dart';
 
 class SectionTextLoginOrRegister extends StatelessWidget {
   const SectionTextLoginOrRegister({super.key});

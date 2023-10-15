@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../core/color/app_color.dart';
 
+import '../../../../../core/color/app_color.dart';
+import '../../../domain/entities/product_entity.dart';
 import 'section_description.dart';
 import 'section_list_images.dart';
 import 'section_price_button.dart';
 import 'section_title_with_quantity.dart';
-
-import '../../../domain/entities/product_entity.dart';
 
 class BodyContainerDiscripeProduct extends StatelessWidget {
   const BodyContainerDiscripeProduct({super.key, required this.productEntity});

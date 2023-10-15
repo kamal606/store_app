@@ -1,8 +1,8 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:store_app/feautres/auth/data/models/user.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/create_user_use_case.dart';
+import '../../../../data/models/user.dart';
+import '../../../../domain/use_cases/user_use_case/create_user_use_case.dart';
 
 part 'create_user_event.dart';
 part 'create_user_state.dart';

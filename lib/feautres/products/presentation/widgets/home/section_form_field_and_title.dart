@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/classes/icons.dart';
@@ -26,6 +26,8 @@ class SectionTitleWithFormField extends StatelessWidget {
           ),
         ),
         CustomTextFormField(
+          hintColor: AppColor.darkGrey,
+          colorIcon: AppColor.darkGrey,
           onChanged: (value) async {
             if (value.isNotEmpty) {
               await context.push(AppRouter.searchHomeView, extra: value);

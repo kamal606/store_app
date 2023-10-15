@@ -2,15 +2,15 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/widgets/custom_elvated_button.dart';
-import 'package:store_app/core/widgets/custom_increment_quantity.dart';
-import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
-import 'package:store_app/feautres/favorite/data/local_data_source/icon_button_to_cart.dart';
-import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../core/classes/icons.dart';
+import '../../../../core/color/app_color.dart';
+import '../../../../core/fonts/app_font.dart';
+import '../../../../core/widgets/custom_elvated_button.dart';
+import '../../../../core/widgets/custom_increment_quantity.dart';
+import '../../../cart/presentation/bloc/cart/cart_bloc.dart';
+import '../../data/local_data_source/icon_button_to_cart.dart';
+import '../../../products/domain/entities/product_entity.dart';
+import '../../../../generated/l10n.dart';
 
 class CustomCardWishlistAndCart extends StatelessWidget {
   const CustomCardWishlistAndCart(

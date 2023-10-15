@@ -2,15 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:store_app/core/classes/hive_const.dart';
 
-import 'package:store_app/feautres/localization/domain/enum_locale.dart';
-import 'package:store_app/feautres/theme/domain/model/theme.dart';
-import '../utils/bloc_obeserver.dart';
-
+import '../../feautres/localization/domain/enum_locale.dart';
 import '../../feautres/products/domain/entities/category_entity.dart';
 import '../../feautres/products/domain/entities/product_entity.dart';
-
+import '../../feautres/theme/domain/model/theme.dart';
+import '../classes/hive_const.dart';
+import '../utils/bloc_obeserver.dart';
 import '../utils/dependency_injection.dart';
 
 Future<void> initFlutter() async {

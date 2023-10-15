@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/shared_widget/custom_facebook_or_gmail.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/shared_widget/custom_text_or_with.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/shared_widget/custom_text_title_auth.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/signup/sction_button.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/signup/section_text_form_field.dart';
-import 'package:store_app/generated/l10n.dart';
+
+import '../../../../../generated/l10n.dart';
+import '../shared_widget/custom_facebook_or_gmail.dart';
+import '../shared_widget/custom_text_or_with.dart';
+import '../shared_widget/custom_text_title_auth.dart';
+import 'sction_button.dart';
+import 'section_text_form_field.dart';
 
 class FirstColumnSignUp extends StatelessWidget {
   const FirstColumnSignUp({super.key});

@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:store_app/core/utils/failure.dart';
-import 'package:store_app/feautres/products/data/data_source/local_data_source.dart/products_of_category_local.dart';
-import 'package:store_app/feautres/products/data/data_source/remote_data_source/products_of_category_remote.dart';
-import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
-import 'package:store_app/feautres/products/domain/repository/repo_product_of_category.dart';
+import '../../../../core/utils/failure.dart';
+import '../data_source/local_data_source.dart/products_of_category_local.dart';
+import '../data_source/remote_data_source/products_of_category_remote.dart';
+import '../../domain/entities/product_entity.dart';
+import '../../domain/repository/repo_product_of_category.dart';
 
 class GetProductsOfCategoryRepoImpl implements GetProductsOfCategoryRepo {
   final GetProductsOfCategoryLocalDataSourceImpl getProductsLocal;

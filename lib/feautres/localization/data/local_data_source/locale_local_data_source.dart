@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
-import 'package:store_app/core/classes/hive_const.dart';
-import 'package:store_app/feautres/localization/domain/enum_locale.dart';
+import '../../../../core/classes/hive_const.dart';
+import '../../domain/enum_locale.dart';
 
 abstract class LocaleLocalDataSource {
   Future<Box> openBox();

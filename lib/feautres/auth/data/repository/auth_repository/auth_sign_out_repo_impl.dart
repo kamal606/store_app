@@ -1,9 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:store_app/core/utils/failure.dart';
-import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_sign_out_remote.dart';
-import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_sign_out_repo.dart';
+
+import '../../../../../core/utils/failure.dart';
+import '../../../domain/repository/auth_repository/auth_sign_out_repo.dart';
+import '../../data_source/remote_data_source/auth_remote/auth_sign_out_remote.dart';
 
 class AuthSignOutUserRepoImpl implements AuthSignOutUserRepo {
   final AuthSignOutRemoteDataSourceImpl authSignOutRemoteDataSourceImpl;

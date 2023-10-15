@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/widgets/custom_text_form_field.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/classes/icons.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/widgets/custom_text_form_field.dart';
+import '../../bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
+import '../../../../../generated/l10n.dart';
 
 class SectionTextFormFieldSignUp extends StatelessWidget {
   const SectionTextFormFieldSignUp({super.key});

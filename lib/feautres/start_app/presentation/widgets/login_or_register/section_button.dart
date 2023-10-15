@@ -1,17 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/core/widgets/custom_elvated_button.dart';
-import 'package:store_app/feautres/auth/domain/entity/user_entity.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
-
-import 'package:store_app/feautres/start_app/data/local_data_source/save_start_app.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/fonts/app_font.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../../../../core/widgets/custom_elvated_button.dart';
+import '../../../../auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
+import '../../../data/local_data_source/save_start_app.dart';
+import '../../../../../generated/l10n.dart';
 
 class SectionButtonLoginOrRegister extends StatelessWidget {
   const SectionButtonLoginOrRegister({super.key});
@@ -27,12 +25,15 @@ class SectionButtonLoginOrRegister extends StatelessWidget {
           child: BlocBuilder<AuthListenBloc, AuthListenState>(
             builder: (context, state) {
               return CustomElvatedButton(
-                onPressed: () {
+                onPressed: () async {
                   BlocProvider.of<AuthListenBloc>(context)
                       .add(const AuthUserChanged());
+                  Box box = await SaveStartViewAppLocal.openBox();
+                  await SaveStartViewAppLocal.loginOrRegister(box);
+                  if (!context.mounted) return;
                   context.replace(AppRouter.login);
                 },
-                title: "Login or Register",
+                title: S.of(context).loginOrRegister,
               );
             },
           ),
@@ -50,13 +51,13 @@ class SectionButtonLoginOrRegister extends StatelessWidget {
               ),
             ),
             onPressed: () async {
-              // Box box = await SaveStartViewAppLocal.openBox();
-              // await SaveStartViewAppLocal.loginOrRegister(box);
-              // if (!context.mounted) return;
+              Box box = await SaveStartViewAppLocal.openBox();
+              await SaveStartViewAppLocal.loginOrRegister(box);
+              if (!context.mounted) return;
               context.replace(AppRouter.chooseLanguageView);
             },
             child: Text(
-              "Guest Login",
+              S.of(context).guest,
               style: AppFonts.semiBold_16.copyWith(color: AppColor.white),
             ),
           ),

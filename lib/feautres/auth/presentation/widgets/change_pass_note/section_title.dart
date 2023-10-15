@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/fonts/app_font.dart';
+import '../../../../../generated/l10n.dart';
 
-class SectionTitleChangePasswordSuccess extends StatelessWidget {
-  const SectionTitleChangePasswordSuccess({super.key});
+class SectionTitleChangePasswordNote extends StatelessWidget {
+  const SectionTitleChangePasswordNote({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class SectionTitleChangePasswordSuccess extends StatelessWidget {
       text: TextSpan(
         children: [
           TextSpan(
-              text: S.of(context).congratulations,
+              text: S.of(context).sendEmail,
               style: AppFonts.bold_25.copyWith(fontFamily: "Cairo")),
           TextSpan(
               text: S.of(context).changeSuccess,

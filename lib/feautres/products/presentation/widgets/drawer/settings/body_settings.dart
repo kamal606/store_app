@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
-import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
-import 'package:store_app/feautres/products/presentation/widgets/drawer/settings/custom_button_settings.dart';
-import 'package:store_app/feautres/products/presentation/widgets/drawer/settings/method_change_language.dart';
-import 'package:store_app/feautres/products/presentation/widgets/drawer/settings/method_change_theme.dart';
-import 'package:store_app/feautres/theme/domain/model/theme.dart';
-import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../../core/classes/icons.dart';
+import '../../../../../../core/function/check_local_arabic.dart';
+import '../../../../../localization/presntation/locale_bloc/locale_bloc.dart';
+import 'custom_button_settings.dart';
+import 'method_change_language.dart';
+import 'method_change_theme.dart';
+import '../../../../../theme/domain/model/theme.dart';
+import '../../../../../theme/presentation/bloc/theme_app/theme_app_bloc.dart';
+import '../../../../../../generated/l10n.dart';
 
 class BodySettings extends StatelessWidget {
   const BodySettings({super.key});

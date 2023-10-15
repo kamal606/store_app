@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/feautres/auth/domain/entity/user_entity.dart';
-import 'package:store_app/feautres/start_app/presentation/widgets/login_or_register/section_button.dart';
-import 'package:store_app/feautres/start_app/presentation/widgets/login_or_register/section_text.dart';
+import '../../../../core/color/app_color.dart';
+import '../widgets/login_or_register/section_button.dart';
+import '../widgets/login_or_register/section_text.dart';
 import 'package:video_player/video_player.dart';
-import 'package:firebase_auth/firebase_auth.dart' as auth;
 
 class LoginOrSkip extends StatefulWidget {
   const LoginOrSkip({Key? key}) : super(key: key);

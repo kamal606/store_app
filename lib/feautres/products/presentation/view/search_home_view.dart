@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/utils/dependency_injection.dart' as di;
-import 'package:store_app/core/widgets/custom_appbar.dart';
-import 'package:store_app/feautres/products/presentation/bloc/get_all_products/get_all_products_bloc.dart';
-import 'package:store_app/feautres/products/presentation/widgets/search_home/search_home_body.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../core/utils/dependency_injection.dart' as di;
+import '../../../../core/widgets/custom_appbar.dart';
+import '../bloc/get_all_products/get_all_products_bloc.dart';
+import '../widgets/search_home/search_home_body.dart';
+import '../../../../generated/l10n.dart';
 
 class SearchHomeView extends StatelessWidget {
   const SearchHomeView({super.key});

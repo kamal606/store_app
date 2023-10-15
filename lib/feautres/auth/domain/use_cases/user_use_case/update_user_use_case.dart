@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:store_app/core/use_case/use_case.dart';
-import 'package:store_app/core/utils/failure.dart';
-import 'package:store_app/feautres/auth/domain/repository/user_repository/update_user_repo.dart';
+
+import '../../../../../core/use_case/use_case.dart';
+import '../../../../../core/utils/failure.dart';
+import '../../repository/user_repository/update_user_repo.dart';
 
 class UpdateUserUseCase extends UseCaseParam {
   final UpdateUserRepo updateUserRepo;

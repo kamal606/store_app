@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/login/body_login_view.dart';
+import '../widgets/login/body_login_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

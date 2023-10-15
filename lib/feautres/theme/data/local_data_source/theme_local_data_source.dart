@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:store_app/feautres/theme/domain/model/theme.dart';
+import '../../domain/model/theme.dart';
 import '../../../../core/classes/hive_const.dart';
 
 abstract class ThemeLocalDataSource {

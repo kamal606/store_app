@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/image_assets.dart';
-import 'package:store_app/core/color/app_color.dart';
+import '../../../../../core/classes/image_assets.dart';
+import '../../../../../core/color/app_color.dart';
 
 class SectionImageChooseLanguage extends StatelessWidget {
   const SectionImageChooseLanguage({super.key});

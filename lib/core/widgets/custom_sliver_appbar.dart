@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
-import '../color/app_color.dart';
+
 import '../../feautres/products/presentation/widgets/home/section_form_field_and_title.dart';
+import '../color/app_color.dart';
+import '../function/check_local_arabic.dart';
 
 class CustomSliverAppBar extends StatelessWidget
     implements PreferredSizeWidget {

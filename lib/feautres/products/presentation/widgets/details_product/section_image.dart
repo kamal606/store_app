@@ -1,8 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/widgets.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
-import 'package:store_app/core/widgets/custom_favorite_icon.dart';
-import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
+
+import '../../../../../core/function/check_local_arabic.dart';
+import '../../../../../core/widgets/custom_favorite_icon.dart';
+import '../../../domain/entities/product_entity.dart';
 
 class SectionImage extends StatelessWidget {
   const SectionImage({super.key, required this.productEntity});

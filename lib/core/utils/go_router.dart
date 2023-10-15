@@ -1,17 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/feautres/auth/presentation/view/change_pass_success.dart';
-import 'package:store_app/feautres/auth/presentation/view/forget_passwod.dart';
-import 'package:store_app/feautres/auth/presentation/view/login.dart';
-import 'package:store_app/feautres/auth/presentation/view/signup.dart';
-import 'package:store_app/feautres/products/domain/entities/category_entity.dart';
-import 'package:store_app/feautres/products/presentation/view/product_category_view.dart';
-import 'package:store_app/feautres/products/presentation/view/search_home_view.dart';
-import 'package:store_app/feautres/products/presentation/view/settings_view.dart';
-import 'package:store_app/feautres/start_app/presentation/view/choose_language_view.dart';
-import 'package:store_app/feautres/start_app/presentation/view/login_or_skip.dart';
-import 'package:store_app/feautres/start_app/presentation/view/onbording_view.dart';
-import 'package:store_app/feautres/start_app/presentation/view/splash_view.dart';
+import '../../feautres/auth/presentation/view/change_pass_note.dart';
+import '../../feautres/auth/presentation/view/forget_passwod.dart';
+import '../../feautres/auth/presentation/view/login.dart';
+import '../../feautres/auth/presentation/view/signup.dart';
+import '../../feautres/products/domain/entities/category_entity.dart';
+import '../../feautres/products/presentation/view/product_category_view.dart';
+import '../../feautres/products/presentation/view/search_home_view.dart';
+import '../../feautres/products/presentation/view/settings_view.dart';
+import '../../feautres/start_app/presentation/view/choose_language_view.dart';
+import '../../feautres/start_app/presentation/view/login_or_skip.dart';
+import '../../feautres/start_app/presentation/view/onbording_view.dart';
+import '../../feautres/start_app/presentation/view/splash_view.dart';
 import 'dependency_injection.dart' as di;
 import '../../feautres/products/domain/entities/product_entity.dart';
 import '../../feautres/products/presentation/bloc/get_all_products/get_all_products_bloc.dart';
@@ -36,7 +36,7 @@ abstract class AppRouter {
   static const String login = "/login";
   static const String signUp = "/signUp";
   static const String forgetPassword = "/forgetPassword";
-  static const String successChangePassword = "/successChangePassword";
+  static const String noteChangePassword = "/noteChangePassword";
 
   static final router = GoRouter(
     routes: [
@@ -47,8 +47,8 @@ abstract class AppRouter {
         builder: (context, state) => const SplashView(),
       ),
       GoRoute(
-        path: AppRouter.successChangePassword,
-        builder: (context, state) => const SuccessChangePasswordView(),
+        path: AppRouter.noteChangePassword,
+        builder: (context, state) => const NoteChangePasswordView(),
       ),
       GoRoute(
         path: AppRouter.forgetPassword,

@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+
 import '../../../../../core/classes/hive_const.dart';
 import '../../../domain/entities/category_entity.dart';
 

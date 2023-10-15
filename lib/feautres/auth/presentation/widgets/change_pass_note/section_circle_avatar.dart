@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
+import '../../../../../core/classes/icons.dart';
+import '../../../../../core/color/app_color.dart';
 
-class SectionCircleAvatarChangePasswordSuccess extends StatelessWidget {
-  const SectionCircleAvatarChangePasswordSuccess({super.key});
+class SectionCircleAvatarChangePasswordNote extends StatelessWidget {
+  const SectionCircleAvatarChangePasswordNote({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class SectionCircleAvatarChangePasswordSuccess extends StatelessWidget {
           radius: 60.h,
         ),
         Icon(
-          AppIcon.check,
+          AppIcon.email,
           color: AppColor.white,
           size: 70.h,
         ),

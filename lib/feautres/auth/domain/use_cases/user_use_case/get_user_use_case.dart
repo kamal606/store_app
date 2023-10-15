@@ -1,5 +1,5 @@
-import 'package:store_app/feautres/auth/domain/entity/user_entity.dart';
-import 'package:store_app/feautres/auth/domain/repository/user_repository/get_user_repo.dart';
+import '../../entity/user_entity.dart';
+import '../../repository/user_repository/get_user_repo.dart';
 
 class GetUserUseCase {
   final GetUserRepo getUserRepo;

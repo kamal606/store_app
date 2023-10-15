@@ -1,19 +1,24 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:store_app/core/utils/failure.dart';
-import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_login_use_case.dart';
+import '../../../../../../core/utils/failure.dart';
+import '../../../../domain/use_cases/auth_use_case/auth_login_use_case.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   final AuthLogInUseCase authLogInUseCase;
+
   String email = "";
   String password = "";
+
   LoginBloc({required this.authLogInUseCase}) : super(LoginInitial()) {
     on<LoginEvent>((event, emit) async {
+      //=================== obscureText event =================
+      if (event is ObscureTextLoginEvent) {
+        emit(ObscureTextLoginState(obscureText: event.obscureText));
+      }
       //=================== email changed event =================
       if (event is LoginEmailChangedEvent) {
         email = event.email;

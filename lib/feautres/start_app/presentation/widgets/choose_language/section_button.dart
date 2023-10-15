@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hive/hive.dart';
-import 'package:store_app/core/classes/image_assets.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/core/widgets/custom_elvated_button.dart';
-import 'package:store_app/feautres/localization/domain/enum_locale.dart';
-import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
-import 'package:store_app/feautres/start_app/data/local_data_source/save_start_app.dart';
+import '../../../../../core/classes/image_assets.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/fonts/app_font.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../../../../core/widgets/custom_elvated_button.dart';
+import '../../../../localization/domain/enum_locale.dart';
+import '../../../../localization/presntation/locale_bloc/locale_bloc.dart';
+import '../../../data/local_data_source/save_start_app.dart';
 
 class SectionButtonLanguage extends StatelessWidget {
   const SectionButtonLanguage({super.key});
@@ -47,9 +47,9 @@ class SectionButtonLanguage extends StatelessWidget {
                     BlocProvider.of<AppLocaleBloc>(context).add(
                         const ChangeLocaleEvent(
                             appLanguage: AppLocale.english));
-                    // Box box = await SaveStartViewAppLocal.openBox();
-                    // await SaveStartViewAppLocal.chooseLanguage(box);
-                    // if (!context.mounted) return;
+                    Box box = await SaveStartViewAppLocal.openBox();
+                    await SaveStartViewAppLocal.chooseLanguage(box);
+                    if (!context.mounted) return;
                     context.replace(AppRouter.onBordingView);
                   },
                   titleAction: "ENGLISH",
@@ -65,9 +65,9 @@ class SectionButtonLanguage extends StatelessWidget {
                   onPressed: () async {
                     BlocProvider.of<AppLocaleBloc>(context).add(
                         const ChangeLocaleEvent(appLanguage: AppLocale.arabic));
-                    // Box box = await SaveStartViewAppLocal.openBox();
-                    // await SaveStartViewAppLocal.chooseLanguage(box);
-                    // if (!context.mounted) return;
+                    Box box = await SaveStartViewAppLocal.openBox();
+                    await SaveStartViewAppLocal.chooseLanguage(box);
+                    if (!context.mounted) return;
                     context.replace(AppRouter.onBordingView);
                   },
                   titleAction: "ARABIC",

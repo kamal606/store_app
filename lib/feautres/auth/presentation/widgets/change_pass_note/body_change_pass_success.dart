@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/change_pass_success/section_button.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/change_pass_success/section_circle_avatar.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/change_pass_success/section_title.dart';
+import '../../../../../core/color/app_color.dart';
+import 'section_button.dart';
+import 'section_circle_avatar.dart';
+import 'section_title.dart';
 
-class SuccessChangePasswordViewBody extends StatelessWidget {
-  const SuccessChangePasswordViewBody({super.key});
+class NoteChangePasswordViewBody extends StatelessWidget {
+  const NoteChangePasswordViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,21 +22,21 @@ class SuccessChangePasswordViewBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // section circle avatar
-                  const SectionCircleAvatarChangePasswordSuccess(),
+                  const SectionCircleAvatarChangePasswordNote(),
 
                   SizedBox(
                     height: 30.h,
                   ),
 
                   // section title
-                  const SectionTitleChangePasswordSuccess(),
+                  const SectionTitleChangePasswordNote(),
 
                   SizedBox(
                     height: 30.h,
                   ),
 
                   // section buuton
-                  const SectionButtonChangePasswordSuccess()
+                  const SectionButtonChangePasswordNote()
                 ],
               ),
             ),

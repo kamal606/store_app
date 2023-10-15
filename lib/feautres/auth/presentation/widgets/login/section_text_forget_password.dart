@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/fonts/app_font.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../../../../generated/l10n.dart';
 
 class SectionTextForgetPassword extends StatelessWidget {
   const SectionTextForgetPassword({super.key});

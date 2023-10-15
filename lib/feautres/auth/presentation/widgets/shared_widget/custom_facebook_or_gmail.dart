@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/image_assets.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/login/custom_container_facbook_or_google.dart';
+import '../../../../../core/classes/image_assets.dart';
+import '../login/custom_container_facbook_or_google.dart';
 
 class CustomFacebookOrGmail extends StatelessWidget {
   const CustomFacebookOrGmail(

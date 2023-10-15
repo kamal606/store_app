@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/function/toast_flutter.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/login_bloc/login_bloc.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/login/first_column.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/login/second_column.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/function/toast_flutter.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../bloc/auth_bloc/login_bloc/login_bloc.dart';
+import 'first_column.dart';
+import 'second_column.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});

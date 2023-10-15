@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:store_app/core/utils/failure.dart';
-import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_sign_out_repo.dart';
+import '../../../../../core/utils/failure.dart';
+import '../../repository/auth_repository/auth_sign_out_repo.dart';
 
 class AuthSignOutUseCase {
   final AuthSignOutUserRepo signOutUserRepo;

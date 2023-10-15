@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/function/toast_flutter.dart';
-import 'package:store_app/core/shimmer_loading/shimmer_loading_products_of_category.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/core/widgets/custom_text_form_field.dart';
-import 'package:store_app/feautres/products/presentation/bloc/get_all_products/get_all_products_bloc.dart';
-import 'package:store_app/feautres/products/presentation/widgets/home/custom_card_product.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/classes/icons.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/fonts/app_font.dart';
+import '../../../../../core/function/toast_flutter.dart';
+import '../../../../../core/shimmer_loading/shimmer_loading_products_of_category.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../../../../core/widgets/custom_text_form_field.dart';
+import '../../bloc/get_all_products/get_all_products_bloc.dart';
+import '../home/custom_card_product.dart';
+import '../../../../../generated/l10n.dart';
 
 class SearchHomeViewBody extends StatelessWidget {
   const SearchHomeViewBody({super.key});
@@ -24,6 +24,8 @@ class SearchHomeViewBody extends StatelessWidget {
         slivers: [
           SliverToBoxAdapter(
             child: CustomTextFormField(
+              hintColor: AppColor.darkGrey,
+              colorIcon: AppColor.darkGrey,
               hint: S.of(context).Search,
               prefixIcon: AppIcon.search,
               onChanged: (value) {

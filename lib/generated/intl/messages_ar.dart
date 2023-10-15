@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cartView": MessageLookupByLibrary.simpleMessage("عربة التسوق"),
         "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
         "changeSuccess": MessageLookupByLibrary.simpleMessage(
-            "تم تغيير كلمة المرور\nالخاصة بك بنجاح"),
+            "تم ارسال بريد الكتروني الى بريدك\nلاعادة تعيين كلمة المرور"),
         "checkout": MessageLookupByLibrary.simpleMessage("معالجة الدفع"),
         "chooseLang": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
         "codeCarouselSlider":
@@ -67,11 +67,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "getReady": MessageLookupByLibrary.simpleMessage("استعد"),
         "glad": MessageLookupByLibrary.simpleMessage("سعيد برؤيتك!"),
+        "guest": MessageLookupByLibrary.simpleMessage("الدخول كضيف"),
         "home": MessageLookupByLibrary.simpleMessage("الصفحة الرئيسية"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "lightMode": MessageLookupByLibrary.simpleMessage("الوضع النهاري"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "loginNow": MessageLookupByLibrary.simpleMessage("تسجيل الدخول الآن"),
+        "loginOrRegister":
+            MessageLookupByLibrary.simpleMessage("انشاء حساب او تسجيل الدخول"),
         "newArrival": MessageLookupByLibrary.simpleMessage("جديد"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("وصول جديد"),
         "notResult": MessageLookupByLibrary.simpleMessage("لا يوجد نتائج"),
@@ -104,6 +107,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ابحث عن اسم المنتج"),
         "seeAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
         "send": MessageLookupByLibrary.simpleMessage("إرسال"),
+        "sendEmail":
+            MessageLookupByLibrary.simpleMessage("ارسال بريد الكتروني\n"),
         "settings": MessageLookupByLibrary.simpleMessage("الاعدادت"),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'section_increment_quantity_with_rate.dart';
-import 'section_title_with_brand.dart';
 
 import '../../../domain/entities/product_entity.dart';
+import 'section_increment_quantity_with_rate.dart';
+import 'section_title_with_brand.dart';
 
 class SectionTitleWithQuantity extends StatelessWidget {
   const SectionTitleWithQuantity({super.key, required this.productEntity});

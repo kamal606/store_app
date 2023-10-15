@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/image_assets.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
+import '../classes/image_assets.dart';
+import '../color/app_color.dart';
+import '../function/check_local_arabic.dart';
 
 class CustomIconLeftOrRight extends StatelessWidget {
   const CustomIconLeftOrRight(

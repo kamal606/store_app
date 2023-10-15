@@ -1,9 +1,10 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
-import 'package:store_app/feautres/localization/data/local_data_source/locale_local_data_source.dart';
-import 'package:store_app/feautres/localization/domain/enum_locale.dart';
+
+import '../../data/local_data_source/locale_local_data_source.dart';
+import '../../domain/enum_locale.dart';
 
 part 'locale_event.dart';
 part 'locale_state.dart';

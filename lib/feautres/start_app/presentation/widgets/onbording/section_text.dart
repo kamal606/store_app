@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
+import '../../../../../core/color/app_color.dart';
 
-import 'package:store_app/core/fonts/app_font.dart';
+import '../../../../../core/fonts/app_font.dart';
 
 class SectionText extends StatelessWidget {
   const SectionText(

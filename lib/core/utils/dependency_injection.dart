@@ -2,43 +2,53 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
-import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_get_user_remote.dart';
-import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_login_remote.dart';
-import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_sign_up_remote.dart';
-import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/create_user_remote.dart';
-import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/get_user_remote.dart';
-import 'package:store_app/feautres/auth/data/repository/auth_repository/get_user_repo_impl.dart';
-import 'package:store_app/feautres/auth/data/repository/auth_repository/login_repo_impl.dart';
-import 'package:store_app/feautres/auth/data/repository/auth_repository/signup_repo_impl.dart';
-import 'package:store_app/feautres/auth/data/repository/user_repository/create_user_repo_impl.dart';
-import 'package:store_app/feautres/auth/data/repository/user_repository/get_user_repo_impl.dart';
-import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_get_user_repo.dart';
-import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_login_user_repo.dart';
-import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_sign_up_repo.dart';
-import 'package:store_app/feautres/auth/domain/repository/user_repository/create_user_repo.dart';
-import 'package:store_app/feautres/auth/domain/repository/user_repository/get_user_repo.dart';
-import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_get_user_use_case.dart';
-import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_login_use_case.dart';
-import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_sign_up_use_case.dart';
-import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/create_user_use_case.dart';
-import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/get_user_use_case.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/login_bloc/login_bloc.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
-import 'package:store_app/feautres/cart/data/local_data_source/cart_local_data_source.dart';
-import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
-import 'package:store_app/feautres/favorite/data/local_data_source/favorite_local_data_source.dart';
-import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
-import 'package:store_app/feautres/localization/data/local_data_source/locale_local_data_source.dart';
-import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
-import 'package:store_app/feautres/products/data/data_source/local_data_source.dart/products_of_category_local.dart';
-import 'package:store_app/feautres/products/data/data_source/remote_data_source/products_of_category_remote.dart';
-import 'package:store_app/feautres/products/data/repository/get_products_of_category_impl.dart';
-import 'package:store_app/feautres/products/domain/repository/repo_product_of_category.dart';
-import 'package:store_app/feautres/products/domain/use_cases/get_products_of_category.dart';
-import 'package:store_app/feautres/products/presentation/bloc/get_products_of_category/get_products_of_category_bloc.dart';
-import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
+import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_forget_password_remote.dart';
+import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_get_user_remote.dart';
+import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_login_remote.dart';
+import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_sign_out_remote.dart';
+import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_sign_up_remote.dart';
+import '../../feautres/auth/data/data_source/remote_data_source/user_remote/create_user_remote.dart';
+import '../../feautres/auth/data/data_source/remote_data_source/user_remote/get_user_remote.dart';
+import '../../feautres/auth/data/repository/auth_repository/auth_forget_password_repo_impl.dart';
+import '../../feautres/auth/data/repository/auth_repository/auth_get_user_repo_impl.dart';
+import '../../feautres/auth/data/repository/auth_repository/auth_login_repo_impl.dart';
+import '../../feautres/auth/data/repository/auth_repository/auth_sign_out_repo_impl.dart';
+import '../../feautres/auth/data/repository/auth_repository/auth_signup_repo_impl.dart';
+import '../../feautres/auth/data/repository/user_repository/create_user_repo_impl.dart';
+import '../../feautres/auth/data/repository/user_repository/get_user_repo_impl.dart';
+import '../../feautres/auth/domain/repository/auth_repository/auth_forget_password_repo.dart';
+import '../../feautres/auth/domain/repository/auth_repository/auth_get_user_repo.dart';
+import '../../feautres/auth/domain/repository/auth_repository/auth_login_user_repo.dart';
+import '../../feautres/auth/domain/repository/auth_repository/auth_sign_out_repo.dart';
+import '../../feautres/auth/domain/repository/auth_repository/auth_sign_up_repo.dart';
+import '../../feautres/auth/domain/repository/user_repository/create_user_repo.dart';
+import '../../feautres/auth/domain/repository/user_repository/get_user_repo.dart';
+import '../../feautres/auth/domain/use_cases/auth_use_case/auth_forget_password_use_case.dart';
+import '../../feautres/auth/domain/use_cases/auth_use_case/auth_get_user_use_case.dart';
+import '../../feautres/auth/domain/use_cases/auth_use_case/auth_login_use_case.dart';
+import '../../feautres/auth/domain/use_cases/auth_use_case/auth_sign_out_use_case.dart';
+import '../../feautres/auth/domain/use_cases/auth_use_case/auth_sign_up_use_case.dart';
+import '../../feautres/auth/domain/use_cases/user_use_case/create_user_use_case.dart';
+import '../../feautres/auth/domain/use_cases/user_use_case/get_user_use_case.dart';
+import '../../feautres/auth/presentation/bloc/auth_bloc/forget_password_bloc/forget_password_bloc.dart';
+import '../../feautres/auth/presentation/bloc/auth_bloc/login_bloc/login_bloc.dart';
+import '../../feautres/auth/presentation/bloc/auth_bloc/sign_out/sign_out_bloc.dart';
+import '../../feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
+import '../../feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
+import '../../feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
+import '../../feautres/cart/data/local_data_source/cart_local_data_source.dart';
+import '../../feautres/cart/presentation/bloc/cart/cart_bloc.dart';
+import '../../feautres/favorite/data/local_data_source/favorite_local_data_source.dart';
+import '../../feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
+import '../../feautres/localization/data/local_data_source/locale_local_data_source.dart';
+import '../../feautres/localization/presntation/locale_bloc/locale_bloc.dart';
+import '../../feautres/products/data/data_source/local_data_source.dart/products_of_category_local.dart';
+import '../../feautres/products/data/data_source/remote_data_source/products_of_category_remote.dart';
+import '../../feautres/products/data/repository/get_products_of_category_impl.dart';
+import '../../feautres/products/domain/repository/repo_product_of_category.dart';
+import '../../feautres/products/domain/use_cases/get_products_of_category.dart';
+import '../../feautres/products/presentation/bloc/get_products_of_category/get_products_of_category_bloc.dart';
+import '../../feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 import 'api_services.dart';
 import '../../feautres/products/data/data_source/local_data_source.dart/category_local_data_source.dart';
 import '../../feautres/products/data/data_source/local_data_source.dart/products_local_data_source.dart';
@@ -60,6 +70,9 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
+  sl.registerFactory(() => SignOutBloc(authSignOutUseCase: sl.call()));
+  sl.registerFactory(
+      () => ForgetPasswordBloc(forgetPasswordUseCase: sl.call()));
   sl.registerFactory(() => LoginBloc(authLogInUseCase: sl.call()));
   sl.registerFactory(() => CreateUserBloc(createUserUseCase: sl.call()));
   sl.registerFactory(() => SignUpBloc(
@@ -80,6 +93,10 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => StatusInternetBloc());
   sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
+  sl.registerLazySingleton(
+      () => AuthSignOutRemoteDataSourceImpl(firebaseAuth: sl.call()));
+  sl.registerLazySingleton(
+      () => AuthForgetPasswordRemoteDataSourceImpl(firebaseAuth: sl.call()));
   sl.registerLazySingleton(
       () => AuthLogInRemoteDataSourceImpl(firebaseAuth: sl.call()));
   sl.registerLazySingleton(
@@ -109,6 +126,13 @@ Future<void> initGetIt() async {
           apiService: sl.call(), productsLocalDataSourceImpl: sl.call()));
 
   //! Repository
+  sl.registerLazySingleton<AuthSignOutUserRepo>(
+    () => AuthSignOutUserRepoImpl(authSignOutRemoteDataSourceImpl: sl.call()),
+  );
+  sl.registerLazySingleton<AuthForgetPasswordRepo>(
+    () => AuthForgetPasswordRepoImpl(
+        forgetPasswordRemoteDataSourceImpl: sl.call()),
+  );
   sl.registerLazySingleton<AuthLoginUserRepo>(
     () => AuthLoginUserRepoImpl(authLogInRemoteDataSourceImpl: sl.call()),
   );
@@ -140,6 +164,10 @@ Future<void> initGetIt() async {
   );
 
   //! Use Cases
+  sl.registerLazySingleton(
+      () => AuthSignOutUseCase(signOutUserRepo: sl.call()));
+  sl.registerLazySingleton(
+      () => AuthForgetPasswordUseCase(authForgetPasswordRepo: sl.call()));
   sl.registerLazySingleton(() => AuthLogInUseCase(loginUserRepo: sl.call()));
   sl.registerLazySingleton(() => CreateUserUseCase(createUserRepo: sl.call()));
   sl.registerLazySingleton(() => AuthSignUpUseCase(signUpUserRepo: sl.call()));

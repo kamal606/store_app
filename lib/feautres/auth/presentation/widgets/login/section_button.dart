@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/widgets/custom_elvated_button.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/login_bloc/login_bloc.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/widgets/custom_elvated_button.dart';
+import '../../bloc/auth_bloc/login_bloc/login_bloc.dart';
+import '../../../../../generated/l10n.dart';
 
 class SectionButtonLogin extends StatelessWidget {
   const SectionButtonLogin({super.key});

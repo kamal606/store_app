@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/image_assets.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
+import '../../../../../core/classes/image_assets.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/fonts/app_font.dart';
 
 class SectionImageWithInfoUser extends StatelessWidget {
   const SectionImageWithInfoUser({super.key, required this.widthNameWithEmail});

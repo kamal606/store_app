@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
-import 'package:store_app/feautres/favorite/data/local_data_source/favorite_local_data_source.dart';
-import 'package:store_app/feautres/favorite/domain/entities/favorite_entity.dart';
-import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
+import '../../../data/local_data_source/favorite_local_data_source.dart';
+import '../../../domain/entities/favorite_entity.dart';
+import '../../../../products/domain/entities/product_entity.dart';
 
 part 'favorite_event.dart';
 part 'favorite_state.dart';

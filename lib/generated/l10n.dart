@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -842,10 +843,10 @@ class S {
     );
   }
 
-  /// `Your password has been\nchanged successfully`
+  /// `An email has been sent to your\nemail to reset your password`
   String get changeSuccess {
     return Intl.message(
-      'Your password has been\nchanged successfully',
+      'An email has been sent to your\nemail to reset your password',
       name: 'changeSuccess',
       desc: '',
       args: [],
@@ -857,6 +858,36 @@ class S {
     return Intl.message(
       'Continue',
       name: 'continuee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Email\n`
+  String get sendEmail {
+    return Intl.message(
+      'Send Email\n',
+      name: 'sendEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Guest Login`
+  String get guest {
+    return Intl.message(
+      'Guest Login',
+      name: 'guest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login or Register`
+  String get loginOrRegister {
+    return Intl.message(
+      'Login or Register',
+      name: 'loginOrRegister',
       desc: '',
       args: [],
     );

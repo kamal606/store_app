@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/widgets/custom_text_form_field.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../core/classes/icons.dart';
+import '../../../../core/color/app_color.dart';
+import '../../../../core/widgets/custom_text_form_field.dart';
+import '../../../../generated/l10n.dart';
 
 class SectionFormFieldAndDeleteAllFavoriteAndCart extends StatelessWidget {
   const SectionFormFieldAndDeleteAllFavoriteAndCart(
@@ -16,6 +16,8 @@ class SectionFormFieldAndDeleteAllFavoriteAndCart extends StatelessWidget {
       children: [
         Expanded(
           child: CustomTextFormField(
+            hintColor: AppColor.darkGrey,
+            colorIcon: AppColor.darkGrey,
             hint: S.of(context).Search,
             prefixIcon: AppIcon.search,
             fillColor: AppColor.white,

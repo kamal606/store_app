@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/utils/go_router.dart';
-import 'package:store_app/core/widgets/custom_elvated_button.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/utils/go_router.dart';
+import '../../../../../core/widgets/custom_elvated_button.dart';
+import '../../../../../generated/l10n.dart';
 
-class SectionButtonChangePasswordSuccess extends StatelessWidget {
-  const SectionButtonChangePasswordSuccess({super.key});
+class SectionButtonChangePasswordNote extends StatelessWidget {
+  const SectionButtonChangePasswordNote({super.key});
 
   @override
   Widget build(BuildContext context) {

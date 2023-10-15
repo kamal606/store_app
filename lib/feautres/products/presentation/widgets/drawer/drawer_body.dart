@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
-import 'package:store_app/feautres/products/presentation/widgets/drawer/section_image_with_info_user.dart';
-import 'package:store_app/feautres/products/presentation/widgets/drawer/section_items_body.dart';
-import 'package:store_app/feautres/products/presentation/widgets/drawer/section_sign_out.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/function/check_local_arabic.dart';
+import 'section_image_with_info_user.dart';
+import 'section_items_body.dart';
+import 'section_sign_out.dart';
 
 class DrawerBody extends StatelessWidget {
   const DrawerBody({super.key});

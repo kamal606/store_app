@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:store_app/core/fonts/app_font.dart';
+import '../../../../../core/fonts/app_font.dart';
 
 class CustomTextTitleAuth extends StatelessWidget {
   const CustomTextTitleAuth(

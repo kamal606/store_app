@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:store_app/core/function/check_local_arabic.dart';
-import 'package:store_app/core/function/toast_flutter.dart';
-import 'package:store_app/feautres/favorite/data/local_data_source/icon_favorite_save_local.dart';
-import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
-import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
+import '../function/check_local_arabic.dart';
+import '../function/toast_flutter.dart';
+import '../../feautres/favorite/data/local_data_source/icon_favorite_save_local.dart';
+import '../../feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
+import '../../feautres/products/domain/entities/product_entity.dart';
 import '../../../../../core/classes/icons.dart';
 import '../../../../../core/color/app_color.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
-import 'package:store_app/feautres/products/domain/use_cases/get_products_of_category.dart';
+import '../../../domain/entities/product_entity.dart';
+import '../../../domain/use_cases/get_products_of_category.dart';
 part 'get_products_of_category_event.dart';
 part 'get_products_of_category_state.dart';
 

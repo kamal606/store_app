@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/login/section_button.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/shared_widget/custom_facebook_or_gmail.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/login/section_text_forget_password.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/login/section_text_form_field.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/shared_widget/custom_text_or_with.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/shared_widget/custom_text_title_auth.dart';
-import 'package:store_app/generated/l10n.dart';
+import 'section_button.dart';
+import '../shared_widget/custom_facebook_or_gmail.dart';
+import 'section_text_forget_password.dart';
+import 'section_text_form_field.dart';
+import '../shared_widget/custom_text_or_with.dart';
+import '../shared_widget/custom_text_title_auth.dart';
+import '../../../../../generated/l10n.dart';
 
 class FirstColumnLogin extends StatelessWidget {
   const FirstColumnLogin({super.key});

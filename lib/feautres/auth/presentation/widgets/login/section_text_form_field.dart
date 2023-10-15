@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/widgets/custom_text_form_field.dart';
-import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/login_bloc/login_bloc.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/classes/icons.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../../core/widgets/custom_text_form_field.dart';
+import '../../bloc/auth_bloc/login_bloc/login_bloc.dart';
+import '../../../../../generated/l10n.dart';
 
 class SectionTextFormFieldLogin extends StatelessWidget {
   const SectionTextFormFieldLogin({super.key});
@@ -42,8 +42,19 @@ class SectionTextFormFieldLogin extends StatelessWidget {
                 BlocProvider.of<LoginBloc>(context)
                     .add(LoginPasswordChangedEvent(password: value));
               },
+              obscureText:
+                  // initial state obscure text = false
+                  (state is ObscureTextLoginState) ? state.obscureText : true,
               prefixIcon: AppIcon.password,
               suffixIcon: AppIcon.eyeLock,
+              onPressedSuffixIcon: () {
+                // initial state obscure text = false
+                final currentObscureText =
+                    state is ObscureTextLoginState ? state.obscureText : true;
+                final newObscureText = !currentObscureText;
+                BlocProvider.of<LoginBloc>(context)
+                    .add(ObscureTextLoginEvent(obscureText: newObscureText));
+              },
               fillColor: AppColor.lightGrey.withAlpha(170),
               isRaiusEnabled: false,
               isRaiusfocused: false,

@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
-import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
+
+import '../../feautres/cart/presentation/bloc/cart/cart_bloc.dart';
+import '../../feautres/products/domain/entities/product_entity.dart';
+import '../classes/icons.dart';
+import '../color/app_color.dart';
+import '../fonts/app_font.dart';
 
 class CustomIncrementQuantity extends StatelessWidget {
   const CustomIncrementQuantity(

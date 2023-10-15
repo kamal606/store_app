@@ -21,6 +21,8 @@ class CustomTextFormField extends StatelessWidget {
     this.onPressedSuffixIcon,
     this.errorText,
     this.onFieldSubmitted,
+    this.obscureText = false,
+    this.hintColor,
   });
   final String hint;
   final IconData? prefixIcon;
@@ -29,8 +31,10 @@ class CustomTextFormField extends StatelessWidget {
   final void Function()? onPressedSuffixIcon;
   final void Function(String)? onChanged;
   final Color? colorIcon;
+  final Color? hintColor;
   final FocusNode? focusNode;
   final bool isRaiusEnabled;
+  final bool obscureText;
   final bool isRaiusfocused;
   final Color? fillColor;
   final String? errorText;
@@ -40,6 +44,7 @@ class CustomTextFormField extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width - 10.w,
       child: TextFormField(
+        obscureText: obscureText,
         onFieldSubmitted: onFieldSubmitted,
         focusNode: focusNode,
         onChanged: onChanged,
@@ -87,7 +92,7 @@ class CustomTextFormField extends StatelessWidget {
           contentPadding: EdgeInsets.symmetric(vertical: 5.h),
           hintText: hint,
           hintStyle: AppFonts.regular_13.copyWith(
-            color: AppColor.white,
+            color: hintColor ?? AppColor.white,
           ),
         ),
       ),

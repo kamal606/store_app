@@ -1,5 +1,5 @@
 import 'package:hive/hive.dart';
-import 'package:store_app/core/classes/hive_const.dart';
+import '../../../../../core/classes/hive_const.dart';
 
 class CheckDarkOrLightMode {
   static Future<void> putMode() async {

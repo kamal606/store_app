@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/icons.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/core/fonts/app_font.dart';
-import 'package:store_app/core/widgets/custom_elvated_button.dart';
-import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../core/classes/icons.dart';
+import '../../../../core/color/app_color.dart';
+import '../../../../core/fonts/app_font.dart';
+import '../../../../core/widgets/custom_elvated_button.dart';
+import '../bloc/cart/cart_bloc.dart';
+import '../../../../generated/l10n.dart';
 
 class SectionPriceAndProceedCart extends StatefulWidget {
   const SectionPriceAndProceedCart({super.key});

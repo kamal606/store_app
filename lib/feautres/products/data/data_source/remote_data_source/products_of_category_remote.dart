@@ -1,6 +1,6 @@
-import 'package:store_app/core/utils/api_services.dart';
-import 'package:store_app/feautres/products/data/data_source/local_data_source.dart/products_of_category_local.dart';
-import 'package:store_app/feautres/products/data/model/product_model.dart';
+import '../../../../../core/utils/api_services.dart';
+import '../../model/product_model.dart';
+import '../local_data_source.dart/products_of_category_local.dart';
 
 abstract class GetProductsOfCategoryRemoteDataSource {
   Future<List<ProductModel>> getProductsOfCategory(String nameCategory);

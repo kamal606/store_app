@@ -1,6 +1,7 @@
 import 'package:hive/hive.dart';
-import 'package:store_app/core/classes/hive_const.dart';
-import 'package:store_app/feautres/products/domain/entities/product_entity.dart';
+
+import '../../../../core/classes/hive_const.dart';
+import '../../../products/domain/entities/product_entity.dart';
 
 class AddToCartButtonSaveLocal {
   static Future<void> addButton(ProductEntity productEntity) async {

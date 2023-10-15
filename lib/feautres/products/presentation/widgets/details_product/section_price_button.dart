@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/color/app_color.dart';
-import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
-import 'package:store_app/feautres/favorite/data/local_data_source/icon_button_to_cart.dart';
-import 'package:store_app/generated/l10n.dart';
+import '../../../../../core/color/app_color.dart';
+import '../../../../cart/presentation/bloc/cart/cart_bloc.dart';
+import '../../../../favorite/data/local_data_source/icon_button_to_cart.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../../core/fonts/app_font.dart';
 import '../../../../../core/widgets/custom_elvated_button.dart';
 

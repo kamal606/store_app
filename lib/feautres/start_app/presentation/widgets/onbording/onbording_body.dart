@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:store_app/core/classes/onbording.dart';
-import 'package:store_app/feautres/start_app/presentation/widgets/onbording/section_bottom.dart';
-import 'package:store_app/feautres/start_app/presentation/widgets/onbording/section_image.dart';
-import 'package:store_app/feautres/start_app/presentation/widgets/onbording/section_text.dart';
+import '../../../../../core/classes/onbording.dart';
+import 'section_bottom.dart';
+import 'section_image.dart';
+import 'section_text.dart';
 
 class OnBordingViewBody extends StatefulWidget {
   const OnBordingViewBody({super.key});
