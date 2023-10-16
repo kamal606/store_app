@@ -2,6 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/update_user_remote.dart';
+import 'package:store_app/feautres/auth/data/repository/user_repository/update_user_repo_impl.dart';
+import 'package:store_app/feautres/auth/domain/repository/user_repository/update_user_repo.dart';
+import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/update_user_use_case.dart';
+
+import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/update_user_bloc/update_user_bloc.dart';
 import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_forget_password_remote.dart';
 import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_get_user_remote.dart';
 import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_login_remote.dart';
@@ -70,6 +76,7 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
+  sl.registerFactory(() => UpdateUserBloc(updateUserUseCase: sl.call()));
   sl.registerFactory(() => SignOutBloc(authSignOutUseCase: sl.call()));
   sl.registerFactory(
       () => ForgetPasswordBloc(forgetPasswordUseCase: sl.call()));
@@ -93,6 +100,8 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => StatusInternetBloc());
   sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
+  sl.registerLazySingleton(
+      () => UpdateUserRemoteDataSourceImpl(firebaseFirestore: sl.call()));
   sl.registerLazySingleton(
       () => AuthSignOutRemoteDataSourceImpl(firebaseAuth: sl.call()));
   sl.registerLazySingleton(
@@ -126,6 +135,9 @@ Future<void> initGetIt() async {
           apiService: sl.call(), productsLocalDataSourceImpl: sl.call()));
 
   //! Repository
+  sl.registerLazySingleton<UpdateUserRepo>(
+    () => UpdateUserRepoImpl(updateUserRemoteDataSourceImpl: sl.call()),
+  );
   sl.registerLazySingleton<AuthSignOutUserRepo>(
     () => AuthSignOutUserRepoImpl(authSignOutRemoteDataSourceImpl: sl.call()),
   );
@@ -164,6 +176,7 @@ Future<void> initGetIt() async {
   );
 
   //! Use Cases
+  sl.registerLazySingleton(() => UpdateUserUseCase(updateUserRepo: sl.call()));
   sl.registerLazySingleton(
       () => AuthSignOutUseCase(signOutUserRepo: sl.call()));
   sl.registerLazySingleton(

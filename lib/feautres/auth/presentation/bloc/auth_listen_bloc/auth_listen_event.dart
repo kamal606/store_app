@@ -9,7 +9,7 @@ sealed class AuthListenEvent extends Equatable {
 
 class AuthUserChanged extends AuthListenEvent {
   final auth.User? authUser;
-  final UserEntity? user;
+  final UserModel? user;
 
   const AuthUserChanged({
     this.authUser,

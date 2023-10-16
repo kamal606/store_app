@@ -4,34 +4,45 @@ import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
 class CustomTextFieldMyInfo extends StatelessWidget {
-  const CustomTextFieldMyInfo(
-      {super.key, required this.titleLable, this.onChanged, this.controller});
+  const CustomTextFieldMyInfo({
+    super.key,
+    required this.titleLable,
+    this.onChanged,
+    this.controller,
+    this.readOnly = false,
+  });
   final String titleLable;
   final Function(String?)? onChanged;
   final TextEditingController? controller;
+  final bool readOnly;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 20.h),
-      child: TextField(
-        controller: controller,
-        onChanged: onChanged,
-        style: AppFonts.semiBold_14.copyWith(color: AppColor.blacK),
-        maxLines: null,
-        cursorColor: AppColor.jGDark,
-        decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(top: 15.h, left: 10.h),
-          label: Text(
-            titleLable,
-          ),
-          labelStyle: AppFonts.semiBold_14.copyWith(color: AppColor.grey),
-          filled: true,
-          fillColor: AppColor.white,
-          enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: AppColor.jGDark),
-          ),
-          focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: AppColor.jGDark),
+      child: Material(
+        elevation: 3,
+        shadowColor: AppColor.grey,
+        child: TextFormField(
+          readOnly: readOnly,
+          controller: controller,
+          onChanged: onChanged,
+          style: AppFonts.semiBold_14.copyWith(color: AppColor.blacK),
+          maxLines: null,
+          cursorColor: AppColor.jGDark,
+          decoration: InputDecoration(
+            contentPadding: EdgeInsets.only(top: 15.h, left: 10.h),
+            label: Text(
+              titleLable,
+            ),
+            labelStyle: AppFonts.semiBold_14.copyWith(color: AppColor.grey),
+            filled: true,
+            fillColor: AppColor.white,
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.all(Radius.circular(6.h))),
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.all(Radius.circular(6.h))),
           ),
         ),
       ),

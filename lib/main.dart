@@ -9,7 +9,9 @@ import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/login_bloc/l
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_out/sign_out_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
+
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/update_user_bloc/update_user_bloc.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
 import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
@@ -45,6 +47,9 @@ class StoreApp extends StatelessWidget {
       builder: (_, child) {
         return MultiBlocProvider(
           providers: [
+            BlocProvider(
+              create: (context) => di.sl<UpdateUserBloc>(),
+            ),
             BlocProvider(
               create: (context) => di.sl<SignOutBloc>(),
             ),

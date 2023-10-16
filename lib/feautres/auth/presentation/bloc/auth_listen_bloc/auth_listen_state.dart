@@ -5,25 +5,25 @@ enum AuthStatus { authenticated, unauthenticated }
 class AuthListenState extends Equatable {
   final AuthStatus status;
   final auth.User? authUser;
-  final UserEntity? userEntity;
+  final UserModel? userModel;
 
   const AuthListenState._({
     this.status = AuthStatus.unauthenticated,
     this.authUser,
-    this.userEntity,
+    this.userModel,
   });
 
   const AuthListenState.authenticated({
     required auth.User authUser,
-    required UserEntity userEntity,
+    required UserModel userEntity,
   }) : this._(
           status: AuthStatus.authenticated,
           authUser: authUser,
-          userEntity: userEntity,
+          userModel: userEntity,
         );
 
   const AuthListenState.unauthenticated() : this._();
 
   @override
-  List<Object?> get props => [status, userEntity];
+  List<Object?> get props => [status, userModel];
 }

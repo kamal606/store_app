@@ -1,10 +1,8 @@
 import 'dart:async';
-
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../domain/entity/user_entity.dart';
+import 'package:store_app/feautres/auth/data/models/user.dart';
 import '../../../domain/use_cases/auth_use_case/auth_get_user_use_case.dart';
 import '../../../domain/use_cases/user_use_case/get_user_use_case.dart';
 
@@ -13,7 +11,7 @@ part 'auth_listen_state.dart';
 
 class AuthListenBloc extends Bloc<AuthListenEvent, AuthListenState> {
   StreamSubscription<auth.User?>? authUserSubscription;
-  StreamSubscription<UserEntity>? getUserSubscription;
+  StreamSubscription<UserModel>? getUserSubscription;
   final AuthGetUserUseCase authGetUserUseCase;
   final GetUserUseCase getUserUseCase;
   AuthListenBloc(

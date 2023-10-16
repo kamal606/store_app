@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/core/widgets/custom_appbar.dart';
-import 'package:store_app/feautres/auth/presentation/widgets/sd/profile/body_profile.dart';
+import 'package:store_app/feautres/auth/presentation/widgets/profile/body_profile.dart';
+
 import 'package:store_app/generated/l10n.dart';
 
 class ProfileView extends StatelessWidget {
