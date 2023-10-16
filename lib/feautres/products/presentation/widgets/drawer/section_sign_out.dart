@@ -33,7 +33,7 @@ class SectionSignOut extends StatelessWidget {
               },
               icon: const Icon(
                 AppIcon.signOut,
-                color: AppColor.white,
+                color: AppColor.blacK,
               ),
             );
           },
@@ -43,7 +43,7 @@ class SectionSignOut extends StatelessWidget {
         ),
         Text(
           S.of(context).signOut,
-          style: AppFonts.bold_16.copyWith(color: AppColor.white),
+          style: AppFonts.bold_16.copyWith(color: AppColor.background),
         )
       ],
     );

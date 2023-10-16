@@ -55,7 +55,7 @@ class SectionItemsBody extends StatelessWidget {
                     ItemsDrawer.itemsDrawer(context)[i].title,
                     style: ItemsDrawer.itemsDrawer(context)[i]
                         .sizedFont!
-                        .copyWith(color: AppColor.white),
+                        .copyWith(color: AppColor.background),
                   ),
                 ],
               ),

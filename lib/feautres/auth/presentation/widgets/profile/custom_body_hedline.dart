@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/classes/icons.dart';
+import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
 
 class CustomBodyHedline extends StatelessWidget {
@@ -19,13 +20,14 @@ class CustomBodyHedline extends StatelessWidget {
         children: [
           Text(
             titleBodyHedline,
-            style: AppFonts.semiBold_14,
+            style: AppFonts.semiBold_14.copyWith(color: AppColor.darkGrey),
           ),
           IconButton(
             onPressed: onPressed,
             icon: Icon(
               AppIcon.angleRight,
               size: 16.h,
+              color: AppColor.jGDark,
             ),
           )
         ],

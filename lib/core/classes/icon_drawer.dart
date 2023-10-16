@@ -21,7 +21,7 @@ class ItemsDrawer {
       Color? colorIcon})
       : sizedFont = sizedFont ?? AppFonts.bold_16,
         sizedIcon = sizedIcon ?? 18.h,
-        colorIcon = colorIcon ?? AppColor.white;
+        colorIcon = colorIcon ?? AppColor.blacK;
 
   static List<ItemsDrawer> itemsDrawer(BuildContext context) {
     return [
