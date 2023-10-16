@@ -82,5 +82,18 @@
 "continuee":"متابعة",
 "sendEmail": "ارسال بريد الكتروني\n",
 "guest":"الدخول كضيف",
-"loginOrRegister": "انشاء حساب او تسجيل الدخول"
+"loginOrRegister": "انشاء حساب او تسجيل الدخول",
+
+"ediProfile":"تعديل الملف الشخصي",
+"personalInfo":"المعلومات الشخصية",
+"myInfo":"معلوماتي",
+"content":"المحتوى",
+"preferences":"التفضيلات",
+"appMode":"وضع التطبيق",
+"update":"تعديل",
+"fullName":"الاسم الكامل",
+"address":"عنوان السكن",
+"country":"البلد",
+"city":"المدينة",
+"zipCode": "الرمز البريدي"
 }

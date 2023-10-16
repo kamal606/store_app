@@ -51,6 +51,7 @@ class CustomElvatedButton extends StatelessWidget {
         : ElevatedButton(
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 20.h),
               backgroundColor: backgroundColor ?? AppColor.jGDark,
               shape: RoundedRectangleBorder(
                   borderRadius: isRadius

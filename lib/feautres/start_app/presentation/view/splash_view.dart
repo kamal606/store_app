@@ -88,18 +88,21 @@ class _SplashViewState extends State<SplashView>
               SaveStartViewAppLocal.getChooseLanguage(box);
           final bool onBording = SaveStartViewAppLocal.getOnBording(box);
 
-          if (state.status == AuthStatus.authenticated &&
-              chooseLanguage == true &&
+          if (chooseLanguage == true &&
               onBording == true &&
               loginOrRegister == true) {
-            if (!context.mounted) return;
-            context.replace(AppRouter.homeView);
-          } else if (state.status == AuthStatus.unauthenticated &&
-              chooseLanguage == true &&
-              onBording == true &&
-              loginOrRegister == true) {
-            if (!context.mounted) return;
-            context.replace(AppRouter.login);
+            if (state.status == AuthStatus.authenticated) {
+              if (!context.mounted) return;
+              context.replace(AppRouter.homeView);
+            } else if (state.status == AuthStatus.unauthenticated) {
+              Future.delayed(
+                const Duration(seconds: 2),
+                () {
+                  if (!context.mounted) return;
+                  context.replace(AppRouter.login);
+                },
+              );
+            }
           }
         },
         child: FadeTransition(

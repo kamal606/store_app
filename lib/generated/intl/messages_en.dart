@@ -26,9 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "about": MessageLookupByLibrary.simpleMessage("About"),
         "addToCart": MessageLookupByLibrary.simpleMessage("Add to cart"),
         "added": MessageLookupByLibrary.simpleMessage("added"),
+        "address": MessageLookupByLibrary.simpleMessage("Address"),
         "agree": MessageLookupByLibrary.simpleMessage("Agree"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "appMode": MessageLookupByLibrary.simpleMessage("App Mode"),
         "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
         "bagTotla": MessageLookupByLibrary.simpleMessage("Bag Total:"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -40,13 +42,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "An email has been sent to your\nemail to reset your password"),
         "checkout": MessageLookupByLibrary.simpleMessage("Proceed to Checkout"),
         "chooseLang": MessageLookupByLibrary.simpleMessage("Choose Language"),
+        "city": MessageLookupByLibrary.simpleMessage("City"),
         "codeCarouselSlider":
             MessageLookupByLibrary.simpleMessage("With code:FSCREATION"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "congratulations":
             MessageLookupByLibrary.simpleMessage("Congratulations\n"),
+        "content": MessageLookupByLibrary.simpleMessage("Content"),
         "continuee": MessageLookupByLibrary.simpleMessage("Continue"),
+        "country": MessageLookupByLibrary.simpleMessage("Country"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Create Account\n"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
@@ -57,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Are you sure to delete all favorites?"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "ediProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
         "english": MessageLookupByLibrary.simpleMessage("English"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
@@ -66,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgetPass": MessageLookupByLibrary.simpleMessage("Forget Password\n"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
+        "fullName": MessageLookupByLibrary.simpleMessage("FullName"),
         "getReady": MessageLookupByLibrary.simpleMessage("Get ready"),
         "glad": MessageLookupByLibrary.simpleMessage("Glad to see you!"),
         "guest": MessageLookupByLibrary.simpleMessage("Guest Login"),
@@ -76,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginNow": MessageLookupByLibrary.simpleMessage("Login Now"),
         "loginOrRegister":
             MessageLookupByLibrary.simpleMessage("Login or Register"),
+        "myInfo": MessageLookupByLibrary.simpleMessage("My information"),
         "newArrival": MessageLookupByLibrary.simpleMessage("NEW"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("New Arrivals"),
         "notResult":
@@ -101,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ourEcommerceApp":
             MessageLookupByLibrary.simpleMessage("Our Ecommerce App"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "personalInfo":
+            MessageLookupByLibrary.simpleMessage("Personal information"),
+        "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "saleProduct": MessageLookupByLibrary.simpleMessage("Sale Product"),
@@ -132,8 +143,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "toStartWithUs":
             MessageLookupByLibrary.simpleMessage("to start with us"),
         "totalPrice": MessageLookupByLibrary.simpleMessage("Total Price"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "welcomeLogin": MessageLookupByLibrary.simpleMessage("Welcome,\n"),
-        "withCode": MessageLookupByLibrary.simpleMessage("With code:FSCREATION")
+        "withCode":
+            MessageLookupByLibrary.simpleMessage("With code:FSCREATION"),
+        "zipCode": MessageLookupByLibrary.simpleMessage("Zip Code")
       };
 }

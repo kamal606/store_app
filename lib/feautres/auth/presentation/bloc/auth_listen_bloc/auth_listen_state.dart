@@ -1,20 +1,17 @@
 part of 'auth_listen_bloc.dart';
 
-enum AuthStatus { guest, authenticated, unauthenticated }
+enum AuthStatus { authenticated, unauthenticated }
 
 class AuthListenState extends Equatable {
   final AuthStatus status;
   final auth.User? authUser;
   final UserEntity? userEntity;
-  final String? errorMessage;
+
   const AuthListenState._({
-    this.status = AuthStatus.guest,
+    this.status = AuthStatus.unauthenticated,
     this.authUser,
     this.userEntity,
-    this.errorMessage,
   });
-
-  const AuthListenState.guest() : this._();
 
   const AuthListenState.authenticated({
     required auth.User authUser,
@@ -25,8 +22,7 @@ class AuthListenState extends Equatable {
           userEntity: userEntity,
         );
 
-  const AuthListenState.unauthenticated()
-      : this._(status: AuthStatus.unauthenticated);
+  const AuthListenState.unauthenticated() : this._();
 
   @override
   List<Object?> get props => [status, userEntity];

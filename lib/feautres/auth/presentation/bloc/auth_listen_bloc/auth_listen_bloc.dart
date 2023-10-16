@@ -18,7 +18,7 @@ class AuthListenBloc extends Bloc<AuthListenEvent, AuthListenState> {
   final GetUserUseCase getUserUseCase;
   AuthListenBloc(
       {required this.authGetUserUseCase, required this.getUserUseCase})
-      : super(const AuthListenState.guest()) {
+      : super(const AuthListenState.unauthenticated()) {
     authUserSubscription = authGetUserUseCase.call().listen((authUser) {
       print('Auth user: $authUser');
       if (authUser != null) {

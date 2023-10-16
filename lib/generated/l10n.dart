@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -888,6 +887,126 @@ class S {
     return Intl.message(
       'Login or Register',
       name: 'loginOrRegister',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get ediProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'ediProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal information`
+  String get personalInfo {
+    return Intl.message(
+      'Personal information',
+      name: 'personalInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My information`
+  String get myInfo {
+    return Intl.message(
+      'My information',
+      name: 'myInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content`
+  String get content {
+    return Intl.message(
+      'Content',
+      name: 'content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Preferences`
+  String get preferences {
+    return Intl.message(
+      'Preferences',
+      name: 'preferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App Mode`
+  String get appMode {
+    return Intl.message(
+      'App Mode',
+      name: 'appMode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `FullName`
+  String get fullName {
+    return Intl.message(
+      'FullName',
+      name: 'fullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address`
+  String get address {
+    return Intl.message(
+      'Address',
+      name: 'address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Country`
+  String get country {
+    return Intl.message(
+      'Country',
+      name: 'country',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City`
+  String get city {
+    return Intl.message(
+      'City',
+      name: 'city',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Zip Code`
+  String get zipCode {
+    return Intl.message(
+      'Zip Code',
+      name: 'zipCode',
       desc: '',
       args: [],
     );

@@ -27,10 +27,12 @@ abstract class AppIcon {
   static const IconData trash = FontAwesomeIcons.trash;
   static const IconData notExpand = FontAwesomeIcons.sortDown;
   static const IconData expand = FontAwesomeIcons.sortUp;
+  static const IconData angleRight = FontAwesomeIcons.angleRight;
   static const IconData lightMode = FontAwesomeIcons.moon;
   static const IconData darkMode = FontAwesomeIcons.solidMoon;
   static const IconData email = FontAwesomeIcons.envelope;
   static const IconData password = FontAwesomeIcons.lock;
   static const IconData eye = FontAwesomeIcons.solidEye;
   static const IconData eyeLock = FontAwesomeIcons.solidEyeSlash;
+  static const IconData userEdit = FontAwesomeIcons.userPen;
 }

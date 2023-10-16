@@ -83,7 +83,19 @@
 "continuee":"Continue",
 "sendEmail": "Send Email\n",
 "guest":"Guest Login",
-"loginOrRegister": "Login or Register"
+"loginOrRegister": "Login or Register",
+"ediProfile":"Edit Profile",
+"personalInfo":"Personal information",
+"myInfo":"My information",
+"content":"Content",
+"preferences":"Preferences",
+"appMode":"App Mode",
+"update":"Update",
+"fullName":"FullName",
+"address":"Address",
+"country":"Country",
+"city":"City",
+"zipCode": "Zip Code"
 
 }
 

@@ -18,28 +18,34 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.titleAppbar,
     this.colorCircleAvatar,
     this.isCircleOnLeading = false,
+    this.isGradient = true,
+    this.colorAppBar,
   });
   final void Function()? onPressedLeading;
   final void Function()? onPressedAction;
   final bool isAction;
   final bool isLeading;
   final bool isCircleOnLeading;
+  final bool isGradient;
   final IconData? iconAction;
   final String? titleAppbar;
   final Color? colorCircleAvatar;
+  final Color? colorAppBar;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      titleTextStyle: AppFonts.bold_25.copyWith(color: AppColor.white),
+      titleTextStyle: AppFonts.bold_23.copyWith(color: AppColor.white),
       title: Text(
         titleAppbar ?? "",
       ),
       leadingWidth: 40.h,
       elevation: 0,
       flexibleSpace: Container(
-        decoration: BoxDecoration(gradient: AppColor.linearGradient()),
+        decoration: BoxDecoration(
+            color: colorAppBar,
+            gradient: isGradient ? AppColor.linearGradient() : null),
       ),
       leading: isLeading
           ? InkWell(

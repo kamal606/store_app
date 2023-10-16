@@ -35,6 +35,8 @@ class SectionTextFormFieldLogin extends StatelessWidget {
         ),
         BlocBuilder<LoginBloc, LoginState>(
           builder: (context, state) {
+            final currentObscureText =
+                state is ObscureTextLoginState ? state.obscureText : true;
             return CustomTextFormField(
               errorText:
                   state is LoginPasswordFailure ? state.errorPassword : null,
@@ -44,13 +46,11 @@ class SectionTextFormFieldLogin extends StatelessWidget {
               },
               obscureText:
                   // initial state obscure text = false
-                  (state is ObscureTextLoginState) ? state.obscureText : true,
+                  currentObscureText,
               prefixIcon: AppIcon.password,
-              suffixIcon: AppIcon.eyeLock,
+              suffixIcon: currentObscureText ? AppIcon.eyeLock : AppIcon.eye,
               onPressedSuffixIcon: () {
                 // initial state obscure text = false
-                final currentObscureText =
-                    state is ObscureTextLoginState ? state.obscureText : true;
                 final newObscureText = !currentObscureText;
                 BlocProvider.of<LoginBloc>(context)
                     .add(ObscureTextLoginEvent(obscureText: newObscureText));

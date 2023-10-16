@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/feautres/auth/presentation/view/profile/my_information.dart';
 import '../../feautres/auth/presentation/view/change_pass_note.dart';
 import '../../feautres/auth/presentation/view/forget_passwod.dart';
 import '../../feautres/auth/presentation/view/login.dart';
@@ -19,7 +20,7 @@ import '../../feautres/cart/presentation/view/cart_view.dart';
 import '../../feautres/products/presentation/view/details_product_view.dart';
 import '../../feautres/favorite/presentation/view/favorite_view.dart';
 import '../../feautres/products/presentation/view/home_view.dart';
-import '../../feautres/products/presentation/view/profile_view.dart';
+import '../../feautres/auth/presentation/view/profile/profile_view.dart';
 
 abstract class AppRouter {
   static const String cartView = "/cartView";
@@ -37,6 +38,7 @@ abstract class AppRouter {
   static const String signUp = "/signUp";
   static const String forgetPassword = "/forgetPassword";
   static const String noteChangePassword = "/noteChangePassword";
+  static const String myInformationView = "/myInformationView";
 
   static final router = GoRouter(
     routes: [
@@ -49,6 +51,10 @@ abstract class AppRouter {
       GoRoute(
         path: AppRouter.noteChangePassword,
         builder: (context, state) => const NoteChangePasswordView(),
+      ),
+      GoRoute(
+        path: AppRouter.myInformationView,
+        builder: (context, state) => const MyInformationView(),
       ),
       GoRoute(
         path: AppRouter.forgetPassword,

@@ -26,9 +26,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "about": MessageLookupByLibrary.simpleMessage("حول"),
         "addToCart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
         "added": MessageLookupByLibrary.simpleMessage("أضيفت"),
+        "address": MessageLookupByLibrary.simpleMessage("عنوان السكن"),
         "agree": MessageLookupByLibrary.simpleMessage("موافق"),
         "alreadyHaveAccount":
             MessageLookupByLibrary.simpleMessage("لديك حساب مسبقاً؟"),
+        "appMode": MessageLookupByLibrary.simpleMessage("وضع التطبيق"),
         "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
         "bagTotla": MessageLookupByLibrary.simpleMessage("إجمالي الحقيبة:"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
@@ -40,12 +42,15 @@ class MessageLookup extends MessageLookupByLibrary {
             "تم ارسال بريد الكتروني الى بريدك\nلاعادة تعيين كلمة المرور"),
         "checkout": MessageLookupByLibrary.simpleMessage("معالجة الدفع"),
         "chooseLang": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
+        "city": MessageLookupByLibrary.simpleMessage("المدينة"),
         "codeCarouselSlider":
             MessageLookupByLibrary.simpleMessage("باستخدام الكود:FSCREATION"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "congratulations": MessageLookupByLibrary.simpleMessage("تهانينا\n"),
+        "content": MessageLookupByLibrary.simpleMessage("المحتوى"),
         "continuee": MessageLookupByLibrary.simpleMessage("متابعة"),
+        "country": MessageLookupByLibrary.simpleMessage("البلد"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب\n"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "description": MessageLookupByLibrary.simpleMessage("وصف"),
@@ -55,6 +60,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "هل أنت متأكد من حذف كل المفضلة؟"),
         "dontHaveAccount":
             MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
+        "ediProfile":
+            MessageLookupByLibrary.simpleMessage("تعديل الملف الشخصي"),
         "emailAddress":
             MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
         "english": MessageLookupByLibrary.simpleMessage("الانكليزية"),
@@ -65,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور\n"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "fullName": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
         "getReady": MessageLookupByLibrary.simpleMessage("استعد"),
         "glad": MessageLookupByLibrary.simpleMessage("سعيد برؤيتك!"),
         "guest": MessageLookupByLibrary.simpleMessage("الدخول كضيف"),
@@ -75,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginNow": MessageLookupByLibrary.simpleMessage("تسجيل الدخول الآن"),
         "loginOrRegister":
             MessageLookupByLibrary.simpleMessage("انشاء حساب او تسجيل الدخول"),
+        "myInfo": MessageLookupByLibrary.simpleMessage("معلوماتي"),
         "newArrival": MessageLookupByLibrary.simpleMessage("جديد"),
         "newArrivals": MessageLookupByLibrary.simpleMessage("وصول جديد"),
         "notResult": MessageLookupByLibrary.simpleMessage("لا يوجد نتائج"),
@@ -100,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ourEcommerceApp": MessageLookupByLibrary.simpleMessage(
             "تطبيق التجارة الإلكترونية الخاص بنا"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+        "personalInfo":
+            MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
+        "preferences": MessageLookupByLibrary.simpleMessage("التفضيلات"),
         "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "recommended": MessageLookupByLibrary.simpleMessage("موصى به"),
         "saleProduct": MessageLookupByLibrary.simpleMessage("منتج بالتخفيض"),
@@ -128,9 +140,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "toGetStarted": MessageLookupByLibrary.simpleMessage("للبدء الآن!"),
         "toStartWithUs": MessageLookupByLibrary.simpleMessage("للبدء معنا"),
         "totalPrice": MessageLookupByLibrary.simpleMessage("السعر الإجمالي"),
+        "update": MessageLookupByLibrary.simpleMessage("تعديل"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا"),
         "welcomeLogin": MessageLookupByLibrary.simpleMessage("مرحباُ,\n"),
         "withCode":
-            MessageLookupByLibrary.simpleMessage("باستخدام الكود: FSCREATION")
+            MessageLookupByLibrary.simpleMessage("باستخدام الكود: FSCREATION"),
+        "zipCode": MessageLookupByLibrary.simpleMessage("الرمز البريدي")
       };
 }
