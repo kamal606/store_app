@@ -1,11 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:store_app/feautres/auth/data/data_source/remote_data_source/image_user_remote/image_user_put_file.dart';
 import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/update_user_remote.dart';
+import 'package:store_app/feautres/auth/data/repository/image_user_reository/image_user_put_file_repo_impl.dart';
 import 'package:store_app/feautres/auth/data/repository/user_repository/update_user_repo_impl.dart';
+import 'package:store_app/feautres/auth/domain/repository/image_user_repository/image_user_put_file.dart';
 import 'package:store_app/feautres/auth/domain/repository/user_repository/update_user_repo.dart';
+import 'package:store_app/feautres/auth/domain/use_cases/image_user_use_case/image_user_put_file.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/update_user_use_case.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/image_user_bloc/image_user_put_file/image_user_put_file_bloc.dart';
 
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/update_user_bloc/update_user_bloc.dart';
 import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_forget_password_remote.dart';
@@ -76,6 +82,8 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
+  sl.registerFactory(() => ImageUserPutFileBloc(
+      imageUserPutFileUseCase: sl.call(), authListenBloc: sl.call()));
   sl.registerFactory(() => UpdateUserBloc(updateUserUseCase: sl.call()));
   sl.registerFactory(() => SignOutBloc(authSignOutUseCase: sl.call()));
   sl.registerFactory(
@@ -100,6 +108,8 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => StatusInternetBloc());
   sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
+  sl.registerLazySingleton(
+      () => ImageUserPutFileRemoteDataSourceImpl(firebaseStorage: sl.call()));
   sl.registerLazySingleton(
       () => UpdateUserRemoteDataSourceImpl(firebaseFirestore: sl.call()));
   sl.registerLazySingleton(
@@ -135,6 +145,10 @@ Future<void> initGetIt() async {
           apiService: sl.call(), productsLocalDataSourceImpl: sl.call()));
 
   //! Repository
+  sl.registerLazySingleton<ImageUserPutFileRepo>(
+    () => ImageUserPutFileRepoImpl(
+        imageUserPutFileRemoteDataSourceImpl: sl.call()),
+  );
   sl.registerLazySingleton<UpdateUserRepo>(
     () => UpdateUserRepoImpl(updateUserRemoteDataSourceImpl: sl.call()),
   );
@@ -176,6 +190,8 @@ Future<void> initGetIt() async {
   );
 
   //! Use Cases
+  sl.registerLazySingleton(
+      () => ImageUserPutFileUseCase(imageUserPutFileRepo: sl.call()));
   sl.registerLazySingleton(() => UpdateUserUseCase(updateUserRepo: sl.call()));
   sl.registerLazySingleton(
       () => AuthSignOutUseCase(signOutUserRepo: sl.call()));
@@ -198,6 +214,7 @@ Future<void> initGetIt() async {
   sl.registerLazySingleton<ApiService>(() => ApiService(sl.call()));
 
   //! External
+  sl.registerLazySingleton<FirebaseStorage>(() => FirebaseStorage.instance);
   sl.registerLazySingleton<FirebaseFirestore>(() => FirebaseFirestore.instance);
   sl.registerLazySingleton<FirebaseAuth>(() => FirebaseAuth.instance);
   sl.registerLazySingleton<Dio>(() => Dio());

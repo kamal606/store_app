@@ -1,14 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 abstract class Failure {
   final String message;
 
   Failure({required this.message});
-}
-
-class CachedFailure extends Failure {
-  CachedFailure({required super.message});
 }
 
 class EmailAuthFailure extends Failure {
@@ -91,11 +88,64 @@ class FirebaseAuthFailure extends Failure {
   }
 }
 
-class NetworkFailure extends Failure {
-  NetworkFailure({
-    required super.message,
-  });
+class FirebaseStorageFailure extends Failure {
+  FirebaseStorageFailure({required super.message});
+
+  factory FirebaseStorageFailure.fromFirebaseStorage(FirebaseException e) {
+    switch (e.code) {
+      case 'unknown':
+        return FirebaseStorageFailure(message: 'An unknown error occurred.');
+      case 'object-not-found':
+        return FirebaseStorageFailure(
+            message: 'The requested file does not exist.');
+
+      case 'unauthorized':
+        return FirebaseStorageFailure(
+            message: 'You are not authorized to access the file.');
+
+      case 'cancelled':
+        return FirebaseStorageFailure(message: 'The operation was cancelled.');
+
+      case 'invalid-argument':
+        return FirebaseStorageFailure(
+            message: 'Invalid arguments were provided.');
+
+      case 'retry-limit-exceeded':
+        return FirebaseStorageFailure(
+            message: 'Exceeded the maximum number of retries.');
+
+      case 'non-unique-upload-id':
+        return FirebaseStorageFailure(message: 'The upload ID already exists.');
+
+      case 'unauthenticated':
+        return FirebaseStorageFailure(message: 'User is not authenticated.');
+
+      default:
+        return FirebaseStorageFailure(message: 'An error occurred.');
+    }
+  }
 }
+
+// class TaskFailure extends Failure {
+//   TaskFailure({required super.message});
+
+//   factory TaskFailure.fromTaskSnapShot(TaskSnapshot e) {
+//     switch (e.state) {
+//       case TaskState.running:
+//         final progress = 100.0 * (e.bytesTransferred / e.totalBytes);
+//         return TaskFailure(message: "Upload is $progress% complete.");
+//       case TaskState.paused:
+//         return TaskFailure(message: "Upload is paused.");
+//       case TaskState.success:
+//         return TaskFailure(message: "Upload is success.");
+//       case TaskState.canceled:
+//         return TaskFailure(message: "Upload was canceled.");
+//       case TaskState.error:
+//         return TaskFailure(
+//             message: "There was an error when upload, try agian late");
+//     }
+//   }
+// }
 
 class ServerFailure extends Failure {
   ServerFailure({required super.message});
