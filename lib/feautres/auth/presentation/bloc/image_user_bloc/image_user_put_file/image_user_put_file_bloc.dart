@@ -16,13 +16,15 @@ class ImageUserPutFileBloc
   String? nameImage;
 
   final AuthListenBloc authListenBloc;
-  ImageUserPutFileBloc(
-      {required this.imageUserPutFileUseCase, required this.authListenBloc})
-      : super(ImageUserPutFileInitial()) {
+  ImageUserPutFileBloc({
+    required this.imageUserPutFileUseCase,
+    required this.authListenBloc,
+  }) : super(ImageUserPutFileInitial()) {
     on<ImageUserPutFileEvent>((event, emit) async {
       if (event is PutFileEvent) {
         emit(ImageUserPutFileLoading());
         await initImagePicker();
+
         final imageUser = await imageUserPutFileUseCase.putFile(
             "$nameImage", file!, authListenBloc.state.userModel!.email);
         imageUser.fold((l) {
@@ -38,9 +40,6 @@ class ImageUserPutFileBloc
     final imagePicked = await imagePicker.pickImage(source: ImageSource.camera);
     if (imagePicked != null) {
       nameImage = imagePicked.name;
-    }
-
-    if (imagePicked != null) {
       file = File(imagePicked.path);
     }
   }

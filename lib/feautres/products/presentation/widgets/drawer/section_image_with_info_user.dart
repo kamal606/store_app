@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/image_user_bloc/image_user_put_file/image_user_put_file_bloc.dart';
 import '../../../../../core/classes/image_assets.dart';
 import '../../../../../core/color/app_color.dart';
 import '../../../../../core/fonts/app_font.dart';
@@ -16,10 +17,17 @@ class SectionImageWithInfoUser extends StatelessWidget {
         final userModel = state.userModel;
         return Row(
           children: [
-            CircleAvatar(
-              radius: 45.h,
-              backgroundColor: AppColor.white,
-              backgroundImage: const AssetImage(AppAssets.avatarProfile),
+            BlocBuilder<ImageUserPutFileBloc, ImageUserPutFileState>(
+              builder: (context, stateImage) {
+                return CircleAvatar(
+                  radius: 45.h,
+                  backgroundColor: AppColor.white,
+                  backgroundImage: stateImage is ImageUserPutFileSuccess
+                      ? NetworkImage(stateImage.donlowadUrl)
+                      : const AssetImage(AppAssets.avatarProfile)
+                          as ImageProvider,
+                );
+              },
             ),
             SizedBox(
               width: widthNameWithEmail,

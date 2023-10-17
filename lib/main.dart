@@ -10,7 +10,6 @@ import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_out/sig
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc/sign_up_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/image_user_bloc/image_user_put_file/image_user_put_file_bloc.dart';
-
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/update_user_bloc/update_user_bloc.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
@@ -18,7 +17,6 @@ import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite
 import 'package:store_app/feautres/localization/presntation/locale_bloc/locale_bloc.dart';
 import 'package:store_app/feautres/theme/presentation/bloc/theme_app/theme_app_bloc.dart';
 import 'package:store_app/generated/l10n.dart';
-
 import 'core/function/init_flutter.dart';
 import 'core/utils/dependency_injection.dart' as di;
 import 'core/utils/go_router.dart';
@@ -49,7 +47,8 @@ class StoreApp extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (context) => di.sl<ImageUserPutFileBloc>(),
+              create: (context) =>
+                  di.sl<ImageUserPutFileBloc>()..add(StartImageEvent()),
             ),
             BlocProvider(
               create: (context) => di.sl<UpdateUserBloc>(),

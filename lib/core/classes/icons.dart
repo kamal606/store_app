@@ -28,6 +28,7 @@ abstract class AppIcon {
   static const IconData notExpand = FontAwesomeIcons.sortDown;
   static const IconData expand = FontAwesomeIcons.sortUp;
   static const IconData angleRight = FontAwesomeIcons.angleRight;
+  static const IconData angleLeft = FontAwesomeIcons.angleLeft;
   static const IconData lightMode = FontAwesomeIcons.moon;
   static const IconData darkMode = FontAwesomeIcons.solidMoon;
   static const IconData email = FontAwesomeIcons.envelope;
@@ -35,4 +36,5 @@ abstract class AppIcon {
   static const IconData eye = FontAwesomeIcons.solidEye;
   static const IconData eyeLock = FontAwesomeIcons.solidEyeSlash;
   static const IconData userEdit = FontAwesomeIcons.userPen;
+  static const IconData editImage = FontAwesomeIcons.solidPenToSquare;
 }

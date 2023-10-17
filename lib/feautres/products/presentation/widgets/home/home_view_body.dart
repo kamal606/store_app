@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/image_user_bloc/image_user_put_file/image_user_put_file_bloc.dart';
 import '../../bloc/get_all_products/get_all_products_bloc.dart';
 import '../../bloc/get_category/get_category_bloc.dart';
 
@@ -33,17 +34,24 @@ class HomeViewBody extends StatelessWidget {
         child: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
-            CustomSliverAppBar(
-              action: Material(
-                elevation: 3.h,
-                shadowColor: AppColor.darkGrey,
-                borderRadius: BorderRadius.circular(22.r),
-                child: CircleAvatar(
-                  radius: 22.r,
-                  backgroundColor: AppColor.background,
-                  backgroundImage: const AssetImage(AppAssets.avatarProfile),
-                ),
-              ),
+            BlocBuilder<ImageUserPutFileBloc, ImageUserPutFileState>(
+              builder: (context, stateImage) {
+                return CustomSliverAppBar(
+                  action: Material(
+                    elevation: 3.h,
+                    shadowColor: AppColor.darkGrey,
+                    borderRadius: BorderRadius.circular(22.r),
+                    child: CircleAvatar(
+                      radius: 22.r,
+                      backgroundColor: AppColor.background,
+                      backgroundImage: stateImage is ImageUserPutFileSuccess
+                          ? NetworkImage(stateImage.donlowadUrl)
+                          : const AssetImage(AppAssets.avatarProfile)
+                              as ImageProvider,
+                    ),
+                  ),
+                );
+              },
             ),
             const CustomInternetStatus(),
             SliverToBoxAdapter(

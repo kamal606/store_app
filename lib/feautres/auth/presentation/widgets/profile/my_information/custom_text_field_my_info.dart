@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:store_app/core/color/app_color.dart';
 import 'package:store_app/core/fonts/app_font.dart';
+import 'package:store_app/core/function/check_local_arabic.dart';
 
 class CustomTextFieldMyInfo extends StatelessWidget {
   const CustomTextFieldMyInfo({
@@ -30,7 +31,10 @@ class CustomTextFieldMyInfo extends StatelessWidget {
           maxLines: null,
           cursorColor: AppColor.jGDark,
           decoration: InputDecoration(
-            contentPadding: EdgeInsets.only(top: 15.h, left: 10.h),
+            contentPadding: EdgeInsets.only(
+                top: 15.h,
+                left: isArabicLocale() ? 0 : 10.h,
+                right: isArabicLocale() ? 10.h : 0),
             label: Text(
               titleLable,
             ),

@@ -12,7 +12,6 @@ import 'package:store_app/feautres/auth/domain/repository/user_repository/update
 import 'package:store_app/feautres/auth/domain/use_cases/image_user_use_case/image_user_put_file.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/update_user_use_case.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/image_user_bloc/image_user_put_file/image_user_put_file_bloc.dart';
-
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/update_user_bloc/update_user_bloc.dart';
 import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_forget_password_remote.dart';
 import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_get_user_remote.dart';
@@ -75,13 +74,13 @@ import '../../feautres/products/domain/use_cases/get_all_products_use_case.dart'
 import '../../feautres/products/presentation/bloc/get_all_products/get_all_products_bloc.dart';
 import '../../feautres/products/presentation/bloc/get_category/get_category_bloc.dart';
 import '../../feautres/products/presentation/bloc/status_internet/status_internet_bloc.dart';
-
 import '../../feautres/products/data/repository/repo_product_of_category_impl.dart';
 
 final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
+
   sl.registerFactory(() => ImageUserPutFileBloc(
       imageUserPutFileUseCase: sl.call(), authListenBloc: sl.call()));
   sl.registerFactory(() => UpdateUserBloc(updateUserUseCase: sl.call()));
@@ -108,6 +107,7 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => StatusInternetBloc());
   sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
+
   sl.registerLazySingleton(
       () => ImageUserPutFileRemoteDataSourceImpl(firebaseStorage: sl.call()));
   sl.registerLazySingleton(
@@ -145,6 +145,7 @@ Future<void> initGetIt() async {
           apiService: sl.call(), productsLocalDataSourceImpl: sl.call()));
 
   //! Repository
+
   sl.registerLazySingleton<ImageUserPutFileRepo>(
     () => ImageUserPutFileRepoImpl(
         imageUserPutFileRemoteDataSourceImpl: sl.call()),
@@ -190,6 +191,7 @@ Future<void> initGetIt() async {
   );
 
   //! Use Cases
+
   sl.registerLazySingleton(
       () => ImageUserPutFileUseCase(imageUserPutFileRepo: sl.call()));
   sl.registerLazySingleton(() => UpdateUserUseCase(updateUserRepo: sl.call()));

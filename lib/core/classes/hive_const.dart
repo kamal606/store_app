@@ -15,4 +15,5 @@ abstract class AppHive {
   static const String loginOrRegister = "LoginOrRegister_Box";
   static const String chooseLanguage = "ChooseLanguage_Box";
   static const String onBording = "OnBording_Box";
+  static const String imageProfile = "ImageProfile_Box";
 }
