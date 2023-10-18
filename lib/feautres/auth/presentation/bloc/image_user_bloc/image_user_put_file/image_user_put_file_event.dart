@@ -7,6 +7,4 @@ sealed class ImageUserPutFileEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class StartImageEvent extends ImageUserPutFileEvent {}
-
 class PutFileEvent extends ImageUserPutFileEvent {}

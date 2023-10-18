@@ -23,7 +23,7 @@ class ImageUserPutFileBloc
     on<ImageUserPutFileEvent>((event, emit) async {
       if (event is PutFileEvent) {
         emit(ImageUserPutFileLoading());
-        await initImagePicker();
+        await _initImagePicker();
 
         final imageUser = await imageUserPutFileUseCase.putFile(
             "$nameImage", file!, authListenBloc.state.userModel!.email);
@@ -36,7 +36,7 @@ class ImageUserPutFileBloc
     });
   }
 
-  Future<void> initImagePicker() async {
+  Future<void> _initImagePicker() async {
     final imagePicked = await imagePicker.pickImage(source: ImageSource.camera);
     if (imagePicked != null) {
       nameImage = imagePicked.name;

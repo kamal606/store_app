@@ -10,13 +10,17 @@ class SectionButtonEditProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomElvatedButton(
-      onPressed: () {
-        context.push(AppRouter.myInformationView);
-      },
-      title: S.of(context).ediProfile,
-      fontTitle: AppFonts.bold_14,
-      isRadius: false,
+    return Column(
+      children: [
+        CustomElvatedButton(
+          onPressed: () {
+            context.push(AppRouter.myInformationView);
+          },
+          title: S.of(context).ediProfile,
+          fontTitle: AppFonts.bold_14,
+          isRadius: false,
+        ),
+      ],
     );
   }
 }

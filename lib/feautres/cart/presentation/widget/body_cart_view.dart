@@ -32,7 +32,7 @@ class CartViewBody extends StatelessWidget {
                       .add(SearchInCartEvent(query: value));
                 },
                 onPressedIconDelete: () async {
-                  await customDialogDeleteCartAndFavorite(
+                  await customDialog(
                     context: context,
                     onPressedCancel: () {
                       context.pop();

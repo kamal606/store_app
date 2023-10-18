@@ -28,7 +28,7 @@ class FavoriteViewBody extends StatelessWidget {
                   .add(SearchFavoriteEvent(query: value));
             },
             onPressedIconDelete: () async {
-              await customDialogDeleteCartAndFavorite(
+              await customDialog(
                 context: context,
                 onPressedCancel: () {
                   context.pop();

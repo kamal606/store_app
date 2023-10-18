@@ -6,7 +6,7 @@ import '../color/app_color.dart';
 import '../fonts/app_font.dart';
 import '../widgets/custom_elvated_button.dart';
 
-Future<void> customDialogDeleteCartAndFavorite(
+Future<void> customDialog(
     {required BuildContext context,
     required Function()? onPressedCancel,
     required Function()? onPressedAgree,

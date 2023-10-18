@@ -55,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Create Account\n"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
+        "deleteAccount": MessageLookupByLibrary.simpleMessage("Delete Account"),
         "description": MessageLookupByLibrary.simpleMessage("Description"),
         "dialogCart": MessageLookupByLibrary.simpleMessage(
             "Are you sure to delete all Cart you have?"),
@@ -132,6 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "subTitleCarouselSlider2":
             MessageLookupByLibrary.simpleMessage("to start with us"),
         "subTotal": MessageLookupByLibrary.simpleMessage("SubTotal:"),
+        "sureDelete": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to remove your account?"),
         "tax": MessageLookupByLibrary.simpleMessage("Tax:"),
         "titleCarouselSlider1": MessageLookupByLibrary.simpleMessage("50% Off"),
         "titleCarouselSlider2":

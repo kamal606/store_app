@@ -3,15 +3,25 @@ import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:store_app/feautres/auth/data/data_source/remote_data_source/auth_remote/auth_delete_account_remote.dart';
 import 'package:store_app/feautres/auth/data/data_source/remote_data_source/image_user_remote/image_user_put_file.dart';
+import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/delete_user_remote.dart';
 import 'package:store_app/feautres/auth/data/data_source/remote_data_source/user_remote/update_user_remote.dart';
+import 'package:store_app/feautres/auth/data/repository/auth_repository/auth_delete_account_repo_impl.dart';
 import 'package:store_app/feautres/auth/data/repository/image_user_reository/image_user_put_file_repo_impl.dart';
+import 'package:store_app/feautres/auth/data/repository/user_repository/delete_user_repo_impl.dart';
 import 'package:store_app/feautres/auth/data/repository/user_repository/update_user_repo_impl.dart';
+import 'package:store_app/feautres/auth/domain/repository/auth_repository/auth_delete_account_repo.dart';
 import 'package:store_app/feautres/auth/domain/repository/image_user_repository/image_user_put_file.dart';
+import 'package:store_app/feautres/auth/domain/repository/user_repository/delete_user_repo.dart';
 import 'package:store_app/feautres/auth/domain/repository/user_repository/update_user_repo.dart';
+import 'package:store_app/feautres/auth/domain/use_cases/auth_use_case/auth_delete_account_user_case.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/image_user_use_case/image_user_put_file.dart';
+import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/delete_user_use_case.dart';
 import 'package:store_app/feautres/auth/domain/use_cases/user_use_case/update_user_use_case.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/delete_account_bloc/delete_account_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/image_user_bloc/image_user_put_file/image_user_put_file_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/delete_user_bloc/delete_user_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/update_user_bloc/update_user_bloc.dart';
 import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_forget_password_remote.dart';
 import '../../feautres/auth/data/data_source/remote_data_source/auth_remote/auth_get_user_remote.dart';
@@ -80,7 +90,12 @@ final sl = GetIt.instance;
 
 Future<void> initGetIt() async {
   //! Bloc
-
+  sl.registerFactory(() => DeleteUserBloc(
+      deleteUserUseCase: sl.call(),
+      authListenBloc: sl.call(),
+      deleteAccountBloc: sl.call()));
+  sl.registerFactory(
+      () => DeleteAccountBloc(authDeleteAccountUseCase: sl.call()));
   sl.registerFactory(() => ImageUserPutFileBloc(
       imageUserPutFileUseCase: sl.call(), authListenBloc: sl.call()));
   sl.registerFactory(() => UpdateUserBloc(updateUserUseCase: sl.call()));
@@ -107,7 +122,10 @@ Future<void> initGetIt() async {
   sl.registerFactory(() => StatusInternetBloc());
   sl.registerFactory(() => AppLocaleBloc(localeLocalDataSourceImpl: sl.call()));
   //! Data Sources
-
+  sl.registerLazySingleton(
+      () => AuthDeleteAccountRemoteDataSourceImpl(firebaseAuth: sl.call()));
+  sl.registerLazySingleton(
+      () => DeleteUserRemoteDataSourceImpl(firebaseFirestore: sl.call()));
   sl.registerLazySingleton(
       () => ImageUserPutFileRemoteDataSourceImpl(firebaseStorage: sl.call()));
   sl.registerLazySingleton(
@@ -145,7 +163,13 @@ Future<void> initGetIt() async {
           apiService: sl.call(), productsLocalDataSourceImpl: sl.call()));
 
   //! Repository
-
+  sl.registerLazySingleton<AuthDeleteAccountRepo>(
+    () => AuthDeleteAccountRepoImpl(
+        authDeleteAccountRemoteDataSourceImpl: sl.call()),
+  );
+  sl.registerLazySingleton<DeleteUserRepo>(
+    () => DeleteUserRepoImpl(deleteUserRemoteDataSourceImpl: sl.call()),
+  );
   sl.registerLazySingleton<ImageUserPutFileRepo>(
     () => ImageUserPutFileRepoImpl(
         imageUserPutFileRemoteDataSourceImpl: sl.call()),
@@ -191,7 +215,9 @@ Future<void> initGetIt() async {
   );
 
   //! Use Cases
-
+  sl.registerLazySingleton(
+      () => AuthDeleteAccountUseCase(authDeleteAccountRepo: sl.call()));
+  sl.registerLazySingleton(() => DeleteUserUseCase(deleteUserRepo: sl.call()));
   sl.registerLazySingleton(
       () => ImageUserPutFileUseCase(imageUserPutFileRepo: sl.call()));
   sl.registerLazySingleton(() => UpdateUserUseCase(updateUserRepo: sl.call()));

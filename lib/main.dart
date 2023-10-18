@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/delete_account_bloc/delete_account_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/forget_password_bloc/forget_password_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/login_bloc/login_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_out/sign_out_bloc.dart';
@@ -11,6 +12,7 @@ import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/sign_up_bloc
 import 'package:store_app/feautres/auth/presentation/bloc/auth_listen_bloc/auth_listen_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/image_user_bloc/image_user_put_file/image_user_put_file_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/create_user_bloc/create_user_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/delete_user_bloc/delete_user_bloc.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/update_user_bloc/update_user_bloc.dart';
 import 'package:store_app/feautres/cart/presentation/bloc/cart/cart_bloc.dart';
 import 'package:store_app/feautres/favorite/presentation/blocs/favorite/favorite_bloc.dart';
@@ -47,8 +49,13 @@ class StoreApp extends StatelessWidget {
         return MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (context) =>
-                  di.sl<ImageUserPutFileBloc>()..add(StartImageEvent()),
+              create: (context) => di.sl<DeleteAccountBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => di.sl<DeleteUserBloc>(),
+            ),
+            BlocProvider(
+              create: (context) => di.sl<ImageUserPutFileBloc>(),
             ),
             BlocProvider(
               create: (context) => di.sl<UpdateUserBloc>(),

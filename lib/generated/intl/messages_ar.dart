@@ -53,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "country": MessageLookupByLibrary.simpleMessage("البلد"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب\n"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
+        "deleteAccount": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
         "description": MessageLookupByLibrary.simpleMessage("وصف"),
         "dialogCart": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد من حذف كل السلة لديك؟"),
@@ -132,6 +133,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "subTitleCarouselSlider2":
             MessageLookupByLibrary.simpleMessage("للبدء معنا"),
         "subTotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي:"),
+        "sureDelete": MessageLookupByLibrary.simpleMessage(
+            "هل انت متاكد من ازالة حسابك؟"),
         "tax": MessageLookupByLibrary.simpleMessage("ضريبة:"),
         "titleCarouselSlider1": MessageLookupByLibrary.simpleMessage("خصم %50"),
         "titleCarouselSlider2": MessageLookupByLibrary.simpleMessage("استعد"),

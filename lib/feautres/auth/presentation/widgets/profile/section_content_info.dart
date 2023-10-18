@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:store_app/core/color/app_color.dart';
+import 'package:store_app/core/function/dialog_cart_and_favorite.dart';
+import 'package:store_app/core/function/toast_flutter.dart';
 import 'package:store_app/core/utils/go_router.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/delete_account_bloc/delete_account_bloc.dart';
+
 import 'package:store_app/feautres/auth/presentation/widgets/profile/custom_body_hedline.dart';
 import 'package:store_app/feautres/auth/presentation/widgets/profile/custom_title_hedline.dart';
 
@@ -54,6 +60,37 @@ class SectionContentInfoProflieView extends StatelessWidget {
           titleBodyHedline: S.of(context).language,
           onPressed: () {
             context.push(AppRouter.settings);
+          },
+        ),
+        BlocConsumer<DeleteAccountBloc, DeleteAccountState>(
+          listener: (context, state) {
+            if (state is DeleteAccountSuccess) {
+              context.replace(AppRouter.login);
+            }
+            if (state is DeleteAccountFailure) {
+              toast(message: state.errorMessage, color: AppColor.erorr);
+            }
+          },
+          builder: (context, state) {
+            if (state is DeleteAccountLoading) {
+              return const CircularProgressIndicator();
+            }
+            return CustomBodyHedline(
+              titleBodyHedline: S.of(context).deleteAccount,
+              onPressed: () {
+                customDialog(
+                    context: context,
+                    onPressedCancel: () {
+                      context.pop();
+                    },
+                    onPressedAgree: () {
+                      BlocProvider.of<DeleteAccountBloc>(context)
+                          .add(DeleteAccountTappedEvent());
+                      context.pop();
+                    },
+                    title: S.of(context).sureDelete);
+              },
+            );
           },
         ),
       ],
