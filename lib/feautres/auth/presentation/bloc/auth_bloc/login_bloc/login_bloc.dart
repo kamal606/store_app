@@ -57,7 +57,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             return emit(LoginFailure(errorAuth: l.message));
           }
         }, (r) {
-          emit(LoginSuccess(authUser: r));
+          emit(LoginSuccess(authUser: r, email: email, password: password));
         });
       }
     });

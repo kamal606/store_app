@@ -14,8 +14,15 @@ class SignUpLoading extends SignUpState {}
 
 class SignUpSuccess extends SignUpState {
   final auth.User? authUser;
-
-  const SignUpSuccess({required this.authUser});
+  final String email;
+  final String password;
+  final String rePassword;
+  const SignUpSuccess({
+    required this.authUser,
+    required this.email,
+    required this.password,
+    required this.rePassword,
+  });
   @override
   List<Object?> get props => [authUser];
 }

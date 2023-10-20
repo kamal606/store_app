@@ -38,10 +38,12 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       if (event is SignUpAuthEvent) {
         emit(SignUpLoading());
         //=============== check email or password empty and confirm password match ==========
+
         if (email.isEmpty) {
           return emit(const SignUpEmailFailure(
               errorEmail: "Email or password is empty"));
         }
+
         if (password.isEmpty) {
           return emit(const SignUpPasswordFailure(
               errorPassword: "Email or password is empty"));
@@ -68,7 +70,11 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         }, (r) {
           UserModel userModel = UserModel(id: r!.uid, email: email);
           userBloc.add(CreateUserChangedEvent(userModel: userModel));
-          return emit(SignUpSuccess(authUser: r));
+          return emit(SignUpSuccess(
+              authUser: r,
+              email: email,
+              password: password,
+              rePassword: confirmPassword));
         });
       }
     });

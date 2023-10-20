@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class DeleteUserRemoteDataSource {
-  Future<Unit> deleteUser(String id);
+  Future<Unit> deleteUser(String? id);
 }
 
 class DeleteUserRemoteDataSourceImpl implements DeleteUserRemoteDataSource {
@@ -12,7 +12,7 @@ class DeleteUserRemoteDataSourceImpl implements DeleteUserRemoteDataSource {
       : _firebaseFirestore = firebaseFirestore ?? FirebaseFirestore.instance;
 
   @override
-  Future<Unit> deleteUser(String id) async {
+  Future<Unit> deleteUser(String? id) async {
     await _firebaseFirestore.collection("users").doc(id).delete();
     return unit;
   }

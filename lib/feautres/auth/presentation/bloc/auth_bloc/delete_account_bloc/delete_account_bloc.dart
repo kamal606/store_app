@@ -15,8 +15,9 @@ class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
         emit(DeleteAccountLoading());
         final deleteAccount = await authDeleteAccountUseCase.deleteAccount();
         deleteAccount.fold(
-            (l) => emit(DeleteAccountFailure(errorMessage: l.message)),
-            (_) => emit(DeleteAccountSuccess()));
+            (l) => emit(DeleteAccountFailure(errorMessage: l.message)), (_) {
+          return emit(DeleteAccountSuccess());
+        });
       }
     });
   }

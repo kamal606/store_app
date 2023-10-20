@@ -12,7 +12,7 @@ class DeleteUserRepoImpl implements DeleteUserRepo {
   DeleteUserRepoImpl({required this.deleteUserRemoteDataSourceImpl});
 
   @override
-  Future<Either<Failure, Unit>> deleteUser(String userId) async {
+  Future<Either<Failure, Unit>> deleteUser(String? userId) async {
     try {
       await deleteUserRemoteDataSourceImpl.deleteUser(userId);
       return right(unit);

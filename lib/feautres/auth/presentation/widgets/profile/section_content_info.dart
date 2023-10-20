@@ -7,6 +7,7 @@ import 'package:store_app/core/function/dialog_cart_and_favorite.dart';
 import 'package:store_app/core/function/toast_flutter.dart';
 import 'package:store_app/core/utils/go_router.dart';
 import 'package:store_app/feautres/auth/presentation/bloc/auth_bloc/delete_account_bloc/delete_account_bloc.dart';
+import 'package:store_app/feautres/auth/presentation/bloc/user_bloc/delete_user_bloc/delete_user_bloc.dart';
 
 import 'package:store_app/feautres/auth/presentation/widgets/profile/custom_body_hedline.dart';
 import 'package:store_app/feautres/auth/presentation/widgets/profile/custom_title_hedline.dart';
@@ -84,9 +85,11 @@ class SectionContentInfoProflieView extends StatelessWidget {
                       context.pop();
                     },
                     onPressedAgree: () {
+                      context.pop();
+                      BlocProvider.of<DeleteUserBloc>(context)
+                          .add(DeleteUserTappedEvent());
                       BlocProvider.of<DeleteAccountBloc>(context)
                           .add(DeleteAccountTappedEvent());
-                      context.pop();
                     },
                     title: S.of(context).sureDelete);
               },

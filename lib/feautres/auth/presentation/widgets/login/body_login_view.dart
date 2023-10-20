@@ -17,7 +17,7 @@ class LoginViewBody extends StatelessWidget {
     return BlocConsumer<LoginBloc, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          context.replace(AppRouter.homeView);
+          context.pushReplacement(AppRouter.homeView);
         }
         if (state is LoginFailure) {
           toast(message: state.errorAuth, color: AppColor.erorr);

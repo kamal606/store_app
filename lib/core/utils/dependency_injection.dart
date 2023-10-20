@@ -91,11 +91,12 @@ final sl = GetIt.instance;
 Future<void> initGetIt() async {
   //! Bloc
   sl.registerFactory(() => DeleteUserBloc(
-      deleteUserUseCase: sl.call(),
-      authListenBloc: sl.call(),
-      deleteAccountBloc: sl.call()));
-  sl.registerFactory(
-      () => DeleteAccountBloc(authDeleteAccountUseCase: sl.call()));
+        deleteUserUseCase: sl.call(),
+        authListenBloc: sl.call(),
+      ));
+  sl.registerFactory(() => DeleteAccountBloc(
+        authDeleteAccountUseCase: sl.call(),
+      ));
   sl.registerFactory(() => ImageUserPutFileBloc(
       imageUserPutFileUseCase: sl.call(), authListenBloc: sl.call()));
   sl.registerFactory(() => UpdateUserBloc(updateUserUseCase: sl.call()));

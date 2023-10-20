@@ -18,7 +18,11 @@ class GetUserRemoteDataSourceImpl implements GetUserRemoteDataSource {
         .doc(id)
         .snapshots()
         .map((snap) {
-      return UserModel.fromSnapshot(snap);
+      if (snap.exists) {
+        return UserModel.fromSnapshot(snap);
+      } else {
+        throw Exception("user does not exist");
+      }
     });
   }
 }

@@ -17,7 +17,7 @@ class SecondCoulmnLogin extends StatelessWidget {
           title: S.of(context).dontHaveAccount,
           titleButton: S.of(context).signUpNow,
           onPressed: () {
-            context.replace(AppRouter.signUp);
+            context.push(AppRouter.signUp);
           },
         ),
         SizedBox(

@@ -15,11 +15,11 @@ class AuthListenState extends Equatable {
 
   const AuthListenState.authenticated({
     required auth.User authUser,
-    required UserModel userEntity,
+    required UserModel userModel,
   }) : this._(
           status: AuthStatus.authenticated,
           authUser: authUser,
-          userModel: userEntity,
+          userModel: userModel,
         );
 
   const AuthListenState.unauthenticated() : this._();

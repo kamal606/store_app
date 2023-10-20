@@ -23,7 +23,6 @@ class SectionButtonSignUp extends StatelessWidget {
             title: S.of(context).signUp,
             backgroundColor: AppColor.white,
             onPressed: () {
-              FocusScope.of(context).unfocus();
               BlocProvider.of<SignUpBloc>(context).add(SignUpAuthEvent());
             },
           ),

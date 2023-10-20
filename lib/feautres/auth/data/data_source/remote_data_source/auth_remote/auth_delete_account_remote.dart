@@ -14,7 +14,7 @@ class AuthDeleteAccountRemoteDataSourceImpl
   @override
   Future<Unit> deleteAccount() async {
     User? user = _firebaseAuth.currentUser;
-    await user!.delete();
+    await user?.delete();
     return unit;
   }
 }

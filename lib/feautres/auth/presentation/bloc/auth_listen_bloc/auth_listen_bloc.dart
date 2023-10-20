@@ -32,7 +32,7 @@ class AuthListenBloc extends Bloc<AuthListenEvent, AuthListenState> {
       if (event is AuthUserChanged) {
         event.authUser != null
             ? emit(AuthListenState.authenticated(
-                authUser: event.authUser!, userEntity: event.user!))
+                authUser: event.authUser!, userModel: event.user!))
             : emit(const AuthListenState.unauthenticated());
       }
     });
