@@ -57,6 +57,9 @@ class FirebaseAuthFailure extends Failure {
   FirebaseAuthFailure({required super.message});
   factory FirebaseAuthFailure.fromFirebase(FirebaseAuthException exception) {
     switch (exception.code) {
+      case 'sign_in_canceled':
+        return FirebaseAuthFailure(
+            message: 'cancel sign in, please try agian later.');
       case 'too-many-requests':
         return FirebaseAuthFailure(
             message: 'Too many requests. Please try again later.');

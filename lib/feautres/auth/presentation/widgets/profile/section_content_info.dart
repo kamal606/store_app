@@ -86,10 +86,9 @@ class SectionContentInfoProflieView extends StatelessWidget {
                     },
                     onPressedAgree: () {
                       context.pop();
+
                       BlocProvider.of<DeleteUserBloc>(context)
                           .add(DeleteUserTappedEvent());
-                      BlocProvider.of<DeleteAccountBloc>(context)
-                          .add(DeleteAccountTappedEvent());
                     },
                     title: S.of(context).sureDelete);
               },

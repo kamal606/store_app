@@ -8,7 +8,7 @@ class DeleteUserUseCase {
 
   DeleteUserUseCase({required this.deleteUserRepo});
 
-  Future<Either<Failure, Unit>> deleteUser(String? id) async {
+  Future<Either<Failure, Unit>> deleteUser(String id) async {
     return await deleteUserRepo.deleteUser(id);
   }
 }

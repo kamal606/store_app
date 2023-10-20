@@ -48,10 +48,7 @@ class FirstColumnSignUp extends StatelessWidget {
         ),
 
         // section google or facebook
-        CustomFacebookOrGmail(
-          onPressedFacbook: () {},
-          onPressedGmail: () {},
-        ),
+        const CustomGmail(),
       ],
     );
   }
