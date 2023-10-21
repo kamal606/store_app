@@ -11,7 +11,7 @@ class ImageUserPutFileUseCase {
   ImageUserPutFileUseCase({required this.imageUserPutFileRepo});
 
   Future<Either<Failure, String>> putFile(
-      String path, File file, String email) async {
+      String path, File? file, String email) async {
     return await imageUserPutFileRepo.putFile(path, file, email);
   }
 }

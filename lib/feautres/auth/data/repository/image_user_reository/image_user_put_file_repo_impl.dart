@@ -16,7 +16,7 @@ class ImageUserPutFileRepoImpl implements ImageUserPutFileRepo {
       {required this.imageUserPutFileRemoteDataSourceImpl});
   @override
   Future<Either<Failure, String>> putFile(
-      String path, File file, String email) async {
+      String path, File? file, String email) async {
     try {
       final imageUrl =
           await imageUserPutFileRemoteDataSourceImpl.putFile(path, file, email);

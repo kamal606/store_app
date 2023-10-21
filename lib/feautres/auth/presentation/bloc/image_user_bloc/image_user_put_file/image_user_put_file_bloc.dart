@@ -26,7 +26,7 @@ class ImageUserPutFileBloc
         await _initImagePicker();
 
         final imageUser = await imageUserPutFileUseCase.putFile(
-            "$nameImage", file!, authListenBloc.state.userModel!.email);
+            "$nameImage", file, authListenBloc.state.userModel!.email);
         imageUser.fold((l) {
           return emit(ImageUserPutFileFailure(errorMessage: l.message));
         }, (r) {
@@ -37,10 +37,11 @@ class ImageUserPutFileBloc
   }
 
   Future<void> _initImagePicker() async {
-    final imagePicked = await imagePicker.pickImage(source: ImageSource.camera);
+    final imagePicked =
+        await imagePicker.pickImage(source: ImageSource.gallery);
     if (imagePicked != null) {
       nameImage = imagePicked.name;
       file = File(imagePicked.path);
-    }
+    } else {}
   }
 }

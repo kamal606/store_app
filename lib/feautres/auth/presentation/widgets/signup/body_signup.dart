@@ -20,7 +20,7 @@ class SignUpViewBody extends StatelessWidget {
         return BlocConsumer<SignUpBloc, SignUpState>(
           listener: (context, state) {
             if (state is SignUpSuccess) {
-              context.pushReplacement(AppRouter.homeView);
+              context.replace(AppRouter.homeView);
             }
             if (state is SignUpFailure) {
               toast(message: state.errorAuth, color: AppColor.erorr);

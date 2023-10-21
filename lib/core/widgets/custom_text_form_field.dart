@@ -44,6 +44,7 @@ class CustomTextFormField extends StatelessWidget {
     return SizedBox(
       width: MediaQuery.of(context).size.width - 10.w,
       child: TextFormField(
+        autovalidateMode: AutovalidateMode.always,
         style: AppFonts.semiBold_14.copyWith(color: AppColor.blacK),
         obscureText: obscureText,
         onFieldSubmitted: onFieldSubmitted,
